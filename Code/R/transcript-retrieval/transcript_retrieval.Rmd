@@ -1,0 +1,145 @@
+---
+title: "transcript_retrieval"
+output: html_document
+---
+
+```{R}
+install.packages("devtools")
+install.packages("hash")
+devtools::install_github("langcog/childesr")
+install.packages("filesstrings")
+```
+```{R}
+collection <- "Eng-NA"
+```
+
+```{R}
+library(dplyr)
+library(tidyverse)
+library(childesr)
+library(hash)
+#library(filesstrings)
+```
+
+```{R}
+library(RMySQL)  
+
+killDbConnections <- function () {
+
+  all_cons <- dbListConnections(MySQL())
+
+  print(all_cons)
+
+  for(con in all_cons)
+    +  dbDisconnect(con)
+
+  print(paste(length(all_cons), " connections killed."))
+
+}
+killDbConnections()
+```
+
+```{R}
+h <- hash() 
+# set values
+h[["1"]] <- 42
+h[["foo"]] <- "bar"
+h[["4"]] <- list(a=1, b=2)
+# get values
+h[["1"]]
+#lsf.str("package:childesr")
+```
+
+
+
+
+```{R}
+create_child_transcript <- function () {
+  print(1)
+}
+```
+
+
+```{R}
+get_participants()
+```
+
+```{R}
+create_child_transcript <- function (corpus, child, child_path) {
+  if (!dir.exists(child_path)) {
+    utter <- get_utterances(collection = collection, corpus = corpus, target_child=child)
+    file.create(paste(child, ".txt", sep=""))
+    utter$transcript <- paste(paste("*", utter$speaker_code, ":", sep=""), utter$gloss)
+    fileConn<-file(child_path)
+    writeLines(utter$transcript, fileConn)
+    close(fileConn)
+  }
+}
+```
+
+```{R}
+parts <- get_participants(collection=collection)
+parts <- parts[!is.na(parts$target_child_name),] 
+parts <- parts[parts$corpus_name == "Bernstein",] 
+parts[is.na(parts$name),]
+```
+
+
+```{R}
+get_participants()
+```
+
+File structure:
+collection/corpus/target_child_corpus.txt
+```{R}
+if (!dir.exists("transcripts")) {
+  dir.create("transcripts")
+}
+
+participants <- get_participants(collection=collection)
+print(participants)
+
+corpora <- get_corpora()
+
+unique_corpora <- corpora[corpora$collection_name == collection,]
+unique_corpora <- unique(corpora$corpus_name)
+unique_corpora
+
+
+for (corpus in unique_corpora) {
+  corpus_path <- paste("transcripts", corpus, sep='/')
+#   if (!dir.exists(corpus_path)) {
+#     dir.create(corpus_path)
+#   }
+  print(corpus_path)
+  corpus_parts <- participants[participants$corpus_name == corpus,]
+  print(length(corpus_parts$target_child_name))
+  #print(head(corpus_parts))
+#   corpus_children <- unique(corpus_parts$target_child_name)
+#   corpus_children
+#   for (i in 1: length(corpus_stats)) {
+#     print(corpus_children[i])
+#     child_path <- paste(corpus_path, corpus_stats$target_child_name[i], sep='/')
+#     child_path <- paste(child_path, corpus, sep='_')
+#     print(child_path)
+#     create_child_transcript(corpus, child, child_path)
+#   }
+}
+```
+if (!is.na(corpus_stats$target_child_name[i])) {
+      child_path <- paste(corpus_path, corpus_stats$target_child_name[i], sep='/')
+    } else if (!is.na(corpus_stats$name[i])) {
+      child_path <- paste(corpus_path, corpus_stats$name[i], sep='/')
+    } else {
+      file_name <- paste(corpus_stats$role[i], corpus_stats$code[i], sep="_")  
+      child_path <- paste(corpus_path, file_name, sep='/')
+    }
+
+
+
+
+
+
+```{R}
+unique_corpora
+```

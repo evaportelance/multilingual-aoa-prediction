@@ -1,0 +1,102 @@
+"","language","num_target_child","tokens"
+"1","ara nld",174,106316
+"2","fra eus",20,6443
+"3","ara fra",71,43703
+"4","nld tur",175,132350
+"5","tha zho",1,194
+"6","zho eng",212,461203
+"7","zho nan",24,30842
+"8","zho nan eng",2,839
+"9","tur nld",1,285
+"10","eus fra",26,6189
+"11","eng jpn",21,52334
+"12","eng zho",247,355275
+"13","eng yid",4,8338
+"14","eng haw",13,25171
+"15","eng kik",2,6193
+"16","eng deu",3,9894
+"17","eng spa",146,396231
+"18","eng fra",81,46261
+"19","eng hun",9,18168
+"20","eng tgl",1,1037
+"21","eng ita",1,1118
+"22","eng nld",2,16471
+"23","spa eng",402,890282
+"24","spa esk",1,2035
+"25","fra eng",42,224303
+"26","afr eng",45,154628
+"27","afr eng deu",1,3761
+"28","nan eng",1,2045
+"29","yue eng",478,1924281
+"30","yue eng jpn",2,15885
+"31","jam eng",13,76297
+"32","eus spa",131,87466
+"33","fas eng",6,9149
+"34","jpn eng",98,349961
+"35","cat spa",98,81050
+"36","por jpn",1,1780
+"37","por eng",70,35213
+"38","ita eng",1,2853
+"39","cym eng",407,879164
+"40","ind jav und xmm",995,2449381
+"41","ind jav und xmm fra",1,1519
+"42","rus eng",40,106832
+"43","srp deu",1,8147
+"44","hrv eng",2,4470
+"45","hrv ita",34,2387
+"46","deu eng",142,554549
+"47","deu fra",3,14585
+"48","deu nld",1,4344
+"49","deu ita",5,22548
+"50","eng heb",1,740
+"51","eng zho ind",13,22300
+"52","eng zho tha",1,734
+"53","spa cat",134,337691
+"54","yue eng zho",24,77456
+"55","yue zho eng",23,53527
+"56","eng zho yue",4,11749
+"57","eng yue zho",27,67713
+"58","zho eng yue",14,47131
+"59","zho yue eng",28,59778
+"60","eng yue",242,662436
+"61","eng pol",22,27638
+"62","nld eng",19,48173
+"63","hun eng",25,37237
+"64","hun eng fas",3,2063
+"65","heb eng",10,18482
+"66","eng gla",1,5008
+"67","eng mar",56,39864
+"68","fra rus",27,39626
+"69","fra nld",87,91952
+"70","nld fra",8,16947
+"71","ita nld",21,62801
+"72","nld ita",32,82887
+"73","eng ara",2,10796
+"74","spa cat hun",4,3524
+"75","hun spa cat",100,202892
+"76","hun spa cat eng",3,7852
+"77","spa hun cat",1,477
+"78","eng spa fra",1,4623
+"79","eng spa deu",1,4071
+"80","eng zho spa",1,1218
+"81","zho eng spa",6,16105
+"82","yue eng zho spa",1,1377
+"83","por swe",30,6468
+"84","swe por",2,770
+"85","jpn dan",17,32133
+"86","ita jpn",10,117
+"87","ita deu",2,21
+"88","jpn ita",6,376
+"89","cat spa eng",47,29299
+"90","spa glg",127,186968
+"91","glg spa",38,61470
+"92","fra por",1,7518
+"93","nan zho eng",430,1755597
+"94","ara eng",1,301
+"95","deu pol",1,96
+"96","deu por",1,96
+"97","deu ron",1,90
+"98","pol eng",38,70151
+"99","deu tur",1,97
+"100","fra por und",54,23160
+"101","por fra und",55,23711

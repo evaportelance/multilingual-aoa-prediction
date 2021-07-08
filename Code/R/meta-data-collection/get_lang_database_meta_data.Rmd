@@ -1,0 +1,232 @@
+---
+title: "aoa-pipline-data-retrieval"
+output: html_document
+---
+
+Loads the library.
+CHILDES structure:
+CHILDES/related language collections (may have only one language)/language 
+corpus/subfolder(s)/transcripts
+```{R}
+library(childesr)
+library(dplyr)
+library(tidyverse)
+
+```
+
+```{R}
+childesr::get_content()
+```
+
+Gets the unique monolingual language codes in CHILDES.
+```{R}
+transcripts <- get_transcripts()
+langs <- select(transcripts, language)
+unique_langs <- unique(langs, incomparables = FALSE) 
+unique_langs <- filter(unique_langs, nchar(language) < 4)
+unique_langs$num_target_child <- 0
+print(unique_langs$language)
+```
+
+
+Gets the number of tokens uttered by monolingual children for each language.
+```{R}
+unique_langs$tokens <- 0
+stats <- get_speaker_statistics()
+tokens_uttered <- select(stats, language,num_tokens)
+
+i = 1
+for (lang in unique_langs$language) {
+  lang_tokens <- subset(tokens_uttered, tokens_uttered$language == lang)
+  unique_langs$tokens[i] <- sum(lang_tokens$num_tokens) 
+  i = i + 1
+}
+print(unique_langs)
+```
+
+
+Gets the number of target children for each unique monolingual language in CHILDES.
+```{R}
+i <- 1
+for (lang in unique_langs$language) {
+  unique_langs$num_target_child[i] <- sum(transcripts$language == lang )
+  i <- i + 1
+}
+write.csv(unique_langs, "unique_langs.csv")
+```
+
+
+
+
+Fills out a CSV in the format of the 'aoa-pipeline language map' spreadsheet 
+with the correct number of target children.
+Note: used double for-loops here because there are only 41*81 operations
+``` {R}
+input_langs <- read.csv("input_langs.csv", header = TRUE)
+input_langs$tokens <- 0
+for (i in 1: length(unique_langs$language)) {
+  if (nchar(input_langs$language[i]) != 0) {
+    for (j in 1: length(input_langs$language)) {
+      if (unique_langs$language[i] == input_langs$language[j]) {
+        input_langs$num_target_child[j] <- unique_langs$num_target_child[i]
+        input_langs$tokens[j] <- unique_langs$tokens[i]
+      }
+    }
+  }
+}
+#write.csv(input_langs, "output_langs.csv")
+```
+
+
+Gets the number of children for each language in WordBank.
+```{R}
+devtools::install_github("langcog/wordbankr")
+wordbankr::get_administration_data("English (American)")
+wordbank_langs <- read.csv("wordbank_langs.csv", header = TRUE)
+wordbank_langs$n_children <- 0
+#print(wordbank_langs)
+
+for (i in 1: length(wordbank_langs$language)) {
+  #print(wordbank_langs$language[i])
+  if (wordbank_langs$language[i] != 0) { 
+    wordbank_langs$n_children[i] <- 
+    length(wordbankr::get_administration_data(language = wordbank_langs$language[i])$age)
+  }
+}
+print(wordbank_langs)
+
+```
+
+
+Kills all open connections to the wordbank database. Code copied from:
+https://stackoverflow.com/questions/32139596/cannot-allocate-a-new-connection-16
+-connections-already-opened-rmysql
+
+```{R}
+library(RMySQL)  
+
+killDbConnections <- function () {
+
+  all_cons <- dbListConnections(MySQL())
+
+  print(all_cons)
+
+  for(con in all_cons)
+    +  dbDisconnect(con)
+
+  print(paste(length(all_cons), " connections killed."))
+
+}
+killDbConnections()
+```
+```{R}
+wordbank_langs$forms <- matrix("0", ncol=max_num_forms, nrow=length(wordbank_langs$language))
+for (i in 1: length(wordbank_langs$language)) {
+  #wordbank_langs$forms[i] <- vector("1", "2", "3", "4")
+  for (j in 1: 4) {
+    wordbank_langs$forms[i, j] <- toString(i + j)
+  }
+}
+print(wordbank_langs$forms)
+```
+
+Gets the unilemma coverage for a given language and form.
+```{R}
+unilemma_coverage <- function (lang_item_data, form) {
+  form_data <- lang_item_data[lang_item_data$form == form,]
+  form_item_count <- nrow(form_data)
+  if (form_item_count == 0) {
+    return("0")
+  }
+  unilemmas_avail <- nrow(form_data[is.na(form_data$uni_lemma) == FALSE,])
+  return(unilemmas_avail / form_item_count)
+}
+```
+
+```{R}
+sort_unique_forms <- function(unique_forms) {
+  print(unique_forms)
+  if (length(unique_forms) > 1) {
+    for (i in 1: length(unique_forms)) {
+      if (unique_forms[i] == "WG" && i != 1) {
+        temp <- unique_forms[1]
+        unique_forms[1] <- "WG"
+        unique_forms[i] <- temp
+        print(unique_forms)
+      } else if (unique_forms[i] == "WS" && i != 2) {
+        temp <- unique_forms[2]
+        unique_forms[2] <- "WS"
+        unique_forms[i] <- temp
+        print(unique_forms)
+      }
+    }
+  }
+  return(unique_forms)
+}
+```
+
+Gets the list of unique forms.
+```{R}
+max_num_forms <- 4
+wordbank_langs$forms <- matrix("0", ncol=2*max_num_forms, nrow=length(wordbank_langs$language))
+print(item_data)
+for (i in 1: length(wordbank_langs$language)) {
+  print(wordbank_langs$language[i])
+  if (wordbank_langs$language[i] != "0") {
+    lang_item_data <- wordbankr::get_item_data(wordbank_langs$language[i])
+    unique_forms <- unique(lang_item_data$form)
+    unique_forms <- sort_unique_forms(unique_forms)
+    print(unique_forms)
+    for (j in 1: length(unique_forms)) {
+      wordbank_langs$forms[i, 2*j - 1] <- unique_forms[j]
+      wordbank_langs$forms[i, 2*j] <- unilemma_coverage(lang_item_data, unique_forms[j])
+    } 
+  }
+}
+print(wordbank_langs$forms)
+```
+```{R}
+wordbankr::get_item_data("Danish", "WS")
+```
+
+```{R}
+print(wordbank_langs)
+write.csv(wordbank_langs, "test.csv")
+```
+  #print(length(lang_item_data$form))
+  #wordbank_langs$forms[i] <- lang_forms
+
+unique_forms <- unique(item_data$form)
+print(wordbank_langs$forms)
+```
+
+unilemmas for each language in Wordbank.
+```{R}
+
+#For each form
+#Get 
+languages = wordbank_langs$language
+for (i in 1: length(languages)) {
+  if (languages[i] != "0") {
+    print(1)
+ #   forms <- wordbankr::get_item_data(languages[i])$form 
+ #   forms <- unique(forms)
+ #   print(typeof(forms))
+  }
+}
+
+
+for (i in 1: length(languages)) {
+  if (languages[i] != "0") {
+   items <- wordbankr::get_item_data(languages[i])  
+  }
+  wordbank_langs$has_unilemma
+}
+  #if (!any(is.na(items$uni_lemmas))) {
+  #  unique_langs$uni_lemma = 'yes'
+  #} else {
+  #  unique_langs$uni_lemma = 'no'
+  #}
+  
+
+```
