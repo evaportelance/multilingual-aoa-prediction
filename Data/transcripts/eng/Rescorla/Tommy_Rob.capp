@@ -1,0 +1,387 @@
+*MOT: does the car light change ?
+*MOT: does it change when you turn it Tommy ?
+*CHI: mhm .
+*MOT: yes ?
+*MOT: so what are you making it to go ?
+*MOT: are you changing it to go or to stop ?
+*MOT: no ?
+*MOT: may I get a person out too ?
+*CHI: yes .
+*MOT: and a car ?
+*MOT: Im xxx this lady driving a car .
+*CHI: hi .
+*MOT: hi how are you today ?
+*CHI: alright .
+*MOT: where are you going ?
+*CHI: just going back to my house .
+*MOT: okay .
+*MOT: Im going to run errands .
+*MOT: Ill see you later .
+*CHI: bye .
+*MOT: bye .
+*CHI: this mail truck is stuck .
+*MOT: the mail truck is going to go ?
+*CHI: yeah .
+*CHI: he has got some mail .
+*MOT: do you have a driver ?
+*CHI: yeah .
+*MOT: is there a driver in here ?
+*CHI: oh heres a driver .
+*CHI: oh heres a driver .
+*MOT: good .
+*MOT: theres things on the other side too Tommy .
+*MOT: Im gonna put that lady in the garage .
+*MOT: do you see the car there ?
+*CHI: whoa .
+*MOT: do you know what that is ?
+*MOT: thats the police station .
+*MOT: do you wanna see the other side of the village Tommy ?
+*MOT: my that lady left her car at the garage .
+*MOT: shes gonna go into the barber shop .
+*MOT: do you see where the post office is ?
+*CHI: hes gonna parking his car .
+*MOT: is he ?
+*MOT: should we turn it around so you can see the other side ?
+*MOT: see theres the front of the building .
+*MOT: see this is the other side of the street .
+*MOT: uh oh what did I do ?
+*CHI: you knocked you car .
+*CHI: Ill get it .
+*MOT: Ill get it .
+*MOT: now theres the other side .
+*MOT: oh theres a gas pump .
+*MOT: do you see it ?
+*MOT: over there by the garage .
+*MOT: we can get gas .
+*MOT: fill it up please .
+*CHI: this guys almost runned out of gas so he needs more gas .
+*MOT: he almost ran out so he needs more .
+*MOT: is he all full now ?
+*CHI: yeah .
+*CHI: around the town .
+*MOT: I better park over here huh ?
+*CHI: hes going in his building .
+*MOT: wheres he going ?
+*MOT: he went in and came out already ?
+*MOT: how about that lady over over there in the barber shop ?
+*MOT: can I get her out ?
+*MOT: can you get her for me ?
+*MOT: the lady whos in the barber shop .
+*INV: this is Susan .
+*INV: shes gonna sit and uh xxx play then shell have a chance to play with you later .
+*ADU: hi .
+*CHI: hi .
+*MOT: can I get my lady from the barber shop ?
+*MOT: can you get her for me ?
+*MOT: there she is .
+*MOT: thankyou .
+*MOT: zzz .
+*CHI: dont block the the motorcycle .
+*CHI: dont go where the motorcycle is .
+*MOT: okay Ill go around .
+*MOT: okay ?
+*MOT: I cant see the light .
+*MOT: what color ?
+*MOT: what color is it ?
+*CHI: green .
+*MOT: oh good .
+*MOT: zzz .
+*MOT: did you find any ?
+*MOT: there he is .
+*MOT: shes gonna go to the post office .
+*MOT: she has a package to mail .
+*CHI: wait till the wait till the mail truck comes .
+*MOT: oh wait till the mail truck comes ?
+*MOT: okay .
+*MOT: hes getting the package out .
+*MOT: he did what ?
+*MOT: he put it through this slot ?
+*MOT: he put it through the slot there like this ?
+*MOT: can he do it ?
+*MOT: yeah it does .
+*MOT: it goes right through .
+*CHI: now the doors locked .
+*MOT: the doors locked .
+*MOT: okay .
+*CHI: locked .
+*CHI: I hafta .
+*MOT: oh dear I thought the post office was open .
+*MOT: well Ill go run some other errands and come back .
+*MOT: she can park on the street here .
+*MOT: oh is it open now ?
+*MOT: knockknock .
+*MOT: oh good .
+*MOT: I can mail my package .
+*MOT: good morning Mr .
+*MOT: Postmaster .
+*CHI: hi .
+*CHI: hafta get your package because the mailman not going to go now .
+*MOT: oh you want me to take this ?
+*MOT: this package is for me ?
+*CHI: yeah .
+*MOT: okay thankyou .
+*CHI: you welcome .
+*CHI: oh I forgot to lock the car .
+*MOT: oh okay .
+*MOT: no Ill get it for you with my package .
+*MOT: byebye .
+*CHI: this is in this .
+*MOT: Im gonna take my package to my house and see what it is .
+*MOT: whoops .
+*MOT: thats the barber chair .
+*MOT: goes over here near my house .
+*MOT: are you coming to see me ?
+*CHI: yes .
+*MOT: hello .
+*CHI: hi .
+*MOT: I just got this package from the post office .
+*CHI: I know .
+*CHI: but now hes gone now .
+*CHI: I guess hes gonna come back any minute .
+*CHI: whoa .
+*CHI: he gets that thing thats up .
+*CHI: I cant drive onto that thing .
+*CHI: oh I might as well back up .
+*MOT: how do you put it down Tommy ?
+*MOT: do you see a way to put it down ?
+*CHI: I know .
+*MOT: yes .
+*CHI: oh now I can go on it .
+*CHI: whoa my car my car my car drop out .
+*CHI: ride carefully up .
+*MOT: yes he drives carefully now .
+*MOT: wheres the driver ?
+*CHI: hes off the car .
+*MOT: right .
+*MOT: I wouldnt wanna stay in my car when that went up .
+*MOT: would you ?
+*CHI: no .
+*MOT: is the man gonna come see my lady too ?
+*CHI: no this man is stuck in the that car .
+*CHI: and if a cop comes hes gonna say cop cop .
+*CHI: byebye .
+*MOT: byebye .
+*MOT: thankyou for visiting .
+*CHI: youre welcome .
+*MOT: Im gonna mail my letter .
+*CHI: no .
+*CHI: hes not there yet .
+*CHI: it is dropped in the mail slot .
+*MOT: okay I dropped it in the mail slot since the postmaster is not there yet huh ?
+*CHI: cop cop .
+*CHI: hello .
+*CHI: whoa xxx .
+*MOT: getting more gas ?
+*CHI: yes she almost runned out of it .
+*CHI: fill it with two three thankyou .
+*CHI: zzz .
+*CHI: its all filled .
+*MOT: you gonna pay for it ?
+*CHI: no he doesnt needta pay .
+*MOT: oh hes lucky .
+*MOT: you better not park right there by the fire hydrant .
+*MOT: youll get a ticket .
+*CHI: hes moving .
+*MOT: hes moving ?
+*MOT: time to put the barber chair in here instead of in the street .
+*MOT: think he needs a haircut at the barber shop ?
+*CHI: hes not hes not getting a haircut yet .
+*MOT: no not yet okay .
+*CHI: somebodys pushing that out for him .
+*MOT: oh they pushed his truck out of the garage for him .
+*CHI: park the truck in the garage .
+*CHI: whoop the wrong place .
+*MOT: thats the fire station .
+*MOT: is that the fire truck do you think ?
+*MOT: its got a ladder on it like a hook and ladder truck right ?
+*CHI: oh heres .
+*MOT: bless you .
+*MOT: oh my goodness .
+*MOT: cover your nose when you sneeze Tommy .
+*MOT: whoa he looks like the mayor doesnt he ?
+*MOT: I dont see the fire fighter .
+*MOT: we hafta pretend Tommy .
+*CHI: we hafta find a fire fighter .
+*MOT: oh and a police car .
+*CHI: this this is a police car police car .
+*MOT: okay .
+*CHI: wheres the gas thing ?
+*CHI: oh there it is .
+*CHI: now where is a police car ?
+*CHI: oh .
+*MOT: the sirens going .
+*MOT: does that mean theres a fire ?
+*CHI: no .
+*MOT: no .
+*MOT: theyre just testing it ?
+*CHI: yeah .
+*CHI: this xxx here .
+*CHI: whoa .
+*CHI: too much .
+*MOT: that was just a little bit wasnt it ?
+*MOT: you know what ?
+*MOT: I need some gas .
+*MOT: do you think you could fill her up if I come over there ?
+*CHI: the man hasta .
+*MOT: okay Ill come xxx .
+*CHI: lets do this .
+*CHI: zzz .
+*CHI: you hafta take this out .
+*MOT: oh okay .
+*MOT: I thought maybe you were doing it for me .
+*MOT: fill it up please .
+*CHI: zzz .
+*MOT: how much is it do you think ?
+*CHI: theres ten more .
+*MOT: oh theres ten more .
+*MOT: its not full yet ?
+*MOT: oh boy she was really low on gas .
+*CHI: mommy ?
+*MOT: yes .
+*CHI: there is lots of gas .
+*MOT: theres lots of gas in the tank .
+*CHI: zzz .
+*MOT: in the pump .
+*CHI: it shut off .
+*MOT: it shut off .
+*MOT: okay .
+*CHI: now you can take it off the car now .
+*MOT: unhooks pump from the car .
+*MOT: okay .
+*CHI: now go on the other car somehow .
+*MOT: okay .
+*CHI: wait .
+*CHI: the cars hafta go the other way .
+*MOT: we have a traffic jam dont we Tommy ?
+*CHI: yeah .
+*CHI: a little traffic jam .
+*MOT: mhm .
+*CHI: a accident happened .
+*MOT: theyre gonna come with their rescue team .
+*MOT: everybody okay ?
+*CHI: yep .
+*MOT: okay .
+*CHI: theyre going to get him .
+*CHI: zzz .
+*CHI: hes okay .
+*MOT: oh thats good .
+*CHI: thats good .
+*MOT: oh my goodness shes still parked over here .
+*MOT: I better come back over .
+*MOT: I think she needs a haircut .
+*MOT: shes gonna go to the barber shop .
+*MOT: okay ?
+*CHI: thank you for my parking place .
+*MOT: youre welcome .
+*MOT: you were working and Im just a xxx .
+*MOT: there she goes getting a haircut .
+*CHI: wheres a fire ?
+*CHI: no theres no fire .
+*MOT: false alarm .
+*MOT: theres more mail in here .
+*MOT: did you see this ?
+*CHI: these guys are .
+*CHI: stopped his motor .
+*MOT: he stopped his motor ?
+*CHI: and his motor stopped .
+*CHI: now his motor is stopped .
+*CHI: I guess they fixing it .
+*MOT: what the traffic light ?
+*CHI: yeah .
+*MOT: is it broken ?
+*CHI: her knock .
+*MOT: more mail .
+*MOT: are they waiting for the light to change ?
+*CHI: this is a long time .
+*MOT: it does seem like a long light to wait for .
+*CHI: Mom dont go this way .
+*MOT: okay .
+*CHI: if you have a car you have .
+*CHI: its a long wait .
+*CHI: zzz .
+*MOT: thats the mail huh ?
+*MOT: is that the man at the mail at the postoffice ?
+*CHI: hes gonna drop the mail in this .
+*CHI: unlock it .
+*MOT: carry them in .
+*CHI: locked .
+*CHI: zzz .
+*MOT: the ladys all done with her haircut .
+*MOT: want her out ?
+*MOT: can I bring her out ?
+*CHI: yeah .
+*MOT: come out .
+*CHI: lets wait until the cars out .
+*CHI: this way back .
+*CHI: beepbeep .
+*MOT: oh dear why is he beeping at me ?
+*MOT: hello .
+*CHI: hi .
+*MOT: whats wrong ?
+*CHI: I just was trying to get out of the way because I was trying to go home to my uh top office .
+*MOT: okay Im ready to go .
+*CHI: thankyou .
+*CHI: thankyou .
+*MOT: see you later .
+*CHI: I almost crashed into you .
+*MOT: oh Im glad you didnt .
+*CHI: because whenever turning this way almost went kabonk .
+*CHI: crashed right into you .
+*MOT: almost .
+*CHI: sorry lady .
+*MOT: thats okay .
+*CHI: that will keep me nice and low .
+*MOT: yes .
+*MOT: tell me do I have a green light or red light ?
+*CHI: let me change to a red light .
+*MOT: no .
+*MOT: thanks .
+*CHI: now I now you can go .
+*MOT: oh thank you .
+*CHI: I will change it quick the other to greengo .
+*CHI: oh well we better not go this way .
+*MOT: Im gonna go back up in my house .
+*CHI: hello .
+*MOT: hello how are you ?
+*CHI: I cant get up here .
+*CHI: I will .
+*CHI: I better get my mail .
+*CHI: then tomorrow Im going tomorrow Im gonna come to your house alright ?
+*MOT: okay .
+*MOT: I would like to see you .
+*CHI: okay bye .
+*MOT: bye .
+*CHI: oh I like to come in my house .
+*CHI: its over my house .
+*CHI: my post office .
+*CHI: theres lots of cars going round in the street .
+*MOT: there are a lot of cars in the street here .
+*MOT: youre right .
+*CHI: whoa .
+*MOT: the mayor fell down .
+*MOT: Ill put him over here .
+*CHI: lets put him in here .
+*MOT: okay well just put him back .
+*CHI: and we dont need that .
+*MOT: right .
+*CHI: does this come out ?
+*MOT: my baby seems to be stuck .
+*CHI: is she stuck ?
+*MOT: oh you got her .
+*MOT: shall we put her up here ?
+*CHI: pretend that was her baby .
+*MOT: okay .
+*MOT: we can pretend .
+*CHI: wah wah wah .
+*MOT: oh my poor little baby .
+*MOT: here come on .
+*CHI: wah wah .
+*ADU: only one more minute and then well be all finished with Main Street .
+*MOT: okay were gonna play one more minute and then put it away okay ?
+*MOT: and Ill feed the baby while were in our last minute .
+*MOT: oh hello you came for a visit .
+*CHI: yeah I just was checking what was the matter with the baby .
+*MOT: the baby was hungry .
+*CHI: oh .
+*CHI: hello .
+*MOT: hello how are you ?

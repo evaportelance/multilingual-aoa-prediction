@@ -1,0 +1,686 @@
+*MOT: yellow .
+*CHI: blue .
+*MOT: thats green .
+*CHI: blue .
+*MOT: yeah you finally found the blue one .
+*MOT: what else is in there ?
+*CHI: out .
+*MOT: oh you hafta get them out .
+*CHI: yeah .
+*MOT: oh you dropped him .
+*MOT: how many count them .
+*MOT: one .
+*MOT: all right .
+*CHI: back .
+*MOT: put them back ?
+*CHI: yep .
+*CHI: way .
+*MOT: you put the green where the yellow one goes didnt you ?
+*CHI: yep .
+*MOT: which ones the yellow one ?
+*MOT: doesnt it go down here ?
+*CHI: yep .
+*MOT: all right .
+*MOT: look at this .
+*MOT: whats this ?
+*MOT: puzzle ?
+*MOT: were missing a piece .
+*MOT: heres a bunch of pieces .
+*MOT: oh whats that ?
+*CHI: Elaine .
+*MOT: Elaine would like that ?
+*MOT: do you think she would ?
+*CHI: yeah .
+*CHI: help .
+*MOT: help ?
+*MOT: whats the matter with them ?
+*CHI: out .
+*MOT: are they stuck ?
+*CHI: yeah .
+*MOT: how many ?
+*MOT: count them .
+*MOT: count them .
+*MOT: hey Lareine .
+*MOT: how many guys ?
+*MOT: one two three four .
+*CHI: back .
+*MOT: put them back already ?
+*CHI: yeah .
+*MOT: yeah .
+*MOT: allgone .
+*MOT: allgone .
+*MOT: peekaboo .
+*CHI: peekaboo .
+*MOT: allgone .
+*MOT: yeah .
+*MOT: what is that ?
+*CHI: light .
+*MOT: camera ?
+*CHI: light .
+*MOT: it has a light .
+*MOT: it does have a light .
+*CHI: dad .
+*MOT: dad has one just like that .
+*MOT: he sure does .
+*MOT: you dont miss a thing do you ?
+*CHI: out .
+*MOT: get them out ?
+*MOT: red .
+*CHI: out .
+*CHI: out .
+*MOT: one two three four .
+*CHI: one two .
+*CHI: daddy .
+*MOT: yeah dad has one of those .
+*CHI: way .
+*CHI: way .
+*MOT: put them away ?
+*CHI: way .
+*MOT: away .
+*CHI: way .
+*CHI: way .
+*MOT: yeah youre going to put them away .
+*MOT: what color is he ?
+*CHI: blue .
+*MOT: blue .
+*CHI: blue .
+*MOT: yeah hes blue .
+*CHI: hat .
+*MOT: he has on a hat .
+*MOT: whats this ?
+*MOT: whats this ?
+*MOT: hes got a face .
+*MOT: whats this ?
+*CHI: eye eye .
+*MOT: eye .
+*MOT: whats that ?
+*CHI: way .
+*MOT: okay put him away .
+*CHI: Elaine .
+*MOT: yeah Elaine would like those beads .
+*MOT: she likes necklaces .
+*CHI: mom .
+*MOT: what ?
+*MOT: you can do it .
+*MOT: how many ?
+*CHI: one .
+*MOT: one .
+*CHI: up .
+*CHI: peek a boo .
+*MOT: peekaboo .
+*MOT: peek a boo .
+*MOT: wheres the blue one ?
+*MOT: yeah .
+*MOT: wheres the yellow one ?
+*MOT: its the yellow button but youve got the red guy in there .
+*MOT: its red .
+*CHI: blue .
+*CHI: blue .
+*MOT: which ones blue ?
+*CHI: uh oh .
+*MOT: uh oh .
+*CHI: easy .
+*MOT: easy .
+*MOT: oh Im sorry .
+*MOT: what color is that one ?
+*CHI: blue .
+*MOT: yellow .
+*CHI: blue .
+*MOT: yellow .
+*CHI: blue .
+*MOT: hes blue .
+*CHI: blue .
+*CHI: blue .
+*MOT: hes green .
+*CHI: blue .
+*MOT: hes red .
+*CHI: way .
+*MOT: put them away .
+*CHI: blue .
+*MOT: yellow .
+*CHI: blue .
+*MOT: yeah hes blue .
+*CHI: blue .
+*MOT: green .
+*CHI: blue .
+*MOT: hes blue .
+*CHI: way .
+*MOT: put the blue one away .
+*MOT: now the green one .
+*MOT: put the red one away .
+*MOT: very good .
+*CHI: daddy .
+*MOT: yeah dad has a camera like that .
+*MOT: uh oh .
+*CHI: huh ?
+*MOT: uh oh .
+*CHI: way .
+*MOT: put them away .
+*MOT: tadah .
+*MOT: tadah .
+*CHI: daddy .
+*MOT: yeah .
+*MOT: oh pretty beads .
+*MOT: oh you werent finished with that ?
+*CHI: mom .
+*MOT: what ?
+*CHI: chair .
+*MOT: yeah Im in a chair .
+*CHI: there .
+*MOT: thats a couch .
+*CHI: couch .
+*MOT: mm hm .
+*CHI: oh oh .
+*MOT: wood .
+*MOT: is that a pretty couch ?
+*CHI: yes .
+*MOT: oh whats in this one ?
+*INV: thank you .
+*MOT: ohmygoodness what is in there ?
+*MOT: whats that ?
+*CHI: bottle .
+*MOT: bottle .
+*MOT: whats in that bottle ?
+*CHI: milk .
+*MOT: milk .
+*CHI: baby .
+*MOT: thats for the baby .
+*MOT: is there a baby in there ?
+*CHI: yeah .
+*MOT: there is ?
+*MOT: we have a baby just like this at home dont we ?
+*CHI: mom .
+*MOT: what ?
+*CHI: dish .
+*MOT: what do you do with that dish ?
+*CHI: milk .
+*MOT: cook ?
+*CHI: yeah .
+*CHI: milk .
+*MOT: put milk in it ?
+*MOT: what are you going to make ?
+*MOT: lunch ?
+*CHI: help baby .
+*MOT: oh you want this baby ?
+*MOT: here you go .
+*CHI: thanks .
+*MOT: youre welcome .
+*CHI: bottle .
+*MOT: bottle .
+*CHI: baby .
+*MOT: mm hm .
+*MOT: whats that babys name ?
+*CHI: bottle .
+*MOT: bottle ?
+*CHI: milk .
+*MOT: mm hm .
+*MOT: whats in her milk .
+*CHI: milk .
+*MOT: what is this ?
+*CHI: milk .
+*MOT: is that bubbles in it ?
+*CHI: yep milk .
+*MOT: whats in there with that milk ?
+*CHI: bubble .
+*MOT: bubble .
+*CHI: eat .
+*MOT: who hasta eat ?
+*CHI: mom .
+*MOT: mom hasta eat ?
+*CHI: pizza .
+*MOT: its pizza ?
+*MOT: my favorite .
+*CHI: open .
+*MOT: no it doesnt open .
+*CHI: huh ?
+*MOT: it does not open .
+*CHI: that bottle bottle .
+*MOT: I dont get it say it again .
+*CHI: bottle .
+*MOT: bottle ?
+*CHI: mom .
+*MOT: hey whats that ?
+*MOT: part of a hamburger ?
+*CHI: yeah .
+*CHI: eat .
+*MOT: cook it first .
+*MOT: mm delicious .
+*CHI: mom .
+*MOT: what ?
+*CHI: cheese .
+*MOT: cheese .
+*CHI: bite .
+*MOT: only pretend .
+*MOT: dont put it in your mouth its only pretend .
+*MOT: why are you whispering ?
+*CHI: eat .
+*CHI: mom .
+*MOT: what ?
+*CHI: drink .
+*MOT: yeah .
+*CHI: uh oh .
+*MOT: uh oh did you drop something ?
+*MOT: go get it .
+*CHI: juice .
+*MOT: you dropped the what did you drop ?
+*CHI: milk .
+*MOT: milk .
+*MOT: did it make a mess ?
+*CHI: no .
+*MOT: good .
+*CHI: rug .
+*MOT: its on the rug .
+*CHI: huh ?
+*MOT: yes it was on the rug .
+*CHI: scoot .
+*MOT: scoot .
+*MOT: there you go .
+*MOT: thanks .
+*MOT: whats that ?
+*CHI: cup .
+*MOT: its a cup ?
+*CHI: cup .
+*MOT: whats in there ?
+*CHI: bubble .
+*MOT: bubbles .
+*MOT: oh youre going to cook with that ?
+*CHI: eat .
+*MOT: what is it ?
+*MOT: what is it ?
+*MOT: its a hamburger ?
+*CHI: yeah .
+*MOT: you making more bubbles ?
+*CHI: yeah .
+*MOT: you like bubbles dont you ?
+*CHI: whoa .
+*MOT: whoa .
+*CHI: mom .
+*MOT: what ?
+*MOT: yeah its a cabinet .
+*MOT: why dont you sit down and play with me ?
+*CHI: huh ?
+*MOT: sit down and play with me .
+*CHI: play .
+*MOT: play .
+*CHI: play .
+*MOT: neat chair huh ?
+*CHI: yeah .
+*MOT: yep .
+*MOT: what is that ?
+*MOT: hamburger .
+*CHI: cheese .
+*MOT: cheese .
+*CHI: eat .
+*MOT: yes maam .
+*MOT: mm delicious .
+*MOT: here you have a bite .
+*MOT: mm isnt that delicious ?
+*MOT: you make the best cheese hamburgers .
+*CHI: me .
+*MOT: delicious .
+*CHI: milk .
+*CHI: bubble .
+*MOT: mm hm .
+*MOT: that makes noise when you shake it .
+*CHI: huh ?
+*MOT: that makes noise when you shake it .
+*CHI: bubble .
+*MOT: uh huh .
+*CHI: tea .
+*MOT: thats tea ?
+*CHI: tea .
+*MOT: whats in there ?
+*CHI: bubble .
+*MOT: bubbles ?
+*CHI: out tea .
+*CHI: mom .
+*MOT: what is that ?
+*CHI: cheese .
+*MOT: bread .
+*CHI: cheese .
+*MOT: bread .
+*CHI: huh ?
+*MOT: thats bread .
+*MOT: this is cheese .
+*CHI: hm ?
+*MOT: thats coffee .
+*CHI: hm ?
+*MOT: thats bread .
+*MOT: now you tell me .
+*CHI: bread .
+*MOT: bread .
+*MOT: whats this ?
+*CHI: coffee .
+*MOT: coffee .
+*CHI: way way .
+*MOT: you going to make a sandwich ?
+*CHI: no .
+*CHI: put way .
+*MOT: put it away .
+*MOT: okay .
+*CHI: way .
+*MOT: away .
+*CHI: hm .
+*MOT: mm hm .
+*CHI: daddy .
+*MOT: light .
+*CHI: eat .
+*CHI: eat .
+*MOT: mm delicious .
+*CHI: here .
+*MOT: oh I missed a part ?
+*MOT: Im sorry .
+*CHI: mine .
+*MOT: is that mine ?
+*CHI: no mine .
+*MOT: okay its yours .
+*CHI: mine .
+*MOT: okay .
+*CHI: mine .
+*CHI: Elaine .
+*MOT: thats for Elaine ?
+*MOT: oh lets put these away .
+*MOT: thank you .
+*MOT: now what have you got ?
+*MOT: its a Mister Potatohead .
+*MOT: what is that ?
+*CHI: plane .
+*MOT: airplane .
+*MOT: his head on backwards .
+*MOT: there thats better .
+*CHI: plane .
+*CHI: plane .
+*MOT: yeah .
+*MOT: here it comes here it comes .
+*MOT: watch his head .
+*CHI: huh ?
+*MOT: watch his head .
+*MOT: isnt he silly ?
+*CHI: silly silly .
+*MOT: good job .
+*CHI: mom .
+*MOT: whos this ?
+*CHI: mom .
+*MOT: what ?
+*MOT: thats Missus Potatohead .
+*CHI: no .
+*MOT: no ?
+*CHI: hole .
+*MOT: yeah it has a hole .
+*CHI: see .
+*CHI: see .
+*MOT: I think thats where the feet go .
+*CHI: huh ?
+*CHI: Mommy Mom .
+*MOT: what ?
+*CHI: no .
+*MOT: no ?
+*CHI: no .
+*MOT: now look who I found .
+*MOT: whos this ?
+*MOT: Ernie .
+*MOT: you want the Potatohead .
+*CHI: shoes .
+*MOT: Potatoheads missing an ear .
+*CHI: shoes .
+*MOT: yeah hes got on shoes .
+*MOT: oh I think thats a tongue .
+*MOT: its pink like the ear .
+*MOT: take his lips off put the tongue in ?
+*CHI: yeah .
+*MOT: what is that ?
+*CHI: ear .
+*MOT: no its a tongue .
+*CHI: ear .
+*CHI: huh ?
+*MOT: thats his tongue .
+*MOT: wheres your tongue ?
+*MOT: youre right .
+*CHI: tongue .
+*CHI: chair .
+*MOT: chair .
+*CHI: mine .
+*MOT: what is this ?
+*MOT: whats this ?
+*CHI: uh oh .
+*MOT: oh its a puzzle .
+*MOT: the pieces are in here .
+*CHI: huh ?
+*MOT: here they are .
+*MOT: whos this ?
+*CHI: Big Bird .
+*MOT: Big Bird .
+*CHI: oh .
+*MOT: I think the door goes here .
+*MOT: it covers up Harry Monster .
+*CHI: no here .
+*MOT: no it goes up there ?
+*CHI: yeah .
+*MOT: Honkers .
+*MOT: whos this ?
+*MOT: Cookie .
+*CHI: dont .
+*MOT: oh your favorite .
+*CHI: dont .
+*CHI: dont .
+*MOT: little bird .
+*MOT: Count .
+*MOT: whats this ?
+*CHI: up .
+*MOT: what is this ?
+*CHI: up .
+*MOT: youre not paying any attention to me are you ?
+*MOT: whats this ?
+*CHI: way .
+*MOT: whats this ?
+*CHI: way .
+*MOT: youre going to put it away ?
+*CHI: yeah .
+*MOT: this one comes out .
+*MOT: this one comes out .
+*CHI: way .
+*CHI: take out .
+*MOT: no Barkley stays there Big Bird comes out .
+*CHI: out .
+*MOT: no thats all .
+*MOT: thats all that comes out .
+*MOT: oh look please dont break it .
+*CHI: finish .
+*MOT: youre all finished with the puzzle already ?
+*CHI: yeah .
+*MOT: okay .
+*MOT: who are those guys ?
+*CHI: bye .
+*MOT: oh youre going to go bye ?
+*MOT: whoa crash landing .
+*MOT: here it comes .
+*MOT: here it comes .
+*MOT: its going to get your belly .
+*CHI: no .
+*MOT: gonna got your belly .
+*MOT: xxx got your belly .
+*CHI: uh oh .
+*MOT: uh oh .
+*CHI: crash .
+*MOT: whoa .
+*MOT: I caught him .
+*MOT: Ernie got away from us though .
+*MOT: lets not push him so hard .
+*CHI: back .
+*MOT: easy easy .
+*CHI: mom watch .
+*MOT: what ?
+*MOT: tuck your horns back in .
+*CHI: huh ?
+*MOT: put him back on the table .
+*CHI: why ?
+*MOT: baby baby .
+*MOT: whos a baby ?
+*CHI: baby .
+*MOT: no youre not a baby youre a big girl .
+*CHI: baby .
+*MOT: no .
+*CHI: baby .
+*MOT: youre a big girl .
+*CHI: up .
+*MOT: thats Oscar .
+*CHI: up up .
+*MOT: no hes already taken apart .
+*MOT: you hafta find Big Bird .
+*MOT: can you turn him around and get him to fit in there ?
+*CHI: yep .
+*MOT: who is this ?
+*CHI: up .
+*MOT: who is that ?
+*CHI: up .
+*CHI: that ?
+*CHI: that ?
+*CHI: out out .
+*MOT: youre climbing on your chair .
+*MOT: its Bert its Bert its Bert hello hi oh its Bert .
+*MOT: uh oh .
+*MOT: its Bert its Bert .
+*CHI: throw .
+*MOT: dont throw .
+*MOT: go pick Bert up .
+*MOT: Lareine .
+*CHI: huh ?
+*MOT: Lareine will you please pick up Bert ?
+*MOT: Lareine will you get Bert over there please .
+*MOT: no Im not going to do it .
+*CHI: mom .
+*MOT: now what ?
+*MOT: what is that ?
+*CHI: open .
+*MOT: no were not going to open it .
+*CHI: Mommy .
+*MOT: what did you find ?
+*MOT: can I show you how they work ?
+*CHI: huh ?
+*MOT: you want Mommy to show you how they work ?
+*CHI: mom .
+*MOT: watch .
+*MOT: you ready for this ?
+*MOT: wait a second here they come .
+*MOT: let them walk .
+*CHI: shoes .
+*MOT: shoes .
+*MOT: neat .
+*CHI: mom .
+*MOT: what ?
+*CHI: walk .
+*MOT: wind .
+*CHI: walk .
+*MOT: mom help ?
+*CHI: here .
+*CHI: no .
+*MOT: okay .
+*CHI: help .
+*MOT: help .
+*CHI: walk .
+*MOT: here they come .
+*CHI: walk .
+*CHI: walk walk .
+*MOT: theyre going to get your belly .
+*MOT: would you like a drink of that ?
+*CHI: yeah .
+*MOT: sit on your fanny please .
+*CHI: juice .
+*MOT: juice .
+*MOT: what kind of juice ?
+*CHI: um me .
+*CHI: me .
+*MOT: apple juice .
+*CHI: me me .
+*MOT: okay put the lid on it .
+*MOT: well sit it over here so we dont spill it okay ?
+*MOT: what else is in there ?
+*CHI: um up please up please up .
+*MOT: no open .
+*CHI: yeah .
+*CHI: Mommy .
+*CHI: mom .
+*MOT: yeah .
+*CHI: Mommy mom .
+*CHI: night night .
+*MOT: theyre going to go night night ?
+*MOT: on the floor ?
+*CHI: yep .
+*MOT: yep .
+*CHI: Mommy mom .
+*MOT: what ?
+*CHI: look wow .
+*MOT: wow .
+*MOT: that looks like the hat that the Mommy wears .
+*CHI: huh ?
+*MOT: that looks like Mommys hat .
+*MOT: its Lareines hat .
+*MOT: its Mommys its Mommys hat .
+*CHI: no .
+*MOT: I think so .
+*CHI: no .
+*MOT: whered it go ?
+*MOT: I dont see it .
+*MOT: oh its way over here .
+*MOT: okay check this out .
+*CHI: huh ?
+*CHI: up .
+*MOT: you want her to wear the green one ?
+*MOT: mm hm does it fit her ?
+*CHI: nope .
+*MOT: hat .
+*MOT: hat .
+*CHI: what color is her hat ?
+*CHI: blue .
+*MOT: red .
+*CHI: blue .
+*MOT: red .
+*MOT: now dont put it in your mouth .
+*CHI: another hat .
+*CHI: hat .
+*MOT: is that hat for the baby ?
+*CHI: yeah .
+*MOT: does it fit ?
+*CHI: yep .
+*MOT: does it ?
+*CHI: dont fit .
+*MOT: dont fit .
+*CHI: way .
+*MOT: put it away .
+*MOT: mm hm .
+*CHI: way way .
+*MOT: put the lid on ?
+*MOT: it goes this way .
+*MOT: good job .
+*MOT: oh do you see a pretty cup in there ?
+*MOT: what in the world are those ?
+*CHI: up up up up .
+*MOT: uh oh .
+*CHI: get it .
+*CHI: up please .
+*MOT: what are those ?
+*CHI: up .
+*MOT: open .
+*MOT: what are they ?
+*CHI: lion .
+*CHI: up please .
+*MOT: what do you thinks in here ?
+*CHI: help me .
+*CHI: up .
+*MOT: what do you think they are ?
+*MOT: haha .
+*MOT: what are they ?
+*CHI: eat .
+*MOT: theyre to eat .
+*CHI: cookie .
+*MOT: cookie .
+*MOT: animal cookie .
+*MOT: what else is in here ?
+*MOT: theres a monkey .
+*MOT: theres a purple monkey .
+*CHI: mom .
+*MOT: what ?
+*MOT: wind him up see what he does .
+*MOT: oh you hafta turn it the other way .
+*MOT: help ?
+*CHI: no .

@@ -1,0 +1,324 @@
+*EXP: subject four six two nine a b .
+*EXP: date February thirteenth two thousand nine .
+*EXP: visit two .
+*MOT: is that gonna ?
+*MOT: should I do it the other way or is that okay ?
+*EXP: um it seems xxx .
+*MOT: okay .
+*MOT: what do you wanna do ?
+*EXP: play with as you would at home .
+*MOT: okay what do you wanna do ?
+*MOT: huh whatve you got ?
+*MOT: I think thats a beaver .
+*MOT: you know this one .
+*MOT: the zebra .
+*MOT: lets see if they have a lion .
+*MOT: is there a lion ?
+*MOT: no lion you like the lion .
+*MOT: ha heres a chicken .
+*MOT: thats different .
+*EXP: actually do you mind if I ask you just to move that up a little bit ?
+*MOT: is that better ?
+*EXP: oh yes thank you .
+*MOT: Alexander .
+*MOT: do you wanna read one of the books ?
+*MOT: ha oh .
+*MOT: you wanna read a book ?
+*MOT: which book do you wanna read ?
+*MOT: Alex ?
+*MOT: Alexander ?
+*MOT: Alexander .
+*MOT: hey buddy .
+*MOT: Alexander .
+*MOT: hey .
+*MOT: which book you wanna read ?
+*MOT: wanna pick one ?
+*MOT: you pick .
+*MOT: you pick .
+*MOT: too much going on ?
+*MOT: okay .
+*MOT: well play instead .
+*MOT: why dont you go pick something out .
+*MOT: go get something .
+*MOT: go pick something .
+*MOT: go on .
+*MOT: go on .
+*MOT: yeah .
+*MOT: hm ?
+*MOT: frog .
+*MOT: whats this ?
+*MOT: ha donkey .
+*MOT: look at this crazy thing .
+*MOT: thats a bee .
+*MOT: you like the bee ?
+*MOT: you like the bee ?
+*MOT: again ?
+*MOT: you want it ?
+*MOT: here .
+*MOT: you hold it .
+*MOT: I know what are those funny things ?
+*MOT: what else ?
+*MOT: you know what this is .
+*MOT: this is a puppet look .
+*MOT: hello Alexander .
+*MOT: hello Alexander .
+*MOT: what do ya think ?
+*MOT: can you clap your hands ?
+*MOT: no ?
+*MOT: ha .
+*MOT: what ?
+*MOT: no more kangaroo ?
+*MOT: you know Poohbear .
+*MOT: well sorta .
+*MOT: and deer .
+*MOT: and a fox .
+*MOT: fox .
+*MOT: do you wanna play with food ?
+*MOT: hm ?
+*MOT: wanna play with a baby ?
+*MOT: ha aw .
+*MOT: nice baby .
+*MOT: ha aw .
+*MOT: what do ya think ?
+*MOT: I know .
+*MOT: what do ya think ?
+*MOT: aw .
+*MOT: wanna say hi to the baby ?
+*MOT: no no eat .
+*MOT: I know .
+*MOT: whats this ?
+*MOT: huh ?
+*MOT: food ?
+*MOT: here .
+*MOT: here put your food on your plate .
+*MOT: theres that .
+*MOT: ha oh Alex look its keys .
+*MOT: you like keys .
+*MOT: right now you like that bee .
+*MOT: what else is there ?
+*MOT: what do ya think ?
+*MOT: can I have a bite ?
+*MOT: Alex .
+*MOT: wanna bite ?
+*MOT: oh excuse you .
+*MOT: look theres juice .
+*MOT: wanna sandwich ?
+*MOT: how about we do this ?
+*MOT: whats this look .
+*MOT: this is what we do at home .
+*MOT: ready ?
+*MOT: Alex you wanna build something ?
+*MOT: Alexander you wanna build ?
+*MOT: look Alex .
+*MOT: ready ?
+*MOT: remember what to do ?
+*MOT: here we go .
+*MOT: Alexander .
+*MOT: Alex look .
+*MOT: look .
+*MOT: uhoh .
+*MOT: ready ?
+*MOT: knock it down .
+*MOT: wanna do it again ?
+*MOT: ready ?
+*MOT: lets get some more stuff .
+*MOT: theres that .
+*MOT: what else ?
+*MOT: ready ?
+*MOT: Alex look .
+*MOT: Alex .
+*MOT: youre not gonna smash it down ?
+*MOT: wanna do it again ?
+*MOT: waffle .
+*MOT: can I have a bite ?
+*MOT: can I have a bite ?
+*MOT: cheese .
+*MOT: pizza .
+*MOT: thank can I have a bite ?
+*MOT: thank you .
+*MOT: here .
+*MOT: you want back ?
+*MOT: thank you .
+*MOT: yeah .
+*MOT: whats that ?
+*MOT: its a little chick ?
+*MOT: a little chick on the farm .
+*MOT: ha aw soft .
+*MOT: soft .
+*MOT: right ?
+*MOT: ha splish splash .
+*MOT: quack .
+*MOT: soft feel .
+*MOT: soft .
+*MOT: is this soft ?
+*MOT: soft .
+*MOT: the mommy sheep goes .
+*MOT: wanna turn the page ?
+*MOT: turn the page .
+*MOT: turn the page .
+*MOT: nope nope turn the page .
+*MOT: right here .
+*MOT: good job .
+*MOT: whats next whats next .
+*MOT: turn the page .
+*MOT: soft .
+*MOT: ha a cow .
+*MOT: oh soft .
+*MOT: look those ducks huh ?
+*MOT: turn the page .
+*MOT: the friendly pink piglet .
+*MOT: you dont want a book .
+*MOT: hm ?
+*MOT: look .
+*MOT: say thank you .
+*MOT: mm yum can I have a bite ?
+*MOT: what ?
+*MOT: spaghetti ?
+*MOT: bottle ?
+*MOT: is that a bottle ?
+*MOT: can I have it ?
+*MOT: can I have it ?
+*MOT: can I have it ?
+*MOT: can I have spaghetti ?
+*MOT: thank you .
+*MOT: you want back ?
+*MOT: say thank you .
+*MOT: can I have it ?
+*MOT: hm ?
+*MOT: thank you .
+*MOT: want back ?
+*MOT: thank you .
+*MOT: oh .
+*MOT: say thank you .
+*MOT: thank you .
+*MOT: yeah thank you .
+*MOT: now can I have it ?
+*MOT: no ?
+*MOT: oh .
+*MOT: ha want back ?
+*EXP: okay .
+*EXP: excuse me .
+*EXP: Im just gonna bring you the bins .
+*MOT: okay .
+*EXP: pick up a few of these toys .
+*EXP: and them Im going to ask you just a few questions .
+*MOT: okay .
+*EXP: and then well be finished .
+*MOT: ha put the bi toys away .
+*MOT: put them in here Alex .
+*MOT: put them in there .
+*MOT: he hasnt learned clean up yet .
+*MOT: put them in there .
+*MOT: wanna put it in there ?
+*MOT: no ?
+*MOT: okay .
+*MOT: here lets put well put all this stuff in the other bin .
+*MOT: ready ?
+*MOT: well put all this stuff in the other bin .
+*MOT: ha here we go .
+*MOT: put it in there .
+*MOT: put that in .
+*MOT: that in .
+*MOT: put it in .
+*MOT: you wanna put the bologna in ?
+*MOT: ha there you go .
+*MOT: wanna put the bottle in ?
+*MOT: there you go .
+*MOT: I know .
+*EXP: you wanna play with this while I ask your mommy some questions ?
+*EXP: you like balloons ?
+*MOT: oh yeah .
+*EXP: just a few questions for you .
+*MOT: okay .
+*EXP: so during this session which toys um do you think Alexander was most interested in ?
+*MOT: its hard to say because I switched it up on him a lot .
+*EXP: yeah .
+*MOT: because I kept showing him new things .
+*MOT: but he like the uh measuring spoons a lot .
+*MOT: cause has the keys .
+*MOT: and then I think he likes when he gets something if you try to take it .
+*MOT: he liked it so .
+*MOT: um he was first drawn to the stuffed animals I think .
+*MOT: but that might have been because he was facing them .
+*MOT: but then he liked he didnt like the books that much .
+*MOT: hey .
+*EXP: and why do you think he liked okay well you said he probably liked the stuffed toy animals because they were in front of him .
+*EXP: why do you think he likes the play food .
+*MOT: um I think we dont have any play food at home so maybe that was it .
+*MOT: plus if he bangs it can make a sound .
+*MOT: he likes to do stuff like that .
+*MOT: um and it feels feels different and everything .
+*MOT: um if anything he probably liked the stuffed animals because they have a face and he loves just interacting .
+*MOT: thats his biggest his biggest thing .
+*EXP: do you think there have been any items that um his interests maybe have changed since the last time that like before he was here from the last time he was here .
+*MOT: the last time ?
+*EXP: do you think any of his interests have changed ?
+*MOT: um he was definitely more interested uh in the items themselves than he was last time .
+*MOT: like I probably could have just sat here and watched him and he would have played the whole time .
+*MOT: I wouldnt have ev even hadta do anything with him .
+*MOT: versus in the past .
+*MOT: it was a lit so I think he liked the food items more than he did last time .
+*EXP: okay .
+*MOT: what have you got ?
+*EXP: so which book um wo do you think that Alexander would prefer to read or look at with you ?
+*MOT: um probably the pat the the touch and feel book .
+*MOT: he likes stuff like that he likes things with animals .
+*MOT: um of the books that were there the only one we have is good night moon .
+*MOT: we dont ha uh we might have one of the other ones .
+*MOT: but the ones that he usually reads arent arent in that pile .
+*MOT: um but he likes to touch and eat stuff so .
+*MOT: I would say the texture book was his he would like better .
+*EXP: um does Alexander play with any similar toys at home ?
+*MOT: um he has some stuffed animals .
+*MOT: he doesnt have any food items .
+*MOT: um so not that many similar .
+*MOT: a lot of them are very different actually .
+*MOT: he has a toy box in our basement .
+*MOT: and he goes in just like he did here and he pulls himself up and he pulls stuff out .
+*MOT: but its theres like to tools and theres a lot of puzzles .
+*MOT: the puzzles where you pull it away and the same piece is there .
+*EXP: okay .
+*MOT: the pictures underneath it but he likes that a lot .
+*MOT: um uh he likes he likes things that have music .
+*MOT: so we have a lot of things like that .
+*MOT: so most of the things here we do not have at home .
+*EXP: do you think Alexander prefers books or toys ?
+*MOT: toys .
+*EXP: does Alexander play with any dolls at home ?
+*MOT: um theres some teddy bears that hell play with sometimes .
+*MOT: but not much .
+*MOT: he has them there but he doesnt really play with them .
+*EXP: okay .
+*EXP: do you think that he recognized any of the foods ?
+*EXP: from the last time he was here ?
+*EXP: or even maybe he can recognize any of them from home ?
+*MOT: um not from home .
+*MOT: uh from last time .
+*MOT: we played with the peas a lot last time he was playing wi .
+*MOT: I dunno .
+*MOT: I cant tell if he recognized them or not .
+*EXP: and at this point do you think that Alexander recognizes the names of any of these items ?
+*EXP: or is he beginning to recognize the name of some of these toys ?
+*MOT: hes beginning to recognize the names of um some animals .
+*MOT: and I think baby sometimes he recognizes .
+*MOT: uh the foods no .
+*MOT: because I dont use those terms a lot .
+*EXP: what animals has he started to recognize ?
+*MOT: um lion .
+*MOT: we have a lion at home that he plays with a lot .
+*MOT: and uh dog .
+*MOT: he seems to slowly be starting to recognize .
+*EXP: okay .
+*EXP: and are there any other items that arent here um maybe that theyre at home or somewhere else that you think that maybe Alexanders recognized the names of ?
+*MOT: um lets think .
+*MOT: I think diaper .
+*MOT: he recognizes the name of .
+*MOT: um not a whole lot yet though .
+*MOT: not a whole lot yet .
+*MOT: and I dont know if thats because I dont use the words a lot .
+*MOT: or hes just not ready for it .
+*MOT: definitely he recognizes the name of mom and dad .
+*MOT: things like that .
+*MOT: but as far as toys go not not as much .
+*MOT: thats it .
+*MOT: sure .
