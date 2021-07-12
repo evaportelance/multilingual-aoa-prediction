@@ -7,8 +7,6 @@ import os
 import re 
 import random
 
-print("hello")
-
 #The ISO 639-3 code for the desired language or the name of a custom language directory
 LANG_NAME = "eng" 
 
@@ -43,15 +41,14 @@ def is_validation_sent():
 '''
     Iterates over all of the transcripts in TRANSCRIPT_DIR and assigns and
     adds each line to either train, validation, or test set lists. Removes the speaker code (e.g. "*CHI:") 
-    when the line is added to appropriate list. Each line in each list is added
-    sequentially to a train, validation, or test .txt file.
+    when the line is added to appropriate list. 
 
     Parameters: NA
 
     Returns:
-        data: a 3-tuple containing the model datasets of the form (test, validation, validation)
+        splits: a 3-tuple containing the model datasets in the form (test, validation, validation)
 '''
-def get_data_from_files():
+def create_splits_from_transcripts():
     test = []
     validation = [] 
     train = []
@@ -71,19 +68,30 @@ def get_data_from_files():
                             validation.append(sent)
                         else:
                             train.append(sent)
+    return {"test": test, "validation":validation,
+                                    "train":train} 
+
+'''
+    Writes each line in the train, validation, and test lists sequentially to a
+    .txt file to get the final model splits.
+
+    Parameters: 
+        splits: a 3-tuple containing the model datasets in the form (test, validation, validation)
+
+    Returns: NA
+'''
+def write_splits_to_disk(splits):
     #save train, validation, and test split in case we need to rerun model
     with open(MODEL_SETS_DIR + '/test.txt','w') as f :
-        for line in test:
+        for line in splits["test"]:
             f.write(line)
     with open(MODEL_SETS_DIR + '/validation.txt','w') as f :
-        for line in validation:
+        for line in splits["validation"]:
             f.write(line)
     with open(MODEL_SETS_DIR + '/train.txt','w') as f :
-        for line in train:
+        for line in splits["train"]:
             f.write(line)
-    return (test, validation, train) #Only useful if this will be used as a module
 
-#Delete to use this script as a module
 if __name__ == "__main__":
-    print("Doing something")
-    get_data_from_files()
+    splits = create_splits_from_transcripts()
+    write_splits_to_disk(splits)
