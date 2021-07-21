@@ -1,92 +1,72 @@
-'''
-What am I doing today
-steps:
-    *set up pytorch
-    *Set up Keras and PyTorch
-    *Initialize data classes
-    *Pad data
-    *Create DataLoaders
-What does the dataloader do?
-Loads data to model for training
-
-Input: data as a txt
-Output: batches of data
-
-Pad data, length of longest
-load 5000 most common words
-'''
-
-
-import tensorflow as tf
-import torch
 from torch.utils.data import Dataset, DataLoader
-import pandas as pd
+from operator import itemgetter
 
-TRAINING_DATA_PATH = "../../Data/model-sets/toy_train.txt"
+VOCAB_SIZE = 10 #Actual 5000
+BATCH_SIZE = 10
+TRAINING_DATA_PATH = "../../Data/model-sets/toy_train.txt" 
 VALIDATION_DATA_PATH = "../../Data/model-sets/toy_validation.txt"
 TEST_DATA_PATH = "../../Data/model-sets/toy_test.txt"
 
 '''
+    Opens a text file and creates a list whose elements are lists that 
+    correspond to file lines. The elements of each file line list are
+    the words in the line.
+    
+    Parameters:
+        file_path: a relative path to a text file
+        
+    Returns:
+        file_list: a list of lines in the file at file_path
 '''
-# class FaceLandmarksDataset(Dataset):
-#     """Face Landmarks dataset."""
-#
-#     def __init__(self, csv_file, root_dir, transform=None):
-#         """
-#         Args:
-#             csv_file (string): Path to the csv file with annotations.
-#             root_dir (string): Directory with all the images.
-#             transform (callable, optional): Optional transform to be applied
-#                 on a sample.
-#         """
-#         self.landmarks_frame = pd.read_csv(csv_file)
-#         self.root_dir = root_dir
-#         self.transform = transform
-#
-#     def __len__(self):
-#         return len(self.landmarks_frame)
-#
-#     def __getitem__(self, idx):
-#         if torch.is_tensor(idx):
-#             idx = idx.tolist()
-#
-#         img_name = os.path.join(self.root_dir,
-#                                 self.landmarks_frame.iloc[idx, 0])
-#         image = io.imread(img_name)
-#         landmarks = self.landmarks_frame.iloc[idx, 1:]
-#         landmarks = np.array([landmarks])
-#         landmarks = landmarks.astype('float').reshape(-1, 2)
-#         sample = {'image': image, 'landmarks': landmarks}
-#
-#         if self.transform:
-#             sample = self.transform(sample)
-#
-#         return sample
+def open_file(file_path):
+    file_list = []
+    with open(file_path, "r") as f:
+        for line in f:
+            file_list.append(line.split())
+    return file_list
 
-#File open function
+'''
+    Reduces n-dimensional lists to a single dimension.
+    
+    Parameters: 
+        list: any list
+    
+    Returns: a flattened version of list
+'''
+def flatten_list(list):
+    return [item for sublist in list for item in sublist]
 
-train_data = []
-with open(TRAINING_DATA_PATH, "r") as f:
-    for line in f:
-        train_data.append(line.split())
+'''
+    Creates a dictionary from a word list where the keys are words and the values are
+    the number of occurrences of the word in the word list for the number of words in
+    VOCAB_SIZE that have the most occurrences in the word list. All other word-keys
+    have value 0.
+    
+    Parameters:
+        word_list: one-dimensional list of words
+        
+    Returns:
+        word_dict: a dictionary of words to word counts
+'''
+def create_word_dict(word_list):
+    word_list = flatten_list(word_list)
+    word_set = set(word_list)
+    word_index_dict = {}
+    word_dict = word_index_dict.fromkeys(word_set, 0)
+    for word in word_list:
+        word_dict[word] = word_dict[word] + 1
+    lexicon = dict(sorted(word_dict.items(), key = itemgetter(1), reverse = True)[:VOCAB_SIZE])
+    not_lexicon = set(word_dict) - set(lexicon)
+    for word in not_lexicon:
+        word_dict[word] = 0
+    return word_dict
 
-validation_data = []
-with open(TRAINING_DATA_PATH, "r") as f:
-    for line in f:
-        validation_data.append(line.split())
-
-test_data = []
-with open(TRAINING_DATA_PATH, "r") as f:
-    for line in f:
-        test_data.append(line.split())
-
-train_word_set = set(train_data)
-word_index_dict = {}
-train_set = word_index_dict.fromkeys(train_word_set[, 0])
-
-class TrainingSet(Dataset):
-    def __init__(self, path = TRAINING_DATA_PATH):
-        self.data = test
+class Dataset(Dataset):
+    def __init__(self, data, encoding_dict):
+        self.data = data
+        for i in range(len(data)):
+            for j in range(len(data[i])):
+                self.data[i][j] = encoding_dict[data[i][j]]
 
     def __len__(self):
         return len(self.data)
@@ -94,103 +74,31 @@ class TrainingSet(Dataset):
     def __getitem__(self, index):
         return self.data[index]
 
-class ValidationSet(Dataset):
-    def __init__(self, path = VALIDATION_DATA_PATH):
-        with open(path, "r") as f:
-            keys = f.readlines()
-            maxlen = len(max(keys, key=len))
-            keys = [line.rjust(maxlen) for line in keys]
-            values = range(len(keys))
-            self.data = dict(zip(keys, values))
-
-    def __len__(self):
-        return len(self.data)
-
-    def __getitem__(self, index):
-
-        return self.data[index]
-
-class TestSet(Dataset):
-    def __init__(self, path = TEST_DATA_PATH):
-        with open(path, "r") as f:
-            keys = f.readlines()
-            maxlen = len(max(keys, key=len))
-            keys = [line.rjust(maxlen) for line in keys]
-            values = range(len(keys))
-            self.data = dict(zip(keys, values))
-
-    def __len__(self):
-        return len(self.data)
-
-    def __getitem__(self, index):
-        return self.data[index]
-
-#Initialize a dataloader for each data set
-training_dataloader = TrainingSet()
-validation_dataloader = ValidationSet()
-test_dataloader = TestSet()
-
 '''
-
-
+    Creates dataloaders for the training, validation, and test datasets.
+    
+    Parameters: none
+    
+    Returns:
+        training_dataloader, validation_dataloader, test_dataloader
 '''
+def create_dataloaders():
+    #Get file data
+    train_data = open_file(TRAINING_DATA_PATH)
+    validation_data = open_file(VALIDATION_DATA_PATH)
+    test_data = open_file(TEST_DATA_PATH)
 
+    #Create word to index dictionary
+    all_data = train_data + validation_data + test_data
+    word_dict = create_word_dict(all_data)
 
+    #Initialize datasets, replacing words with indexes or '0,' as appropriate
+    training_dataset = Dataset(train_data, word_dict)
+    validation_dataset = Dataset(validation_data, word_dict)
+    test_dataset = Dataset(test_data, word_dict)
 
-
-# train_max_len_line = .col1.map(lambda TrainingSet.data: len(TrainingSet.data)).max()
-# TrainingSet.data = TrainingSet.data.str.pad(train_max_len_line, side ='left')
-#
-# valid_max_len_line = df.col1.map(lambda ValidationSet.data: len(ValidationSet.data)).max()
-# TrainingSet.data = ValidationSet.data.str.pad(valid_max_len_line, side ='left')
-# test_max_len_line = df.col1.map(lambda TestSet.data: len(TestSet.data)).max()
-# TrainingSet.data = TestSet.data.str.pad(test_max_len_line, side ='left')
-#
-# train_dataloader = DataLoader(transformed_dataset, batch_size=4,
-#                         shuffle=True)
-#
-# valid_dataloader = DataLoader(transformed_dataset, batch_size=4,
-#                         shuffle=True)
-#
-# test_dataloader = DataLoader(transformed_dataset, batch_size=4,
-#                         shuffle=True)
-#
-
-
-
-
- 
-'''
-train, val, test = get_data_from_files()
-
-tokenizer = Tokenizer(num_words=vocab_size)
-tokenizer.fit_on_texts(train+val+test)
-vocab = tokenizer.word_index
-
-# transform text strings into sequences of int (representing the word's
-# index in vocab)
-train_seqs = tokenizer.texts_to_sequences(train)
-val_seqs = tokenizer.texts_to_sequences(val)
-# get the maximum length of sequences - this is needed for data generator
-maxlen = max([len(seq) for seq in (train_seqs+val_seqs)])
-
-print('vocab_size = '+str(vocab_size))
-print('train_maxlen = '+str(maxlen))
-print('INITIALIZE DATA GENERATORS...\n')
-
-# Create data generators for train and test sequences
-train_generator = DataGenerator(seqs = train_seqs,
-                                   vocab = vocab,
-                                   vocab_size = vocab_size,
-                                   maxlen = maxlen,
-                                   batch_size = batch_size,
-                                   shuffle = shuffle)
-val_generator = DataGenerator(seqs = val_seqs,
-                                   vocab = vocab,
-                                   vocab_size = vocab_size,
-                                   maxlen = maxlen,
-                                   batch_size = batch_size,
-                                   shuffle = shuffle)
-
-print('BUILDING MODEL...\n')
-'''
+    #Create dataloaders
+    training_dataloader = DataLoader(training_dataset, batch_size=BATCH_SIZE,shuffle=True)
+    validation_dataloader = DataLoader(validation_dataset, batch_size=BATCH_SIZE,shuffle=True)
+    test_dataloader = DataLoader(test_dataset, batch_size=BATCH_SIZE,shuffle=True)
+    return training_dataloader, validation_dataloader, test_dataloader
