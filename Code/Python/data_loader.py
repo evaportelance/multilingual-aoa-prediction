@@ -1,11 +1,26 @@
+'''
+Opens text files and creates dataloader objects for training a model.
+'''
+
+
 from torch.utils.data import Dataset, DataLoader
 from operator import itemgetter
 
 VOCAB_SIZE = 10 #Actual 5000
-BATCH_SIZE = 10
-TRAINING_DATA_PATH = "../../Data/model-sets/toy_train.txt" 
+BATCH_SIZE = 30
+TRAINING_DATA_PATH = "../../Data/model-sets/toy_train.txt"
 VALIDATION_DATA_PATH = "../../Data/model-sets/toy_validation.txt"
 TEST_DATA_PATH = "../../Data/model-sets/toy_test.txt"
+
+def format_data(data, max_len_word):
+    padded_data = []
+    for line in data:
+        padded_line = []
+        for word in line:
+            padded_line.append(word.zfill(max_len_word))
+        padded_data.append(padded_line)
+    return padded_data
+
 
 '''
     Opens a text file and creates a list whose elements are lists that 
@@ -19,11 +34,11 @@ TEST_DATA_PATH = "../../Data/model-sets/toy_test.txt"
         file_list: a list of lines in the file at file_path
 '''
 def open_file(file_path):
-    file_list = []
+    lines = []
     with open(file_path, "r") as f:
         for line in f:
-            file_list.append(line.split())
-    return file_list
+            lines.append(line.splitlines())
+    return lines
 
 '''
     Reduces n-dimensional lists to a single dimension.
@@ -48,17 +63,24 @@ def flatten_list(list):
     Returns:
         word_dict: a dictionary of words to word counts
 '''
-def create_word_dict(word_list):
-    word_list = flatten_list(word_list)
-    word_set = set(word_list)
+def create_word_dict(all_data):
+    flattened_list = flatten_list(all_data)
+    word_set = set(flattened_list)
     word_index_dict = {}
     word_dict = word_index_dict.fromkeys(word_set, 0)
-    for word in word_list:
+    for word in flattened_list:
         word_dict[word] = word_dict[word] + 1
     lexicon = dict(sorted(word_dict.items(), key = itemgetter(1), reverse = True)[:VOCAB_SIZE])
-    not_lexicon = set(word_dict) - set(lexicon)
-    for word in not_lexicon:
-        word_dict[word] = 0
+    max_word_len = len(str(VOCAB_SIZE))
+
+    #Set word_dict values to indexes and pad words
+    i = 1
+    for word in word_set:
+        if word in lexicon:
+            word_dict[word] = str(i).zfill(max_word_len)
+            i += 1
+        else:
+            word_dict[word] = "0".zfill(max_word_len)
     return word_dict
 
 class Dataset(Dataset):
@@ -102,3 +124,11 @@ def create_dataloaders():
     validation_dataloader = DataLoader(validation_dataset, batch_size=BATCH_SIZE,shuffle=True)
     test_dataloader = DataLoader(test_dataset, batch_size=BATCH_SIZE,shuffle=True)
     return training_dataloader, validation_dataloader, test_dataloader
+
+import time
+start_time = time.time()
+a, b, c = create_dataloaders()
+print("--- %s seconds ---" % (time.time() - start_time))
+
+for sample in enumerate(a):
+    print(sample)
