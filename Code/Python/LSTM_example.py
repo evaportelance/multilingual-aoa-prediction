@@ -45,7 +45,7 @@ training_data = [
     ("Everybody read that book".split(), ["NN", "V", "DET", "NN"])
 ]
 word_to_ix = {}
-# For each words-list (sentence) and tags-list in each tuple of training_data
+# For each words-list (utterannce) and tags-list in each tuple of training_data
 for sent, tags in training_data:
     for word in sent:
         if word not in word_to_ix:  # word has not been assigned an index yet
