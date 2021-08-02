@@ -87,7 +87,6 @@ class Dataset(Dataset):
             #print("Unpadded data: " + str(self.data[i]))
             self.data[i] = padding + self.data[i]
             #print("Padded data: " + str(self.data[i]))
-        print(self.data)
         self.data = torch.tensor(self.data)
 
     def __len__(self):
@@ -95,6 +94,7 @@ class Dataset(Dataset):
 
     def __getitem__(self, index):
         #torch tensor list of lists
+
         return self.data[index]
 
 '''
@@ -137,12 +137,12 @@ import time
 start_time = time.time()
 train_dl, validation_dl, test_dl = create_dataloaders(TRAINING_DATA_PATH, VALIDATION_DATA_PATH, TEST_DATA_PATH,
                                                          VOCAB_SIZE, BATCH_SIZE)
-print("--- %s seconds ---" % (time.time() - start_time))
-
-print("Dataloader output:")
-for batch in enumerate(test_dl):
-    print(batch)
-    for elem in batch[1]:
-        print(elem)
+#print("--- %s seconds ---" % (time.time() - start_time))
+#
+#print("Dataloader output:")
+#for batch in enumerate(test_dl):
+#    print(batch)
+#    for elem in batch[1]:
+#        print(elem)
 
 ############TEMPORARY#################
