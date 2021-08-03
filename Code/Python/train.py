@@ -16,11 +16,8 @@ import sys
 Parameters: model, data_loader
 Returns: 
 Dimensions:
-
-
-
 '''
-def test_model(model, data_loader, stat_tracker):
+def test_model(model, data_loader, stat_tracker, epoch, prefix):
     model.eval()
     test_stats = stats.AverageMeterSet()
     for i, batch in enumerate(data_loader):
@@ -30,9 +27,10 @@ def test_model(model, data_loader, stat_tracker):
         accuracy = torch.eq(maxes, batch).int()
         max_sequence_len = list(accuracy.size())[1]
         avg_sequence_accs = torch.sum(accuracy, 1)/max_sequence_len
-        stat_tracker.record_stats(test_stats.averages(avg_sequence_accs, prefix=str('/train/')))
+        test_stats.update('accuracy', avg_sequence_accs, n=1)
+    stat_tracker.record_stats(test_stats.averages(epoch, prefix=prefix))
 
-def train_model(model, data_loader, validation_dl, learning_rate, output_dir, num_epochs, stat_tracker):
+def train_model(model, data_loader, validation_dl, learning_rate, num_epochs, stat_tracker):
     loss_function = torch.nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     for epoch in range(num_epochs):
@@ -58,6 +56,7 @@ def train_model(model, data_loader, validation_dl, learning_rate, output_dir, nu
             epoch_stats.update('mean_rewards', loss, n=1)
             epoch_stats.update('loss', loss, n=1)
         #epoch_number += 1
+        test_model(model, validation_dl, stat_tracker, epoch, "/validation/")
         stat_tracker.record_stats(epoch_stats.averages(epoch, prefix=str('/train/')))
 
         #test_model(model, validation_dl)
@@ -98,9 +97,9 @@ def main():
     model = LSTM(hyp_params["vocab_size"], hyp_params["batch_size"],
                  hyp_params["embedding_dim"], hyp_params["hidden_dim"], hyp_params["output_dir"])
     stat_tracker = stats.StatTracker(log_dir=os.path.join(hyp_params["output_dir"], "tensorboard-log"))
-    train_model(model, train_dl, validation_dl, hyp_params["learning_rate"], hyp_params["output_dir"], hyp_params["num_epochs"], stat_tracker)
+    train_model(model, train_dl, validation_dl, hyp_params["learning_rate"], hyp_params["num_epochs"], stat_tracker)
     save_hyperparameters(hyp_params, hyp_params["output_dir"])
-    test_model(model, test_dl, stat_tracker)
+    test_model(model, test_dl, stat_tracker, 1, "/test/")
 
 if __name__=="__main__":
     main()
