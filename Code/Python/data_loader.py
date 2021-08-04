@@ -78,9 +78,9 @@ class Dataset(Dataset):
                 max_utterance_len = len(data[i])
             for j in range(len(data[i])):
                 self.data[i][j] = encoding_dict[data[i][j]]
-        if max_utterance_len > batch_size:
-            raise ValueError("Batch size must be at least " + str(max_utterance_len) + " items long. "
-                            "Otherwise, utterance lists will be truncated by the dataloader.")
+        #if max_utterance_len > batch_size:
+        #    raise ValueError("Batch size must be at least " + str(max_utterance_len) + " items long. "
+        #                    "Otherwise, utterance lists will be truncated by the dataloader.")
         for i in range(len(data)):
             zeros = 0 * random.choice(list(encoding_dict.values()))
             padding = [zeros] * (max_utterance_len - len(data[i]))
