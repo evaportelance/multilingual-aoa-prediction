@@ -56,18 +56,18 @@ def create_word_dict(all_data, vocab_size):
     word_dict = word_index_dict.fromkeys(word_set, 0)
     for word in flattened_list:
         word_dict[word] = word_dict[word] + 1
-    lexicon = dict(sorted(word_dict.items(), key = itemgetter(1), reverse = True)[:VOCAB_SIZE])
-    max_word_len = len(str(vocab_size))
+    vocabulary = dict(sorted(word_dict.items(), key = itemgetter(1), reverse = True)[:vocab_size])
 
-    #Set word_dict values to indexes and pad words
+    #Set word dict values equal to indices
     i = 1
     for word in word_set:
-        if word in lexicon:
-            word_dict[word] = int(str(i).zfill(max_word_len))
+        if word in vocabulary:
+            word_dict[word] = i
+            vocabulary[word] = i
             i += 1
         else:
-            word_dict[word] = int("0".zfill(max_word_len))
-    return word_dict
+            word_dict[word] = 0
+    return word_dict, vocabulary
 
 class Dataset(Dataset):
     def __init__(self, data, encoding_dict, batch_size):
@@ -113,7 +113,7 @@ def create_dataloaders(training_data_path, validation_data_path, test_data_path,
 
     #Create word to index dictionary
     all_data = train_data + validation_data + test_data
-    word_dict = create_word_dict(all_data, vocab_size)
+    word_dict, vocabulary = create_word_dict(all_data, vocab_size)
 
     #Initialize datasets, replacing words with indexes or '0,' as appropriate
     training_dataset = Dataset(train_data, word_dict, batch_size)
@@ -124,25 +124,4 @@ def create_dataloaders(training_data_path, validation_data_path, test_data_path,
     training_dataloader = DataLoader(training_dataset, batch_size=batch_size,shuffle=True)
     validation_dataloader = DataLoader(validation_dataset, batch_size=batch_size,shuffle=True)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size,shuffle=True)
-    return training_dataloader, validation_dataloader, test_dataloader
-
-############TEMPORARY#################
-TRAINING_DATA_PATH = "../../Data/model-sets/toy_train.txt"
-VALIDATION_DATA_PATH = "../../Data/model-sets/toy_validation.txt"
-TEST_DATA_PATH = "../../Data/model-sets/toy_test.txt"
-VOCAB_SIZE = 20 #Actual 5000
-BATCH_SIZE = 20
-
-import time
-start_time = time.time()
-train_dl, validation_dl, test_dl = create_dataloaders(TRAINING_DATA_PATH, VALIDATION_DATA_PATH, TEST_DATA_PATH,
-                                                         VOCAB_SIZE, BATCH_SIZE)
-#print("--- %s seconds ---" % (time.time() - start_time))
-#
-#print("Dataloader output:")
-#for batch in enumerate(test_dl):
-#    print(batch)
-#    for elem in batch[1]:
-#        print(elem)
-
-############TEMPORARY#################
+    return training_dataloader, validation_dataloader, test_dataloader, vocabulary, all_data

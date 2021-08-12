@@ -1,7 +1,7 @@
 import os
 
 '''
-hyperparameters: a dictionaries contaning the relevant hyperparameters."
+hyperparameters: a dictionary containing the relevant hyperparameters."
 '''
 def save_hyperparameters(hyperparameters, output_dir):
     with open(os.path.join(output_dir, "hyper_parameters"), "w") as f:
