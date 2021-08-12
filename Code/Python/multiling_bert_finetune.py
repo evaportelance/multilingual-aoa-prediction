@@ -13,8 +13,9 @@ def get_args():
                         help='file path for training data')
     parser.add_argument('--val_path', type=string, default='../../Data/model-sets/validation.txt',
                         help='file path for validation data')
-    parser.add_argument('--result_dir', type=string, default='../../Results/Finetune_experiments/',
+    parser.add_argument('--result_dir', type=string, default='../../Results/experiments/',
                         help='directory where model and log files will be saved')
+    parser.add_argument('--experiment_name', type=string, default='test', help='name of the experiment directory where model and log files will be stored')
     parser.add_argument('--lr', type=double, default='5e-5',
                         help='learning rate')
     parser.add_argument('--batch_size', type=int, default=256)
@@ -82,6 +83,9 @@ def finetune_model(model, train_dataloader, val_dataloader, device, stat_tracker
 
 def main():
     args = get_args()
+    experiment_dir = os.path.join(args.result_dir, args.experiment_name)
+    os.makedirs(experiment_dir, exist_ok=True)
+
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     model = BertLMHeadModel.from_pretrained("bert-base-multilingual-uncased", return_dict=True, is_decoder = True)
     model = model.to(device)
@@ -91,11 +95,11 @@ def main():
     val_dataset = CHILDESDataset(args.val_path)
     val_dl = DataLoader(val_dataset, batch_size=args.batch_size,shuffle=True)
 
-    stat_tracker = StatTracker(log_dir=os.path.join(args.result_dir,"tensorboard-log"))
+    stat_tracker = StatTracker(log_dir=os.path.join(experiment_dir,"tensorboard-log"))
 
     model = finetune_model(model, train_dl, val_dl, device, stat_tracker, args.n_epochs, args.lr, args.patience)
 
-    torch.save(model, os.path.join(args.result_dir,"model.pt"))
+    torch.save(model, os.path.join(experiment_dir,"model.pt"))
 
 
 if __name__=="__main__":
