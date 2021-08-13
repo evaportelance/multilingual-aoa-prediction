@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from transformers import BertLMHeadModel, AdamW
 from stats import AverageMeterSet, StatTracker
 from bert_custom_dataset import CHILDESDataset
-from utils import save_hyperparameters
+from utils import save_pkl
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -38,9 +38,9 @@ def test_finetuned_model(model, dataloader, device, stat_tracker, epoch=1, prefi
             batch[key] = batch[key].to(device)
         labels = batch['labels']
         outputs = model(**batch)
-        distributions = F.log_softmax(outputs.logits, -1)
-        predictions = torch.argmax(distributions, dim = -1)
-        n_matches = torch.eq(predictions, labels).int()
+        predictions = F.log_softmax(outputs.logits, -1)
+        max_pred = torch.argmax(predictions, dim = -1)
+        n_matches = torch.eq(max_pred, labels).int()
         max_sequence_len = list(n_matches.size())[1]
         avg_sequence_accs = torch.sum(n_matches, 1)/max_sequence_len
         batch_accuracy = (torch.sum(avg_sequence_accs, 0)/avg_sequence_accs.size()[0]).item()
@@ -86,9 +86,9 @@ def finetune_model(model, train_dataloader, val_dataloader, device, stat_tracker
             stop_early_count +=1
         else:
             stop_early_count = 0
+            previous_val_acc = val_accuracy
         if stop_early_count >= patience:
             break
-        previous_val_acc = val_accuracy
 
     return model
 
@@ -97,7 +97,7 @@ def main():
     args = get_args()
     experiment_dir = os.path.join(args.result_dir, args.experiment_name)
     os.makedirs(experiment_dir, exist_ok=True)
-    save_hyperparameters(vars(args), experiment_dir)
+    save_pkl(experiment_dir, vars(params), "hyperparameters.pkl"
 
     torch.manual_seed(args.seed)
 

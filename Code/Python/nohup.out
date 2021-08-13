@@ -1,0 +1,10 @@
+usage: train_lstm.py [-h] [--training_data_path]
+                     [--validation_data_path VALIDATION_DATA_PATH]
+                     [--test_data_path TEST_DATA_PATH]
+                     [--result_dir RESULT_DIR]
+                     [--experiment_name EXPERIMENT_NAME]
+                     [--vocab_size VOCAB_SIZE] [--batch_size BATCH_SIZE]
+                     [--embedding_dim EMBEDDING_DIM] [--hidden_dim HIDDEN_DIM]
+                     [--gpu_run] [--learning_rate LEARNING_RATE]
+                     [--num_epochs NUM_EPOCHS] [--patience PATIENCE]
+train_lstm.py: error: unrecognized arguments: ../../Data/model-sets/train.txt

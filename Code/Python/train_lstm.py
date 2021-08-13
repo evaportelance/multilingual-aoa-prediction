@@ -12,6 +12,31 @@ import argparse
 from datetime import datetime
 
 '''
+Gets command-line arguments and specifies defaults values for arguments that aren't specified.
+
+    Returns:
+        params: a dictionary with all command line values
+'''
+def get_params():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--training_data_path", default="../../Data/model-sets/toy_train.txt")
+    parser.add_argument("--validation_data_path",default="../../Data/model-sets/toy_validation.txt")
+    parser.add_argument("--test_data_path", default="../../Data/model-sets/toy_test.txt")
+    parser.add_argument("--result_dir", default="../../Results/experiments/")
+    parser.add_argument("--experiment_name", default=None)
+    parser.add_argument("--vocab_size", default=100, type=int)
+    parser.add_argument("--batch_size", default=10, type=int)
+    parser.add_argument ("--embedding_dim", default=100, type=int)
+    parser.add_argument("--hidden_dim", default=50, type=int)
+    parser.add_argument("--gpu_run", action="store_true")
+    parser.add_argument("--learning_rate", default=.0001, type=float)
+    parser.add_argument("--num_epochs", default=30, type=int)
+    parser.add_argument("--patience", default=10, type=int)
+    params = parser.parse_args() #converts namespace to dictionary
+    return params
+
+
+'''
 Creates an experiment directory that contains all of the output from running the train function. The name of the
 directory is a timestamp.
 
@@ -29,55 +54,31 @@ def create_experiment_directory(experiments_dir):
     return experiment_dir
 
 '''
-Gets command-line arguments and specifies defaults values for arguments that aren't specified.
-
-    Returns:
-        params: a dictionary with all command line values
-'''
-def get_parameters():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-training_data_path", default="../../data/model-sets/toy_train.txt", action="store_true")
-    parser.add_argument("-validation_data_path",default="../../data/model-sets/toy_validation.txt")
-    parser.add_argument("-test_data_path", default="../../data/model-sets/toy_test.txt")
-    parser.add_argument("-experiments_dir", default="../../results/experiments/")
-    parser.add_argument("-vocab_size", default=10, type=int)
-    parser.add_argument("-batch_size", default=10, type=int)
-    parser.add_argument ("-embedding_dim", default=50, type=int)
-    parser.add_argument("-hidden_dim", default=50, type=int)
-    parser.add_argument("--gpu_run", action="store_true")
-    parser.add_argument("-learning_rate", default=.0001, type=float)
-    parser.add_argument("-num_epochs", default=10, type=int)
-    parser.add_argument("-dec_acc_epoch_cnt_stop_threshold", default=20, type=int)
-    params = vars(parser.parse_args()) #converts namespace to dictionary
-    return params
-
-'''
 Calculates the model's accuracy on a given data set by predicting the next word given some input and comparing the
 prediction to the data. The overall accuracy is calculated by averaging the model's accuracy for each batch.
-Batch-level accuracy is the average of the accuracy for each utterance. An utterances accuracy is the percentage of 
+Batch-level accuracy is the average of the accuracy for each utterance. An utterances accuracy is the percentage of
 words in an utterance that the model predicted correctly.
 
-Parameters: 
-    model: a pytorch.nn.lstm object
+Parameters:
+    model: a LSTM object from model.py
     data_loader: a pytorch dataloader that is used to feed data into the model
     stat_tracker: an object that stores important information about the model and feeds it to tensorboard
     epoch: the current epoch number in the training cycle if evaluate_model is run on the validation set or 1 if it is
             on the test set
     prefix: tells stat_tracker what data_loader is used
     batch_size: the number of utterances in one batch
-    
-Returns: 
-   overall_accuracy: the average of all the batch accuracies 
+
+Returns:
+   overall_accuracy: the average of all the batch accuracies
 '''
 def evaluate_model(model, data_loader, stat_tracker, epoch, prefix, batch_size, device):
     model.eval()
-    torch.no_grad()
     test_stats = stats.AverageMeterSet()
     for i, batch in enumerate(data_loader):
         batch = batch.to(device)
-        predictions = model(batch)
-        distributions = F.log_softmax(predictions, dim=2)
-        maxes = torch.argmax(distributions, 2)
+        logits = model(batch)
+        predictions = F.log_softmax(logits, dim=2)
+        maxes = torch.argmax(predictions, 2)
         accuracy = torch.eq(maxes, batch).int()
         max_sequence_len = list(accuracy.size())[1]
         avg_sequence_accs = torch.sum(accuracy, 1)/max_sequence_len
@@ -107,11 +108,11 @@ Returns:
     model: the trained model
 '''
 def train_model(model, data_loader, validation_dl, learning_rate, num_epochs, stat_tracker, batch_size,
-                dec_acc_epoch_cnt_stop_threshold, device):
+                patience, device):
     loss_function = torch.nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     num_decreasing_acc_epochs = 0
-    max_accuracy = 0
+    prev_val_accuracy = 0
     for epoch in range(num_epochs):
         epoch_stats = stats.AverageMeterSet()
         model.train()
@@ -123,12 +124,21 @@ def train_model(model, data_loader, validation_dl, learning_rate, num_epochs, st
             model.zero_grad()
 
             # Step 2 Run our forward pass.
-            predictions = model.forward(batch)
-            predictions = predictions.permute(0, 2, 1)
+            logits = model(batch)
 
-            # Step 3. Compute the loss, gradients, and update the parameters by
+            # Step 3. Get train accuracy
+            predictions = F.log_softmax(logits, -1)
+            max_pred = torch.argmax(predictions, dim = -1)
+            n_matches = torch.eq(max_pred, batch).int()
+            max_sequence_len = list(n_matches.size())[1]
+            avg_sequence_accs = torch.sum(n_matches, 1)/max_sequence_len
+            batch_accuracy = (torch.sum(avg_sequence_accs, 0)/avg_sequence_accs.size()[0]).item()
+            epoch_stats.update('accuracy', batch_accuracy, n=1)
+
+            # Step 4. Compute the loss, gradients, and update the parameters by
             #  calling optimizer.step()
-            loss = loss_function(predictions, batch)
+            logits = logits.permute(0, 2, 1)
+            loss = loss_function(logits, batch)
             loss.backward()
             optimizer.step()
 
@@ -136,38 +146,55 @@ def train_model(model, data_loader, validation_dl, learning_rate, num_epochs, st
         stat_tracker.record_stats(epoch_stats.averages(epoch, prefix=str('/train/')))
 
         #Handles early stopping
-        valid_acc_after_train_epoch = evaluate_model(model, validation_dl, stat_tracker, epoch,
+        val_accuracy = evaluate_model(model, validation_dl, stat_tracker, epoch,
                                                      "/validation/", batch_size, device)
-        if max_accuracy > valid_acc_after_train_epoch:
+
+        print(str(epoch))
+        print("train acc: "+ str(epoch_stats.avgs['accuracy']))
+        print("val acc: "+ str(val_accuracy))
+        print("loss :"+ str(epoch_stats.avgs['loss']))
+
+        if prev_val_accuracy > val_accuracy:
             num_decreasing_acc_epochs += 1
         else:
-            max_accuracy = valid_acc_after_train_epoch
+            prev_val_accuracy = val_accuracy
             num_decreasing_acc_epochs = 0
-        if num_decreasing_acc_epochs > dec_acc_epoch_cnt_stop_threshold:
-            return model
+        if num_decreasing_acc_epochs > patience:
+            break
+    return model
 
 '''
 Takes in command line arguments specifying the parameters of the lstm to be trained, trains the model, saves the model
 and hyperparameters to disk and evaluates the models accuracy on the test set.
 '''
 def main():
-    params = get_parameters()
-    experiment_dir = create_experiment_directory(params["experiments_dir"])
-    train_dl, validation_dl, test_dl, word_list, all_data = dl.create_dataloaders(params["training_data_path"],
-                                                             params["validation_data_path"],
-                                                             params["test_data_path"],
-                                                             params["vocab_size"],
-                                                             params["batch_size"])
-    model = LSTM(params["vocab_size"], params["batch_size"], params["embedding_dim"], params["hidden_dim"])
+    params = get_params()
+    if params.experiment_name:
+        experiment_dir = os.path.join(params.result_dir, params.experiment_name)
+        os.makedirs(experiment_dir, exist_ok=True)
+    else:
+        experiment_dir = create_experiment_directory(params.result_dir)
+
+    utils.save_pkl(experiment_dir, vars(params), "hyperparameters.pkl")
+
+    device = torch.device('cuda') if params.gpu_run == True else torch.device('cpu')
+
+    train_dl, validation_dl, test_dl, vocabulary, all_data = dl.create_dataloaders(params.training_data_path,
+                                                             params.validation_data_path,
+                                                             params.test_data_path,
+                                                             params.vocab_size,
+                                                             params.batch_size)
+
+    utils.save_pkl(experiment_dir, vocabulary, "vocabulary.pkl")
+    #utils.save_pkl(experiment_dir, all_data, "all_data.pkl")
+
+    model = LSTM(params.vocab_size, params.batch_size, params.embedding_dim, params.hidden_dim)
+    model = model.to(device)
     stat_tracker = stats.StatTracker(log_dir=os.path.join(experiment_dir, "tensorboard-log"))
-    device = torch.device('cuda') if params["gpu_run"] == True else torch.device('cpu')
-    train_model(model, train_dl, validation_dl, params["learning_rate"], params["num_epochs"], stat_tracker,
-                params["batch_size"], params["dec_acc_epoch_cnt_stop_threshold"], device)
-    torch.save(model, experiment_dir + "model")
-    utils.save_pkl(experiment_dir, word_list, "word_list.pkl")
-    utils.save_pkl(experiment_dir, all_data, "all_data.pkl")
-    utils.save_pkl(experiment_dir, params, "parameters.pkl")
-    test_accuracy = evaluate_model(model, test_dl, stat_tracker, 1, "/test/", params["batch_size"], device)
+    model = train_model(model, train_dl, validation_dl, params.learning_rate, params.num_epochs, stat_tracker,
+                params.batch_size, params.patience, device)
+    torch.save(model, os.path.join(experiment_dir,"model.pt"))
+    test_accuracy = evaluate_model(model, test_dl, stat_tracker, 1, "/test/", params.batch_size, device)
     print("test_accuracy: " + str(test_accuracy))
 
 if __name__=="__main__":
