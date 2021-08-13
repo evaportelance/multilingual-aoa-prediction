@@ -55,7 +55,7 @@ def create_splits_from_transcripts():
     for subdir, dirs, files in os.walk(TRANSCRIPT_DIR):
         for file in files:
             if ('.capp' in file):
-                textfile = subdir+'/'+file
+                textfile = subdir + '/' + file
                 with open(textfile,'r') as f :
                     lines = f.readlines()
                 for sent in lines :
@@ -81,7 +81,6 @@ def create_splits_from_transcripts():
     Returns: NA
 '''
 def write_splits_to_disk(splits):
-    #save train, validation, and test split in case we need to rerun model
     with open(MODEL_SETS_DIR + '/test.txt','w') as f :
         for line in splits["test"]:
             f.write(line)
@@ -90,6 +89,9 @@ def write_splits_to_disk(splits):
             f.write(line)
     with open(MODEL_SETS_DIR + '/train.txt','w') as f :
         for line in splits["train"]:
+            f.write(line)
+    with open(MODEL_SETS_DIR + '/all_data.txt','w') as f :
+        for line in splits["test"] + splits["validation"] + splits["train"]:
             f.write(line)
 
 if __name__ == "__main__":

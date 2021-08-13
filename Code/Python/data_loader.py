@@ -5,26 +5,8 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from operator import itemgetter
 import random
+import utils
 
-'''
-    Opens a text file and creates a list whose elements are lists that 
-    correspond to file lines. The elements of each file line list are
-    the words in the line.
-    
-    Parameters:
-        file_path: a relative path to a text file
-        
-    Returns:
-        file_list: a list of lines in the file at file_path
-'''
-def open_file(file_path):
-    lines = []
-    with open(file_path, "r") as f:
-        for line in f:
-            line = line.strip('\n')
-            line_as_list = line.split(" ")
-            lines.append(line_as_list)
-    return lines
 
 '''
     Reduces n-dimensional lists to a single dimension.
@@ -56,18 +38,18 @@ def create_word_dict(all_data, vocab_size):
     word_dict = word_index_dict.fromkeys(word_set, 0)
     for word in flattened_list:
         word_dict[word] = word_dict[word] + 1
-    vocabulary = dict(sorted(word_dict.items(), key = itemgetter(1), reverse = True)[:vocab_size])
+    word_list = dict(sorted(word_dict.items(), key = itemgetter(1), reverse = True)[:vocab_size])
 
     #Set word dict values equal to indices
     i = 1
     for word in word_set:
-        if word in vocabulary:
+        if word in word_list:
             word_dict[word] = i
-            vocabulary[word] = i
+            word_list[word] = i
             i += 1
         else:
             word_dict[word] = 0
-    return word_dict, vocabulary
+    return word_dict, word_list
 
 class Dataset(Dataset):
     def __init__(self, data, encoding_dict, batch_size):
@@ -107,13 +89,14 @@ class Dataset(Dataset):
 '''
 def create_dataloaders(training_data_path, validation_data_path, test_data_path, vocab_size, batch_size):
     #Get file data
-    train_data = open_file(training_data_path)
-    validation_data = open_file(validation_data_path)
-    test_data = open_file(test_data_path)
+    train_data = utils.open_file(training_data_path)
+    validation_data = utils.open_file(validation_data_path)
+    test_data = utils.open_file(test_data_path)
 
     #Create word to index dictionary
     all_data = train_data + validation_data + test_data
-    word_dict, vocabulary = create_word_dict(all_data, vocab_size)
+
+    word_dict, word_list = create_word_dict(all_data, vocab_size)
 
     #Initialize datasets, replacing words with indexes or '0,' as appropriate
     training_dataset = Dataset(train_data, word_dict, batch_size)
@@ -124,4 +107,4 @@ def create_dataloaders(training_data_path, validation_data_path, test_data_path,
     training_dataloader = DataLoader(training_dataset, batch_size=batch_size,shuffle=True)
     validation_dataloader = DataLoader(validation_dataset, batch_size=batch_size,shuffle=True)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size,shuffle=True)
-    return training_dataloader, validation_dataloader, test_dataloader, vocabulary, all_data
+    return training_dataloader, validation_dataloader, test_dataloader, word_list, all_data

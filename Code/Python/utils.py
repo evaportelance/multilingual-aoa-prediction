@@ -1,10 +1,41 @@
-import os
+import pickle
 
 '''
-hyperparameters: a dictionary containing the relevant hyperparameters."
+    Saves a dictionary as a pickle file.
+    
+    Parameters:
+        dir: a file path
+        dict: a dictionary
 '''
-def save_hyperparameters(hyperparameters, output_dir):
-    with open(os.path.join(output_dir, "hyper_parameters"), "w") as f:
-        for hp in hyperparameters.keys():
-            print(hp +": "+str(hyperparameters[hp])+"\n")
-            f.write(hp +": "+str(hyperparameters[hp])+"\n")
+def save_pkl(dir, file, name):
+    with open(dir + name, 'wb') as f:
+        pickle.dump(file, f, pickle.HIGHEST_PROTOCOL)
+
+'''
+    Opens a dictionary as a pickle file.
+    
+    Parameters:
+        dir: a file path
+        dict: a dictionary
+'''
+def open_pkl(dir):
+    with open(dir, 'rb') as file:
+        return pickle.load(file)
+
+'''
+    Opens a text file and creates a list whose elements are lists that 
+    correspond to file lines. The elements of each file line list are
+    the words in the line.
+    Parameters:
+        file_path: a relative path to a text file
+    Returns:
+        file_list: a list of lines in the file at file_path
+'''
+def open_file(file_path):
+    lines = []
+    with open(file_path, "r") as f:
+        for line in f:
+            line = line.strip('\n')
+            line_as_list = line.split(" ")
+            lines.append(line_as_list)
+    return lines
