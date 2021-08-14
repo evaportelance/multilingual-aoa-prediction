@@ -9,6 +9,11 @@ import argparse
 import utils
 
 '''
+to-do:
+add word_list functionality
+save as csv
+write header comment for the train script
+
 Gets arguments from the command-line.
 
 Returns:
@@ -17,7 +22,8 @@ Returns:
 def get_parameters():
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu_run", action="store_true")
-    parser.add_argument("-word_list", default="word_list.pkl")
+    parser.add_argument("-vocabulary", default="vocabulary.pkl")
+    parser.add_argument("-aoa_word_list", default="../../data/model-sets/aoa_word_list.csv")
     parser.add_argument("-experiment_dir", default="../../results/experiments/2021-12-08T22-59-15/")
     parser.add_argument("-model", default="model")
     parser.add_argument("-all_data", default="all_data.pkl")
@@ -40,10 +46,10 @@ Returns:
 '''
 def find_surprisal_values(word_list, model, all_data):
     surprisal_info = {}
-    for word in word_list.values():
+    for word in word_list:
         surprisal_info[word] = [0.0, 0]
     for utt in all_data:
-        for word in word_list.values():
+        for word in word_list:
             if word in utt:
                 #word = word.item().to(device)
                 indexes_in_utt = [i for i, token in enumerate(utt) if token == word]
@@ -57,19 +63,26 @@ def find_surprisal_values(word_list, model, all_data):
                 surprisal_info[word][1] += len(indexes_in_utt)
     average_surpisals = {}
     for word in surprisal_info:
-        average_surpisals[word] = surprisal_info[word][0]/surprisal_info[word][1]
+        if surprisal_info[word][1] != 0:
+            average_surpisals[word] = surprisal_info[word][0]/surprisal_info[word][1]
+        else:
+            average_surpisals[word] = "NA"
     return average_surpisals
 
 def main():
     params = get_parameters()
     #May add batching, optimize, and cuda support
     #device = torch.device('cuda') if params["gpu_run"] == True else torch.device('cpu')
-    word_list = utils.open_pkl(params["experiment_dir"] + params["word_list"])
+    vocabulary = utils.open_pkl(params["experiment_dir"] + params["vocabulary"])
+    word_list = set(utils.open_word_list_csv(params["aoa_word_list"]))
+    hi = vocabulary.keys()
+    in_word_list_not_vocab = word_list - set(vocabulary.keys())
+    vocab_word_list_intersection = word_list - in_word_list_not_vocab
     model = torch.load(params["experiment_dir"] + params["model"])
     all_data = utils.open_pkl(params["experiment_dir"] + params["all_data"])
-    average_surprisals = find_surprisal_values(word_list, model, all_data)
+    average_surprisals = find_surprisal_values(vocab_word_list_intersection, model, all_data)
     print(average_surprisals)
-    #[SAVE AS SOMETHING]
+    #[SAVE AS SOMETHING] save as csv sum number of cases word names not indexes
 if __name__=="__main__":
     main()
 

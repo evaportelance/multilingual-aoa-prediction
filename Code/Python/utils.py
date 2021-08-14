@@ -1,4 +1,5 @@
 import pickle
+import csv
 
 '''
     Saves a dictionary as a pickle file.
@@ -22,6 +23,20 @@ def open_pkl(dir):
     with open(dir, 'rb') as file:
         return pickle.load(file)
 
+
+'''
+    Opens a csv file.
+'''
+
+def open_word_list_csv(csv_path):
+    with open(csv_path, newline='\n') as csv_file:
+        word_list = []
+        csv_contents = csv.reader(csv_file, delimiter=' ', quotechar='|')
+        for row in csv_contents:
+            word_list.append(row[0].split('\t')[0])
+        word_list.remove(word_list[0])
+        return word_list
+
 '''
     Opens a text file and creates a list whose elements are lists that 
     correspond to file lines. The elements of each file line list are
@@ -31,7 +46,7 @@ def open_pkl(dir):
     Returns:
         file_list: a list of lines in the file at file_path
 '''
-def open_file(file_path):
+def open_txt(file_path):
     lines = []
     with open(file_path, "r") as f:
         for line in f:
