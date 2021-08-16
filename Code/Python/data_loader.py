@@ -7,7 +7,7 @@ import utils
 
 class Dataset(Dataset):
     def __init__(self, data):
-        self.data = torch.tensor(data)
+        self.data = torch.tensor(utils.open_pkl(data))
 
     def __len__(self):
         return len(self.data)

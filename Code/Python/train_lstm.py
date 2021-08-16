@@ -19,10 +19,12 @@ Gets command-line arguments and specifies defaults values for arguments that are
 '''
 def get_params():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--training_data_path", default="../../Data/model-sets/toy_train.txt")
-    parser.add_argument("--validation_data_path",default="../../Data/model-sets/toy_validation.txt")
-    parser.add_argument("--test_data_path", default="../../Data/model-sets/toy_test.txt")
-    parser.add_argument("--result_dir", default="../../Results/experiments/")
+    parser.add_argument("-training_data_path", default="../../data/model-sets/toy_datasets/toy_train.pkl")
+    parser.add_argument("-validation_data_path",default="../../data/model-sets/toy_datasets/toy_validation.pkl")
+    parser.add_argument("-test_data_path", default="../../data/model-sets/toy_datasets/toy_test.pkl")
+    parser.add_argument("-all_data_path", default="../../data/model-sets/toy_datasets/toy_all.pkl")
+    parser.add_argument("-encoding_dictionary_path", default="../../data/model-sets/toy_datasets/encoding_dictionary.pkl")
+    parser.add_argument("-experiments_dir", default="../../results/experiments/")
     parser.add_argument("--experiment_name", default=None)
     parser.add_argument("--vocab_size", default=100, type=int)
     parser.add_argument("--batch_size", default=10, type=int)
@@ -170,23 +172,19 @@ and hyperparameters to disk and evaluates the models accuracy on the test set.
 def main():
     params = get_params()
     if params.experiment_name:
-        experiment_dir = os.path.join(params.result_dir, params.experiment_name)
+        experiment_dir = os.path.join(params.experiments_dir, params.experiment_name)
         os.makedirs(experiment_dir, exist_ok=True)
     else:
-        experiment_dir = create_experiment_directory(params.result_dir)
+        experiment_dir = create_experiment_directory(params.experiments_dir)
 
     utils.save_pkl(experiment_dir, vars(params), "hyperparameters.pkl")
 
     device = torch.device('cuda') if params.gpu_run == True else torch.device('cpu')
 
-    train_dl, validation_dl, test_dl, vocabulary, all_data = dl.create_dataloaders(params.training_data_path,
+    train_dl, validation_dl, test_dl = dl.create_dataloaders(params.training_data_path,
                                                              params.validation_data_path,
                                                              params.test_data_path,
-                                                             params.vocab_size,
                                                              params.batch_size)
-
-    utils.save_pkl(experiment_dir, vocabulary, "vocabulary.pkl")
-    #utils.save_pkl(experiment_dir, all_data, "all_data.pkl")
 
     model = LSTM(params.vocab_size, params.batch_size, params.embedding_dim, params.hidden_dim)
     model = model.to(device)
