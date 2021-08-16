@@ -1,20 +1,21 @@
 import pickle
 import csv
+import os
 
 '''
     Saves a dictionary as a pickle file.
-    
+
     Parameters:
         dir: a file path
         dict: a dictionary
 '''
-def save_pkl(dir, file, name):
-    with open(dir + name, 'wb') as f:
-        pickle.dump(file, f, pickle.HIGHEST_PROTOCOL)
+def save_pkl(dir, data, name):
+    with open(os.path.join(dir, name), 'wb') as f:
+        pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
 
 '''
     Opens a dictionary as a pickle file.
-    
+
     Parameters:
         dir: a file path
         dict: a dictionary
@@ -38,7 +39,7 @@ def open_word_list_csv(csv_path):
         return word_list
 
 '''
-    Opens a text file and creates a list whose elements are lists that 
+    Opens a text file and creates a list whose elements are lists that
     correspond to file lines. The elements of each file line list are
     the words in the line.
     Parameters:
