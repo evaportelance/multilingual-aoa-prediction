@@ -1,6 +1,6 @@
 # Stuff we added
 *.DS_Store
-/Data/*
+#/Data/*
 /Code/R/wordbankr
 # Byte-compiled / optimized / DLL files
 __pycache__/
