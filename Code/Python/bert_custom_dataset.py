@@ -18,7 +18,6 @@ class CHILDESDataset(Dataset):
         self.token_type_ids = encoded_data['token_type_ids']
         self.attention_mask = encoded_data['attention_mask']
 
-
     def __len__(self):
         return len(self.sentences)
 
