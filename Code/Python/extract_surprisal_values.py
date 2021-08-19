@@ -1,5 +1,5 @@
 '''
-Calculates the surprisal values for words in list. [MORE DETAIL NEEDED]
+Calculates the surprisal values for words in a list of words.
 '''
 
 import torch
@@ -7,13 +7,9 @@ import torch.nn.functional as F
 import sys
 import argparse
 import utils
+import os
 
 '''
-to-do:
-add word_list functionality
-save as csv
-write header comment for the train script
-
 Gets arguments from the command-line.
 
 Returns:
@@ -22,11 +18,11 @@ Returns:
 def get_parameters():
     parser = argparse.ArgumentParser()
     parser.add_argument("--all_child_directed_data_path", default="../../data/model-sets/toy_datasets/toy_all.pkl")
-    parser.add_argument("--encoding_dictionary_path", default="../../data/model-sets/toy_datasets/encoding_dictionary.pkl")
+    parser.add_argument("--encoding_dictionary_path", default="../../data/model-sets/toy_datasets/encoding_dictionary_vocab_size_10")
     #parser.add_argument("--gpu_run", action="store_true")
     parser.add_argument("--aoa_word_list", default="../../data/model-sets/aoa_word_list.csv")
     parser.add_argument("--experiment_dir", default="../../results/experiments/2021-12-08T22-59-15/")
-    parser.add_argument("--model", default="model.pt")
+    parser.add_argument("--model", default="model")
     params = parser.parse_args()
     return params
 
@@ -44,30 +40,28 @@ Parameters:
 Returns:
     average_surprisals: a dictionary of word encodings to average surprisal values
 '''
-def find_surprisal_values(word_list, model, all_data):
+def find_surprisal_values(word_list, model, all_data, vocabulary):
     surprisal_info = {}
-    for word in word_list:
+    for word in vocabulary.values():
         surprisal_info[word] = [0.0, 0]
     for utt in all_data:
-        for word in word_list:
-            if word in utt:
-                #word = word.item().to(device)
-                indexes_in_utt = [i for i, token in enumerate(utt) if token == word]
-                utt_tensor = torch.tensor(utt)[None, :]
-                output_weights = model(utt_tensor)
-                surprisals = -F.log_softmax(output_weights, dim=2)
-                word_surprisals = 0
-                for index in indexes_in_utt:
-                    word_surprisals += (surprisals[0][index][word] + sys.float_info.epsilon).item()
-                surprisal_info[word][0] += word_surprisals
-                surprisal_info[word][1] += len(indexes_in_utt)
-    average_surpisals = {}
-    for word in surprisal_info:
-        if surprisal_info[word][1] != 0:
-            average_surpisals[word] = surprisal_info[word][0]/surprisal_info[word][1]
+        utt_tensor = torch.tensor(utt)[None, :]
+        output_weights = model(utt_tensor)
+        surprisals = -F.log_softmax(output_weights, dim=2)
+        i = 0
+        for word in utt:
+            if word != 0:
+                surprisal_info[word][0] += (surprisals[0][i][word] + sys.float_info.epsilon).item()
+                surprisal_info[word][1] += 1
+            i += 1
+    average_surprisals = {}
+    for word in word_list:
+        word_index = vocabulary[word]
+        if surprisal_info[word_index][1] != 0:
+            average_surprisals[word] = surprisal_info[word_index][0]/surprisal_info[word_index][1]
         else:
-            average_surpisals[word] = "NA"
-    return average_surpisals
+            average_surprisals[word] = "NA"
+    return average_surprisals
 
 def main():
     params = get_parameters()
@@ -77,10 +71,10 @@ def main():
     word_list = set(utils.open_word_list_csv(params.aoa_word_list))
     in_word_list_not_vocab = word_list - set(vocabulary.keys())
     vocab_word_list_intersection = word_list - in_word_list_not_vocab
-    model = torch.load(os.join.path(params.experiment_dir, params.model))
+    model = torch.load(os.path.join(params.experiment_dir, params.model))
     all_data = utils.open_pkl(params.all_child_directed_data_path)
-    average_surprisals = find_surprisal_values(vocab_word_list_intersection, model, all_data)
+    average_surprisals = find_surprisal_values(vocab_word_list_intersection, model, all_data, vocabulary)
+    utils.save_surprisals_as_csv(average_surprisals, params.experiment_dir)
     print(average_surprisals)
-    #[SAVE AS SOMETHING] save as csv sum number of cases word names not indexes
 if __name__=="__main__":
     main()

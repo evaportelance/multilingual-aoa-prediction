@@ -38,6 +38,14 @@ def open_word_list_csv(csv_path):
         word_list.remove(word_list[0])
         return word_list
 
+
+def save_surprisals_as_csv(average_surprisals, experiment_dir):
+    with open(experiment_dir + "average_surprisals.csv", mode='w') as csv_file:
+        writer = csv.writer(csv_file, delimiter=',')
+        writer.writerow(["word_in_list_and vocab", "surprisal_value"])
+        for word in average_surprisals.keys():
+            writer.writerow([word, average_surprisals[word]])
+
 '''
     Opens a text file and creates a list whose elements are lists that
     correspond to file lines. The elements of each file line list are
