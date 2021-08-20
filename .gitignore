@@ -1,6 +1,6 @@
 # Stuff we added
 *.DS_Store
-#/Data/*
+/Data/*
 Data/model-sets/complete_datasets/all_data.txt
 /Code/R/wordbankr
 # Byte-compiled / optimized / DLL files
