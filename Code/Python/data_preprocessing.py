@@ -8,12 +8,12 @@ import os
 
 def get_parameters():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--training_dataset_name", default="toy_train")
-    parser.add_argument("--validation_dataset_name", default="toy_validation")
-    parser.add_argument("--test_dataset_name", default="toy_test")
-    parser.add_argument("--all_child_directed_dataset_name", default="toy_all")
+    parser.add_argument("--training_dataset_name", default="train")
+    parser.add_argument("--validation_dataset_name", default="validation")
+    parser.add_argument("--test_dataset_name", default="test_child_data")
+    parser.add_argument("--all_child_directed_dataset_name", default="all_child_directed_data")
     parser.add_argument("--encoding_dictionary_name", default="encoding_dictionary")
-    parser.add_argument("--dataset_path", default="../../data/model-sets/toy_datasets/")
+    parser.add_argument("--dataset_path", default="../../Data/model_datasets/eng/")
     parser.add_argument("--vocab_size", default=10, type=int)
     params = parser.parse_args()
     return params
@@ -103,9 +103,9 @@ def main():
         os.mkdir(params.dataset_path)
 
     # Open files
-    train_data = utils.open_txt(os.join.path(params.dataset_path, str(params.training_dataset_name + ".txt")))
-    validation_data = utils.open_txt(os.join.path(params.dataset_path, str(params.validation_dataset_name + ".txt")))
-    test_data = utils.open_txt(os.join.path(params.dataset_path, str(params.test_dataset_name+ ".txt")))
+    train_data = utils.open_txt(os.path.join(params.dataset_path, str(params.training_dataset_name + ".txt")))
+    validation_data = utils.open_txt(os.path.join(params.dataset_path, str(params.validation_dataset_name + ".txt")))
+    test_data = utils.open_txt(os.path.join(params.dataset_path, str(params.test_dataset_name+ ".txt")))
     datasets = (train_data, validation_data, test_data)
 
     encoding_dictionary = create_encoding_dictionary(train_data + validation_data + test_data,

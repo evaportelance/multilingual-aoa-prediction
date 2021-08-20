@@ -19,20 +19,21 @@ Gets command-line arguments and specifies defaults values for arguments that are
 '''
 def get_params():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--training_data_path", default="../../data/model-sets/toy_datasets/toy_train.pkl")
-    parser.add_argument("--validation_data_path",default="../../data/model-sets/toy_datasets/toy_validation.pkl")
-    parser.add_argument("--test_data_path", default="../../data/model-sets/toy_datasets/toy_test.pkl")
-    parser.add_argument("-experiments_dir", default="../../results/experiments/")
+    parser.add_argument("--training_data_path", default="../../Data/model_datasets/eng/train_vocab_size_5000.pkl")
+    parser.add_argument("--validation_data_path",default="../../Data/model_datasets/eng/validation_vocab_size_5000.pkl")
+    parser.add_argument("--test_data_path", default="../../Data/model_datasets/eng/test_child_data_vocab_size_5000.pkl")
+    parser.add_argument("-experiments_dir", default="../../Results/experiments/")
     parser.add_argument("--experiment_name", default=None)
-    parser.add_argument("--vocab_size", default=100, type=int)
-    parser.add_argument("--batch_size", default=10, type=int)
-    parser.add_argument ("--embedding_dim", default=100, type=int)
-    parser.add_argument("--hidden_dim", default=50, type=int)
+    parser.add_argument("--vocab_size", default=5000, type=int)
+    parser.add_argument("--batch_size", default=200, type=int)
+    parser.add_argument ("--embedding_dim", default=150, type=int)
+    parser.add_argument("--hidden_dim", default=100, type=int)
     parser.add_argument("--gpu_run", action="store_true")
     parser.add_argument("--learning_rate", default=.0001, type=float)
-    parser.add_argument("--num_epochs", default=30, type=int)
+    parser.add_argument("--num_epochs", default=15, type=int)
     parser.add_argument("--patience", default=10, type=int)
-    params = parser.parse_args() 
+    parser.add_argument("--seed", default=0, type=int)
+    params = parser.parse_args()
     return params
 
 
@@ -176,6 +177,8 @@ def main():
         experiment_dir = create_experiment_directory(params.experiments_dir)
 
     utils.save_pkl(experiment_dir, vars(params), "hyperparameters.pkl")
+
+    torch.manual_seed(params.seed)
 
     device = torch.device('cuda') if params.gpu_run == True else torch.device('cpu')
 

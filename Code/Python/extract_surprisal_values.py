@@ -1,7 +1,7 @@
 '''
 Calculates the surprisal values for words in list. [MORE DETAIL NEEDED]
 '''
-
+import os
 import torch
 import torch.nn.functional as F
 import sys
@@ -21,11 +21,11 @@ Returns:
 '''
 def get_parameters():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--all_child_directed_data_path", default="../../data/model-sets/toy_datasets/toy_all.pkl")
-    parser.add_argument("--encoding_dictionary_path", default="../../data/model-sets/toy_datasets/encoding_dictionary.pkl")
+    parser.add_argument("--all_child_directed_data_path", default="../../Data/model_datasets/eng/all_child_directed_data_vocab_size_5000.pkl")
+    parser.add_argument("--encoding_dictionary_path", default="../../Data/model_datasets/eng/encoding_dictionary_vocab_size_5000.pkl")
     #parser.add_argument("--gpu_run", action="store_true")
-    parser.add_argument("--aoa_word_list", default="../../data/model-sets/aoa_word_list.csv")
-    parser.add_argument("--experiment_dir", default="../../results/experiments/2021-12-08T22-59-15/")
+    parser.add_argument("--aoa_word_list", default="../../Data/model_datasets/eng/aoa_words.csv")
+    parser.add_argument("--experiment_dir", default="../../Results/experiments/")
     parser.add_argument("--model", default="model.pt")
     params = parser.parse_args()
     return params
@@ -77,7 +77,7 @@ def main():
     word_list = set(utils.open_word_list_csv(params.aoa_word_list))
     in_word_list_not_vocab = word_list - set(vocabulary.keys())
     vocab_word_list_intersection = word_list - in_word_list_not_vocab
-    model = torch.load(os.join.path(params.experiment_dir, params.model))
+    model = torch.load(os.path.join(params.experiment_dir, params.model))
     all_data = utils.open_pkl(params.all_child_directed_data_path)
     average_surprisals = find_surprisal_values(vocab_word_list_intersection, model, all_data)
     print(average_surprisals)

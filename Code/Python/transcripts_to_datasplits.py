@@ -3,6 +3,7 @@ This script iterates over a directory containing CHILDES transcripts in .capp fo
 training set of child-directed utterances, a test set of child utterances, and
 a validation set of child-directed utterances.
 '''
+import argparse
 import os
 import re
 import random
@@ -48,7 +49,7 @@ def is_validation_sent(prop):
     Returns:
         splits: a 3-tuple containing the model datasets in the form (test, validation, train)
 '''
-def create_splits_from_transcripts(transcript_dir):
+def create_splits_from_transcripts(transcript_dir, prop):
     test = []
     validation = []
     train = []
@@ -64,7 +65,7 @@ def create_splits_from_transcripts(transcript_dir):
                         test.append(sent)
                     else :
                         sent = re.sub('\*[A-Z]+: ', '', sent)
-                        if is_validation_sent():
+                        if is_validation_sent(prop):
                             validation.append(sent)
                         else:
                             train.append(sent)
@@ -81,26 +82,26 @@ def create_splits_from_transcripts(transcript_dir):
     Returns: NA
 '''
 def write_splits_to_disk(splits, result_dir):
-    with open(os.join.path(result_dir, 'test_child_data.txt'),'w') as f :
+    with open(os.path.join(result_dir, 'test_child_data.txt'),'w') as f :
         for line in splits["test"]:
             f.write(line)
-    with open(os.join.path(result_dir, 'validation.txt'),'w') as f :
+    with open(os.path.join(result_dir, 'validation.txt'),'w') as f :
         for line in splits["validation"]:
             f.write(line)
-    with open(os.join.path(result_dir, 'train.txt'),'w') as f :
+    with open(os.path.join(result_dir, 'train.txt'),'w') as f :
         for line in splits["train"]:
             f.write(line)
-    with open(os.join.path(result_dir, 'all_child_directed_data.txt'),'w') as f :
+    with open(os.path.join(result_dir, 'all_child_directed_data.txt'),'w') as f :
         for line in splits["validation"] + splits["train"]:
             f.write(line)
 
 if __name__ == "__main__":
     args = get_args()
     random.seed(args.seed)
-    
+
     transcript_dir = os.path.join(args.transcript_dir, args.lang_name)
-    splits = create_splits_from_transcripts(transcript_dir)
-    result_dir = os.path.join(args.results_dir, args.lang_name)
+    splits = create_splits_from_transcripts(transcript_dir, args.train_prop)
+    result_dir = os.path.join(args.result_dir, args.lang_name)
     if not os.path.isdir(result_dir):
         os.mkdir(result_dir)
     write_splits_to_disk(splits, result_dir)
