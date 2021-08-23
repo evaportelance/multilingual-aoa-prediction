@@ -24,16 +24,15 @@ def make_word_dict(aoa_word_list, dataset):
     return word_dict
 
 ## Evaluation function for getting accuracy using argmax of token predictions
-def get_surprisals(model, dataset, word_dict):
+def get_surprisals(model, dataset, word_dict, device):
     model.eval()
-    batch_size = dataloader.batch_size
     word_surprisals = {}
     for index in word_dict.keys():
         surprisals[word_dict[index]] = [0.0, 0]
     for i in range(0, len(dataset)):
         item = dataset[i]
-        #for key in batch:
-        #    batch[key] = batch[key].to(device)
+        for key in item:
+            item[key] = item[key].to(device)
         labels = item['labels']
         outputs = model(**item)
         surprisals = -F.log_softmax(outputs.logits, -1)
@@ -51,11 +50,13 @@ def get_surprisals(model, dataset, word_dict):
 
 def main():
     params = get_parameters()
+    device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     model = torch.load(os.join.path(params.experiment_dir, params.model))
+    model = model.to(device)
     dataset = CHILDESDataset(params.all_child_directed_data_path)
     aoa_word_list = utils.open_word_list_csv(params.aoa_word_list)
     word_dict = make_word_dict(aoa_word_list, dataset)
-    word_surprisals = get_surprisals(model, dataset, word_dict)
+    word_surprisals = get_surprisals(model, dataset, word_dict, device)
     with open(os.join.path(params.experiment_dir, "aoa_surprisals.csv"), 'w') as f:
         writer = csv.writer(f, delimiter=',')
         writer.writerow("word", "avg_surprisal", "count")

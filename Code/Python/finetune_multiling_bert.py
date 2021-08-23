@@ -8,6 +8,7 @@ from stats import AverageMeterSet, StatTracker
 from bert_custom_dataset import CHILDESDataset
 from utils import save_pkl
 
+
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--train_path', default='../../Data/model-sets/train.txt',
@@ -97,11 +98,11 @@ def main():
     args = get_args()
     experiment_dir = os.path.join(args.result_dir, args.experiment_name)
     os.makedirs(experiment_dir, exist_ok=True)
-    save_pkl(experiment_dir, vars(params), "hyperparameters.pkl"
-
+    save_pkl(experiment_dir, vars(args), "hyperparameters.pkl")
     torch.manual_seed(args.seed)
 
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+    torch.cuda.empty_cache()
     model = BertLMHeadModel.from_pretrained("bert-base-multilingual-uncased", return_dict=True, is_decoder = True)
     model = model.to(device)
 

@@ -39,12 +39,18 @@ def open_word_list_csv(csv_path):
         return word_list
 
 
-def save_surprisals_as_csv(average_surprisals, experiment_dir):
+def save_surprisals_as_csv(surprisals, experiment_dir):
     with open(experiment_dir + "average_surprisals.csv", mode='w') as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
-        writer.writerow(["word_in_list_and vocab", "surprisal_value"])
-        for word in average_surprisals.keys():
-            writer.writerow([word, average_surprisals[word]])
+        writer.writerow(["word", "surprisal_value", "n_instances"])
+        for word in surprisals:
+            _sum, n = surprisals[word]
+            if n == 0:
+                writer.writerow([word, 'NA', 'NA'])
+            else:
+                avg = _sum/n
+                writer.writerow([word, f"{avg:.16f}" , str(n)])
+                
 
 '''
     Opens a text file and creates a list whose elements are lists that
