@@ -37,42 +37,6 @@ def make_word_dict(aoa_word_list, vocabulary):
             not_in_vocab.append(word)
     return word_dict, not_in_vocab
 
-'''
-Make surprisal values run independently
-
-Finds the surprisal of each word in the word_list averaged across the words surprisal for every place where it
-occurs in the data.
-
-Parameters:
-    word_list: a dictionary of words to their numerical encodings
-    model: a trained lstm
-    all_data: a list containing all utterances in the dataset, where every utterance list is a list of words
-
-Returns:
-    average_surprisals: a dictionary of word encodings to average surprisal values
-'''
-def find_surprisal_values(word_list, model, all_data, vocabulary, device):
-    surprisal_info = {}
-    for word in vocabulary.values():
-        surprisal_info[word] = [0.0, 0]
-    for utt in all_data:
-        utt_tensor = torch.tensor(utt)[None, :]
-        output_weights = model(utt_tensor)
-        surprisals = -F.log_softmax(output_weights, dim=2)
-        i = 0
-        for word in utt:
-            if word != 0:
-                surprisal_info[word][0] += (surprisals[0][i][word] + sys.float_info.epsilon).item()
-                surprisal_info[word][1] += 1
-            i += 1
-    average_surprisals = {}
-    for word in word_list:
-        word_index = vocabulary[word]
-        if surprisal_info[word_index][1] != 0:
-            average_surprisals[word] = surprisal_info[word_index][0]/surprisal_info[word_index][1]
-        else:
-            average_surprisals[word] = "NA"
-    return average_surprisals
 
 def get_surprisals(model, dataset, word_dict, device):
     model.eval()
