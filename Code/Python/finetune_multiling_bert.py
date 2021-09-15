@@ -11,18 +11,17 @@ from utils import save_pkl
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train_path', default='../../Data/model-sets/train.txt',
+    parser.add_argument('--train_path', default='../../Data/model_datasets/eng/train.txt',
                         help='file path for training data')
-    parser.add_argument('--val_path', default='../../Data/model-sets/validation.txt',
+    parser.add_argument('--val_path', default='../../Data/model_datasets/eng/validation.txt',
                         help='file path for validation data')
     parser.add_argument('--result_dir', default='../../Results/experiments/',
                         help='directory where model and log files will be saved')
     parser.add_argument('--experiment_name', default='test', help='name of the experiment directory where model and log files will be stored')
     parser.add_argument('--lr', default='5e-5', type=float,
                         help='learning rate')
-    parser.add_argument('--batch_size', type=int, default=256)
-    parser.add_argument('--n_epochs', type=int, default=30)
-    parser.add_argument('--patience', type=int, default=5)
+    parser.add_argument('--batch_size', type=int, default=6)
+    parser.add_argument('--n_epochs', type=int, default=1)
     parser.add_argument('--seed', type=int, default=0)
 
     args = parser.parse_args()
@@ -40,11 +39,10 @@ def test_finetuned_model(model, dataloader, device, stat_tracker, epoch=1, prefi
         labels = batch['labels']
         outputs = model(**batch)
         predictions = F.log_softmax(outputs.logits, -1)
-        max_pred = torch.argmax(predictions, dim = -1)
-        n_matches = torch.eq(max_pred, labels).int()
+        n_matches = torch.eq(torch.argmax(predictions, dim = -1), labels).int()
         max_sequence_len = list(n_matches.size())[1]
         avg_sequence_accs = torch.sum(n_matches, 1)/max_sequence_len
-        batch_accuracy = (torch.sum(avg_sequence_accs, 0)/avg_sequence_accs.size()[0]).item()
+        batch_accuracy = float((torch.sum(avg_sequence_accs, 0)/avg_sequence_accs.size()[0]).item())
         test_stats.update('accuracy', batch_accuracy, n=1)
     stat_tracker.record_stats(test_stats.averages(epoch, prefix=prefix))
 
@@ -52,47 +50,36 @@ def test_finetuned_model(model, dataloader, device, stat_tracker, epoch=1, prefi
 
 
 ## Train function for finetuning multilingual BERT
-def finetune_model(model, train_dataloader, val_dataloader, device, stat_tracker, n_epochs=30, lr=5e-5, patience=5):
+def finetune_model(model, train_dataloader, val_dataloader, device, stat_tracker, n_epochs=5, lr=5e-5):
     optimizer = AdamW(model.parameters(), lr)
-    stop_early_count = 0
-    previous_val_acc = 0.0
     for epoch in range(n_epochs):
         model.train()
         epoch_stats = AverageMeterSet()
-        for batch in train_dataloader:
+        for step,batch in enumerate(train_dataloader):
             optimizer.zero_grad()
             for key in batch:
                 batch[key] = batch[key].to(device)
             outputs = model(**batch)
             ##get train accuracy
-            distributions = F.log_softmax(outputs.logits, -1)
-            predictions = torch.argmax(distributions, dim = -1)
-            n_matches = torch.eq(predictions, batch['labels']).int()
+            predictions = F.log_softmax(outputs.logits, -1)
+            n_matches = torch.eq(torch.argmax(predictions, dim = -1), batch['labels']).int()
             max_sequence_len = list(n_matches.size())[1]
             avg_sequence_accs = torch.sum(n_matches, 1)/max_sequence_len
-            batch_accuracy = (torch.sum(avg_sequence_accs, 0)/avg_sequence_accs.size()[0]).item()
+            batch_accuracy = float((torch.sum(avg_sequence_accs, 0)/avg_sequence_accs.size()[0]).item())
             epoch_stats.update('accuracy', batch_accuracy, n=1)
             ## get loss
             loss = outputs[0]
             loss.backward()
             optimizer.step()
-            epoch_stats.update('loss', loss, n=1)
+            epoch_stats.update('loss', float(loss), n=1)
         val_accuracy = test_finetuned_model(model, val_dataloader, device, stat_tracker, epoch, prefix="val")
         stat_tracker.record_stats(epoch_stats.averages(epoch, prefix="train"))
         print(str(epoch))
         print("train acc: "+ str(epoch_stats.avgs['accuracy']))
         print("val acc: "+ str(val_accuracy))
         print("loss :"+ str(epoch_stats.avgs['loss']))
-        if previous_val_acc >= val_accuracy:
-            stop_early_count +=1
-        else:
-            stop_early_count = 0
-            previous_val_acc = val_accuracy
-        if stop_early_count >= patience:
-            break
-
+        
     return model
-
 
 def main():
     args = get_args()
@@ -113,7 +100,7 @@ def main():
 
     stat_tracker = StatTracker(log_dir=os.path.join(experiment_dir,"tensorboard-log"))
 
-    model = finetune_model(model, train_dl, val_dl, device, stat_tracker, args.n_epochs, args.lr, args.patience)
+    model = finetune_model(model, train_dl, val_dl, device, stat_tracker, args.n_epochs, args.lr)
 
     torch.save(model, os.path.join(experiment_dir,"model.pt"))
 

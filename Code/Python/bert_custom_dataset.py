@@ -12,7 +12,7 @@ class CHILDESDataset(Dataset):
             for line in f:
                 text = line.strip()
                 self.sentences.append(text)
-        encoded_data = self.tokenizer(self.sentences, return_tensors='pt', padding=True, truncation=True, max_length=150)
+        encoded_data = self.tokenizer(self.sentences, return_tensors='pt', padding=True, truncation=True, max_length=100)
 
         self.input_ids = encoded_data['input_ids']
         self.token_type_ids = encoded_data['token_type_ids']
