@@ -1,8 +1,7 @@
 # Stuff we added
 *.DS_Store
-/Data/*
 /data/df_utterances_eng_all
-/Data/model-sets/complete_datasets/all_data.txt
+/Data/model-sets/complete_datasets/*
 /Code/R/wordbankr
 # Byte-compiled / optimized / DLL files
 __pycache__/
