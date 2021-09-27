@@ -23,7 +23,7 @@ theme_set(theme_classic())
 Enter the ISO 639-3 language code for the language of the desired transcripts.
 Multiple language codes can be entered to get multi-language transcripts(e.g. "ara nld").
 ```{r set_transcript_language}
-lang = "eng"
+lang = "zho"
 ```
 
 
@@ -47,7 +47,7 @@ df.utterances_eng_all = df.transcripts_eng %>%
 ```
 
 ```{r}
-write.csv(df.utterances_eng_all, file = "df_utterances_eng_all")
+write.csv(df.utterances_eng_all, file = "df_utterances_zho_all")
 ```
 Given that there are multiple children with each name for different corpora, I need to only keep the one with the largest amount of tokens according to M & C's paper, which is equivalent to the one with the most utterances. So for each child name and for each different corpus, calculate the total number of utterances and filter to only keep the child for each name with the most utterances.
 ```{r, eval=FALSE}
@@ -94,7 +94,7 @@ create_dir_or_file  =  function (path) {
 Sets up a directory structure of the form:
 transcripts/[ISO language code]/[corpus name]
 ```{r, create_folder_lang}
-  TRANSCRIPT_DIR_PATH <- "../../../Data/transcripts"
+  TRANSCRIPT_DIR_PATH <- "../../data/transcripts"
   create_dir_or_file(TRANSCRIPT_DIR_PATH)
 
   lang_dir_path <- paste(TRANSCRIPT_DIR_PATH, "/", lang, sep="")
@@ -110,14 +110,14 @@ transcripts/[ISO language code]/[corpus name]
 
 
 Write a separate file for each child transcript.
-```{r, eval=FALSE}  
+```{r}  
 my_write_CBL_transcripts <- function(df){
   child_name <- df$target_child_name[1]
   corpus_name <- df$corpus_name[1]
   if (is.na(corpus_name)) {
     corpus_name <- "not_available"
   }
-  transcript_dir <- paste("../../../data/transcripts/", lang, "/", corpus_name, "/", child_name, ".capp", sep ="")
+  transcript_dir <- paste("../../data/transcripts/", lang, "/", corpus_name, "/", child_name, ".capp", sep ="")
   if (!file.exists(transcript_dir)) {
     df %>%
     filter(!is.na(CBL_string)) %>%
@@ -130,4 +130,4 @@ df.CBL_strings_eng_final %>%
   select(target_child_name, CBL_string, corpus_name) %>%
   group_by(target_child_name) %>%
   do(my_write_CBL_transcripts(.))
-```s
+```
