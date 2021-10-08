@@ -1,0 +1,48 @@
+---
+title: "English_word-list_cleaning"
+author: "Isaac Bevers"
+date: "10/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library("childesr")
+library("tm")
+library("tidyverse")
+library("filesstrings")
+library("dplyr")
+```
+
+There are 3 different English lists (American, Brittish and Australian). I need you to do through the uni_lemma column and make sure there are no "NA" values, 
+
+if there are remove those rows. Next I need you to go through the word_clean column and make sure that there are no rogue punctuatin marks (remove them from this column only is so) or extra spaces at the end of the words.
+```{R}
+
+clean_word_list <- function(read_path) {
+  #Remove rows with NA in the unilemma column
+  word_list.df <- read.csv(read_path) %>% 
+  filter(!is.na(uni_lemma)) %>% 
+  print()
+  
+  #remove rogue punctuation marks from the word_clean column
+  #remove extra spaces at the end of words
+  if (!is.null(word_list.df$word_list)) {
+    word_list.df$word_list <- gsub("[^[:alnum:]]", "", word_list.df$word_list, " +")
+  }
+  
+  write_path <- gsub(".csv", "", read_path, " +") %>% 
+  paste("_clean.csv") 
+  
+  write.csv(word_list.df, write_path)
+}
+```
+
+```{r}
+aus_word_list_path <- "../../data/word-lists/english-word-lists/word_list_english_(australian).csv"
+american_word_list_path <- "../../data/word-lists/english-word-lists/word_list_english_(american).csv"
+british_word_list_path <- "../../data/word-lists/english-word-lists/word_list_english_(british).csv" 
+
+clean_word_list(aus_word_list_path)
+clean_word_list(american_word_list_path)
+clean_word_list(british_word_list_path)
+```

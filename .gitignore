@@ -1,6 +1,7 @@
 # Stuff we added
 *.DS_Store
 /data/df_utterances_eng_all
+/data/english-word-lists
 /Data/model-sets/complete_datasets/*
 /Code/R/wordbankr
 # Byte-compiled / optimized / DLL files
