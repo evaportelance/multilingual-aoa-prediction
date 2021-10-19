@@ -1,0 +1,77 @@
+---
+title: "average_surprisals"
+author: "Isaac Bevers"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+```
+Average across runs:
+
+Create list of test dfs.
+For each run:
+  Open val_surprisal.df.
+  Add to all_val_surprisals.
+  Open test_surprisal.df.
+  Add to all_test_surprisals.
+Create all_val_surprisals.
+Create all_test_surprisals.
+Create val_surprisal_avg.df.
+Create test_surprisal_avg.df.
+Average all_val_surprisals.
+Average all_test_surprisals.
+
+```{R}
+runs_dir_path <- "../../results/experiments/"
+run_name <- "2021-08-20_lstm_eng_5e_256b_em100_hd100_v5000_run"
+train_surprisals_name <- "train_average_surprisals.csv"
+val_surprisals_name <- "validation_average_surprisals.csv"
+num_runs <- 5
+auto_generate_run_names = TRUE
+```
+
+
+```{R}
+train_surprisal_dfs <- list()
+val_surprisal_dfs <- list()
+runs_list <- list()
+if (auto_generate_run_names) {
+  for (i in 0:(num_runs - 1)) {
+    runs_list[i + 1] <- paste(run_name, toString(i), sep="")
+    train_surprisals_dfs[i + 1] <- read.csv(paste(runs_list[i + 1], train_surprisals_name))
+    val_surprisals_dfs[i + 1] <- read.csv(paste(runs_list[i + 1], val_surprisals_name))
+    
+  }
+}
+
+```
+
+```{R}
+
+
+
+
+all_val_surprisals <- list()
+all_test_surprisals <- list()
+```
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
