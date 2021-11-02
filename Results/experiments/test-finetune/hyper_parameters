@@ -1,9 +1,0 @@
-train_path: ../../Data/model-sets/toy_train.txt
-val_path: ../../Data/model-sets/toy_validation.txt
-result_dir: ../../Results/experiments/
-experiment_name: test-finetune
-lr: 5e-05
-batch_size: 10
-n_epochs: 5
-patience: 5
-seed: 0

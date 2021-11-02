@@ -1,5 +1,7 @@
 # Stuff we added
 *.DS_Store
+*nohup.out
+*.pkl
 /data/df_utterances_eng_all
 /data/english-word-lists
 /Data/model-sets/complete_datasets/*

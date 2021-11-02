@@ -1,17 +1,19 @@
 import argparse
 import os
+import sys
 import torch
 import torch.nn.functional as F
 from bert_custom_dataset import CHILDESDataset
 import operator
 import functools
 from torch.utils.data import DataLoader
+import utils
 
 def get_parameters():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data_path", default="../../Data/model_datasets/eng/validation.txt")
     parser.add_argument("--gpu_run", action="store_true")
-    parser.add_argument("--batch_size", default=500, type=int)
+    parser.add_argument("--batch_size", default=6, type=int)
     parser.add_argument("--aoa_word_list", default="../../Data/model_datasets/eng/aoa_words.csv")
     parser.add_argument("--experiment_dir", default="../../Results/experiments/")
     parser.add_argument("--model", default="model.pt")
@@ -36,7 +38,7 @@ def indexes_in_sequence(query, base):
     locations = []
     for i in range((len(label)-l)):
         if torch.all(label[i:i+l] == query):
-            locations.append([id_, i])            
+            locations.append([id_, i])
     return locations
 
 def get_batched_surprisals(model, dataloader, word_pairs, device):
@@ -46,7 +48,8 @@ def get_batched_surprisals(model, dataloader, word_pairs, device):
         word_surprisals[word] = [0.0, 0]
     batch_size = dataloader.batch_size
     for n, batch in enumerate(dataloader):
-        print(n)
+        if n % 100 == 0:
+            print(n)
         for key in batch:
             batch[key] = batch[key].to(device)
         outputs = model(**batch)
@@ -55,28 +58,38 @@ def get_batched_surprisals(model, dataloader, word_pairs, device):
         labels_split = torch.tensor_split(labels, batch_size)
         for indexes, word in word_pairs:
             indexes = indexes.to(device)
-            print(indexes)
-            match_list = list(map(lambda x: indexes_in_sequence(indexes, x), enumerate(labels_split)))
-            index_matches = functools.reduce(operator.iconcat, match_list)
-            if len(index_matches) > 0:
-                for i in index_matches:
-                    surprisal = 1.0
-                    for j, index in enumerate(indexes):
-                        id_ = i
-                        id_[1] += j
-                        match = surprisals[tuple(id_)]
-                        sub_surprisal = match[index].item()
-                        surprisal *= sub_surprisal
-                    word_surprisals[word][0] += (surprisal + sys.float_info.epsilon)
-                    word_surprisals[word][1] += 1
+            if len(indexes) == 1:
+                index_matches = (labels == indexes).nonzero(as_tuple=False)
+                if len(index_matches) > 0:
+                    for i in index_matches:
+                        match = surprisals[tuple(i)]
+                        surprisal = match[indexes].item() + sys.float_info.epsilon
+                        word_surprisals[word][0] += surprisal
+                        word_surprisals[word][1] += 1    
+            else:
+                match_list = list(map(lambda x: indexes_in_sequence(indexes, x), enumerate(labels_split)))
+                index_matches = functools.reduce(operator.iconcat, match_list)
+                if len(index_matches) > 0:
+                    for i in index_matches:
+                        surprisal = 1.0
+                        for j, index in enumerate(indexes):
+                            id_ = i
+                            id_[1] += j
+                            match = surprisals[tuple(id_)]
+                            sub_surprisal = match[index].item()
+                            surprisal *= sub_surprisal
+                        word_surprisals[word][0] += (surprisal + sys.float_info.epsilon)
+                        word_surprisals[word][1] += 1
     return word_surprisals
 
 def main():
     params = get_parameters()
     device = torch.device('cuda') if params.gpu_run == True else torch.device('cpu')
+    if params.gpu_run == True:
+        torch.cuda.empty_cache()
     model = torch.load(os.path.join(params.experiment_dir, params.model))
     model = model.to(device)
-    data = Dataset(params.data_path)
+    data = CHILDESDataset(params.data_path)
     dataloader = DataLoader(data, batch_size=params.batch_size)
     word_list = utils.open_word_list_csv(params.aoa_word_list)
     word_pairs = make_token_word_pairs(word_list, data)
