@@ -1,0 +1,600 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+Mandarin (Beijing),a,function_words,final_particles,啊/呀,啊
+Mandarin (Beijing),a,function_words,quantifiers,一个,一个
+Mandarin (Beijing),a little,function_words,quantifiers,一点,一点
+Mandarin (Beijing),a lot,adjectives,descriptive_words,好多,好多
+Mandarin (Beijing),airplane,nouns,vehicles,飞机,飞机
+Mandarin (Beijing),all,function_words,quantifiers,都,都
+Mandarin (Beijing),all gone,adjectives,descriptive_words,(吃)没了,没 了
+Mandarin (Beijing),also,function_words,quantifiers,也,也
+Mandarin (Beijing),ambulance,nouns,vehicles,救护车,救护车
+Mandarin (Beijing),angry,adjectives,descriptive_words,生气,生气
+Mandarin (Beijing),animal,nouns,animals,动物,动物
+Mandarin (Beijing),another,function_words,quantifiers,另外,另外
+Mandarin (Beijing),ant,nouns,animals,蚂蚁,蚂蚁
+Mandarin (Beijing),apple,nouns,food_drink,苹果,苹果
+Mandarin (Beijing),arm,nouns,body_parts,胳膊,胳膊
+Mandarin (Beijing),asleep,adjectives,descriptive_words,睡着,睡着
+Mandarin (Beijing),at,function_words,directions,在,在
+Mandarin (Beijing),backyard,nouns,outside,院子,院子
+Mandarin (Beijing),bad,adjectives,descriptive_words,坏,坏
+Mandarin (Beijing),bad,adjectives,descriptive_words,不好,不好
+Mandarin (Beijing),bad,adjectives,descriptive_words,坏(人),坏
+Mandarin (Beijing),bag,nouns,household,书包,书包
+Mandarin (Beijing),bag,nouns,household,包,包
+Mandarin (Beijing),ball,nouns,toys,皮球,皮球
+Mandarin (Beijing),ball,nouns,toys,汽球,汽球
+Mandarin (Beijing),ball,nouns,toys,球,球
+Mandarin (Beijing),balloon,nouns,toys,汽球,汽球
+Mandarin (Beijing),balloon,nouns,toys,气球,气球
+Mandarin (Beijing),banana,nouns,food_drink,香蕉,香蕉
+Mandarin (Beijing),bathroom,nouns,furniture_rooms,厕所,厕所
+Mandarin (Beijing),bathroom,nouns,furniture_rooms,浴室,浴室
+Mandarin (Beijing),bathtub,nouns,furniture_rooms,澡盆,澡盆
+Mandarin (Beijing),bathtub,nouns,furniture_rooms,浴缸,浴缸
+Mandarin (Beijing),battery,nouns,household,电池,电池
+Mandarin (Beijing),beads,nouns,clothing,珠子,珠子
+Mandarin (Beijing),beans,nouns,food_drink,豆,豆
+Mandarin (Beijing),bear,nouns,animals,熊,熊
+Mandarin (Beijing),bed,nouns,furniture_rooms,床,床
+Mandarin (Beijing),bedroom,nouns,furniture_rooms,卧室,卧室
+Mandarin (Beijing),bee,nouns,animals,蜜蜂,蜜蜂
+Mandarin (Beijing),bell,nouns,toys,铃铛,铃铛
+Mandarin (Beijing),belly button,nouns,body_parts,肚脐眼儿,肚脐眼
+Mandarin (Beijing),bib,nouns,clothing,围嘴,围嘴
+Mandarin (Beijing),bicycle,nouns,vehicles,自行车,自行车
+Mandarin (Beijing),big,adjectives,descriptive_words,大,大
+Mandarin (Beijing),bird,nouns,animals,鸟,鸟
+Mandarin (Beijing),bite,verbs,action_words,咬,咬
+Mandarin (Beijing),black,adjectives,descriptive_words,黑色,黑色
+Mandarin (Beijing),black,adjectives,descriptive_words,黑,黑
+Mandarin (Beijing),blanket,nouns,household,毛巾被,毛巾被
+Mandarin (Beijing),blanket,nouns,household,毯子,毯子
+Mandarin (Beijing),block,nouns,toys,积木,积木
+Mandarin (Beijing),blow,verbs,action_words,吹,吹
+Mandarin (Beijing),blow,verbs,action_words,刮风,刮风
+Mandarin (Beijing),blue,adjectives,descriptive_words,蓝色,蓝色
+Mandarin (Beijing),blue,adjectives,descriptive_words,蓝（色）,蓝
+Mandarin (Beijing),boat,nouns,vehicles,船,船
+Mandarin (Beijing),book,nouns,toys,书,书
+Mandarin (Beijing),book,nouns,toys,枪,枪
+Mandarin (Beijing),bottle,nouns,household,瓶子,瓶子
+Mandarin (Beijing),bowl,nouns,household,碗,碗
+Mandarin (Beijing),box,nouns,household,盒子,盒子
+Mandarin (Beijing),bread,nouns,food_drink,面包,面包
+Mandarin (Beijing),break,verbs,action_words,拆,拆
+Mandarin (Beijing),break,verbs,action_words,打破,打破
+Mandarin (Beijing),break,verbs,action_words,打碎,打碎
+Mandarin (Beijing),bring,verbs,action_words,带,带
+Mandarin (Beijing),bring,verbs,action_words,带上,带上
+Mandarin (Beijing),broken,adjectives,descriptive_words,坏,坏
+Mandarin (Beijing),broken,adjectives,descriptive_words,坏了,坏 了
+Mandarin (Beijing),broom,nouns,household,扫帚,扫帚
+Mandarin (Beijing),broom,nouns,household,条帚,条帚
+Mandarin (Beijing),brush (action),verbs,action_words,刷,刷
+Mandarin (Beijing),brush (object),nouns,household,刷子,刷子
+Mandarin (Beijing),bubbles,nouns,toys,泡泡,泡泡
+Mandarin (Beijing),bucket,nouns,household,桶,桶
+Mandarin (Beijing),bug,nouns,animals,虫子,虫子
+Mandarin (Beijing),bump,verbs,action_words,撞,撞
+Mandarin (Beijing),bunny,nouns,animals,兔子,兔子
+Mandarin (Beijing),bus,nouns,vehicles,公共汽车,公共汽车
+Mandarin (Beijing),butt,nouns,body_parts,屁股,屁股
+Mandarin (Beijing),butterfly,nouns,animals,蝴蝶,蝴蝶
+Mandarin (Beijing),button,nouns,clothing,钮扣,钮扣
+Mandarin (Beijing),button,nouns,clothing,扣子,扣子
+Mandarin (Beijing),buy,verbs,action_words,买,买
+Mandarin (Beijing),cabbage,nouns,food_drink,白菜,白菜
+Mandarin (Beijing),cake,nouns,food_drink,蛋糕,蛋糕
+Mandarin (Beijing),calf,nouns,body_parts,小腿,小腿
+Mandarin (Beijing),camera,nouns,household,照相机,照相机
+Mandarin (Beijing),can (auxiliary),verbs,action_words,会,会
+Mandarin (Beijing),can (auxiliary),function_words,helping_verbs,能,能
+Mandarin (Beijing),can (auxiliary),function_words,helping_verbs,会,会
+Mandarin (Beijing),can (object),nouns,household,罐头,罐头
+Mandarin (Beijing),candle,nouns,household,蜡烛,蜡烛
+Mandarin (Beijing),cap,verbs,action_words,套,套
+Mandarin (Beijing),car,nouns,vehicles,小汽车,小汽车
+Mandarin (Beijing),car,nouns,vehicles,车,车
+Mandarin (Beijing),careful,adjectives,descriptive_words,委屈,委屈
+Mandarin (Beijing),careful,adjectives,descriptive_words,小心,小心
+Mandarin (Beijing),carrots,nouns,food_drink,胡萝卜,胡萝卜
+Mandarin (Beijing),cat,nouns,animals,猫,猫
+Mandarin (Beijing),catch,verbs,action_words,抓,抓
+Mandarin (Beijing),catch,verbs,action_words,逮（坏蛋）,逮
+Mandarin (Beijing),chair,nouns,furniture_rooms,椅子,椅子
+Mandarin (Beijing),cheek,nouns,body_parts,脸蛋,脸蛋
+Mandarin (Beijing),cheese,nouns,food_drink,奶酪,奶酪
+Mandarin (Beijing),chick,nouns,animals,小鸡,小鸡
+Mandarin (Beijing),chicken (animal),nouns,animals,鸡,鸡
+Mandarin (Beijing),chicken (food),nouns,food_drink,鸡肉,鸡肉
+Mandarin (Beijing),chin,nouns,body_parts,下巴,下巴
+Mandarin (Beijing),chocolate,nouns,food_drink,巧克力,巧克力
+Mandarin (Beijing),clap,verbs,action_words,拍,拍
+Mandarin (Beijing),clap,verbs,action_words,鼓掌,鼓掌
+Mandarin (Beijing),clap,verbs,action_words,拍手,拍手
+Mandarin (Beijing),clean (action),verbs,action_words,打扫,打扫
+Mandarin (Beijing),clean (description),adjectives,descriptive_words,干净,干净
+Mandarin (Beijing),climb,verbs,action_words,爬,爬
+Mandarin (Beijing),clock,nouns,household,钟/表,钟
+Mandarin (Beijing),close,verbs,action_words,关(门),关
+Mandarin (Beijing),close,verbs,action_words,闭（眼、嘴）,闭
+Mandarin (Beijing),closet,nouns,furniture_rooms,柜子,柜子
+Mandarin (Beijing),cloth,nouns,household,（抹）布,布
+Mandarin (Beijing),cloud,nouns,outside,云彩,云彩
+Mandarin (Beijing),cloud,nouns,outside,云,云
+Mandarin (Beijing),coat,nouns,clothing,大衣/外套,大衣
+Mandarin (Beijing),coat,nouns,clothing,大衣,大衣
+Mandarin (Beijing),coffee,nouns,food_drink,咖啡,咖啡
+Mandarin (Beijing),cold,adjectives,descriptive_words,冷,冷
+Mandarin (Beijing),comb (action),verbs,action_words,梳(头),梳
+Mandarin (Beijing),comb (object),nouns,household,梳子,梳子
+Mandarin (Beijing),come,verbs,action_words,来,来
+Mandarin (Beijing),computer,nouns,furniture_rooms,电脑,电脑
+Mandarin (Beijing),cookie,nouns,food_drink,饼干,饼干
+Mandarin (Beijing),corridor,nouns,outside,楼道,楼道
+Mandarin (Beijing),couch,nouns,furniture_rooms,沙发,沙发
+Mandarin (Beijing),count,verbs,action_words,数数,数数
+Mandarin (Beijing),cover (action),verbs,action_words,盖上,盖上
+Mandarin (Beijing),cover (action),verbs,action_words,盖(被子),盖
+Mandarin (Beijing),cow,nouns,animals,牛,牛
+Mandarin (Beijing),crayon,nouns,toys,蜡笔,蜡笔
+Mandarin (Beijing),crow,nouns,animals,乌鸦,乌鸦
+Mandarin (Beijing),cry,verbs,action_words,哭,哭
+Mandarin (Beijing),cry,verbs,action_words,叫,叫
+Mandarin (Beijing),cucumber,nouns,food_drink,黄瓜,黄瓜
+Mandarin (Beijing),cup,nouns,household,杯子,杯子
+Mandarin (Beijing),curtain,nouns,furniture_rooms,窗帘,窗帘
+Mandarin (Beijing),cute,adjectives,descriptive_words,可爱/好玩儿,可爱
+Mandarin (Beijing),dance,verbs,action_words,跳舞,跳舞
+Mandarin (Beijing),dark,adjectives,descriptive_words,黑乎乎,黑乎乎
+Mandarin (Beijing),dark,adjectives,descriptive_words,(天)黑,天黑
+Mandarin (Beijing),deer,nouns,animals,鹿,鹿
+Mandarin (Beijing),deer,nouns,animals,梅花鹿,梅花鹿
+Mandarin (Beijing),dirty,adjectives,descriptive_words,脏,脏
+Mandarin (Beijing),dish,nouns,food_drink,菜,菜
+Mandarin (Beijing),dog,nouns,animals,狗,狗
+Mandarin (Beijing),doll,nouns,toys,娃娃,娃娃
+Mandarin (Beijing),doll,nouns,toys,布娃娃,布娃娃
+Mandarin (Beijing),donkey,nouns,animals,驴,驴
+Mandarin (Beijing),door,nouns,furniture_rooms,门,门
+Mandarin (Beijing),down,verbs,action_words,下,下
+Mandarin (Beijing),draw,verbs,action_words,画画,画画
+Mandarin (Beijing),drawer,nouns,furniture_rooms,抽屉,抽屉
+Mandarin (Beijing),dress (object),nouns,clothing,衣服,衣服
+Mandarin (Beijing),drink (action),verbs,action_words,喝,喝
+Mandarin (Beijing),drink (beverage),nouns,food_drink,饮料,饮料
+Mandarin (Beijing),drive,verbs,action_words,开车,开车
+Mandarin (Beijing),drop,verbs,action_words,掉,掉
+Mandarin (Beijing),dry (description),adjectives,descriptive_words,干,干
+Mandarin (Beijing),duck,nouns,animals,鸭子,鸭子
+Mandarin (Beijing),dump,verbs,action_words,倒(垃圾),倒
+Mandarin (Beijing),ear,nouns,body_parts,耳朵,耳朵
+Mandarin (Beijing),earth,nouns,outside,土,土
+Mandarin (Beijing),eat,verbs,action_words,吃,吃
+Mandarin (Beijing),egg,nouns,food_drink,鸡蛋,鸡蛋
+Mandarin (Beijing),egg,nouns,food_drink,蛋,蛋
+Mandarin (Beijing),elephant,nouns,animals,大象,大象
+Mandarin (Beijing),elevator,nouns,furniture_rooms,电梯,电梯
+Mandarin (Beijing),elevator,nouns,outside,电梯,电梯
+Mandarin (Beijing),empty,adjectives,descriptive_words,空的,空 的
+Mandarin (Beijing),enter,verbs,action_words,进去,进去
+Mandarin (Beijing),eye,nouns,body_parts,眼睛,眼睛
+Mandarin (Beijing),face,nouns,body_parts,脸,脸
+Mandarin (Beijing),fall,verbs,action_words,跌倒,跌倒
+Mandarin (Beijing),fall,verbs,action_words,摔倒,摔倒
+Mandarin (Beijing),fast,adjectives,descriptive_words,快,快
+Mandarin (Beijing),feed,verbs,action_words,喂,喂
+Mandarin (Beijing),find,verbs,action_words,找到,找到
+Mandarin (Beijing),finger,nouns,body_parts,手指头,手指头
+Mandarin (Beijing),finish,verbs,action_words,做完,做 完
+Mandarin (Beijing),finished,adjectives,descriptive_words,喜欢,喜欢
+Mandarin (Beijing),fish (animal),nouns,animals,鱼,鱼
+Mandarin (Beijing),fish (food),nouns,food_drink,鱼,鱼
+Mandarin (Beijing),flip,verbs,action_words,翻,翻
+Mandarin (Beijing),flower,nouns,outside,花,花
+Mandarin (Beijing),flowerpot,nouns,household,花盆,花盆
+Mandarin (Beijing),fly (action),verbs,action_words,飞,飞
+Mandarin (Beijing),fly (animal),nouns,animals,苍蝇,苍蝇
+Mandarin (Beijing),food,nouns,food_drink,饭,饭
+Mandarin (Beijing),foot,nouns,body_parts,脚,脚
+Mandarin (Beijing),foot,nouns,body_parts,脚/脚丫丫,脚
+Mandarin (Beijing),fork,nouns,household,叉子,叉子
+Mandarin (Beijing),fox,nouns,animals,狐狸,狐狸
+Mandarin (Beijing),frog,nouns,animals,青蛙,青蛙
+Mandarin (Beijing),front,function_words,directions,前面,前面
+Mandarin (Beijing),fruit,nouns,food_drink,水果,水果
+Mandarin (Beijing),full,adjectives,descriptive_words,饱,饱
+Mandarin (Beijing),full,adjectives,descriptive_words,高兴/乐/开心,高兴
+Mandarin (Beijing),full,adjectives,descriptive_words,满,满
+Mandarin (Beijing),garden,nouns,outside,花园,花园
+Mandarin (Beijing),get up,verbs,action_words,起来,起来
+Mandarin (Beijing),giraffe,nouns,animals,长颈鹿,长颈鹿
+Mandarin (Beijing),give,verbs,action_words,给,给
+Mandarin (Beijing),glass,nouns,household,玻璃,玻璃
+Mandarin (Beijing),glasses,nouns,household,眼镜,眼镜
+Mandarin (Beijing),gloves,nouns,clothing,手套,手套
+Mandarin (Beijing),go,verbs,action_words,走,走
+Mandarin (Beijing),go,verbs,action_words,去,去
+Mandarin (Beijing),goat,nouns,animals,山羊,山羊
+Mandarin (Beijing),good,adjectives,descriptive_words,好,好
+Mandarin (Beijing),goose,nouns,animals,鹅,鹅
+Mandarin (Beijing),grapes,nouns,food_drink,葡萄,葡萄
+Mandarin (Beijing),grass,nouns,outside,草,草
+Mandarin (Beijing),green,adjectives,descriptive_words,绿,绿
+Mandarin (Beijing),green,adjectives,descriptive_words,绿色,绿色
+Mandarin (Beijing),hair,nouns,body_parts,头发,头发
+Mandarin (Beijing),hammer,nouns,household,锤子,锤子
+Mandarin (Beijing),hand,nouns,body_parts,手,手
+Mandarin (Beijing),happy,adjectives,descriptive_words,高兴/乐/开心,高兴
+Mandarin (Beijing),happy,adjectives,descriptive_words,高兴,高兴
+Mandarin (Beijing),hard,adjectives,descriptive_words,硬,硬
+Mandarin (Beijing),hat,nouns,clothing,帽子,帽子
+Mandarin (Beijing),have,verbs,action_words,有,有
+Mandarin (Beijing),he,function_words,pronouns,他(她),他
+Mandarin (Beijing),head,nouns,body_parts,头,头
+Mandarin (Beijing),hear,verbs,action_words,听,听
+Mandarin (Beijing),hear,verbs,action_words,听见,听见
+Mandarin (Beijing),heavy,adjectives,descriptive_words,生气,生气
+Mandarin (Beijing),heavy,adjectives,descriptive_words,重,重
+Mandarin (Beijing),hedgehog,nouns,animals,刺猬,刺猬
+Mandarin (Beijing),help,verbs,action_words,帮助/帮忙,帮助
+Mandarin (Beijing),help,verbs,action_words,帮忙,帮忙
+Mandarin (Beijing),help,verbs,action_words,帮,帮
+Mandarin (Beijing),hen,nouns,animals,母鸡,母鸡
+Mandarin (Beijing),here,function_words,pronouns,这儿,这儿
+Mandarin (Beijing),here,function_words,directions,这边/这儿,这边
+Mandarin (Beijing),hide,verbs,action_words,藏,藏
+Mandarin (Beijing),high,adjectives,descriptive_words,高,高
+Mandarin (Beijing),his,function_words,pronouns,他的,他 的
+Mandarin (Beijing),hit,verbs,action_words,打,打
+Mandarin (Beijing),home,nouns,outside,家,家
+Mandarin (Beijing),honey,nouns,food_drink,蜂蜜,蜂蜜
+Mandarin (Beijing),hop,verbs,action_words,蹦,蹦
+Mandarin (Beijing),horse,nouns,animals,马,马
+Mandarin (Beijing),hot,adjectives,descriptive_words,烫,烫
+Mandarin (Beijing),hot,adjectives,descriptive_words,热,热
+Mandarin (Beijing),house,nouns,outside,房子,房子
+Mandarin (Beijing),how,function_words,question_words,怎么,怎么
+Mandarin (Beijing),hug,verbs,action_words,抱,抱
+Mandarin (Beijing),hug,verbs,action_words,搂,搂
+Mandarin (Beijing),hungry,adjectives,descriptive_words,饿,饿
+Mandarin (Beijing),hurry,verbs,action_words,赶快,赶快
+Mandarin (Beijing),hurt (description),adjectives,descriptive_words,疼,疼
+Mandarin (Beijing),i,function_words,pronouns,我,我
+Mandarin (Beijing),ice cream,nouns,food_drink,冰淇淋,冰淇淋
+Mandarin (Beijing),inside,function_words,directions,里面,里面
+Mandarin (Beijing),jacket,nouns,clothing,夹克,夹克
+Mandarin (Beijing),jacket,nouns,clothing,棉衣,棉衣
+Mandarin (Beijing),jam,nouns,food_drink,果酱,果酱
+Mandarin (Beijing),jeep,nouns,vehicles,吉普车,吉普车
+Mandarin (Beijing),juice,nouns,food_drink,果汁,果汁
+Mandarin (Beijing),jump,verbs,action_words,跳,跳
+Mandarin (Beijing),keys,nouns,household,钥匙,钥匙
+Mandarin (Beijing),kick,verbs,action_words,踢,踢
+Mandarin (Beijing),kiss,verbs,action_words,亲,亲
+Mandarin (Beijing),kitchen,nouns,furniture_rooms,厨房,厨房
+Mandarin (Beijing),knee,nouns,body_parts,膝盖,膝盖
+Mandarin (Beijing),knife,nouns,household,刀,刀
+Mandarin (Beijing),ladder,nouns,outside,梯子,梯子
+Mandarin (Beijing),lamb,nouns,animals,小羊,小羊
+Mandarin (Beijing),lamp,nouns,household,灯,灯
+Mandarin (Beijing),lawn,nouns,outside,草地,草地
+Mandarin (Beijing),leaf,nouns,outside,叶子/树叶,叶子
+Mandarin (Beijing),leaf,nouns,outside,树叶,树叶
+Mandarin (Beijing),leg,nouns,body_parts,腿,腿
+Mandarin (Beijing),lick,verbs,action_words,舔,舔
+Mandarin (Beijing),lift,verbs,action_words,举,举
+Mandarin (Beijing),light (description),adjectives,descriptive_words,轻,轻
+Mandarin (Beijing),light (object),nouns,household,光,光
+Mandarin (Beijing),lion,nouns,animals,狮子,狮子
+Mandarin (Beijing),little (amount),adjectives,descriptive_words,少,少
+Mandarin (Beijing),little (description),adjectives,descriptive_words,小,小
+Mandarin (Beijing),living room,nouns,furniture_rooms,客厅,客厅
+Mandarin (Beijing),lock,nouns,household,锁,锁
+Mandarin (Beijing),lollipop,nouns,food_drink,棒棒糖,棒棒糖
+Mandarin (Beijing),look,verbs,action_words,看,看
+Mandarin (Beijing),look,verbs,action_words,找,找
+Mandarin (Beijing),loud,adjectives,descriptive_words,困了,困了
+Mandarin (Beijing),love,verbs,action_words,爱,爱
+Mandarin (Beijing),love,verbs,action_words,喜欢,喜欢
+Mandarin (Beijing),many,function_words,quantifiers,多,多
+Mandarin (Beijing),meat,nouns,food_drink,肉,肉
+Mandarin (Beijing),medicine,nouns,household,药,药
+Mandarin (Beijing),milk,nouns,food_drink,牛奶,牛奶
+Mandarin (Beijing),mirror,nouns,furniture_rooms,镜子,镜子
+Mandarin (Beijing),mirror,nouns,household,镜子,镜子
+Mandarin (Beijing),money,nouns,household,钱,钱
+Mandarin (Beijing),monkey,nouns,animals,猴子,猴子
+Mandarin (Beijing),moon,nouns,outside,月亮,月亮
+Mandarin (Beijing),mosquito,nouns,animals,蚊子,蚊子
+Mandarin (Beijing),motorcycle,nouns,vehicles,摩托车,摩托车
+Mandarin (Beijing),mouse,nouns,animals,老鼠,老鼠
+Mandarin (Beijing),mouth,nouns,body_parts,嘴,嘴
+Mandarin (Beijing),much,adjectives,descriptive_words,多,多
+Mandarin (Beijing),my,function_words,pronouns,我的,我 的
+Mandarin (Beijing),nail (body part),nouns,body_parts,指甲,指甲
+Mandarin (Beijing),nail (object),nouns,household,钉子,钉子
+Mandarin (Beijing),naughty,adjectives,descriptive_words,淘气,淘气
+Mandarin (Beijing),neck,nouns,body_parts,脖子,脖子
+Mandarin (Beijing),necklace,nouns,clothing,项链,项链
+Mandarin (Beijing),need,verbs,action_words,要,要
+Mandarin (Beijing),need,function_words,helping_verbs,必须,必须
+Mandarin (Beijing),new,adjectives,descriptive_words,新,新
+Mandarin (Beijing),no,function_words,quantifiers,没,没
+Mandarin (Beijing),no,adjectives,descriptive_words,不是,不是
+Mandarin (Beijing),noodles,nouns,food_drink,面条,面条
+Mandarin (Beijing),nose,nouns,body_parts,鼻子,鼻子
+Mandarin (Beijing),ok,function_words,helping_verbs,可以（做）,可以
+Mandarin (Beijing),old,adjectives,descriptive_words,老,老
+Mandarin (Beijing),on,function_words,directions,上（面）,上
+Mandarin (Beijing),open (action),verbs,action_words,开(门),开
+Mandarin (Beijing),open (action),verbs,action_words,打开,打开
+Mandarin (Beijing),orange (description),adjectives,descriptive_words,桔黄色,桔黄色
+Mandarin (Beijing),orange (food),nouns,food_drink,桔子,桔子
+Mandarin (Beijing),orange (food),nouns,food_drink,橙子,橙子
+Mandarin (Beijing),other,function_words,pronouns,其它,其它
+Mandarin (Beijing),other,function_words,quantifiers,别的,别的
+Mandarin (Beijing),our,function_words,pronouns,我们的,我们 的
+Mandarin (Beijing),our,function_words,pronouns,咱们的,咱们 的
+Mandarin (Beijing),outside,nouns,outside,外面,外面
+Mandarin (Beijing),outside,function_words,directions,外面,外面
+Mandarin (Beijing),owl,nouns,animals,猫头鹰,猫头鹰
+Mandarin (Beijing),pajamas,nouns,clothing,睡衣,睡衣
+Mandarin (Beijing),pancake,nouns,food_drink,饼,饼
+Mandarin (Beijing),pants,nouns,clothing,裤子,裤子
+Mandarin (Beijing),paper,nouns,household,纸,纸
+Mandarin (Beijing),park,nouns,outside,公园,公园
+Mandarin (Beijing),peach,nouns,food_drink,桃,桃
+Mandarin (Beijing),peacock,nouns,animals,孔雀,孔雀
+Mandarin (Beijing),peanut,nouns,food_drink,花生,花生
+Mandarin (Beijing),pear,nouns,food_drink,梨,梨
+Mandarin (Beijing),peas,nouns,food_drink,豌豆,豌豆
+Mandarin (Beijing),pee,verbs,action_words,尿,尿
+Mandarin (Beijing),pen,nouns,toys,笔,笔
+Mandarin (Beijing),penguin,nouns,animals,企鹅,企鹅
+Mandarin (Beijing),pepper,nouns,food_drink,辣椒,辣椒
+Mandarin (Beijing),picture,nouns,household,画,画
+Mandarin (Beijing),pig,nouns,animals,猪,猪
+Mandarin (Beijing),pillow,nouns,household,枕头,枕头
+Mandarin (Beijing),plate,nouns,household,盘,盘
+Mandarin (Beijing),plate,nouns,household,盘子,盘子
+Mandarin (Beijing),play,verbs,action_words,玩,玩
+Mandarin (Beijing),pool,nouns,outside,游泳池,游泳池
+Mandarin (Beijing),porridge,nouns,food_drink,稀饭,稀饭
+Mandarin (Beijing),potato,nouns,food_drink,土豆,土豆
+Mandarin (Beijing),potty,nouns,furniture_rooms,尿盆,尿盆
+Mandarin (Beijing),present,nouns,toys,礼物,礼物
+Mandarin (Beijing),press,verbs,action_words,摁（按）,摁
+Mandarin (Beijing),pretend,verbs,action_words,假装,假装
+Mandarin (Beijing),pretend,verbs,action_words,(假)装,装
+Mandarin (Beijing),pretty,adjectives,descriptive_words,漂亮,漂亮
+Mandarin (Beijing),pretty,adjectives,descriptive_words,漂亮/美,漂亮
+Mandarin (Beijing),pretty,adjectives,descriptive_words,好看,好看
+Mandarin (Beijing),puddle,nouns,furniture_rooms,水池子,水池子
+Mandarin (Beijing),pull,verbs,action_words,拉,拉
+Mandarin (Beijing),pull,verbs,action_words,拉/拽,拉
+Mandarin (Beijing),pull,verbs,action_words,拖,拖
+Mandarin (Beijing),pull,verbs,action_words,拉(手),拉
+Mandarin (Beijing),purse,nouns,household,钱包,钱包
+Mandarin (Beijing),push,verbs,action_words,推,推
+Mandarin (Beijing),put,verbs,action_words,放,放
+Mandarin (Beijing),radio,nouns,household,收音机,收音机
+Mandarin (Beijing),rag,nouns,household,托把/墩布,墩布
+Mandarin (Beijing),rain,nouns,outside,下雨,下雨
+Mandarin (Beijing),rain,nouns,outside,雨,雨
+Mandarin (Beijing),raisin,nouns,food_drink,葡萄干,葡萄干
+Mandarin (Beijing),read,verbs,action_words,读,读
+Mandarin (Beijing),red,adjectives,descriptive_words,红色,红色
+Mandarin (Beijing),refrigerator,nouns,furniture_rooms,冰箱,冰箱
+Mandarin (Beijing),remote control,nouns,household,遥控器,遥控器
+Mandarin (Beijing),rice,nouns,food_drink,米,米
+Mandarin (Beijing),ride,verbs,action_words,骑,骑
+Mandarin (Beijing),road,nouns,outside,路,路
+Mandarin (Beijing),rocking chair,nouns,furniture_rooms,摇椅,摇椅
+Mandarin (Beijing),roof,nouns,outside,房顶,房顶
+Mandarin (Beijing),room,nouns,furniture_rooms,屋子,屋子
+Mandarin (Beijing),rooster,nouns,animals,公鸡,公鸡
+Mandarin (Beijing),row row your boat,verbs,action_words,划(船),划
+Mandarin (Beijing),run,verbs,action_words,跑,跑
+Mandarin (Beijing),sad,adjectives,descriptive_words,伤心,伤心
+Mandarin (Beijing),salty,adjectives,descriptive_words,咸,咸
+Mandarin (Beijing),same,function_words,quantifiers,一样,一样
+Mandarin (Beijing),sand,nouns,outside,沙子,沙子
+Mandarin (Beijing),sandals,nouns,clothing,凉鞋,凉鞋
+Mandarin (Beijing),sandwich,nouns,food_drink,三明治,三明治
+Mandarin (Beijing),sauce,nouns,food_drink,酱油,酱油
+Mandarin (Beijing),say,verbs,action_words,说,说
+Mandarin (Beijing),say,verbs,action_words,说(话),说
+Mandarin (Beijing),scared,adjectives,descriptive_words,害怕,害怕
+Mandarin (Beijing),scarf,nouns,clothing,围巾,围巾
+Mandarin (Beijing),scissors,nouns,household,剪刀,剪刀
+Mandarin (Beijing),self,function_words,pronouns,自己,自己
+Mandarin (Beijing),shake,verbs,action_words,握（手）,握 手 
+Mandarin (Beijing),shake,verbs,action_words,摇,摇
+Mandarin (Beijing),sheep,nouns,animals,羊,羊
+Mandarin (Beijing),ship,nouns,vehicles,船,船
+Mandarin (Beijing),shirt,nouns,clothing,上衣,上衣
+Mandarin (Beijing),shoe,nouns,clothing,鞋,鞋
+Mandarin (Beijing),shorts,nouns,clothing,短裤,短裤
+Mandarin (Beijing),should,function_words,helping_verbs,该（走啦！）/应该,该
+Mandarin (Beijing),shout,verbs,action_words,叫唤,叫唤
+Mandarin (Beijing),shout,verbs,action_words,喊,喊
+Mandarin (Beijing),shovel,nouns,outside,铲子,铲子
+Mandarin (Beijing),show,verbs,action_words,(表)演,演
+Mandarin (Beijing),sick,adjectives,descriptive_words,病,病
+Mandarin (Beijing),sing,verbs,action_words,唱,唱
+Mandarin (Beijing),sink,nouns,furniture_rooms,水池,水池
+Mandarin (Beijing),sit,verbs,action_words,坐,坐
+Mandarin (Beijing),skirt,nouns,clothing,裙子,裙子
+Mandarin (Beijing),sky,nouns,outside,天（空）,天
+Mandarin (Beijing),sky,nouns,outside,天上,天上
+Mandarin (Beijing),sleep,verbs,action_words,睡觉,睡觉
+Mandarin (Beijing),sleepy,adjectives,descriptive_words,困了,困了
+Mandarin (Beijing),sleepy,adjectives,descriptive_words,困,困
+Mandarin (Beijing),slipper,nouns,clothing,拖鞋,拖鞋
+Mandarin (Beijing),slow,adjectives,descriptive_words,慢/慢点,慢
+Mandarin (Beijing),slow,adjectives,descriptive_words,慢,慢
+Mandarin (Beijing),smart,adjectives,descriptive_words,聪明,聪明
+Mandarin (Beijing),smell,verbs,action_words,闻,闻
+Mandarin (Beijing),smile,verbs,action_words,笑,笑
+Mandarin (Beijing),smile,verbs,action_words,乐（一个）,乐
+Mandarin (Beijing),snake,nouns,animals,蛇,蛇
+Mandarin (Beijing),snow,nouns,outside,雪,雪
+Mandarin (Beijing),soap,nouns,household,肥皂/香皂,肥皂
+Mandarin (Beijing),soap,nouns,household,肥皂,肥皂
+Mandarin (Beijing),soap,nouns,household,香皂,香皂
+Mandarin (Beijing),sock,nouns,clothing,袜子,袜子
+Mandarin (Beijing),soda,nouns,food_drink,汽水,汽水
+Mandarin (Beijing),soft,adjectives,descriptive_words,漂亮/美,漂亮
+Mandarin (Beijing),soft,adjectives,descriptive_words,软,软
+Mandarin (Beijing),some more,function_words,quantifiers,多点儿,多点儿
+Mandarin (Beijing),soup,nouns,food_drink,汤,汤
+Mandarin (Beijing),spill,verbs,action_words,撒,撒
+Mandarin (Beijing),spinach,nouns,food_drink,菠菜,菠菜
+Mandarin (Beijing),spit,verbs,action_words,吐,吐
+Mandarin (Beijing),splash,verbs,action_words,洒,洒
+Mandarin (Beijing),spoon,nouns,household,勺子,勺子
+Mandarin (Beijing),spoon,nouns,household,勺,勺
+Mandarin (Beijing),squirrel,nouns,animals,松鼠,松鼠
+Mandarin (Beijing),stairs,nouns,furniture_rooms,楼梯,楼梯
+Mandarin (Beijing),stairs,nouns,furniture_rooms,茶几,茶几
+Mandarin (Beijing),stairs,nouns,outside,楼梯,楼梯
+Mandarin (Beijing),stand,verbs,action_words,站,站
+Mandarin (Beijing),star,nouns,outside,星星,星星
+Mandarin (Beijing),stick,verbs,action_words,贴,贴
+Mandarin (Beijing),stick,nouns,outside,棍子,棍子
+Mandarin (Beijing),stick,nouns,outside,棍,棍
+Mandarin (Beijing),stick,nouns,toys,贴画,贴画
+Mandarin (Beijing),stone,nouns,outside,石头,石头
+Mandarin (Beijing),stop,verbs,action_words,停,停
+Mandarin (Beijing),stove,nouns,furniture_rooms,炉子/灶,炉子
+Mandarin (Beijing),stove,nouns,furniture_rooms,炉子,炉子
+Mandarin (Beijing),street,nouns,outside,街（道）/大街,街
+Mandarin (Beijing),street,nouns,outside,街道,街道
+Mandarin (Beijing),sugar,nouns,food_drink,糖,糖
+Mandarin (Beijing),sun,nouns,outside,太阳,太阳
+Mandarin (Beijing),swallow,verbs,action_words,咽,咽
+Mandarin (Beijing),swallow,nouns,animals,燕子,燕子
+Mandarin (Beijing),sweater,nouns,clothing,毛衣,毛衣
+Mandarin (Beijing),sweep,verbs,action_words,扫（地）,扫
+Mandarin (Beijing),sweep,verbs,action_words,扫地,扫地
+Mandarin (Beijing),sweet,adjectives,descriptive_words,甜,甜
+Mandarin (Beijing),swim,verbs,action_words,游泳,游泳
+Mandarin (Beijing),swing (object),nouns,outside,秋千,秋千
+Mandarin (Beijing),table,nouns,furniture_rooms,桌子,桌子
+Mandarin (Beijing),table,nouns,furniture_rooms,桌子/饭桌,桌子
+Mandarin (Beijing),take,verbs,action_words,拿,拿
+Mandarin (Beijing),take away,verbs,action_words,拿走,拿走
+Mandarin (Beijing),tasty,adjectives,descriptive_words,好吃,好吃
+Mandarin (Beijing),tea,nouns,food_drink,茶,茶
+Mandarin (Beijing),tear,nouns,body_parts,眼泪,眼泪
+Mandarin (Beijing),telephone,nouns,household,电话,电话
+Mandarin (Beijing),telephone,nouns,furniture_rooms,电话,电话
+Mandarin (Beijing),tell,verbs,action_words,告诉,告诉
+Mandarin (Beijing),that,function_words,pronouns,那个,那个
+Mandarin (Beijing),them,function_words,pronouns,他们,他们
+Mandarin (Beijing),there,function_words,pronouns,那儿,那儿
+Mandarin (Beijing),there,function_words,directions,那边/那儿,那边
+Mandarin (Beijing),these,function_words,pronouns,这些,这些
+Mandarin (Beijing),thirsty,adjectives,descriptive_words,渴,渴
+Mandarin (Beijing),this,function_words,pronouns,这个,这个
+Mandarin (Beijing),those,function_words,pronouns,那些,那些
+Mandarin (Beijing),throw,verbs,action_words,扔,扔
+Mandarin (Beijing),thumb,nouns,body_parts,大拇指,大拇指
+Mandarin (Beijing),tickle,verbs,action_words,挠(痒痒),挠
+Mandarin (Beijing),tiger,nouns,animals,老虎,老虎
+Mandarin (Beijing),tired,adjectives,descriptive_words,累,累
+Mandarin (Beijing),toe,nouns,body_parts,脚趾,脚趾
+Mandarin (Beijing),tomato,nouns,food_drink,西红柿,西红柿
+Mandarin (Beijing),tongue,nouns,body_parts,舌头,舌头
+Mandarin (Beijing),tooth,nouns,body_parts,牙,牙
+Mandarin (Beijing),toothbrush,nouns,household,牙刷,牙刷
+Mandarin (Beijing),touch,verbs,action_words,摸,摸
+Mandarin (Beijing),towel,nouns,household,毛巾,毛巾
+Mandarin (Beijing),toy (object),nouns,toys,玩具,玩具
+Mandarin (Beijing),train,nouns,vehicles,火车,火车
+Mandarin (Beijing),trash,nouns,household,垃圾,垃圾
+Mandarin (Beijing),tree,nouns,outside,树,树
+Mandarin (Beijing),truck,nouns,vehicles,卡车,卡车
+Mandarin (Beijing),turn,verbs,action_words,拐（弯）,拐 （ 弯 ）
+Mandarin (Beijing),turn,verbs,action_words,转(圈),转
+Mandarin (Beijing),turtle,nouns,animals,乌龟,乌龟
+Mandarin (Beijing),tv,nouns,furniture_rooms,电视,电视
+Mandarin (Beijing),ugly,adjectives,descriptive_words,难看,难看
+Mandarin (Beijing),umbrella,nouns,household,伞,伞
+Mandarin (Beijing),umbrella,nouns,outside,（雨）伞,雨伞
+Mandarin (Beijing),under,function_words,directions,底下,底下
+Mandarin (Beijing),vest,nouns,clothing,背心,背心
+Mandarin (Beijing),wait,verbs,action_words,等,等
+Mandarin (Beijing),wake,verbs,action_words,醒,醒
+Mandarin (Beijing),walk,verbs,action_words,走,走
+Mandarin (Beijing),walk,verbs,action_words,走路,走路
+Mandarin (Beijing),wardrobe,nouns,furniture_rooms,衣柜,衣柜
+Mandarin (Beijing),wash,verbs,action_words,洗,洗
+Mandarin (Beijing),washing machine,nouns,furniture_rooms,洗衣机,洗衣机
+Mandarin (Beijing),watch (object),nouns,household,手表,手表
+Mandarin (Beijing),water (beverage),nouns,food_drink,水,水
+Mandarin (Beijing),water (not beverage),nouns,outside,水,水
+Mandarin (Beijing),watermelon,nouns,food_drink,西瓜,西瓜
+Mandarin (Beijing),we,function_words,pronouns,我们,我们
+Mandarin (Beijing),wear,verbs,action_words,戴,戴
+Mandarin (Beijing),wear,verbs,action_words,穿,穿
+Mandarin (Beijing),wet (description),adjectives,descriptive_words,湿,湿
+Mandarin (Beijing),wet (description),adjectives,descriptive_words,可怜,可怜
+Mandarin (Beijing),what,function_words,question_words,什么,什么
+Mandarin (Beijing),when (question),function_words,question_words,几点,几点
+Mandarin (Beijing),where (question),function_words,question_words,在哪里/哪儿呢？,在 哪里
+Mandarin (Beijing),where (question),function_words,question_words,哪里,哪里
+Mandarin (Beijing),where (question),function_words,question_words,哪儿,哪儿
+Mandarin (Beijing),which (question),function_words,question_words,哪个,哪个
+Mandarin (Beijing),white,adjectives,descriptive_words,白色,白色
+Mandarin (Beijing),white,adjectives,descriptive_words,白,白
+Mandarin (Beijing),who,function_words,question_words,谁,谁
+Mandarin (Beijing),why,function_words,question_words,为什么,为什么
+Mandarin (Beijing),wind,nouns,outside,风,风
+Mandarin (Beijing),wind,verbs,action_words,拧,拧
+Mandarin (Beijing),window,nouns,furniture_rooms,窗子,窗子
+Mandarin (Beijing),window,nouns,furniture_rooms,窗户,窗户
+Mandarin (Beijing),wipe,verbs,action_words,擦,擦
+Mandarin (Beijing),with,function_words,directions,跟,跟
+Mandarin (Beijing),with,function_words,connecting_words,和,和
+Mandarin (Beijing),wolf,nouns,animals,狼,狼
+Mandarin (Beijing),wolf,nouns,animals,大灰狼,大灰狼
+Mandarin (Beijing),work (action),verbs,action_words,工作,工作
+Mandarin (Beijing),work (action),verbs,action_words,干活,干活
+Mandarin (Beijing),write,verbs,action_words,写,写
+Mandarin (Beijing),yellow,adjectives,descriptive_words,黄,黄
+Mandarin (Beijing),yellow,adjectives,descriptive_words,黄色,黄色
+Mandarin (Beijing),yes,function_words,helping_verbs,是,是
+Mandarin (Beijing),yogurt,nouns,food_drink,酸奶,酸奶
+Mandarin (Beijing),you,function_words,pronouns,你,你
+Mandarin (Beijing),you,function_words,pronouns,你们,你们
+Mandarin (Beijing),your,function_words,pronouns,你的,你 的
+Mandarin (Beijing),your,function_words,pronouns,你们的,你们 的
+Mandarin (Beijing),zipper,nouns,clothing,拉锁,拉锁
+Mandarin (Beijing),zipper,nouns,clothing,拉链,拉链
+Mandarin (Beijing),a,function_words,final_particles,啊/呀,呀
+Mandarin (Beijing),clock,nouns,household,钟/表,表
+Mandarin (Beijing),coat,nouns,clothing,大衣/外套,外套
+Mandarin (Beijing),cute,adjectives,descriptive_words,可爱/好玩儿,好玩
+Mandarin (Beijing),foot,nouns,body_parts,脚/脚丫丫,脚
+Mandarin (Beijing),full,adjectives,descriptive_words,高兴/乐/开心,乐
+Mandarin (Beijing),happy,adjectives,descriptive_words,高兴/乐/开心,乐
+Mandarin (Beijing),help,verbs,action_words,帮助/帮忙,帮忙
+Mandarin (Beijing),here,function_words,directions,这边/这儿,这儿
+Mandarin (Beijing),leaf,nouns,outside,叶子/树叶,树叶
+Mandarin (Beijing),pretty,adjectives,descriptive_words,漂亮/美,美
+Mandarin (Beijing),pull,verbs,action_words,拉/拽,拽
+Mandarin (Beijing),rag,nouns,household,托把/墩布,墩布
+Mandarin (Beijing),should,function_words,helping_verbs,该（走啦！）/应该,应该
+Mandarin (Beijing),slow,adjectives,descriptive_words,慢/慢点,慢点
+Mandarin (Beijing),soap,nouns,household,肥皂/香皂,香皂
+Mandarin (Beijing),soft,adjectives,descriptive_words,漂亮/美,美
+Mandarin (Beijing),stove,nouns,furniture_rooms,炉子/灶,灶
+Mandarin (Beijing),street,nouns,outside,街（道）/大街,大街
+Mandarin (Beijing),table,nouns,furniture_rooms,桌子/饭桌,饭桌
+Mandarin (Beijing),there,function_words,directions,那边/那儿,那儿
+Mandarin (Beijing),where (question),function_words,question_words,在哪里/哪儿呢？,哪
+Mandarin (Beijing),full,adjectives,descriptive_words,高兴/乐/开心,开心
+Mandarin (Beijing),happy,adjectives,descriptive_words,高兴/乐/开心,开心

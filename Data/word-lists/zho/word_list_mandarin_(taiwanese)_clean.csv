@@ -1,0 +1,554 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+Mandarin (Taiwanese),above,function_words,locations,上面,上面
+Mandarin (Taiwanese),air conditioner,nouns,household,冷氣,冷气
+Mandarin (Taiwanese),airplane,nouns,vehicles,飛機,飞机
+Mandarin (Taiwanese),all,function_words,quantifiers,全部(通通),全部
+Mandarin (Taiwanese),alligator,nouns,animals,鱷魚,鳄鱼
+Mandarin (Taiwanese),also,function_words,quantifiers,還有,还
+Mandarin (Taiwanese),also,function_words,quantifiers,也有、也是,也
+Mandarin (Taiwanese),ambulance,nouns,vehicles,救護車,救护车
+Mandarin (Taiwanese),and,function_words,connecting_words,和,和
+Mandarin (Taiwanese),angry,adjectives,descriptive_words,生氣的,生气
+Mandarin (Taiwanese),animal,nouns,animals,動物,动物
+Mandarin (Taiwanese),ant,nouns,animals,螞蟻,蚂蚁
+Mandarin (Taiwanese),apple,nouns,food_drink,蘋果,苹果
+Mandarin (Taiwanese),arm,nouns,body_parts,手臂,手臂
+Mandarin (Taiwanese),awake,adjectives,descriptive_words,醒了/醒著,醒 了
+Mandarin (Taiwanese),away,function_words,locations,走開,走开
+Mandarin (Taiwanese),back,function_words,locations,後面,后面
+Mandarin (Taiwanese),back,nouns,body_parts,背,背
+Mandarin (Taiwanese),bad,adjectives,descriptive_words,壞的,坏 的
+Mandarin (Taiwanese),bag,nouns,household,書包,书包
+Mandarin (Taiwanese),bag,nouns,household,袋子,袋子
+Mandarin (Taiwanese),balcony,nouns,furniture_rooms,陽台,阳台
+Mandarin (Taiwanese),ball,nouns,toys,球,球
+Mandarin (Taiwanese),balloon,nouns,toys,氣球,气球
+Mandarin (Taiwanese),banana,nouns,food_drink,香蕉,香蕉
+Mandarin (Taiwanese),basket,nouns,household,籃子,篮子
+Mandarin (Taiwanese),bat,nouns,toys,球棒,球棒
+Mandarin (Taiwanese),bathroom,nouns,furniture_rooms,浴室,浴室
+Mandarin (Taiwanese),bathtub,nouns,furniture_rooms,浴缸,浴缸
+Mandarin (Taiwanese),beads,nouns,clothing,珠珠,珠珠
+Mandarin (Taiwanese),because,function_words,connecting_words,因為,因为
+Mandarin (Taiwanese),bed,nouns,furniture_rooms,床,床
+Mandarin (Taiwanese),bedroom,nouns,furniture_rooms,臥(房)室,卧室
+Mandarin (Taiwanese),bee,nouns,animals,蜜蜂(ㄨㄥㄨㄥ),蜜蜂
+Mandarin (Taiwanese),belly button,nouns,body_parts,肚臍,肚脐
+Mandarin (Taiwanese),below,function_words,locations,下面,下面
+Mandarin (Taiwanese),belt,nouns,clothing,皮帶,皮带
+Mandarin (Taiwanese),bib,nouns,clothing,圍兜(兜),围兜
+Mandarin (Taiwanese),bicycle,nouns,vehicles,腳踏車,脚踏车
+Mandarin (Taiwanese),big,adjectives,descriptive_words,大的,大
+Mandarin (Taiwanese),bird,nouns,animals,小鳥,小鸟
+Mandarin (Taiwanese),bite,verbs,action_words,咬,咬
+Mandarin (Taiwanese),bitter,adjectives,descriptive_words,好苦/苦苦的,苦 的
+Mandarin (Taiwanese),black,adjectives,descriptive_words,黑色的/黑黑的,黑色
+Mandarin (Taiwanese),blanket,nouns,household,毯子(被子),毯子
+Mandarin (Taiwanese),block,nouns,toys,積木,积木
+Mandarin (Taiwanese),blow,verbs,action_words,吹,吹
+Mandarin (Taiwanese),blue,adjectives,descriptive_words,藍藍的/藍色的,蓝色
+Mandarin (Taiwanese),boat,nouns,vehicles,船,船
+Mandarin (Taiwanese),book,nouns,toys,書,书
+Mandarin (Taiwanese),bottle,nouns,household,瓶子,瓶子
+Mandarin (Taiwanese),bowl,nouns,household,碗,碗
+Mandarin (Taiwanese),box,nouns,household,盒子,盒子
+Mandarin (Taiwanese),bread,nouns,food_drink,麵包,面包
+Mandarin (Taiwanese),break,verbs,action_words,打破,打破
+Mandarin (Taiwanese),breast,nouns,body_parts,胸部(ㄋㄟㄋㄟ),胸部
+Mandarin (Taiwanese),bright,adjectives,descriptive_words,亮亮的,亮
+Mandarin (Taiwanese),bring,verbs,action_words,帶,带
+Mandarin (Taiwanese),broken,adjectives,descriptive_words,破了/破掉了,破 了
+Mandarin (Taiwanese),broom,nouns,household,掃把,扫把
+Mandarin (Taiwanese),brush,nouns,household,刷子,刷子
+Mandarin (Taiwanese),bubbles,nouns,toys,泡泡,泡泡
+Mandarin (Taiwanese),bucket,nouns,household,水桶,水桶
+Mandarin (Taiwanese),bug,nouns,animals,蟲蟲,虫子
+Mandarin (Taiwanese),bun,nouns,food_drink,饅頭,馒头
+Mandarin (Taiwanese),bun,nouns,food_drink,包子,包子
+Mandarin (Taiwanese),bunny,nouns,animals,兔子,兔子
+Mandarin (Taiwanese),bus,nouns,vehicles,公車(巴士),公车
+Mandarin (Taiwanese),but,function_words,connecting_words,可是,可是
+Mandarin (Taiwanese),butt,nouns,body_parts,屁股,屁股
+Mandarin (Taiwanese),butterfly,nouns,animals,蝴蝶,蝴蝶
+Mandarin (Taiwanese),button,nouns,clothing,扣子,扣子
+Mandarin (Taiwanese),by,function_words,locations,旁邊,旁边
+Mandarin (Taiwanese),cake,nouns,food_drink,蛋糕,蛋糕
+Mandarin (Taiwanese),call,verbs,action_words,叫,叫
+Mandarin (Taiwanese),camera,nouns,household,相機,相机
+Mandarin (Taiwanese),candy,nouns,food_drink,糖果,糖果
+Mandarin (Taiwanese),car,nouns,vehicles,汽車(車車、ㄅㄨㄅㄨ),汽车
+Mandarin (Taiwanese),careful,adjectives,descriptive_words,小心,小心
+Mandarin (Taiwanese),carrot,nouns,food_drink,紅(白)蘿蔔,红
+Mandarin (Taiwanese),cat,nouns,animals,小貓(喵喵),小猫
+Mandarin (Taiwanese),catch,verbs,action_words,抓,抓
+Mandarin (Taiwanese),chair,nouns,furniture_rooms,椅子,椅子
+Mandarin (Taiwanese),cheese,nouns,food_drink,起司(乳酪),起司
+Mandarin (Taiwanese),cherry,nouns,food_drink,櫻桃,樱桃
+Mandarin (Taiwanese),chicken (animal),nouns,animals,雞(咕咕咕),鸡
+Mandarin (Taiwanese),chicken (animal),nouns,animals,小雞,小鸡
+Mandarin (Taiwanese),chin,nouns,body_parts,下巴,下巴
+Mandarin (Taiwanese),chocolate,nouns,food_drink,巧克力,巧克力
+Mandarin (Taiwanese),chopsticks,nouns,household,筷子,筷子
+Mandarin (Taiwanese),clap,verbs,action_words,拍(手),拍
+Mandarin (Taiwanese),clean (description),adjectives,descriptive_words,乾淨的,干净
+Mandarin (Taiwanese),climb,verbs,action_words,爬,爬
+Mandarin (Taiwanese),clock,nouns,household,時鐘(鬧鐘),时钟
+Mandarin (Taiwanese),close,verbs,action_words,關,关
+Mandarin (Taiwanese),cloud,nouns,outside,雲,云
+Mandarin (Taiwanese),cockroach,nouns,animals,蟑螂,蟑螂
+Mandarin (Taiwanese),coffee,nouns,food_drink,咖啡,咖啡
+Mandarin (Taiwanese),coin,nouns,household,銅板(零錢),铜板
+Mandarin (Taiwanese),coke,nouns,food_drink,可樂,可乐
+Mandarin (Taiwanese),cold,adjectives,descriptive_words,好冷/冷冷的,冷
+Mandarin (Taiwanese),cold,adjectives,descriptive_words,冰冰的,冰 的
+Mandarin (Taiwanese),comb (object),nouns,household,梳子,梳子
+Mandarin (Taiwanese),come,function_words,locations,過來,过来
+Mandarin (Taiwanese),come,verbs,action_words,來,来
+Mandarin (Taiwanese),computer,nouns,furniture_rooms,電腦,电脑
+Mandarin (Taiwanese),cook,verbs,action_words,煮,煮
+Mandarin (Taiwanese),cookie,nouns,food_drink,餅乾,饼干
+Mandarin (Taiwanese),corn,nouns,food_drink,玉米,玉米
+Mandarin (Taiwanese),couch,nouns,furniture_rooms,沙發,沙发
+Mandarin (Taiwanese),count,verbs,action_words,數數,数数
+Mandarin (Taiwanese),cow,nouns,animals,牛(哞),牛
+Mandarin (Taiwanese),crab,nouns,animals,螃蟹,螃蟹
+Mandarin (Taiwanese),crane,nouns,vehicles,吊車,吊车
+Mandarin (Taiwanese),crayon,nouns,toys,彩色筆,彩色笔
+Mandarin (Taiwanese),crayon,nouns,toys,蠟筆,蜡笔
+Mandarin (Taiwanese),crib,nouns,furniture_rooms,嬰兒床,婴儿床
+Mandarin (Taiwanese),cry,verbs,action_words,哭,哭
+Mandarin (Taiwanese),cup,nouns,household,杯子,杯子
+Mandarin (Taiwanese),cupboard,nouns,furniture_rooms,櫃子,柜子
+Mandarin (Taiwanese),cut,verbs,action_words,切,切
+Mandarin (Taiwanese),cute,adjectives,descriptive_words,好可愛/可愛的,可爱
+Mandarin (Taiwanese),dark,adjectives,descriptive_words,暗暗的,暗
+Mandarin (Taiwanese),deer,nouns,animals,鹿,鹿
+Mandarin (Taiwanese),diaper,nouns,clothing,尿布,尿布
+Mandarin (Taiwanese),dirty,adjectives,descriptive_words,髒髒的/骯髒的,脏
+Mandarin (Taiwanese),dog,nouns,animals,小狗(汪汪),小狗
+Mandarin (Taiwanese),doll,nouns,toys,娃娃(洋娃娃),娃娃
+Mandarin (Taiwanese),dolphin,nouns,animals,海豚,海豚
+Mandarin (Taiwanese),don't,verbs,action_words,不要,不要
+Mandarin (Taiwanese),donut,nouns,food_drink,甜甜圈,甜甜 圈
+Mandarin (Taiwanese),door,nouns,furniture_rooms,門,门
+Mandarin (Taiwanese),down,function_words,locations,向(往)下,向
+Mandarin (Taiwanese),draw,verbs,action_words,畫畫,画画
+Mandarin (Taiwanese),drawer,nouns,furniture_rooms,抽屜,抽屉
+Mandarin (Taiwanese),dress (object),nouns,clothing,裙子,裙子
+Mandarin (Taiwanese),drink (action),verbs,action_words,喝,喝
+Mandarin (Taiwanese),drink (beverage),nouns,food_drink,飲料,饮料
+Mandarin (Taiwanese),drop,verbs,action_words,掉,掉
+Mandarin (Taiwanese),drum,nouns,toys,鼓,鼓
+Mandarin (Taiwanese),dry (description),adjectives,descriptive_words,乾乾的,干 的
+Mandarin (Taiwanese),dryer,nouns,household,吹風機,吹风机
+Mandarin (Taiwanese),duck,nouns,animals,鴨子(呱呱),鸭子
+Mandarin (Taiwanese),dumpling,nouns,food_drink,水餃,水饺
+Mandarin (Taiwanese),dumpling,nouns,food_drink,餛飩,馄饨
+Mandarin (Taiwanese),ear,nouns,body_parts,耳朵,耳朵
+Mandarin (Taiwanese),eat,verbs,action_words,吃,吃
+Mandarin (Taiwanese),egg,nouns,food_drink,蛋,蛋
+Mandarin (Taiwanese),elephant,nouns,animals,大象,大象
+Mandarin (Taiwanese),elevator,nouns,furniture_rooms,電梯,电梯
+Mandarin (Taiwanese),empty,adjectives,descriptive_words,空空的,空 的
+Mandarin (Taiwanese),enough,adjectives,descriptive_words,夠了,够 了
+Mandarin (Taiwanese),eye,nouns,body_parts,眼睛,眼睛
+Mandarin (Taiwanese),eyebrow,nouns,body_parts,眉毛,眉毛
+Mandarin (Taiwanese),face,nouns,body_parts,臉,脸
+Mandarin (Taiwanese),fall,verbs,action_words,跌倒,跌倒
+Mandarin (Taiwanese),fan,nouns,household,電風扇,电风扇
+Mandarin (Taiwanese),fast,adjectives,descriptive_words,好快/快的,好快
+Mandarin (Taiwanese),feed,verbs,action_words,餵,喂
+Mandarin (Taiwanese),fine,adjectives,descriptive_words,好的,好 的
+Mandarin (Taiwanese),finger,nouns,body_parts,手指(手指頭),手指
+Mandarin (Taiwanese),finish,verbs,action_words,好了,好 了
+Mandarin (Taiwanese),firetruck,nouns,vehicles,消防車,消防车
+Mandarin (Taiwanese),first,adjectives,descriptive_words,第一/第一名,第一
+Mandarin (Taiwanese),fish (animal),nouns,animals,魚,鱼
+Mandarin (Taiwanese),flag,nouns,outside,旗子,旗子
+Mandarin (Taiwanese),floor,nouns,furniture_rooms,地板,地板
+Mandarin (Taiwanese),flower,nouns,outside,花,花
+Mandarin (Taiwanese),fly,nouns,animals,蒼蠅,苍蝇
+Mandarin (Taiwanese),food,nouns,food_drink,食物,食物
+Mandarin (Taiwanese),foot,nouns,body_parts,腳,脚
+Mandarin (Taiwanese),fork,nouns,household,叉子,叉子
+Mandarin (Taiwanese),french fries,nouns,food_drink,薯條,薯条
+Mandarin (Taiwanese),frog,nouns,animals,青蛙,青蛙
+Mandarin (Taiwanese),front,function_words,locations,前面,前面
+Mandarin (Taiwanese),fruit,nouns,food_drink,水果,水果
+Mandarin (Taiwanese),full,adjectives,descriptive_words,飽了/好飽,饱 了
+Mandarin (Taiwanese),full,adjectives,descriptive_words,滿滿的,满 的
+Mandarin (Taiwanese),garbage,nouns,household,垃圾,垃圾
+Mandarin (Taiwanese),garden,nouns,outside,花園,花园
+Mandarin (Taiwanese),giraffe,nouns,animals,長頸鹿,长颈鹿
+Mandarin (Taiwanese),give,verbs,action_words,給,给
+Mandarin (Taiwanese),glasses,nouns,household,眼鏡,眼镜
+Mandarin (Taiwanese),glasses,nouns,household,玻璃(玻璃杯),玻璃
+Mandarin (Taiwanese),glue,nouns,toys,膠水,胶水
+Mandarin (Taiwanese),go,verbs,action_words,去,去
+Mandarin (Taiwanese),good,adjectives,descriptive_words,好棒,好棒
+Mandarin (Taiwanese),goose,nouns,animals,鵝,鹅
+Mandarin (Taiwanese),grape,nouns,food_drink,葡萄,葡萄
+Mandarin (Taiwanese),grass,nouns,outside,草,草
+Mandarin (Taiwanese),green,adjectives,descriptive_words,綠色的,绿色
+Mandarin (Taiwanese),guava,nouns,food_drink,芭樂,芭乐
+Mandarin (Taiwanese),gum,nouns,food_drink,口香糖,口香糖
+Mandarin (Taiwanese),gun,nouns,toys,手槍,手枪
+Mandarin (Taiwanese),hair,nouns,body_parts,頭髮,头发
+Mandarin (Taiwanese),ham,nouns,food_drink,火腿,火腿
+Mandarin (Taiwanese),hamburger,nouns,food_drink,漢堡,汉堡
+Mandarin (Taiwanese),hand,nouns,body_parts,手,手
+Mandarin (Taiwanese),hang,verbs,action_words,曬,晒
+Mandarin (Taiwanese),happy,adjectives,descriptive_words,快樂的/高興的,快乐 的
+Mandarin (Taiwanese),hard,adjectives,descriptive_words,好硬/硬硬的,硬 的
+Mandarin (Taiwanese),hat,nouns,clothing,帽子,帽子
+Mandarin (Taiwanese),hate,verbs,action_words,討厭,讨厌
+Mandarin (Taiwanese),head,nouns,body_parts,頭,头
+Mandarin (Taiwanese),heavy,adjectives,descriptive_words,好重/重重的,好重
+Mandarin (Taiwanese),helicopter,nouns,vehicles,直昇機,直升机
+Mandarin (Taiwanese),help,verbs,action_words,幫忙,帮忙
+Mandarin (Taiwanese),hen,nouns,animals,母雞,母鸡
+Mandarin (Taiwanese),here,function_words,locations,在這裡,这里
+Mandarin (Taiwanese),hide,verbs,action_words,藏,藏
+Mandarin (Taiwanese),high,adjectives,descriptive_words,好高/高高的,高
+Mandarin (Taiwanese),hit,verbs,action_words,打,打
+Mandarin (Taiwanese),hit,verbs,action_words,碰/撞,碰
+Mandarin (Taiwanese),hold,verbs,action_words,握手,握手
+Mandarin (Taiwanese),horse,nouns,animals,馬,马
+Mandarin (Taiwanese),hot,adjectives,descriptive_words,好熱/熱熱的,热
+Mandarin (Taiwanese),hot,adjectives,descriptive_words,好燙/燙燙的,烫
+Mandarin (Taiwanese),how,function_words,question_words,怎麼(辦)？,怎么
+Mandarin (Taiwanese),how many,function_words,question_words,幾個？,几个
+Mandarin (Taiwanese),how much,function_words,question_words,多少？,多少
+Mandarin (Taiwanese),hug,verbs,action_words,抱(抱),抱
+Mandarin (Taiwanese),hungry,adjectives,descriptive_words,餓了/好餓,饿
+Mandarin (Taiwanese),hurry,verbs,action_words,快點/快一點,快点
+Mandarin (Taiwanese),hurt,adjectives,descriptive_words,好痛/痛痛的,好痛
+Mandarin (Taiwanese),ice cream,nouns,food_drink,冰淇淋,冰淇淋
+Mandarin (Taiwanese),if,function_words,connecting_words,如果,如果
+Mandarin (Taiwanese),in,function_words,locations,裡面,里面
+Mandarin (Taiwanese),is that okay?,function_words,question_words,好不好？,好不好
+Mandarin (Taiwanese),jacket,nouns,clothing,夾克(外套),夹克
+Mandarin (Taiwanese),jam,nouns,food_drink,果醬,果酱
+Mandarin (Taiwanese),jar,nouns,household,罐子,罐子
+Mandarin (Taiwanese),jelly,nouns,food_drink,果凍,果冻
+Mandarin (Taiwanese),juice,nouns,food_drink,果汁,果汁
+Mandarin (Taiwanese),jump,verbs,action_words,跳,跳
+Mandarin (Taiwanese),keys,nouns,household,鑰匙,钥匙
+Mandarin (Taiwanese),kick,verbs,action_words,踢,踢
+Mandarin (Taiwanese),kiss,verbs,action_words,親,亲
+Mandarin (Taiwanese),kitchen,nouns,furniture_rooms,廚房,厨房
+Mandarin (Taiwanese),kite,nouns,outside,風箏,风筝
+Mandarin (Taiwanese),knee,nouns,body_parts,膝蓋,膝盖
+Mandarin (Taiwanese),knife,nouns,household,刀子,刀子
+Mandarin (Taiwanese),knock,verbs,action_words,敲,敲
+Mandarin (Taiwanese),ladder,nouns,outside,梯子,梯子
+Mandarin (Taiwanese),lamp,nouns,household,電燈,电灯
+Mandarin (Taiwanese),leaf,nouns,outside,葉子,叶子
+Mandarin (Taiwanese),lemon,nouns,food_drink,檸檬,柠檬
+Mandarin (Taiwanese),lion,nouns,animals,獅子,狮子
+Mandarin (Taiwanese),lips,nouns,body_parts,嘴唇,嘴唇
+Mandarin (Taiwanese),listen,verbs,action_words,聽,听
+Mandarin (Taiwanese),living room,nouns,furniture_rooms,客廳,客厅
+Mandarin (Taiwanese),lollipop,nouns,food_drink,棒棒糖,棒棒糖
+Mandarin (Taiwanese),long,adjectives,descriptive_words,長長的,长 的
+Mandarin (Taiwanese),look,verbs,action_words,看,看
+Mandarin (Taiwanese),loud,adjectives,descriptive_words,大聲,大声
+Mandarin (Taiwanese),love,verbs,action_words,喜歡,喜欢
+Mandarin (Taiwanese),meat,nouns,food_drink,肉,肉
+Mandarin (Taiwanese),medicine,nouns,household,藥,药
+Mandarin (Taiwanese),melon,nouns,food_drink,西瓜,西瓜
+Mandarin (Taiwanese),melon,nouns,food_drink,香瓜(哈密瓜),香瓜
+Mandarin (Taiwanese),milk,nouns,food_drink,牛奶(ㄋㄟㄋㄟ),牛奶
+Mandarin (Taiwanese),mirror,nouns,household,鏡子,镜子
+Mandarin (Taiwanese),mittens,nouns,clothing,手套,手套
+Mandarin (Taiwanese),money,nouns,household,錢,钱
+Mandarin (Taiwanese),monkey,nouns,animals,猴子,猴子
+Mandarin (Taiwanese),moon,nouns,outside,月亮,月亮
+Mandarin (Taiwanese),mop,nouns,household,拖把,拖把
+Mandarin (Taiwanese),more,function_words,quantifiers,更多,更 多
+Mandarin (Taiwanese),mosquito,nouns,animals,蚊子,蚊子
+Mandarin (Taiwanese),motorcycle,nouns,vehicles,機車(摩托車),机车
+Mandarin (Taiwanese),mouse,nouns,animals,老鼠,老鼠
+Mandarin (Taiwanese),mouth,nouns,body_parts,嘴巴,嘴巴
+Mandarin (Taiwanese),much,function_words,quantifiers,好多,好多
+Mandarin (Taiwanese),much,function_words,quantifiers,很多,很多
+Mandarin (Taiwanese),mud,nouns,outside,土/泥土,土
+Mandarin (Taiwanese),nail,nouns,body_parts,指甲,指甲
+Mandarin (Taiwanese),nail,nouns,household,釘子,钉子
+Mandarin (Taiwanese),naughty,adjectives,descriptive_words,不乖,不乖
+Mandarin (Taiwanese),neck,nouns,body_parts,脖子,脖子
+Mandarin (Taiwanese),necklace,nouns,clothing,項鍊,项链
+Mandarin (Taiwanese),new,adjectives,descriptive_words,新的,新
+Mandarin (Taiwanese),no,verbs,action_words,不是/不對/不好,不是
+Mandarin (Taiwanese),noisy,adjectives,descriptive_words,好吵/吵鬧的,好 吵
+Mandarin (Taiwanese),none,function_words,quantifiers,沒半個/沒有,没有
+Mandarin (Taiwanese),noodle,nouns,food_drink,麵,面
+Mandarin (Taiwanese),nose,nouns,body_parts,鼻子,鼻子
+Mandarin (Taiwanese),one two three,function_words,quantifiers,一個(二、三個…),一个
+Mandarin (Taiwanese),open (action),verbs,action_words,打開,打开
+Mandarin (Taiwanese),orange (food),nouns,food_drink,柳丁,柳丁
+Mandarin (Taiwanese),out,function_words,locations,外面,外面
+Mandarin (Taiwanese),oven,nouns,furniture_rooms,微波爐,微波炉
+Mandarin (Taiwanese),over,adjectives,descriptive_words,太多了,太多
+Mandarin (Taiwanese),owl,nouns,animals,貓頭鷹,猫头鹰
+Mandarin (Taiwanese),pajamas,nouns,clothing,睡衣(褲),睡衣
+Mandarin (Taiwanese),pants,nouns,clothing,褲子,裤子
+Mandarin (Taiwanese),pants,nouns,clothing,長褲,长裤
+Mandarin (Taiwanese),paper,nouns,household,紙,纸
+Mandarin (Taiwanese),parrot,nouns,animals,鸚鵡,鹦鹉
+Mandarin (Taiwanese),peacock,nouns,animals,孔雀,孔雀
+Mandarin (Taiwanese),peanut,nouns,food_drink,花生,花生
+Mandarin (Taiwanese),pear,nouns,food_drink,梨子,梨子
+Mandarin (Taiwanese),peas,nouns,food_drink,豆子,豆子
+Mandarin (Taiwanese),pen,nouns,toys,筆,笔
+Mandarin (Taiwanese),pencil,nouns,toys,鉛筆,铅笔
+Mandarin (Taiwanese),penguin,nouns,animals,企鵝,企鹅
+Mandarin (Taiwanese),penis,nouns,body_parts,小ㄐㄐ/小鳥(生殖器),小 ㄐ ㄐ
+Mandarin (Taiwanese),phone,nouns,household,手機,手机
+Mandarin (Taiwanese),pick up,verbs,action_words,撿,捡
+Mandarin (Taiwanese),picture,nouns,household,圖片,图片
+Mandarin (Taiwanese),pig,nouns,animals,豬,猪
+Mandarin (Taiwanese),pigeon,nouns,animals,鴿子,鸽子
+Mandarin (Taiwanese),pillow,nouns,household,枕頭,枕头
+Mandarin (Taiwanese),pinch,verbs,action_words,捏,捏
+Mandarin (Taiwanese),pinch,verbs,action_words,夾,夹
+Mandarin (Taiwanese),pipe,nouns,outside,水管,水管
+Mandarin (Taiwanese),pizza,nouns,food_drink,披薩,披萨
+Mandarin (Taiwanese),plate,nouns,household,盤子,盘子
+Mandarin (Taiwanese),play,verbs,action_words,玩,玩
+Mandarin (Taiwanese),poor,adjectives,descriptive_words,可憐的,可怜
+Mandarin (Taiwanese),popcorn,nouns,food_drink,爆米花,爆米花
+Mandarin (Taiwanese),popsicle,nouns,food_drink,冰棒,冰棒
+Mandarin (Taiwanese),porridge,nouns,food_drink,稀飯,稀饭
+Mandarin (Taiwanese),pot,nouns,household,鍋子,锅
+Mandarin (Taiwanese),pot,nouns,household,電鍋,电锅
+Mandarin (Taiwanese),potato,nouns,food_drink,馬鈴薯,马铃薯
+Mandarin (Taiwanese),potato chip,nouns,food_drink,洋芋片,洋芋片
+Mandarin (Taiwanese),potty,nouns,furniture_rooms,馬桶,马桶
+Mandarin (Taiwanese),pour,verbs,action_words,倒,倒
+Mandarin (Taiwanese),present,nouns,toys,禮物,礼物
+Mandarin (Taiwanese),press,verbs,action_words,按,按
+Mandarin (Taiwanese),pretend,verbs,action_words,假裝,假装
+Mandarin (Taiwanese),pretty,adjectives,descriptive_words,好漂亮/漂亮的,漂亮
+Mandarin (Taiwanese),pudding,nouns,food_drink,布丁,布丁
+Mandarin (Taiwanese),pull,verbs,action_words,拉,拉
+Mandarin (Taiwanese),pull,verbs,action_words,拔,拔
+Mandarin (Taiwanese),pumpkin,nouns,food_drink,南瓜,南瓜
+Mandarin (Taiwanese),purse,nouns,household,皮包,皮包
+Mandarin (Taiwanese),push,verbs,action_words,壓,压
+Mandarin (Taiwanese),push,verbs,action_words,推,推
+Mandarin (Taiwanese),put,verbs,action_words,放,放
+Mandarin (Taiwanese),puzzle,nouns,toys,拼圖,拼图
+Mandarin (Taiwanese),quickly,adjectives,descriptive_words,快一點,快点
+Mandarin (Taiwanese),quiet,adjectives,descriptive_words,安靜的,安静
+Mandarin (Taiwanese),radio,nouns,household,收音機/音響,收音机
+Mandarin (Taiwanese),rain,nouns,outside,下雨,下雨
+Mandarin (Taiwanese),raisin,nouns,food_drink,葡萄乾,葡萄干
+Mandarin (Taiwanese),red,adjectives,descriptive_words,紅紅的/紅色的,红色
+Mandarin (Taiwanese),refrigerator,nouns,household,冰箱,冰箱
+Mandarin (Taiwanese),remember,verbs,action_words,記,记
+Mandarin (Taiwanese),remote control,nouns,household,遙控器,遥控器
+Mandarin (Taiwanese),rice,nouns,food_drink,飯,饭
+Mandarin (Taiwanese),ride,verbs,action_words,騎,骑
+Mandarin (Taiwanese),road,nouns,outside,馬路,马路
+Mandarin (Taiwanese),robot,nouns,toys,機器人,机器人
+Mandarin (Taiwanese),rock (object),nouns,outside,石頭,石头
+Mandarin (Taiwanese),room,nouns,furniture_rooms,房間,房间
+Mandarin (Taiwanese),rooster,nouns,animals,公雞,公鸡
+Mandarin (Taiwanese),run,verbs,action_words,跑,跑
+Mandarin (Taiwanese),run,verbs,action_words,流(鼻涕),流
+Mandarin (Taiwanese),sad,adjectives,descriptive_words,傷心的/難過的,伤心
+Mandarin (Taiwanese),same,adjectives,descriptive_words,一樣的,一样
+Mandarin (Taiwanese),sand,nouns,outside,沙子,沙子
+Mandarin (Taiwanese),sandals,nouns,clothing,涼鞋,凉鞋
+Mandarin (Taiwanese),sandwich,nouns,food_drink,三明治,三明治
+Mandarin (Taiwanese),sausage,nouns,food_drink,香腸,香肠
+Mandarin (Taiwanese),say,verbs,action_words,說話,说话
+Mandarin (Taiwanese),scared,adjectives,descriptive_words,害怕的(好恐怖),害怕
+Mandarin (Taiwanese),scarf,nouns,clothing,圍巾,围巾
+Mandarin (Taiwanese),scissors,nouns,household,剪刀,剪刀
+Mandarin (Taiwanese),scold,verbs,action_words,罵,骂
+Mandarin (Taiwanese),seesaw (object),nouns,outside,翹翹板,翘翘板
+Mandarin (Taiwanese),shake,verbs,action_words,搖,摇
+Mandarin (Taiwanese),sheep,nouns,animals,小羊(咩咩),小羊
+Mandarin (Taiwanese),sheep,nouns,animals,綿羊,绵羊
+Mandarin (Taiwanese),shirt,nouns,clothing,衣物,衣物
+Mandarin (Taiwanese),shoe,nouns,clothing,鞋子,鞋子
+Mandarin (Taiwanese),shoe,nouns,clothing,皮鞋,皮鞋
+Mandarin (Taiwanese),shorts,nouns,clothing,短褲,短裤
+Mandarin (Taiwanese),shoulder,nouns,body_parts,肩膀,肩膀
+Mandarin (Taiwanese),shovel,nouns,outside,鏟子,铲子
+Mandarin (Taiwanese),sick,adjectives,descriptive_words,生病了,生病
+Mandarin (Taiwanese),sink,nouns,furniture_rooms,水槽(洗手檯),水槽
+Mandarin (Taiwanese),sit,verbs,action_words,坐,坐
+Mandarin (Taiwanese),sky,nouns,outside,天空,天空
+Mandarin (Taiwanese),slide (action),verbs,action_words,滑,滑
+Mandarin (Taiwanese),slide (object),nouns,outside,溜滑梯,溜滑梯
+Mandarin (Taiwanese),slipper,nouns,clothing,拖鞋,拖鞋
+Mandarin (Taiwanese),slow,adjectives,descriptive_words,好慢/慢慢的,好慢
+Mandarin (Taiwanese),small,adjectives,descriptive_words,小的,小
+Mandarin (Taiwanese),smell,verbs,action_words,聞,闻
+Mandarin (Taiwanese),smile (action),verbs,action_words,笑,笑
+Mandarin (Taiwanese),snack,nouns,food_drink,點心,点心
+Mandarin (Taiwanese),snail,nouns,animals,蝸牛,蜗牛
+Mandarin (Taiwanese),snake,nouns,animals,蛇,蛇
+Mandarin (Taiwanese),sneaker,nouns,clothing,布鞋(運動鞋),布鞋
+Mandarin (Taiwanese),so,function_words,connecting_words,所以,所以
+Mandarin (Taiwanese),soap,nouns,household,肥皂,肥皂
+Mandarin (Taiwanese),sock,nouns,clothing,襪子,袜子
+Mandarin (Taiwanese),soda,nouns,food_drink,汽水,汽水
+Mandarin (Taiwanese),soft,adjectives,descriptive_words,好軟/軟軟的,好软
+Mandarin (Taiwanese),soup,nouns,food_drink,湯,汤
+Mandarin (Taiwanese),sour,adjectives,descriptive_words,好酸/酸酸的,好酸
+Mandarin (Taiwanese),soy milk,nouns,food_drink,豆漿,豆浆
+Mandarin (Taiwanese),soy sauce,nouns,food_drink,醬油,酱油
+Mandarin (Taiwanese),spicy,adjectives,descriptive_words,好辣/辣辣的,好辣
+Mandarin (Taiwanese),spider,nouns,animals,蜘蛛,蜘蛛
+Mandarin (Taiwanese),spinach,nouns,food_drink,菠菜,菠菜
+Mandarin (Taiwanese),spoon,nouns,household,湯匙,汤匙
+Mandarin (Taiwanese),squat,verbs,action_words,蹲,蹲
+Mandarin (Taiwanese),squirrel,nouns,animals,松鼠,松鼠
+Mandarin (Taiwanese),stairs,nouns,furniture_rooms,樓梯,楼梯
+Mandarin (Taiwanese),stand,verbs,action_words,排(東西),排
+Mandarin (Taiwanese),stand,verbs,action_words,站,站
+Mandarin (Taiwanese),star,nouns,outside,星星,星星
+Mandarin (Taiwanese),stick,nouns,outside,棍子,棍子
+Mandarin (Taiwanese),sticker,nouns,toys,貼紙,贴纸
+Mandarin (Taiwanese),sticky,adjectives,descriptive_words,好臭/臭臭的,好 臭
+Mandarin (Taiwanese),sticky,adjectives,descriptive_words,黏黏的,黏 的
+Mandarin (Taiwanese),stop,verbs,action_words,停,停
+Mandarin (Taiwanese),straw,nouns,household,吸管,吸管
+Mandarin (Taiwanese),strawberry,nouns,food_drink,草莓,草莓
+Mandarin (Taiwanese),stroller,nouns,vehicles,娃娃車(手推車),娃娃车
+Mandarin (Taiwanese),sugar,nouns,food_drink,糖,糖
+Mandarin (Taiwanese),sun,nouns,outside,太陽,太阳
+Mandarin (Taiwanese),swallow,verbs,action_words,吞,吞
+Mandarin (Taiwanese),sweater,nouns,clothing,毛衣,毛衣
+Mandarin (Taiwanese),sweep,verbs,action_words,掃地,扫地
+Mandarin (Taiwanese),sweet,adjectives,descriptive_words,甜甜的,甜
+Mandarin (Taiwanese),swimsuit,nouns,clothing,泳衣,泳衣
+Mandarin (Taiwanese),swing (object),nouns,outside,鞦韆,秋千
+Mandarin (Taiwanese),table,nouns,furniture_rooms,桌子,桌子
+Mandarin (Taiwanese),table,nouns,furniture_rooms,餐桌,餐桌
+Mandarin (Taiwanese),take,verbs,action_words,拿,拿
+Mandarin (Taiwanese),take,verbs,action_words,脫,脱
+Mandarin (Taiwanese),tangerine,nouns,food_drink,橘子,橘子
+Mandarin (Taiwanese),taxi,nouns,vehicles,計程車,计程车
+Mandarin (Taiwanese),tea,nouns,food_drink,茶,茶
+Mandarin (Taiwanese),tear,verbs,action_words,撕,撕
+Mandarin (Taiwanese),teddybear,nouns,animals,小熊(泰迪熊),小熊
+Mandarin (Taiwanese),telephone,nouns,household,電話,电话
+Mandarin (Taiwanese),tell,verbs,action_words,告訴,告诉
+Mandarin (Taiwanese),that,function_words,quantifiers,那個,那个
+Mandarin (Taiwanese),then,function_words,connecting_words,後來,后来
+Mandarin (Taiwanese),there,function_words,locations,在那裡,那里
+Mandarin (Taiwanese),these,function_words,quantifiers,這些,这些
+Mandarin (Taiwanese),think,verbs,action_words,想,想
+Mandarin (Taiwanese),think,verbs,action_words,以為,以为
+Mandarin (Taiwanese),thirsty,adjectives,descriptive_words,口渴了/好渴,口渴
+Mandarin (Taiwanese),this,function_words,quantifiers,這個,这个
+Mandarin (Taiwanese),those,function_words,quantifiers,那些,那些
+Mandarin (Taiwanese),throw,verbs,action_words,丟,丢
+Mandarin (Taiwanese),throw,verbs,action_words,投,投
+Mandarin (Taiwanese),thunder,nouns,outside,打雷,打雷
+Mandarin (Taiwanese),tickle,verbs,action_words,搔癢,搔痒
+Mandarin (Taiwanese),tie,verbs,action_words,綁,绑
+Mandarin (Taiwanese),tiger,nouns,animals,老虎,老虎
+Mandarin (Taiwanese),tired,adjectives,descriptive_words,好累/累了,累
+Mandarin (Taiwanese),tissue,nouns,household,衛生紙(面紙),卫生纸
+Mandarin (Taiwanese),toast,nouns,food_drink,土司,土司
+Mandarin (Taiwanese),toe,nouns,body_parts,腳趾頭,脚趾头
+Mandarin (Taiwanese),toilet,nouns,furniture_rooms,廁所,厕所
+Mandarin (Taiwanese),tomato,nouns,food_drink,蕃茄,蕃茄
+Mandarin (Taiwanese),tongue,nouns,body_parts,舌頭,舌头
+Mandarin (Taiwanese),tooth,nouns,body_parts,牙齒,牙齿
+Mandarin (Taiwanese),toothbrush,nouns,household,牙刷,牙刷
+Mandarin (Taiwanese),toothpaste,nouns,household,牙膏,牙膏
+Mandarin (Taiwanese),touch,verbs,action_words,摸,摸
+Mandarin (Taiwanese),towel,nouns,household,毛巾,毛巾
+Mandarin (Taiwanese),toy (object),nouns,toys,玩具,玩具
+Mandarin (Taiwanese),traffic light,nouns,outside,紅綠燈,红绿灯
+Mandarin (Taiwanese),train,nouns,vehicles,火車,火车
+Mandarin (Taiwanese),trash,nouns,household,垃圾桶,垃圾桶
+Mandarin (Taiwanese),tree,nouns,outside,樹,树
+Mandarin (Taiwanese),tricycle,nouns,vehicles,三輪車,三轮车
+Mandarin (Taiwanese),truck,nouns,vehicles,垃圾車,垃圾车
+Mandarin (Taiwanese),truck,nouns,vehicles,卡車,卡车
+Mandarin (Taiwanese),tummy,nouns,body_parts,肚子,肚子
+Mandarin (Taiwanese),turtle,nouns,animals,烏龜,乌龟
+Mandarin (Taiwanese),TV,nouns,household,電視,电视
+Mandarin (Taiwanese),umbrella,nouns,outside,雨傘,雨伞
+Mandarin (Taiwanese),underpants,nouns,clothing,內褲(三角褲),内裤
+Mandarin (Taiwanese),up,function_words,locations,向(往)上,向
+Mandarin (Taiwanese),vegetable,nouns,food_drink,蔬菜,蔬菜
+Mandarin (Taiwanese),vest,nouns,clothing,背心,背心
+Mandarin (Taiwanese),walk,verbs,action_words,走/散步,走
+Mandarin (Taiwanese),wanna,verbs,action_words,要,要
+Mandarin (Taiwanese),wardrobe,nouns,furniture_rooms,衣櫥,衣橱
+Mandarin (Taiwanese),wash,verbs,action_words,洗,洗
+Mandarin (Taiwanese),washing machine,nouns,furniture_rooms,洗衣機,洗衣机
+Mandarin (Taiwanese),water (beverage),nouns,food_drink,水(茶茶),水
+Mandarin (Taiwanese),wear,verbs,action_words,穿,穿
+Mandarin (Taiwanese),wet,adjectives,descriptive_words,濕濕的,湿
+Mandarin (Taiwanese),what,function_words,question_words,什麼？,什么
+Mandarin (Taiwanese),what time,function_words,question_words,幾點？,几点
+Mandarin (Taiwanese),where,function_words,question_words,哪裡？,哪里
+Mandarin (Taiwanese),which,function_words,question_words,哪一個？,哪个
+Mandarin (Taiwanese),white,adjectives,descriptive_words,白色的,白色
+Mandarin (Taiwanese),who,function_words,question_words,誰？,谁
+Mandarin (Taiwanese),why,function_words,question_words,咦？,咦
+Mandarin (Taiwanese),why,function_words,question_words,為什麼？,为什么
+Mandarin (Taiwanese),wind,nouns,outside,風,风
+Mandarin (Taiwanese),window,nouns,furniture_rooms,窗戶,窗户
+Mandarin (Taiwanese),wipe,verbs,action_words,擦,擦
+Mandarin (Taiwanese),wolf,nouns,animals,狼(大野狼),狼
+Mandarin (Taiwanese),write,verbs,action_words,寫,写
+Mandarin (Taiwanese),yellow,adjectives,descriptive_words,黃色的,黄色
+Mandarin (Taiwanese),yes,verbs,action_words,是/對/好,是
+Mandarin (Taiwanese),yucky,adjectives,descriptive_words,討厭的,讨厌 的
+Mandarin (Taiwanese),yum yum,adjectives,descriptive_words,很好吃/好吃的,好吃
+Mandarin (Taiwanese),zebra,nouns,animals,斑馬,斑马
+Mandarin (Taiwanese),zipper,nouns,clothing,拉鍊,拉链
+Mandarin (Taiwanese),awake,adjectives,descriptive_words,醒了/醒著,醒 着
+Mandarin (Taiwanese),bitter,adjectives,descriptive_words,好苦/苦苦的,苦苦 的
+Mandarin (Taiwanese),black,adjectives,descriptive_words,黑色的/黑黑的,黑黑的
+Mandarin (Taiwanese),blue,adjectives,descriptive_words,藍藍的/藍色的,蓝色 的
+Mandarin (Taiwanese),broken,adjectives,descriptive_words,破了/破掉了,破掉 了
+Mandarin (Taiwanese),cold,adjectives,descriptive_words,好冷/冷冷的,冷冷的
+Mandarin (Taiwanese),cute,adjectives,descriptive_words,好可愛/可愛的,可爱 的
+Mandarin (Taiwanese),dirty,adjectives,descriptive_words,髒髒的/骯髒的,肮脏 的
+Mandarin (Taiwanese),fast,adjectives,descriptive_words,好快/快的,快 的
+Mandarin (Taiwanese),first,adjectives,descriptive_words,第一/第一名,第一名
+Mandarin (Taiwanese),full,adjectives,descriptive_words,飽了/好飽,好 饱
+Mandarin (Taiwanese),happy,adjectives,descriptive_words,快樂的/高興的,高兴 的
+Mandarin (Taiwanese),hard,adjectives,descriptive_words,好硬/硬硬的,硬硬 的
+Mandarin (Taiwanese),heavy,adjectives,descriptive_words,好重/重重的,重重的
+Mandarin (Taiwanese),high,adjectives,descriptive_words,好高/高高的,高高的
+Mandarin (Taiwanese),hit,verbs,action_words,碰/撞,撞
+Mandarin (Taiwanese),hot,adjectives,descriptive_words,好熱/熱熱的,热热 的
+Mandarin (Taiwanese),hot,adjectives,descriptive_words,好燙/燙燙的,烫烫 的
+Mandarin (Taiwanese),hungry,adjectives,descriptive_words,餓了/好餓,好 饿
+Mandarin (Taiwanese),hurry,verbs,action_words,快點/快一點,快 一点
+Mandarin (Taiwanese),hurt,adjectives,descriptive_words,好痛/痛痛的,痛痛 的
+Mandarin (Taiwanese),mud,nouns,outside,土/泥土,泥土
+Mandarin (Taiwanese),no,verbs,action_words,不是/不對/不好,不 对
+Mandarin (Taiwanese),noisy,adjectives,descriptive_words,好吵/吵鬧的,吵闹 的
+Mandarin (Taiwanese),none,function_words,quantifiers,沒半個/沒有,没有
+Mandarin (Taiwanese),not,verbs,action_words,不可以/不行,不行
+Mandarin (Taiwanese),penis,nouns,body_parts,小ㄐㄐ/小鳥(生殖器),小鸟
+Mandarin (Taiwanese),pretty,adjectives,descriptive_words,好漂亮/漂亮的,漂亮 的
+Mandarin (Taiwanese),radio,nouns,household,收音機/音響,音响
+Mandarin (Taiwanese),red,adjectives,descriptive_words,紅紅的/紅色的,红色 的
+Mandarin (Taiwanese),sad,adjectives,descriptive_words,傷心的/難過的,难过 的
+Mandarin (Taiwanese),slow,adjectives,descriptive_words,好慢/慢慢的,慢慢 的
+Mandarin (Taiwanese),soft,adjectives,descriptive_words,好軟/軟軟的,软软 的
+Mandarin (Taiwanese),sour,adjectives,descriptive_words,好酸/酸酸的,酸酸的
+Mandarin (Taiwanese),spicy,adjectives,descriptive_words,好辣/辣辣的,辣辣的
+Mandarin (Taiwanese),sticky,adjectives,descriptive_words,好臭/臭臭的,臭臭 的
+Mandarin (Taiwanese),thirsty,adjectives,descriptive_words,口渴了/好渴,好渴
+Mandarin (Taiwanese),tired,adjectives,descriptive_words,好累/累了,累 了
+Mandarin (Taiwanese),walk,verbs,action_words,走/散步,散步
+Mandarin (Taiwanese),yes,verbs,action_words,是/對/好,对
+Mandarin (Taiwanese),yum yum,adjectives,descriptive_words,很好吃/好吃的,好吃 的
+Mandarin (Taiwanese),no,verbs,action_words,不是/不對/不好,不好
+Mandarin (Taiwanese),yes,verbs,action_words,是/對/好,好

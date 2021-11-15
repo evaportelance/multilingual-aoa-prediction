@@ -1,0 +1,364 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+English (British),again,function_words,prepositions,again,again
+English (British),airplane,nouns,vehicles,aeroplane / plane,aeroplane
+English (British),all,function_words,prepositions,all,all
+English (British),all gone,adjectives,descriptive_words,all gone,all gone
+English (British),animal,nouns,animals,animal,animal
+English (British),another,function_words,prepositions,another,another
+English (British),apple,nouns,food_drink,apple,apple
+English (British),arm,nouns,body_parts,arm,arm
+English (British),asleep,adjectives,descriptive_words,asleep,asleep
+English (British),away,function_words,prepositions,away,away
+English (British),back,function_words,prepositions,back,back
+English (British),bad,adjectives,descriptive_words,bad,bad
+English (British),ball,nouns,toys,ball,ball
+English (British),balloon,nouns,toys,balloon,balloon
+English (British),banana,nouns,food_drink,banana,banana
+English (British),basket,nouns,household,bin,bin
+English (British),bathroom,nouns,furniture_rooms,bathroom,bathroom
+English (British),bathtub,nouns,clothing,bath / bathtub,bath
+English (British),beach,nouns,outside,beach,beach
+English (British),bear,nouns,animals,bear,bear
+English (British),bed,nouns,furniture_rooms,bed,bed
+English (British),bedroom,nouns,furniture_rooms,bedroom,bedroom
+English (British),bee,nouns,animals,bee,bee
+English (British),belly button,nouns,body_parts,belly button / tummy button,belly button 
+English (British),bib,nouns,clothing,bib,bib
+English (British),bicycle,nouns,vehicles,bicycle / bike,bicycle 
+English (British),big,adjectives,descriptive_words,big,big
+English (British),bird,nouns,animals,bird,bird
+English (British),biscuit,nouns,food_drink,biscuit,biscuit
+English (British),bite,verbs,action_words,bite,bite
+English (British),blanket,nouns,household,blanket,blanket
+English (British),block,nouns,toys,block / brick,block 
+English (British),blow,verbs,action_words,blow,blow
+English (British),blue,adjectives,descriptive_words,blue,blue
+English (British),boat,nouns,vehicles,boat,boat
+English (British),book,nouns,toys,book,book
+English (British),boots,nouns,clothing,boot(s),boot
+English (British),bottle,nouns,household,bottle,bottle
+English (British),bowl,nouns,household,bowl,bowl
+English (British),box,nouns,household,box,box
+English (British),bread,nouns,food_drink,bread,bread
+English (British),break,verbs,action_words,break,break
+English (British),bring,verbs,action_words,bring,bring
+English (British),broken,adjectives,descriptive_words,broken,broken
+English (British),broom,nouns,household,broom,broom
+English (British),brush (object),nouns,household,brush,brush
+English (British),bubbles,nouns,toys,bubble,bubble
+English (British),bucket,nouns,outside,bucket,bucket
+English (British),bump,verbs,action_words,bump,bump
+English (British),bunny,nouns,animals,bunny / rabbit,bunny
+English (British),bus,nouns,vehicles,bus,bus
+English (British),butter,nouns,food_drink,butter,butter
+English (British),butterfly,nouns,animals,butterfly,butterfly
+English (British),button,nouns,clothing,button,button
+English (British),cake,nouns,food_drink,cake,cake
+English (British),car,nouns,vehicles,car,car
+English (British),careful,adjectives,descriptive_words,careful,careful
+English (British),carrots,nouns,food_drink,carrot,carrot
+English (British),carry,verbs,action_words,carry,carry
+English (British),cat,nouns,animals,cat,cat
+English (British),catch,verbs,action_words,catch,catch
+English (British),cereal,nouns,food_drink,cereal,cereal
+English (British),chair,nouns,furniture_rooms,chair,chair
+English (British),cheek,nouns,body_parts,cheek,cheek
+English (British),cheese,nouns,food_drink,cheese,cheese
+English (British),chicken (animal),nouns,animals,chicken,chicken
+English (British),chicken (food),nouns,food_drink,chicken,chicken
+English (British),church,nouns,outside,church,church
+English (British),clean (action),verbs,action_words,clean,clean
+English (British),clean (description),adjectives,descriptive_words,clean,clean
+English (British),clock,nouns,household,clock,clock
+English (British),close,verbs,action_words,shut / close,shut
+English (British),coat,nouns,clothing,coat,coat
+English (British),coffee,nouns,food_drink,coffee,coffee
+English (British),cold,adjectives,descriptive_words,cold,cold
+English (British),comb (object),nouns,household,comb,comb
+English (British),couch,nouns,furniture_rooms,settee / sofa,settee
+English (British),cow,nouns,animals,cow,cow
+English (British),crib,nouns,furniture_rooms,cot,cot
+English (British),cry,verbs,action_words,cry,cry
+English (British),cup,nouns,household,cup,cup
+English (British),cup,nouns,household,mug,mug
+English (British),dance,verbs,action_words,dance,dance
+English (British),dark,adjectives,descriptive_words,dark,dark
+English (British),deer,nouns,animals,deer,deer
+English (British),diaper,nouns,clothing,nappy,nappy
+English (British),dirty,adjectives,descriptive_words,dirty,dirty
+English (British),dish,nouns,household,dish,dish
+English (British),dog,nouns,animals,dog,dog
+English (British),doll,nouns,toys,doll,doll
+English (British),donkey,nouns,animals,donkey,donkey
+English (British),door,nouns,furniture_rooms,door,door
+English (British),down,function_words,prepositions,down,down
+English (British),draw,verbs,action_words,draw,draw
+English (British),drawer,nouns,furniture_rooms,drawer,drawer
+English (British),dress (object),nouns,clothing,dress,dress
+English (British),drink (action),verbs,action_words,drink,drink
+English (British),drink (beverage),nouns,food_drink,drink,drink
+English (British),drive,verbs,action_words,drive,drive
+English (British),drop,verbs,action_words,drop,drop
+English (British),dry (description),adjectives,descriptive_words,dry,dry
+English (British),duck,nouns,animals,duck,duck
+English (British),ear,nouns,body_parts,ear,ear
+English (British),eat,verbs,action_words,eat,eat
+English (British),egg,nouns,food_drink,egg,egg
+English (British),elephant,nouns,animals,elephant,elephant
+English (British),empty,adjectives,descriptive_words,empty,empty
+English (British),eye,nouns,body_parts,eye,eye
+English (British),face,nouns,body_parts,face,face
+English (British),fall,verbs,action_words,fall,fall
+English (British),fast,adjectives,descriptive_words,fast,fast
+English (British),feed,verbs,action_words,feed,feed
+English (British),find,verbs,action_words,find,find
+English (British),fine,adjectives,descriptive_words,fine,fine
+English (British),finger,nouns,body_parts,finger,finger
+English (British),finish,verbs,action_words,finish,finish
+English (British),firetruck,nouns,vehicles,fire engine,fire engine
+English (British),fish (animal),nouns,animals,fish,fish
+English (British),fish (food),nouns,food_drink,fish,fish
+English (British),flower,nouns,outside,flower,flower
+English (British),food,nouns,food_drink,food,food
+English (British),foot,nouns,body_parts,foot,foot
+English (British),fork,nouns,household,fork,fork
+English (British),frog,nouns,animals,frog,frog
+English (British),garage,nouns,furniture_rooms,garage,garage
+English (British),garden,nouns,outside,garden,garden
+English (British),gentle,adjectives,descriptive_words,gentle,gentle
+English (British),get,verbs,action_words,get,get
+English (British),giraffe,nouns,animals,giraffe,giraffe
+English (British),give,verbs,action_words,give,give
+English (British),glass,nouns,household,glass,glass
+English (British),glasses,nouns,clothing,glasses / specs,glasses
+English (British),go,verbs,action_words,go,go
+English (British),good,adjectives,descriptive_words,good,good
+English (British),goose,nouns,animals,goose,goose
+English (British),green,adjectives,descriptive_words,green,green
+English (British),hair,nouns,body_parts,hair,hair
+English (British),hammer,nouns,household,hammer,hammer
+English (British),hand,nouns,body_parts,hand,hand
+English (British),happy,adjectives,descriptive_words,happy,happy
+English (British),hard,adjectives,descriptive_words,hard,hard
+English (British),hat,nouns,clothing,hat,hat
+English (British),have,verbs,action_words,have,have
+English (British),head,nouns,body_parts,head,head
+English (British),hear,verbs,action_words,hear,hear
+English (British),help,verbs,action_words,help,help
+English (British),her,function_words,pronouns,her,her
+English (British),high chair,nouns,furniture_rooms,high chair,high chair
+English (British),his,function_words,pronouns,his,his
+English (British),hit,verbs,action_words,hit,hit
+English (British),horse,nouns,animals,horse,horse
+English (British),hot,adjectives,descriptive_words,hot,hot
+English (British),house,nouns,outside,house,house
+English (British),how,function_words,question_words,how,how
+English (British),hug,verbs,action_words,hug,hug
+English (British),hungry,adjectives,descriptive_words,hungry,hungry
+English (British),hurry,verbs,action_words,hurry,hurry
+English (British),hurt (description),adjectives,descriptive_words,hurt,hurt
+English (British),i,function_words,pronouns,I,i
+English (British),ice cream,nouns,food_drink,ice cream,ice cream
+English (British),in,function_words,prepositions,in,in
+English (British),inside,function_words,prepositions,inside,inside
+English (British),it,function_words,pronouns,it,it
+English (British),jacket,nouns,clothing,jacket,jacket
+English (British),jam,nouns,food_drink,jam,jam
+English (British),jeans,nouns,clothing,jeans,jeans
+English (British),juice,nouns,food_drink,juice,juice
+English (British),jump,verbs,action_words,jump,jump
+English (British),keys,nouns,household,key,key
+English (British),kick,verbs,action_words,kick,kick
+English (British),kiss,verbs,action_words,kiss,kiss
+English (British),kitchen,nouns,furniture_rooms,kitchen,kitchen
+English (British),kitty,nouns,animals,kitten,kitten
+English (British),knee,nouns,body_parts,knee,knee
+English (British),lamb,nouns,animals,lamb,lamb
+English (British),lamp,nouns,household,lamp,lamp
+English (British),leg,nouns,body_parts,leg,leg
+English (British),light (object),nouns,household,light,light
+English (British),lion,nouns,animals,lion,lion
+English (British),little (description),adjectives,descriptive_words,little,little
+English (British),living room,nouns,furniture_rooms,living room,living room
+English (British),look,verbs,action_words,look,look
+English (British),love,verbs,action_words,love,love
+English (British),make,verbs,action_words,make,make
+English (British),me,function_words,pronouns,me,me
+English (British),meat,nouns,food_drink,meat,meat
+English (British),medicine,nouns,household,medicine,medicine
+English (British),milk,nouns,food_drink,milk,milk
+English (British),mine,function_words,pronouns,mine,mine
+English (British),money,nouns,household,money,money
+English (British),monkey,nouns,animals,monkey,monkey
+English (British),moon,nouns,outside,moon,moon
+English (British),more,function_words,prepositions,more,more
+English (British),motorcycle,nouns,vehicles,motor-bike,motor-bike
+English (British),mouse,nouns,animals,mouse,mouse
+English (British),mouth,nouns,body_parts,mouth,mouth
+English (British),my,function_words,pronouns,my,my
+English (British),nail (body part),nouns,body_parts,nail,nail
+English (British),naughty,adjectives,descriptive_words,naughty,naughty
+English (British),necklace,nouns,clothing,necklace,necklace
+English (British),nice,adjectives,descriptive_words,nice,nice
+English (British),none,function_words,prepositions,none,none
+English (British),nose,nouns,body_parts,nose,nose
+English (British),not,function_words,prepositions,not,not
+English (British),off,function_words,prepositions,off,off
+English (British),old,adjectives,descriptive_words,old,old
+English (British),on,function_words,prepositions,on,on
+English (British),open (action),verbs,action_words,open,open
+English (British),orange (food),nouns,food_drink,orange,orange
+English (British),other,function_words,prepositions,other,other
+English (British),out,function_words,prepositions,out,out
+English (British),outside,nouns,outside,outside,outside
+English (British),owl,nouns,animals,owl,owl
+English (British),pacifier,nouns,household,dummy,dummy
+English (British),pajamas,nouns,clothing,pyjamas,pyjamas
+English (British),pants,nouns,clothing,trousers,trousers
+English (British),paper,nouns,household,paper,paper
+English (British),park,nouns,outside,park,park
+English (British),party,nouns,outside,party,party
+English (British),pasta,nouns,food_drink,pasta / spaghetti,pasta
+English (British),peas,nouns,food_drink,peas,peas
+English (British),pen,nouns,toys,pen,pen
+English (British),penguin,nouns,animals,penguin,penguin
+English (British),penny,nouns,household,penny,penny
+English (British),picture,nouns,household,picture,picture
+English (British),pig,nouns,animals,pig,pig
+English (British),pillow,nouns,household,pillow,pillow
+English (British),pizza,nouns,food_drink,pizza,pizza
+English (British),plant,nouns,household,plant,plant
+English (British),plate,nouns,household,plate,plate
+English (British),play,verbs,action_words,play,play
+English (British),play pen,nouns,furniture_rooms,play pen,play pen
+English (British),pony,nouns,animals,pony,pony
+English (British),pool,nouns,outside,pool,pool
+English (British),potty,nouns,furniture_rooms,potty,potty
+English (British),pretty,adjectives,descriptive_words,pretty,pretty
+English (British),pull,verbs,action_words,pull,pull
+English (British),puppy,nouns,animals,puppy,puppy
+English (British),purse,nouns,household,purse,purse
+English (British),push,verbs,action_words,push,push
+English (British),put,verbs,action_words,put,put
+English (British),radio,nouns,household,radio,radio
+English (British),rain,nouns,outside,rain,rain
+English (British),read,verbs,action_words,read,read
+English (British),red,adjectives,descriptive_words,red,red
+English (British),refrigerator,nouns,furniture_rooms,refrigerator / fridge,refrigerator
+English (British),ride,verbs,action_words,ride,ride
+English (British),rocking chair,nouns,furniture_rooms,rocking chair,rocking chair
+English (British),run,verbs,action_words,run,run
+English (British),sad,adjectives,descriptive_words,sad,sad
+English (British),same,function_words,prepositions,same,same
+English (British),say,verbs,action_words,say,say
+English (British),scared,adjectives,descriptive_words,scared,scared
+English (British),school,nouns,outside,school,school
+English (British),scissors,nouns,household,scissors,scissors
+English (British),see,verbs,action_words,see,see
+English (British),sheep,nouns,animals,sheep,sheep
+English (British),shirt,nouns,clothing,shirt,shirt
+English (British),shoe,nouns,clothing,shoe,shoe
+English (British),shorts,nouns,clothing,shorts,shorts
+English (British),show,verbs,action_words,show,show
+English (British),sick,adjectives,descriptive_words,sick,sick
+English (British),sing,verbs,action_words,sing,sing
+English (British),sink,nouns,furniture_rooms,sink,sink
+English (British),sky,nouns,outside,sky,sky
+English (British),sleep,verbs,action_words,sleep,sleep
+English (British),sleepy,adjectives,descriptive_words,sleepy,sleepy
+English (British),slide (object),nouns,outside,slide,slide
+English (British),smell,verbs,action_words,smell,smell
+English (British),smile,verbs,action_words,smile,smile
+English (British),snow,nouns,outside,snow,snow
+English (British),soap,nouns,household,soap,soap
+English (British),sock,nouns,clothing,sock,sock
+English (British),soft,adjectives,descriptive_words,soft,soft
+English (British),some,function_words,prepositions,some,some
+English (British),spade,nouns,outside,spade,spade
+English (British),spider,nouns,animals,spider,spider
+English (British),splash,verbs,action_words,splash,splash
+English (British),spoon,nouns,household,spoon,spoon
+English (British),squirrel,nouns,animals,squirrel,squirrel
+English (British),stairs,nouns,furniture_rooms,stairs,stairs
+English (British),star,nouns,outside,star,star
+English (British),stoller,nouns,vehicles,pushchair / buggy,pushchair
+English (British),stone,nouns,outside,stone,stone
+English (British),stop,verbs,action_words,stop,stop
+English (British),stove,nouns,furniture_rooms,cooker / stove / oven,cooker
+English (British),sun,nouns,outside,sun,sun
+English (British),sweater,nouns,clothing,jumper / sweater,jumper
+English (British),swim,verbs,action_words,swim,swim
+English (British),swing (action),verbs,action_words,swing,swing
+English (British),swing (object),nouns,outside,swing,swing
+English (British),table,nouns,furniture_rooms,table,table
+English (British),take,verbs,action_words,take,take
+English (British),tea,nouns,food_drink,tea,tea
+English (British),teddybear,nouns,toys,teddy bear,teddy bear
+English (British),telephone,nouns,household,telephone,telephone
+English (British),tell,verbs,action_words,tell,tell
+English (British),that,function_words,pronouns,that,that
+English (British),there,function_words,prepositions,there,there
+English (British),thirsty,adjectives,descriptive_words,thirsty,thirsty
+English (British),this,function_words,pronouns,this,this
+English (British),throw,verbs,action_words,throw,throw
+English (British),tickle,verbs,action_words,tickle,tickle
+English (British),tiger,nouns,animals,tiger,tiger
+English (British),tired,adjectives,descriptive_words,tired,tired
+English (British),toast,nouns,food_drink,toast,toast
+English (British),toe,nouns,body_parts,toe,toe
+English (British),tongue,nouns,body_parts,tongue,tongue
+English (British),tooth,nouns,body_parts,tooth,tooth
+English (British),toothbrush,nouns,household,toothbrush,toothbrush
+English (British),towel,nouns,household,towel,towel
+English (British),toy (object),nouns,toys,toy,toy
+English (British),train,nouns,vehicles,train,train
+English (British),trash,nouns,household,rubbish,rubbish
+English (British),tree,nouns,outside,tree,tree
+English (British),truck,nouns,vehicles,lorry / truck,lorry
+English (British),tummy,nouns,body_parts,tummy,tummy
+English (British),turkey,nouns,animals,turkey,turkey
+English (British),turtle,nouns,animals,turtle,turtle
+English (British),tv,nouns,furniture_rooms,TV / television,tv
+English (British),under,function_words,prepositions,under,under
+English (British),up,function_words,prepositions,up,up
+English (British),vacuum,nouns,household,hoover / vacuum,hoover
+English (British),walk,verbs,action_words,walk,walk
+English (British),wall,nouns,outside,wall,wall
+English (British),wash,verbs,action_words,wash,wash
+English (British),watch (action),verbs,action_words,watch,watch
+English (British),watch (object),nouns,household,watch,watch
+English (British),water (beverage),nouns,food_drink,water,water
+English (British),water (not beverage),nouns,outside,water,water
+English (British),wet (description),adjectives,descriptive_words,wet,wet
+English (British),what,function_words,question_words,what,what
+English (British),when (question),function_words,question_words,when,when
+English (British),where (question),function_words,question_words,where,where
+English (British),who,function_words,question_words,who,who
+English (British),why,function_words,question_words,why,why
+English (British),window,nouns,furniture_rooms,window,window
+English (British),wipe,verbs,action_words,wipe,wipe
+English (British),work (place),nouns,outside,work,work
+English (British),write,verbs,action_words,write,write
+English (British),yellow,adjectives,descriptive_words,yellow,yellow
+English (British),you,function_words,pronouns,you,you
+English (British),your,function_words,pronouns,your,your
+English (British),zipper,nouns,clothing,zip,zip
+English (British),zoo,nouns,outside,zoo,zoo
+English (British),airplane,nouns,vehicles,aeroplane / plane,plane
+English (British),bathtub,nouns,clothing,bath / bathtub,bathtub
+English (British),belly button,nouns,body_parts,belly button / tummy button,tummy button
+English (British),bicycle,nouns,vehicles,bicycle / bike,bike
+English (British),block,nouns,toys,block / brick,brick
+English (British),bunny,nouns,animals,bunny / rabbit,rabbit
+English (British),close,verbs,action_words,shut / close,close
+English (British),couch,nouns,furniture_rooms,settee / sofa,sofa
+English (British),glasses,nouns,clothing,glasses / specs,specs
+English (British),pasta,nouns,food_drink,pasta / spaghetti,spaghetti
+English (British),refrigerator,nouns,furniture_rooms,refrigerator / fridge,fridge
+English (British),stoller,nouns,vehicles,pushchair / buggy,buggy
+English (British),stove,nouns,furniture_rooms,cooker / stove / oven,stove 
+English (British),sweater,nouns,clothing,jumper / sweater,sweater
+English (British),truck,nouns,vehicles,lorry / truck,truck
+English (British),tv,nouns,furniture_rooms,TV / television,television
+English (British),vacuum,nouns,household,hoover / vacuum,vacuum
+English (British),stove,nouns,furniture_rooms,cooker / stove / oven,oven

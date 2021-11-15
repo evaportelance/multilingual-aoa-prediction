@@ -1,0 +1,597 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+French (Quebecois),a,function_words,quantifiers,un/une,un
+French (Quebecois),a lot,function_words,quantifiers,beaucoup,beaucoup
+French (Quebecois),able,adjectives,descriptive_words,capable,capable
+French (Quebecois),again,function_words,quantifiers,encore,encore
+French (Quebecois),airplane,nouns,vehicles,avion,avion
+French (Quebecois),all,function_words,quantifiers,tout/toute,tout
+French (Quebecois),all gone,adjectives,descriptive_words,parti,parti
+French (Quebecois),also,function_words,connecting_words,aussi,aussi
+French (Quebecois),and,function_words,connecting_words,et,et
+French (Quebecois),angry,adjectives,descriptive_words,fâché,fâché
+French (Quebecois),animal,nouns,animals,animal,animal
+French (Quebecois),another,function_words,quantifiers,un autre,un autre
+French (Quebecois),ant,nouns,animals,fourmi,fourmi
+French (Quebecois),apple,nouns,food_drink,pomme,pomme
+French (Quebecois),arm,nouns,body_parts,bras,bras
+French (Quebecois),around,function_words,locations,autour,autour
+French (Quebecois),as,function_words,locations,comme,comme
+French (Quebecois),asleep,adjectives,descriptive_words,endormi,endormi
+French (Quebecois),at,function_words,locations,à,à
+French (Quebecois),attach,verbs,action_words,attacher,attacher
+French (Quebecois),awake,adjectives,descriptive_words,réveillé,réveillé
+French (Quebecois),bad,adjectives,descriptive_words,mal,mal
+French (Quebecois),balcony,nouns,outside,véranda/balcon,véranda
+French (Quebecois),ball,nouns,toys,ballon,ballon
+French (Quebecois),ball,nouns,toys,balle,balle
+French (Quebecois),banana,nouns,food_drink,banane,banane
+French (Quebecois),bang,verbs,action_words,cogner (à),cogner
+French (Quebecois),basement,nouns,furniture_rooms,sous-sol,sous-sol
+French (Quebecois),basket,nouns,household,panier,panier
+French (Quebecois),bathroom,nouns,furniture_rooms,salle de bain/toilette,salle de bain
+French (Quebecois),bathtub,nouns,furniture_rooms,bain (object),bain
+French (Quebecois),be,verbs,action_words,être,être
+French (Quebecois),beads,nouns,clothing,perles/boules,perles
+French (Quebecois),beans,nouns,food_drink,haricot,haricot
+French (Quebecois),bear,nouns,animals,ours,ours
+French (Quebecois),beautiful,adjectives,descriptive_words,beau/belle,beau
+French (Quebecois),beautiful,adjectives,descriptive_words,joli,joli
+French (Quebecois),because,function_words,connecting_words,parce que,parce que
+French (Quebecois),bed,nouns,furniture_rooms,lit,lit
+French (Quebecois),bedroom,nouns,furniture_rooms,chambre,chambre
+French (Quebecois),bee,nouns,animals,abeille,abeille
+French (Quebecois),behind,function_words,locations,en arrière,en arrière
+French (Quebecois),belly button,nouns,body_parts,nombril,nombril
+French (Quebecois),below,function_words,locations,en bas,en bas
+French (Quebecois),belt,nouns,clothing,ceinture,ceinture
+French (Quebecois),bench,nouns,furniture_rooms,banc,banc
+French (Quebecois),better,adjectives,descriptive_words,mieux,mieux
+French (Quebecois),bib,nouns,clothing,bavette,bavette
+French (Quebecois),bicycle,nouns,vehicles,bicyclette,bicyclette
+French (Quebecois),big,adjectives,descriptive_words,gros/grand,gros
+French (Quebecois),bird,nouns,animals,oiseau,oiseau
+French (Quebecois),bite,verbs,action_words,mordre,mordre
+French (Quebecois),black,adjectives,descriptive_words,noir,noir
+French (Quebecois),blanket,nouns,household,couverte/couverture,couverte
+French (Quebecois),block,nouns,toys,bloc,bloc
+French (Quebecois),blow,verbs,action_words,souffler,souffler
+French (Quebecois),blue,adjectives,descriptive_words,bleu,bleu
+French (Quebecois),boat,nouns,vehicles,bateau,bateau
+French (Quebecois),book,nouns,toys,livre,livre
+French (Quebecois),boots,nouns,clothing,bottes,bottes
+French (Quebecois),bottle,nouns,household,bouteille,bouteille
+French (Quebecois),bowl,nouns,household,bol,bol
+French (Quebecois),box,nouns,household,boîte,boîte
+French (Quebecois),bread,nouns,food_drink,pain,pain
+French (Quebecois),break,verbs,action_words,briser/casser,briser
+French (Quebecois),bring,verbs,action_words,amener,amener
+French (Quebecois),bring,verbs,action_words,apporter,apporter
+French (Quebecois),broken,adjectives,descriptive_words,brisé/cassé,brisé
+French (Quebecois),broom,nouns,household,balai,balai
+French (Quebecois),brown,adjectives,descriptive_words,brun,brun
+French (Quebecois),brush (action),verbs,action_words,brosser,brosser
+French (Quebecois),brush (object),nouns,household,brosse,brosse
+French (Quebecois),bubbles,nouns,toys,bulles,bulles
+French (Quebecois),bucket,nouns,household,seau,seau
+French (Quebecois),bug,nouns,animals,bibitte,bibitte
+French (Quebecois),build,verbs,action_words,construire/bâtir,construire
+French (Quebecois),bunny,nouns,animals,lapin,lapin
+French (Quebecois),bus,nouns,vehicles,autobus,autobus
+French (Quebecois),but,function_words,connecting_words,mais,mais
+French (Quebecois),butt,nouns,body_parts,fesses,fesses
+French (Quebecois),butter,nouns,food_drink,beurre,beurre
+French (Quebecois),butterfly,nouns,animals,papillon,papillon
+French (Quebecois),button,nouns,clothing,bouton,bouton
+French (Quebecois),buy,verbs,action_words,acheter,acheter
+French (Quebecois),by,function_words,locations,par,par
+French (Quebecois),cake,nouns,food_drink,gâteau,gâteau
+French (Quebecois),camera,nouns,household,caméra,caméra
+French (Quebecois),can (auxiliary),verbs,action_words,pouvoir,pouvoir
+French (Quebecois),candy,nouns,food_drink,bonbon,bonbon
+French (Quebecois),car,nouns,vehicles,auto,auto
+French (Quebecois),careful,adjectives,descriptive_words,prudent,prudent
+French (Quebecois),carrots,nouns,food_drink,carotte,carotte
+French (Quebecois),carry,verbs,action_words,transporter,transporter
+French (Quebecois),cat,nouns,animals,chat,chat
+French (Quebecois),catch,verbs,action_words,attraper,attraper
+French (Quebecois),cereal,nouns,food_drink,céréales,céréales
+French (Quebecois),chair,nouns,furniture_rooms,chaise,chaise
+French (Quebecois),chalk,nouns,toys,craie,craie
+French (Quebecois),cheek,nouns,body_parts,joue,joue
+French (Quebecois),cheerios,nouns,food_drink,cheerios,cheerios
+French (Quebecois),cheese,nouns,food_drink,fromage,fromage
+French (Quebecois),chicken (animal),nouns,animals,poule,poule
+French (Quebecois),chicken (animal),nouns,animals,poulet (animal),poulet
+French (Quebecois),chicken (food),nouns,food_drink,poulet,poulet
+French (Quebecois),chicken (food),nouns,food_drink,poulet (food),poulet
+French (Quebecois),chin,nouns,body_parts,menton,menton
+French (Quebecois),chips,nouns,food_drink,chips,chips
+French (Quebecois),chocolate,nouns,food_drink,chocolat,chocolat
+French (Quebecois),choose,verbs,action_words,choisir,choisir
+French (Quebecois),clean (action),verbs,action_words,nettoyer,nettoyer
+French (Quebecois),clean (action),verbs,action_words,ranger,ranger
+French (Quebecois),clean (description),adjectives,descriptive_words,propre,propre
+French (Quebecois),climb,verbs,action_words,grimper,grimper
+French (Quebecois),climb,verbs,action_words,monter,monter
+French (Quebecois),clock,nouns,household,horloge,horloge
+French (Quebecois),close,verbs,action_words,fermer,fermer
+French (Quebecois),cloud,nouns,outside,nuage,nuage
+French (Quebecois),coat,nouns,clothing,manteau,manteau
+French (Quebecois),coffee,nouns,food_drink,café,café
+French (Quebecois),coke,nouns,food_drink,coke,coke
+French (Quebecois),cold,adjectives,descriptive_words,froid,froid
+French (Quebecois),colored pencil,nouns,toys,crayon de couleur,crayon de couleur
+French (Quebecois),comb (object),nouns,household,peigne,peigne
+French (Quebecois),come,verbs,action_words,venir,venir
+French (Quebecois),compote,nouns,food_drink,compote de pommes,compote de pommes
+French (Quebecois),cookie,nouns,food_drink,biscuit,biscuit
+French (Quebecois),couch,nouns,furniture_rooms,divan,divan
+French (Quebecois),couch,nouns,furniture_rooms,divan/sofa,divan
+French (Quebecois),cover,verbs,action_words,couvrir,couvrir
+French (Quebecois),cow,nouns,animals,vache,vache
+French (Quebecois),cracker,nouns,food_drink,biscuit soda,biscuit soda
+French (Quebecois),crib,nouns,furniture_rooms,bassinette/berceau,bassinette
+French (Quebecois),crocodile,nouns,animals,alligator/crocodile,alligator
+French (Quebecois),cry,verbs,action_words,pleurer,pleurer
+French (Quebecois),cucumber,nouns,food_drink,cornichon,cornichon
+French (Quebecois),cup,nouns,household,tasse,tasse
+French (Quebecois),cut,verbs,action_words,couper,couper
+French (Quebecois),cute,adjectives,descriptive_words,mignon/cute,mignon
+French (Quebecois),dance,verbs,action_words,danser,danser
+French (Quebecois),deer,nouns,animals,chevreuil,chevreuil
+French (Quebecois),diaper,nouns,clothing,couche,couche
+French (Quebecois),dirty,adjectives,descriptive_words,sale,sale
+French (Quebecois),dish,nouns,household,plat,plat
+French (Quebecois),do,verbs,action_words,faire,faire
+French (Quebecois),dog,nouns,animals,chien,chien
+French (Quebecois),doll,nouns,toys,poupée,poupée
+French (Quebecois),donkey,nouns,animals,âne,âne
+French (Quebecois),donut,nouns,food_drink,beigne,beigne
+French (Quebecois),door,nouns,furniture_rooms,porte,porte
+French (Quebecois),down,function_words,locations,à terre/par terre,à terre
+French (Quebecois),draw,verbs,action_words,dessiner,dessiner
+French (Quebecois),drawer,nouns,furniture_rooms,tiroir,tiroir
+French (Quebecois),dress (object),nouns,clothing,robe,robe
+French (Quebecois),drink (action),verbs,action_words,boire,boire
+French (Quebecois),drive,verbs,action_words,conduire,conduire
+French (Quebecois),dry (action),verbs,action_words,sécher,sécher
+French (Quebecois),dry (description),adjectives,descriptive_words,sec,sec
+French (Quebecois),dryer,nouns,furniture_rooms,sécheuse,sécheuse
+French (Quebecois),duck,nouns,animals,canard,canard
+French (Quebecois),dump,verbs,action_words,jeter,jeter
+French (Quebecois),ear,nouns,body_parts,oreille,oreille
+French (Quebecois),eat,verbs,action_words,manger,manger
+French (Quebecois),egg,nouns,food_drink,oeuf,oeuf
+French (Quebecois),elephant,nouns,animals,éléphant,éléphant
+French (Quebecois),empty,adjectives,descriptive_words,vide,vide
+French (Quebecois),eye,nouns,body_parts,yeux,yeux
+French (Quebecois),face,nouns,body_parts,visage,visage
+French (Quebecois),fall,verbs,action_words,tomber,tomber
+French (Quebecois),far,function_words,locations,loin,loin
+French (Quebecois),fast,adjectives,descriptive_words,vite,vite
+French (Quebecois),find,verbs,action_words,trouver,trouver
+French (Quebecois),finger,nouns,body_parts,doigt,doigt
+French (Quebecois),finish,verbs,action_words,finir,finir
+French (Quebecois),finished,adjectives,descriptive_words,fini,fini
+French (Quebecois),firetruck,nouns,vehicles,camion de pompier,camion de pompier
+French (Quebecois),first,adjectives,descriptive_words,premier,premier
+French (Quebecois),fish (animal),nouns,animals,poisson (animal),poisson
+French (Quebecois),fish (food),nouns,food_drink,poisson (food),poisson
+French (Quebecois),fix,verbs,action_words,réparer,réparer
+French (Quebecois),flag,nouns,outside,drapeau,drapeau
+French (Quebecois),flower,nouns,outside,fleur,fleur
+French (Quebecois),food,nouns,food_drink,nourriture,nourriture
+French (Quebecois),foot,nouns,body_parts,pied,pied
+French (Quebecois),for,function_words,locations,pour,pour
+French (Quebecois),fork,nouns,household,fourchette,fourchette
+French (Quebecois),french fries,nouns,food_drink,patate frite,patate frite
+French (Quebecois),frog,nouns,animals,grenouille,grenouille
+French (Quebecois),full,adjectives,descriptive_words,plein,plein
+French (Quebecois),game,nouns,toys,jeu,jeu
+French (Quebecois),garage,nouns,furniture_rooms,garage,garage
+French (Quebecois),garden,nouns,outside,jardin,jardin
+French (Quebecois),get off,verbs,action_words,débarquer,débarquer
+French (Quebecois),get off,verbs,action_words,descendre,descendre
+French (Quebecois),get on,verbs,action_words,embarquer,embarquer
+French (Quebecois),giraffe,nouns,animals,girafe,girafe
+French (Quebecois),give,verbs,action_words,donner,donner
+French (Quebecois),glass,nouns,household,verre,verre
+French (Quebecois),glasses,nouns,household,lunettes,lunettes
+French (Quebecois),gloves,nouns,clothing,gants,gants
+French (Quebecois),glue,nouns,toys,colle,colle
+French (Quebecois),glue,verbs,action_words,coller,coller
+French (Quebecois),go,verbs,action_words,aller,aller
+French (Quebecois),good,adjectives,descriptive_words,bien,bien
+French (Quebecois),good,adjectives,descriptive_words,bon,bon
+French (Quebecois),goose,nouns,animals,oie,oie
+French (Quebecois),grapes,nouns,food_drink,raisin,raisin
+French (Quebecois),grass,nouns,outside,gazon,gazon
+French (Quebecois),green,adjectives,descriptive_words,vert,vert
+French (Quebecois),hair,nouns,body_parts,cheveux,cheveux
+French (Quebecois),hamburger,nouns,food_drink,hamburger,hamburger
+French (Quebecois),hammer,nouns,household,marteau,marteau
+French (Quebecois),hand,nouns,body_parts,main,main
+French (Quebecois),happy,adjectives,descriptive_words,content,content
+French (Quebecois),hard,adjectives,descriptive_words,dur,dur
+French (Quebecois),hat,nouns,clothing,chapeau,chapeau
+French (Quebecois),have,verbs,action_words,avoir,avoir
+French (Quebecois),he,function_words,pronouns,il,il
+French (Quebecois),head,nouns,body_parts,tête,tête
+French (Quebecois),hear,verbs,action_words,entendre,entendre
+French (Quebecois),heavy,adjectives,descriptive_words,lourd,lourd
+French (Quebecois),helicopter,nouns,vehicles,hélicoptère,hélicoptère
+French (Quebecois),help,verbs,action_words,aider,aider
+French (Quebecois),here,function_words,locations,ici,ici
+French (Quebecois),hide,verbs,action_words,cacher,cacher
+French (Quebecois),high,adjectives,descriptive_words,haut,haut
+French (Quebecois),high chair,nouns,furniture_rooms,chaise haute,chaise haute
+French (Quebecois),him,function_words,pronouns,lui,lui
+French (Quebecois),his,function_words,pronouns,son,son
+French (Quebecois),his,function_words,pronouns,à lui,à lui
+French (Quebecois),hit,verbs,action_words,taper,taper
+French (Quebecois),hold,verbs,action_words,tenir,tenir
+French (Quebecois),home,nouns,outside,chez nous,chez nous
+French (Quebecois),home,nouns,furniture_rooms,foyer,foyer
+French (Quebecois),horse,nouns,animals,cheval,cheval
+French (Quebecois),hot,adjectives,descriptive_words,chaud,chaud
+French (Quebecois),house,nouns,outside,maison,maison
+French (Quebecois),how,function_words,question_words,comment,comment
+French (Quebecois),hungry,adjectives,descriptive_words,avoir faim,faim
+French (Quebecois),hungry,adjectives,descriptive_words,faim,faim
+French (Quebecois),hurt (description),adjectives,descriptive_words,avoir mal,mal
+French (Quebecois),i,function_words,pronouns,je,je
+French (Quebecois),ice cream,nouns,food_drink,crème glacée,crème glacée
+French (Quebecois),ice cream,nouns,food_drink,glace,glace
+French (Quebecois),if,function_words,connecting_words,si,si
+French (Quebecois),in,function_words,locations,dans,dans
+French (Quebecois),in,function_words,locations,en,en
+French (Quebecois),in front,function_words,locations,devant/en avant,devant
+French (Quebecois),jam,nouns,food_drink,confiture,confiture
+French (Quebecois),jeans,nouns,clothing,jeans,jeans
+French (Quebecois),jello,nouns,food_drink,jello,jello
+French (Quebecois),juice,nouns,food_drink,jus,jus
+French (Quebecois),jump,verbs,action_words,sauter,sauter
+French (Quebecois),keys,nouns,household,clés,clés
+French (Quebecois),kiss,verbs,action_words,embrasser,embrasser
+French (Quebecois),kitchen,nouns,furniture_rooms,cuisine,cuisine
+French (Quebecois),kitty,nouns,animals,petit minou,petit minou
+French (Quebecois),knee,nouns,body_parts,genou,genou
+French (Quebecois),knife,nouns,household,couteau,couteau
+French (Quebecois),ladder,nouns,outside,échelle,échelle
+French (Quebecois),lamb,nouns,animals,agneau,agneau
+French (Quebecois),lamp,nouns,household,lampe,lampe
+French (Quebecois),last,adjectives,descriptive_words,dernier,dernier
+French (Quebecois),lawn mower,nouns,outside,tondeuse,tondeuse
+French (Quebecois),leg,nouns,body_parts,jambe,jambe
+French (Quebecois),lego,nouns,toys,lego,lego
+French (Quebecois),lick,verbs,action_words,lécher,lécher
+French (Quebecois),light,nouns,household,lumière,lumière
+French (Quebecois),lion,nouns,animals,lion,lion
+French (Quebecois),lips,nouns,body_parts,lèvres,lèvres
+French (Quebecois),listen,verbs,action_words,écouter,écouter
+French (Quebecois),little (amount),function_words,quantifiers,un peu,un peu
+French (Quebecois),little (description),adjectives,descriptive_words,petit,petit
+French (Quebecois),living room,nouns,furniture_rooms,salon,salon
+French (Quebecois),lollipop,nouns,food_drink,suçon,suçon
+French (Quebecois),long,adjectives,descriptive_words,long,long
+French (Quebecois),look,verbs,action_words,regarder,regarder
+French (Quebecois),look for,verbs,action_words,chercher,chercher
+French (Quebecois),love,verbs,action_words,aimer,aimer
+French (Quebecois),many,function_words,quantifiers,plusieurs,plusieurs
+French (Quebecois),me,function_words,pronouns,moi,moi
+French (Quebecois),meat,nouns,food_drink,viande,viande
+French (Quebecois),medicine,nouns,household,médicament,médicament
+French (Quebecois),melon,nouns,food_drink,melon,melon
+French (Quebecois),milk,nouns,food_drink,lait,lait
+French (Quebecois),mine,function_words,pronouns,à moi,à moi
+French (Quebecois),mine,function_words,pronouns,le mien,le mien
+French (Quebecois),mittens,nouns,clothing,mitaine,mitaine
+French (Quebecois),money,nouns,household,argent,argent
+French (Quebecois),monkey,nouns,animals,singe,singe
+French (Quebecois),moon,nouns,outside,lune,lune
+French (Quebecois),moose,nouns,animals,orignal,orignal
+French (Quebecois),more,function_words,quantifiers,plus,plus
+French (Quebecois),motorcycle,nouns,vehicles,moto,moto
+French (Quebecois),mouse,nouns,animals,souris,souris
+French (Quebecois),mouth,nouns,body_parts,bouche,bouche
+French (Quebecois),muffin,nouns,food_drink,muffin,muffin
+French (Quebecois),mustache,nouns,body_parts,moustache,moustache
+French (Quebecois),my,function_words,pronouns,mon,mon
+French (Quebecois),nail (object),nouns,household,clou,clou
+French (Quebecois),napkin,nouns,household,serviette de table,serviette de table
+French (Quebecois),naughty,adjectives,descriptive_words,tannant/méchant,tannant
+French (Quebecois),necklace,nouns,clothing,collier,collier
+French (Quebecois),new,adjectives,descriptive_words,nouveau,nouveau
+French (Quebecois),next to,function_words,locations,à côté de,à côté de
+French (Quebecois),nice,adjectives,descriptive_words,gentil,gentil
+French (Quebecois),nose,nouns,body_parts,nez,nez
+French (Quebecois),not,function_words,quantifiers,pas,pas
+French (Quebecois),old,adjectives,descriptive_words,vieux,vieux
+French (Quebecois),on,function_words,locations,sur/dessus,sur
+French (Quebecois),on,function_words,locations,sur,sur
+French (Quebecois),open (action),verbs,action_words,ouvrir,ouvrir
+French (Quebecois),orange (food),nouns,food_drink,orange,orange
+French (Quebecois),other,function_words,quantifiers,autre,autre
+French (Quebecois),our,function_words,pronouns,nôtre/nos,nôtre
+French (Quebecois),outside,nouns,outside,dehors,dehors
+French (Quebecois),outside,function_words,locations,en dehors,en dehors
+French (Quebecois),oven,nouns,furniture_rooms,four,four
+French (Quebecois),over,function_words,locations,au-dessus,au-dessus
+French (Quebecois),over,function_words,locations,par-dessus,par-dessus
+French (Quebecois),owie,nouns,body_parts,bobo,bobo
+French (Quebecois),owl,nouns,animals,hibou,hibou
+French (Quebecois),paint (action),verbs,action_words,peinturer,peinturer
+French (Quebecois),pajamas,nouns,clothing,pyjama,pyjama
+French (Quebecois),panda,nouns,animals,panda,panda
+French (Quebecois),pants,nouns,clothing,pantalon,pantalon
+French (Quebecois),pants,nouns,clothing,pantalons,pantalons
+French (Quebecois),paper,nouns,household,papier,papier
+French (Quebecois),park,nouns,outside,parc,parc
+French (Quebecois),party,nouns,outside,fête,fête
+French (Quebecois),pasta,nouns,food_drink,spaghetti,spaghetti
+French (Quebecois),pasta,nouns,food_drink,nouilles/pâtes,nouilles
+French (Quebecois),peanut butter,nouns,food_drink,beurre de pinotte/d'arachide,beurre de pinotte
+French (Quebecois),peas,nouns,food_drink,pois,pois
+French (Quebecois),pen/pencil,nouns,toys,crayon/stylo,crayon
+French (Quebecois),pen/pencil,nouns,toys,crayon,crayon
+French (Quebecois),pen/pencil,nouns,toys,stylo,stylo
+French (Quebecois),penguin,nouns,animals,pingouin,pingouin
+French (Quebecois),penis,nouns,body_parts,pénis,pénis
+French (Quebecois),penny,nouns,household,sou,sou
+French (Quebecois),photos,nouns,household,photo,photo
+French (Quebecois),pick up,verbs,action_words,ramasser,ramasser
+French (Quebecois),picture,nouns,household,image,image
+French (Quebecois),pig,nouns,animals,cochon,cochon
+French (Quebecois),pillow,nouns,household,oreiller,oreiller
+French (Quebecois),pipe,nouns,outside,tuyau/boyau,tuyau
+French (Quebecois),pizza,nouns,food_drink,pizza,pizza
+French (Quebecois),plant,nouns,household,plante,plante
+French (Quebecois),plate,nouns,household,assiette,assiette
+French (Quebecois),play,verbs,action_words,jouer,jouer
+French (Quebecois),play dough,nouns,toys,pâte à modeler,pâte à modeler
+French (Quebecois),play pen,nouns,furniture_rooms,parc (d'enfant),parc
+French (Quebecois),pool,nouns,outside,piscine,piscine
+French (Quebecois),poor,adjectives,descriptive_words,pauvre,pauvre
+French (Quebecois),popcorn,nouns,food_drink,popcorn,popcorn
+French (Quebecois),popsicle,nouns,food_drink,popsicle,popsicle
+French (Quebecois),potato,nouns,food_drink,patate,patate
+French (Quebecois),potty,nouns,furniture_rooms,pot,pot
+French (Quebecois),pour,verbs,action_words,verser,verser
+French (Quebecois),present,nouns,toys,cadeau,cadeau
+French (Quebecois),pudding,nouns,food_drink,pouding,pouding
+French (Quebecois),pull,verbs,action_words,tirer,tirer
+French (Quebecois),pumpkin,nouns,food_drink,citrouille,citrouille
+French (Quebecois),puppy,nouns,animals,petit chien,petit chien
+French (Quebecois),purse,nouns,household,sacoche/sac à main,sacoche
+French (Quebecois),push,verbs,action_words,pousser,pousser
+French (Quebecois),put,verbs,action_words,mettre,mettre
+French (Quebecois),puzzle,nouns,toys,casse-tête,casse-tête
+French (Quebecois),radio,nouns,household,radio,radio
+French (Quebecois),rain,nouns,outside,pluie,pluie
+French (Quebecois),raisin,nouns,food_drink,raisin sec,raisin sec
+French (Quebecois),read,verbs,action_words,lire,lire
+French (Quebecois),red,adjectives,descriptive_words,rouge,rouge
+French (Quebecois),refrigerator,nouns,furniture_rooms,frigidaire/frigo,frigidaire
+French (Quebecois),ride,verbs,action_words,monter (à cheval...),monter
+French (Quebecois),rock (action),verbs,action_words,bercer,bercer
+French (Quebecois),rock (object),nouns,outside,roche,roche
+French (Quebecois),rocking chair,nouns,furniture_rooms,chaise berçante,chaise berçante
+French (Quebecois),roof,nouns,outside,toit,toit
+French (Quebecois),room,nouns,furniture_rooms,pièce,pièce
+French (Quebecois),rooster,nouns,animals,coq,coq
+French (Quebecois),run,verbs,action_words,courir,courir
+French (Quebecois),run after,verbs,action_words,courir après,courir après
+French (Quebecois),sad,adjectives,descriptive_words,triste / (avoir)peine,triste 
+French (Quebecois),salt,nouns,food_drink,sel,sel
+French (Quebecois),same,function_words,quantifiers,même,même
+French (Quebecois),sand,nouns,outside,sable,sable
+French (Quebecois),sandals,nouns,clothing,espadrille,espadrille
+French (Quebecois),sandwich,nouns,food_drink,sandwich,sandwich
+French (Quebecois),sauce,nouns,food_drink,sauce,sauce
+French (Quebecois),say,verbs,action_words,dire,dire
+French (Quebecois),scared,adjectives,descriptive_words,avoir peur,peur
+French (Quebecois),scared,adjectives,descriptive_words,peur,peur
+French (Quebecois),scarf,nouns,clothing,foulard,foulard
+French (Quebecois),school,nouns,outside,école,école
+French (Quebecois),scissors,nouns,household,ciseaux,ciseaux
+French (Quebecois),see,verbs,action_words,voir,voir
+French (Quebecois),share,verbs,action_words,partager,partager
+French (Quebecois),she,function_words,pronouns,elle,elle
+French (Quebecois),sheep,nouns,animals,mouton,mouton
+French (Quebecois),shirt,nouns,clothing,chemise,chemise
+French (Quebecois),shoe,nouns,clothing,soulier,soulier
+French (Quebecois),shorts,nouns,clothing,shorts,shorts
+French (Quebecois),shoulder,nouns,body_parts,épaule,épaule
+French (Quebecois),shovel,nouns,outside,pelle,pelle
+French (Quebecois),show,verbs,action_words,montrer,montrer
+French (Quebecois),shower,nouns,furniture_rooms,douche,douche
+French (Quebecois),sick,adjectives,descriptive_words,malade,malade
+French (Quebecois),sidewalk,nouns,outside,trottoir,trottoir
+French (Quebecois),similar,function_words,quantifiers,pareil,pareil
+French (Quebecois),sing,verbs,action_words,chanter,chanter
+French (Quebecois),sink,nouns,furniture_rooms,évier/lavabo,évier
+French (Quebecois),sit,verbs,action_words,asseoir,asseoir
+French (Quebecois),skate,verbs,action_words,patiner,patiner
+French (Quebecois),sky,nouns,outside,ciel,ciel
+French (Quebecois),sled,nouns,vehicles,traîneau,traîneau
+French (Quebecois),sleep,verbs,action_words,dormir,dormir
+French (Quebecois),slide (action),verbs,action_words,glisser,glisser
+French (Quebecois),slide (object),nouns,outside,glissoire,glissoire
+French (Quebecois),slipper,nouns,clothing,pantoufle,pantoufle
+French (Quebecois),smile,verbs,action_words,sourire,sourire
+French (Quebecois),snow,nouns,outside,neige,neige
+French (Quebecois),snowman,nouns,outside,bonhomme de neige,bonhomme de neige
+French (Quebecois),snowsuit,nouns,clothing,habit de neige,habit de neige
+French (Quebecois),so,function_words,connecting_words,alors,alors
+French (Quebecois),soap,nouns,household,savon,savon
+French (Quebecois),sock,nouns,clothing,bas,bas
+French (Quebecois),soft,adjectives,descriptive_words,doux,doux
+French (Quebecois),some,function_words,quantifiers,de/du,de
+French (Quebecois),soup,nouns,food_drink,soupe,soupe
+French (Quebecois),spill,verbs,action_words,renverser,renverser
+French (Quebecois),spit,verbs,action_words,cracher,cracher
+French (Quebecois),splash,verbs,action_words,arroser,arroser
+French (Quebecois),spoon,nouns,household,cuillère,cuillère
+French (Quebecois),squirrel,nouns,animals,écureuil,écureuil
+French (Quebecois),stairs,nouns,furniture_rooms,escalier,escalier
+French (Quebecois),standing,adjectives,descriptive_words,debout,debout
+French (Quebecois),star,nouns,outside,étoile,étoile
+French (Quebecois),stay,verbs,action_words,rester,rester
+French (Quebecois),step,nouns,furniture_rooms,marche,marche
+French (Quebecois),sticky,adjectives,descriptive_words,collant,collant
+French (Quebecois),stir,verbs,action_words,brasser,brasser
+French (Quebecois),stone,nouns,outside,pierre,pierre
+French (Quebecois),stop,verbs,action_words,arrêter,arrêter
+French (Quebecois),store,nouns,outside,magasin,magasin
+French (Quebecois),story,nouns,toys,histoire,histoire
+French (Quebecois),stove,nouns,furniture_rooms,poêle,poêle
+French (Quebecois),strawberry,nouns,food_drink,fraise,fraise
+French (Quebecois),street,nouns,outside,rue,rue
+French (Quebecois),stroller,nouns,vehicles,poussette,poussette
+French (Quebecois),strong,adjectives,descriptive_words,fort,fort
+French (Quebecois),sun,nouns,outside,soleil,soleil
+French (Quebecois),sweater,nouns,clothing,chandail,chandail
+French (Quebecois),sweep,verbs,action_words,balayer,balayer
+French (Quebecois),swim,verbs,action_words,nager,nager
+French (Quebecois),swing (action),verbs,action_words,balancer,balancer
+French (Quebecois),swing (object),nouns,outside,balançoire,balançoire
+French (Quebecois),table,nouns,furniture_rooms,table,table
+French (Quebecois),take,verbs,action_words,prendre,prendre
+French (Quebecois),take off,verbs,action_words,enlever,enlever
+French (Quebecois),talk,verbs,action_words,parler,parler
+French (Quebecois),taste,verbs,action_words,goûter,goûter
+French (Quebecois),tear,verbs,action_words,déchirer,déchirer
+French (Quebecois),teddybear,nouns,toys,toutou,toutou
+French (Quebecois),teddybear,nouns,animals,ourson/nounours,ourson
+French (Quebecois),telephone,nouns,household,téléphone,téléphone
+French (Quebecois),that,function_words,pronouns,ça,ça
+French (Quebecois),the,function_words,quantifiers,le/la,le
+French (Quebecois),theirs,function_words,pronouns,à eux,à eux
+French (Quebecois),then,function_words,connecting_words,puis,puis
+French (Quebecois),there,function_words,locations,là/là-bas,là
+French (Quebecois),there,function_words,locations,y,y
+French (Quebecois),they,function_words,pronouns,elles,elles
+French (Quebecois),they,function_words,pronouns,ils,ils
+French (Quebecois),they,function_words,pronouns,on,on
+French (Quebecois),think,verbs,action_words,penser,penser
+French (Quebecois),thirsty,adjectives,descriptive_words,avoir soif,soif
+French (Quebecois),thirsty,adjectives,descriptive_words,soif,soif
+French (Quebecois),this,function_words,pronouns,ce,ce
+French (Quebecois),throw,verbs,action_words,lancer,lancer
+French (Quebecois),tickle,verbs,action_words,chatouiller,chatouiller
+French (Quebecois),tiger,nouns,animals,tigre,tigre
+French (Quebecois),tights,nouns,clothing,collants,collants
+French (Quebecois),tired,adjectives,descriptive_words,fatigué,fatigué
+French (Quebecois),tissue,nouns,household,mouchoir/kleenex,mouchoir
+French (Quebecois),toast,nouns,food_drink,toast/rôtie,toast
+French (Quebecois),toast,nouns,food_drink,toast,toast
+French (Quebecois),toe,nouns,body_parts,orteil,orteil
+French (Quebecois),tongue,nouns,body_parts,langue,langue
+French (Quebecois),too,function_words,quantifiers,trop,trop
+French (Quebecois),tooth,nouns,body_parts,dent,dent
+French (Quebecois),toothbrush,nouns,household,brosse à dent,brosse à dent
+French (Quebecois),toothbrush,nouns,household,brosse à dents,brosse à dents
+French (Quebecois),touch,verbs,action_words,toucher,toucher
+French (Quebecois),towel,nouns,household,serviette,serviette
+French (Quebecois),toy (object),nouns,toys,jouet,jouet
+French (Quebecois),tractor,nouns,vehicles,tracteur,tracteur
+French (Quebecois),train,nouns,vehicles,train,train
+French (Quebecois),trash,nouns,household,vidanges,vidanges
+French (Quebecois),tree,nouns,outside,arbre,arbre
+French (Quebecois),tricycle,nouns,vehicles,tricycle,tricycle
+French (Quebecois),truck,nouns,vehicles,camion,camion
+French (Quebecois),try,verbs,action_words,essayer,essayer
+French (Quebecois),tummy,nouns,body_parts,bedaine/ventre,bedaine
+French (Quebecois),tuna,nouns,food_drink,thon,thon
+French (Quebecois),turkey,nouns,animals,dinde,dinde
+French (Quebecois),turn,verbs,action_words,tourner,tourner
+French (Quebecois),turn on,verbs,action_words,allumer,allumer
+French (Quebecois),turtle,nouns,animals,tortue,tortue
+French (Quebecois),tv,nouns,furniture_rooms,télévision,télévision
+French (Quebecois),under,function_words,locations,sous/en-dessous,sous
+French (Quebecois),underpants,nouns,clothing,petite culotte,petite culotte
+French (Quebecois),up,function_words,locations,en haut,en haut
+French (Quebecois),vacuum,nouns,household,aspirateur,aspirateur
+French (Quebecois),vagina,nouns,body_parts,vagin vulve,vagin
+French (Quebecois),vagina,nouns,body_parts,vagin vulve,vulve
+French (Quebecois),vanilla,nouns,food_drink,vanille,vanille
+French (Quebecois),vitamins,nouns,food_drink,vitamine,vitamine
+French (Quebecois),wait,verbs,action_words,attendre,attendre
+French (Quebecois),wake,verbs,action_words,réveiller,réveiller
+French (Quebecois),walk,verbs,action_words,marcher,marcher
+French (Quebecois),want,verbs,action_words,vouloir,vouloir
+French (Quebecois),wardrobe,nouns,furniture_rooms,garde-robe,garde-robe
+French (Quebecois),wash,verbs,action_words,laver,laver
+French (Quebecois),washing machine,nouns,furniture_rooms,laveuse,laveuse
+French (Quebecois),watch (object),nouns,household,montre,montre
+French (Quebecois),watch out,verbs,action_words,surveiller,surveiller
+French (Quebecois),water (beverage),nouns,food_drink,eau (beverage),eau
+French (Quebecois),water (not beverage),nouns,outside,eau (not beverage),eau
+French (Quebecois),we,function_words,pronouns,nous,nous
+French (Quebecois),wet,adjectives,descriptive_words,mouillé,mouillé
+French (Quebecois),what,function_words,question_words,quoi,quoi
+French (Quebecois),wheel,nouns,outside,roue,roue
+French (Quebecois),when (question),function_words,question_words,quand,quand
+French (Quebecois),where (question),function_words,question_words,où,où
+French (Quebecois),which (question),function_words,question_words,lequel/laquelle,lequel
+French (Quebecois),which (question),function_words,question_words,quel,quel
+French (Quebecois),white,adjectives,descriptive_words,blanc,blanc
+French (Quebecois),who,function_words,question_words,qui,qui
+French (Quebecois),why,function_words,question_words,pourquoi,pourquoi
+French (Quebecois),wind,nouns,outside,vent,vent
+French (Quebecois),window,nouns,furniture_rooms,fenêtre,fenêtre
+French (Quebecois),wipe,verbs,action_words,essuyer,essuyer
+French (Quebecois),with,function_words,locations,avec,avec
+French (Quebecois),wolf,nouns,animals,loup,loup
+French (Quebecois),work (action),verbs,action_words,travailler,travailler
+French (Quebecois),work (place),nouns,outside,travail/bureau,travail
+French (Quebecois),write,verbs,action_words,écrire,écrire
+French (Quebecois),yard,nouns,outside,cour,cour
+French (Quebecois),yellow,adjectives,descriptive_words,jaune,jaune
+French (Quebecois),yogurt,nouns,food_drink,yogourt,yogourt
+French (Quebecois),you,function_words,pronouns,toi,toi
+French (Quebecois),you,function_words,pronouns,tu,tu
+French (Quebecois),you,function_words,pronouns,vous,vous
+French (Quebecois),your,function_words,pronouns,ton,ton
+French (Quebecois),yucky,adjectives,descriptive_words,dégueulasse,dégueulasse
+French (Quebecois),zebra,nouns,animals,zèbre,zèbre
+French (Quebecois),zipper,nouns,clothing,zip/fermeture-éclair,zip
+French (Quebecois),a,function_words,quantifiers,un/une,une
+French (Quebecois),all,function_words,quantifiers,tout/toute,toute
+French (Quebecois),balcony,nouns,outside,véranda/balcon,balcon
+French (Quebecois),bathroom,nouns,furniture_rooms,salle de bain/toilette,toilette
+French (Quebecois),beads,nouns,clothing,perles/boules,boules
+French (Quebecois),beautiful,adjectives,descriptive_words,beau/belle,belle
+French (Quebecois),big,adjectives,descriptive_words,gros/grand,grand
+French (Quebecois),blanket,nouns,household,couverte/couverture,couverture
+French (Quebecois),break,verbs,action_words,briser/casser,casser
+French (Quebecois),broken,adjectives,descriptive_words,brisé/cassé,cassé
+French (Quebecois),build,verbs,action_words,construire/bâtir,bâtir
+French (Quebecois),couch,nouns,furniture_rooms,divan/sofa,sofa
+French (Quebecois),crib,nouns,furniture_rooms,bassinette/berceau,berceau
+French (Quebecois),crocodile,nouns,animals,alligator/crocodile,crocodile
+French (Quebecois),cute,adjectives,descriptive_words,mignon/cute,cute
+French (Quebecois),down,function_words,locations,à terre/par terre,par terre
+French (Quebecois),in front,function_words,locations,devant/en avant,en avant
+French (Quebecois),naughty,adjectives,descriptive_words,tannant/méchant,méchant
+French (Quebecois),on,function_words,locations,sur/dessus,dessus
+French (Quebecois),our,function_words,pronouns,nôtre/nos,nos
+French (Quebecois),pasta,nouns,food_drink,nouilles/pâtes,pâtes
+French (Quebecois),peanut butter,nouns,food_drink,beurre de pinotte/d'arachide,d'arachide
+French (Quebecois),pen/pencil,nouns,toys,crayon/stylo,stylo
+French (Quebecois),pipe,nouns,outside,tuyau/boyau,boyau
+French (Quebecois),purse,nouns,household,sacoche/sac à main,sac à main
+French (Quebecois),refrigerator,nouns,furniture_rooms,frigidaire/frigo,frigo
+French (Quebecois),sad,adjectives,descriptive_words,triste / (avoir)peine,peine
+French (Quebecois),sink,nouns,furniture_rooms,évier/lavabo,lavabo
+French (Quebecois),some,function_words,quantifiers,de/du,du
+French (Quebecois),teddybear,nouns,animals,ourson/nounours,nounours
+French (Quebecois),the,function_words,quantifiers,le/la,la
+French (Quebecois),there,function_words,locations,là/là-bas,là-bas
+French (Quebecois),tissue,nouns,household,mouchoir/kleenex,kleenex
+French (Quebecois),toast,nouns,food_drink,toast/rôtie,rôtie
+French (Quebecois),tummy,nouns,body_parts,bedaine/ventre,ventre
+French (Quebecois),under,function_words,locations,sous/en-dessous,en-dessous
+French (Quebecois),which (question),function_words,question_words,lequel/laquelle,laquelle
+French (Quebecois),work (place),nouns,outside,travail/bureau,bureau
+French (Quebecois),zipper,nouns,clothing,zip/fermeture-éclair,fermeture-éclair

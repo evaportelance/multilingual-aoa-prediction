@@ -1,0 +1,405 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+German,a,function_words,quantifiers,ein,ein
+German,a,function_words,quantifiers,einer,einer
+German,a,function_words,quantifiers,eine,eine
+German,a little,function_words,quantifiers,ein bisschen,ein bisschen
+German,above,function_words,locations,über,über
+German,airplane,nouns,vehicles,Flugzeug,flugzeug
+German,also,function_words,quantifiers,auch,auch
+German,animal,nouns,animals,Tier,tier
+German,another,function_words,quantifiers,andere,andere
+German,another,function_words,quantifiers,anderer,anderer
+German,ant,nouns,animals,Ameise,ameise
+German,apple,nouns,food_drink,Apfel,apfel
+German,arm,nouns,body_parts,Arm,arm
+German,armchair,nouns,furniture_rooms,Sessel,sessel
+German,away,function_words,locations,weg,weg
+German,back,function_words,locations,zurück,zurück
+German,bad,adjectives,descriptive_words,schlecht,schlecht
+German,bad,adjectives,descriptive_words,böse,böse
+German,ball,nouns,toys,Ball,ball
+German,balloon,nouns,toys,Luftballon,luftballon
+German,banana,nouns,food_drink,Banane,banane
+German,bathroom,nouns,furniture_rooms,Klo/Toilette,klo
+German,bathroom,nouns,furniture_rooms,Badezimmer,badezimmer
+German,bathtub,nouns,furniture_rooms,Badewanne,badewanne
+German,beach,function_words,quantifiers,jeder,jeder
+German,beans,nouns,food_drink,Bohnen,bohnen
+German,bear,nouns,animals,Bär,bär
+German,bed,nouns,furniture_rooms,Bett,bett
+German,bedroom,nouns,furniture_rooms,Schlafzimmer,schlafzimmer
+German,bee,nouns,animals,Biene,biene
+German,belly button,nouns,body_parts,Bauchnabel,bauchnabel
+German,bib,nouns,clothing,Lätzchen,lätzchen
+German,bicycle,nouns,vehicles,Fahrrad,fahrrad
+German,big,adjectives,descriptive_words,groß,groß
+German,bird,nouns,animals,Vogel,vogel
+German,bite,verbs,action_words,beißen,beißen
+German,black,adjectives,descriptive_words,schwarz,schwarz
+German,blanket,nouns,household,Decke,decke
+German,blow,verbs,action_words,pusten,pusten
+German,blue,adjectives,descriptive_words,blau,blau
+German,boat,nouns,vehicles,Schiff,schiff
+German,book,nouns,toys,Buch,buch
+German,boots,nouns,clothing,Stiefel,stiefel
+German,bottle,nouns,household,Flasche,flasche
+German,box,nouns,household,Dose,dose
+German,bread,nouns,food_drink,Brot,brot
+German,break,verbs,action_words,kaputt machen,kaputt machen
+German,bring,verbs,action_words,bringen,bringen
+German,broken,adjectives,descriptive_words,kaputt,kaputt
+German,broom,nouns,household,Besen,besen
+German,brush (object),nouns,household,Bürste,bürste
+German,bucket,nouns,household,Eimer,eimer
+German,bug,nouns,animals,Käfer,käfer
+German,bun,nouns,food_drink,Brötchen,brötchen
+German,bunny,nouns,animals,Hase,hase
+German,bus,nouns,vehicles,Bus,bus
+German,butt,nouns,body_parts,Popo,popo
+German,butter,nouns,food_drink,Butter,butter
+German,butterfly,nouns,animals,Schmetterling,schmetterling
+German,buy,verbs,action_words,kaufen,kaufen
+German,cacao,nouns,food_drink,Kakao,kakao
+German,cake,nouns,food_drink,Kuchen,kuchen
+German,camera,nouns,household,Kamera,kamera
+German,can (auxiliary),function_words,helping_verbs,kann,kann
+German,can (auxiliary),function_words,helping_verbs,können,können
+German,car,nouns,vehicles,Auto,auto
+German,careful,adjectives,descriptive_words,vorsichtig,vorsichtig
+German,carry,verbs,action_words,tragen,tragen
+German,cat,nouns,animals,Katze,katze
+German,catch,verbs,action_words,fangen,fangen
+German,cereal,nouns,food_drink,Müsli,müsli
+German,cheek,nouns,body_parts,Wange,wange
+German,cheese,nouns,food_drink,Käse,käse
+German,chick,nouns,animals,Küken,küken
+German,chicken (animal),nouns,animals,Huhn,huhn
+German,chin,nouns,body_parts,Kinn,kinn
+German,chocolate,nouns,food_drink,Schokolade,schokolade
+German,clap,verbs,action_words,klatschen,klatschen
+German,clean (action),verbs,action_words,sauber machen,sauber machen
+German,clean (action),verbs,action_words,aufräumen,aufräumen
+German,clean (description),adjectives,descriptive_words,sauber,sauber
+German,climb,verbs,action_words,klettern,klettern
+German,clock,nouns,household,Uhr,uhr
+German,close,verbs,action_words,zumachen,zumachen
+German,cloud,nouns,outside,Wolke,wolke
+German,coat,nouns,clothing,Mantel,mantel
+German,coffee,nouns,food_drink,Kaffee,kaffee
+German,cold,adjectives,descriptive_words,kalt,kalt
+German,comb (object),nouns,household,Kamm,kamm
+German,cookie,nouns,food_drink,Keks,keks
+German,couch,nouns,furniture_rooms,Sofa,sofa
+German,cover (action),verbs,action_words,zudecken,zudecken
+German,cover (object),nouns,household,Deckel,deckel
+German,cow,nouns,animals,Kuh,kuh
+German,crocodile,nouns,animals,Krokodil,krokodil
+German,cry,verbs,action_words,weinen,weinen
+German,cup,nouns,household,Becher,becher
+German,cup,nouns,household,Tasse,tasse
+German,cute,adjectives,descriptive_words,niedlich,niedlich
+German,dance,verbs,action_words,tanzen,tanzen
+German,dark,adjectives,descriptive_words,dunkel,dunkel
+German,deer,nouns,animals,Reh,reh
+German,diaper,nouns,clothing,Windel,windel
+German,dirty,adjectives,descriptive_words,schmutzig,schmutzig
+German,dog,nouns,animals,Hund,hund
+German,doll,nouns,toys,Puppe,puppe
+German,donkey,nouns,animals,Esel,esel
+German,door,nouns,furniture_rooms,Tür,tür
+German,draw,verbs,action_words,malen,malen
+German,draw,verbs,action_words,zeichnen,zeichnen
+German,drawer,nouns,furniture_rooms,Schublade,schublade
+German,dress (object),nouns,clothing,Kleid,kleid
+German,drink (action),verbs,action_words,trinken,trinken
+German,drive,verbs,action_words,fahren,fahren
+German,dry (action),verbs,action_words,trocknen,trocknen
+German,dry (description),adjectives,descriptive_words,trocken,trocken
+German,duck,nouns,animals,Ente,ente
+German,ear,nouns,body_parts,Ohr,ohr
+German,eat,verbs,action_words,essen,essen
+German,elephant,nouns,animals,Elefant,elefant
+German,empty,adjectives,descriptive_words,leer,leer
+German,eye,nouns,body_parts,Auge,auge
+German,face,nouns,body_parts,Gesicht,gesicht
+German,fall,verbs,action_words,fallen,fallen
+German,fast,adjectives,descriptive_words,schnell,schnell
+German,feed,verbs,action_words,füttern,füttern
+German,feet,nouns,body_parts,Füße,füße
+German,find,verbs,action_words,finden,finden
+German,fine,adjectives,descriptive_words,fein,fein
+German,finger,nouns,body_parts,Finger,finger
+German,finish,verbs,action_words,fertig machen,fertig machen
+German,flower,nouns,outside,Blume,blume
+German,fly (animal),nouns,animals,Fliege,fliege
+German,food,nouns,food_drink,Essen,essen
+German,for,function_words,locations,für,für
+German,for,function_words,locations,bei,bei
+German,fork,nouns,household,Gabel,gabel
+German,fox,nouns,animals,Fuchs,fuchs
+German,frog,nouns,animals,Frosch,frosch
+German,full,adjectives,descriptive_words,voll,voll
+German,garage,nouns,furniture_rooms,Garage,garage
+German,garden,nouns,outside,Garten,garten
+German,get,verbs,action_words,kriegen,kriegen
+German,giraffe,nouns,animals,Giraffe,giraffe
+German,give,verbs,action_words,geben,geben
+German,glass,nouns,household,Glas,glas
+German,gloves,nouns,clothing,Handschuhe,handschuhe
+German,go for a walk,verbs,action_words,spazieren gehen,spazieren gehen
+German,good,adjectives,descriptive_words,gut,gut
+German,goose,nouns,animals,Gans,gans
+German,grapes,nouns,food_drink,Weintrauben,weintrauben
+German,grass,nouns,outside,Gras,gras
+German,green,adjectives,descriptive_words,grün,grün
+German,hair,nouns,body_parts,Haare,haare
+German,hammer,nouns,household,Hammer,hammer
+German,hand,nouns,body_parts,Hand,hand
+German,hard,adjectives,descriptive_words,hart,hart
+German,hat,nouns,clothing,Mütze,mütze
+German,have,verbs,action_words,haben,haben
+German,he,function_words,pronouns,er,er
+German,head,nouns,body_parts,Kopf,kopf
+German,hear,verbs,action_words,hören,hören
+German,heavy,adjectives,descriptive_words,schwer,schwer
+German,hedgehog,nouns,animals,Igel,igel
+German,help,verbs,action_words,helfen,helfen
+German,her,function_words,pronouns,ihr,ihr
+German,here,function_words,locations,hier,hier
+German,hide,verbs,action_words,verstecken,verstecken
+German,high,adjectives,descriptive_words,hoch,hoch
+German,him,function_words,pronouns,ihm,ihm
+German,hippopotamus,nouns,animals,Nilpferd,nilpferd
+German,his,function_words,pronouns,sein,sein
+German,hit,verbs,action_words,stoßen,stoßen
+German,hit,verbs,action_words,hauen,hauen
+German,hit,verbs,action_words,schlagen,schlagen
+German,hold,verbs,action_words,halten,halten
+German,honey,nouns,food_drink,Honig,honig
+German,horse,nouns,animals,Pferd,pferd
+German,hot,adjectives,descriptive_words,heiß,heiß
+German,how,function_words,question_words,wie,wie
+German,hurry,verbs,action_words,beeilen,beeilen
+German,hurt (description),adjectives,descriptive_words,verletzt,verletzt
+German,ice cream,nouns,food_drink,Eis,eis
+German,in,function_words,locations,in,in
+German,inside,function_words,locations,rein,rein
+German,it,function_words,pronouns,es,es
+German,jacket,nouns,clothing,Jacke,jacke
+German,jam,nouns,food_drink,Marmelade,marmelade
+German,jeans,nouns,clothing,Jeans,jeans
+German,juice,nouns,food_drink,Saft,saft
+German,jump,verbs,action_words,springen,springen
+German,keys,nouns,household,Schlüssel,schlüssel
+German,keys,nouns,household,Schüssel,schüssel
+German,kick,verbs,action_words,treten,treten
+German,kiss,verbs,action_words,küssen,küssen
+German,kitchen,nouns,furniture_rooms,Küche,küche
+German,knee,nouns,body_parts,Knie,knie
+German,knife,nouns,household,Messer,messer
+German,ladder,nouns,outside,Leiter,leiter
+German,lamp,nouns,household,Lampe,lampe
+German,laugh,verbs,action_words,lachen,lachen
+German,leg,nouns,body_parts,Bein,bein
+German,lick,verbs,action_words,lecken,lecken
+German,lift,verbs,action_words,aufheben,aufheben
+German,light (object),nouns,household,Licht,licht
+German,like this,function_words,connecting_words,so,so
+German,lion,nouns,animals,Löwe,löwe
+German,little (description),adjectives,descriptive_words,klein,klein
+German,living room,nouns,furniture_rooms,Wohnzimmer,wohnzimmer
+German,loud,adjectives,descriptive_words,laut,laut
+German,make,verbs,action_words,machen,machen
+German,many,function_words,quantifiers,viel,viel
+German,me,function_words,pronouns,mich,mich
+German,me,function_words,pronouns,mir,mir
+German,meat,nouns,food_drink,Fleisch,fleisch
+German,medicine,nouns,household,Medizin,medizin
+German,milk,nouns,food_drink,Milch,milch
+German,mine,function_words,pronouns,meiner,meiner
+German,monkey,nouns,animals,Affe,affe
+German,moon,nouns,outside,Mond,mond
+German,more,function_words,quantifiers,mehr,mehr
+German,motorcycle,nouns,vehicles,Motorrad,motorrad
+German,mouse,nouns,animals,Maus,maus
+German,mouth,nouns,body_parts,Mund,mund
+German,my,function_words,pronouns,mein,mein
+German,nail (object),nouns,household,Nagel,nagel
+German,new,adjectives,descriptive_words,neu,neu
+German,nice,adjectives,descriptive_words,nett,nett
+German,no,function_words,quantifiers,kein,kein
+German,no,function_words,quantifiers,keiner,keiner
+German,no,function_words,quantifiers,keine,keine
+German,nose,nouns,body_parts,Nase,nase
+German,not,function_words,quantifiers,nicht,nicht
+German,nothing,function_words,quantifiers,nichts,nichts
+German,of,function_words,locations,von,von
+German,off,function_words,locations,aus,aus
+German,old,adjectives,descriptive_words,alt,alt
+German,on,function_words,locations,auf,auf
+German,open (action),verbs,action_words,öffnen,öffnen
+German,orange (description),adjectives,descriptive_words,orange,orange
+German,orange (food),nouns,food_drink,Orange/Apfelsine,orange
+German,our,function_words,pronouns,unser,unser
+German,owl,nouns,animals,Eule,eule
+German,pajamas,nouns,clothing,Schlafanzug,schlafanzug
+German,pancake,nouns,food_drink,Pfannkuchen,pfannkuchen
+German,pants,nouns,clothing,Unterhose,unterhose
+German,pants,nouns,clothing,Hose,hose
+German,paper,nouns,toys,Papier,papier
+German,pasta,nouns,food_drink,Nudeln,nudeln
+German,pear,nouns,food_drink,Birne,birne
+German,pen,nouns,toys,Stift,stift
+German,penguin,nouns,animals,Pinguin,pinguin
+German,penis,nouns,body_parts,Penis,penis
+German,picture,nouns,household,Bild,bild
+German,pig,nouns,animals,Schwein,schwein
+German,pillow,nouns,household,Kissen,kissen
+German,pizza,nouns,food_drink,Pizza,pizza
+German,plant,nouns,household,Pflanze,pflanze
+German,plate,nouns,household,Teller,teller
+German,play,verbs,action_words,spielen,spielen
+German,pony,nouns,animals,Pony,pony
+German,present,nouns,toys,Geschenk,geschenk
+German,pretty,adjectives,descriptive_words,schön,schön
+German,pudding,nouns,food_drink,Pudding,pudding
+German,pull,verbs,action_words,ziehen,ziehen
+German,push,verbs,action_words,drücken,drücken
+German,put,verbs,action_words,stellen,stellen
+German,quietly,adjectives,descriptive_words,ruhig,ruhig
+German,radio,nouns,household,Radio,radio
+German,rain,nouns,outside,Regen,regen
+German,read,verbs,action_words,lesen,lesen
+German,red,adjectives,descriptive_words,rot,rot
+German,refrigerator,nouns,furniture_rooms,Kühlschrank,kühlschrank
+German,ride,verbs,action_words,reiten,reiten
+German,roof,nouns,outside,Dach,dach
+German,room,nouns,furniture_rooms,Zimmer,zimmer
+German,sad,adjectives,descriptive_words,traurig,traurig
+German,same,function_words,quantifiers,dasselbe,dasselbe
+German,sandwich,nouns,food_drink,Butterbrot,butterbrot
+German,sauce,nouns,food_drink,Soße,soße
+German,say,verbs,action_words,sagen,sagen
+German,scarf,nouns,clothing,Schal,schal
+German,scissors,nouns,household,Schere,schere
+German,see,verbs,action_words,sehen,sehen
+German,shake,verbs,action_words,schütteln,schütteln
+German,sheep,nouns,animals,Schaf,schaf
+German,shirt,nouns,clothing,Hemd,hemd
+German,shirt,nouns,clothing,Tshirt,tshirt
+German,shoe,nouns,clothing,Schuh,schuh
+German,should,function_words,helping_verbs,soll,soll
+German,should,function_words,helping_verbs,sollst,sollst
+German,shovel,nouns,outside,Schaufel,schaufel
+German,show,verbs,action_words,zeigen,zeigen
+German,shower,nouns,furniture_rooms,Dusche,dusche
+German,sick,adjectives,descriptive_words,krank,krank
+German,sing,verbs,action_words,singen,singen
+German,sink,nouns,furniture_rooms,Spüle,spüle
+German,sit,verbs,action_words,sitzen,sitzen
+German,sky,nouns,outside,Himmel,himmel
+German,sleep,verbs,action_words,schlafen,schlafen
+German,slide (object),nouns,outside,Rutsche,rutsche
+German,slow,adjectives,descriptive_words,langsam,langsam
+German,snake,nouns,animals,Schlange,schlange
+German,snow,nouns,outside,Schnee,schnee
+German,snowsuit,nouns,clothing,Schneeanzug,schneeanzug
+German,soap,nouns,household,Seife,seife
+German,sock,nouns,clothing,Socken,socken
+German,soft,adjectives,descriptive_words,weich,weich
+German,soup,nouns,food_drink,Suppe,suppe
+German,spaghetti,nouns,food_drink,Spaghetti,spaghetti
+German,spider,nouns,animals,Spinne,spinne
+German,spill,verbs,action_words,kleckern,kleckern
+German,spinach,nouns,food_drink,Spinat,spinat
+German,splash,verbs,action_words,spritzen,spritzen
+German,spoon,nouns,household,Löffel,löffel
+German,squirrel,nouns,animals,Eichhörnchen,eichhörnchen
+German,stairs,nouns,furniture_rooms,Treppe,treppe
+German,stand,verbs,action_words,stehen,stehen
+German,stick,nouns,outside,Stock,stock
+German,stone,nouns,outside,Stein,stein
+German,stop,verbs,action_words,aufhören,aufhören
+German,stove,nouns,furniture_rooms,Herd,herd
+German,street,nouns,outside,Straße,straße
+German,sugar,nouns,food_drink,Zucker,zucker
+German,sun,nouns,outside,Sonne,sonne
+German,sweater,nouns,clothing,Pullover,pullover
+German,swim,verbs,action_words,schwimmen,schwimmen
+German,swing (action),verbs,action_words,schaukeln,schaukeln
+German,swing (object),nouns,outside,Schaukel,schaukel
+German,table,nouns,furniture_rooms,Tisch,tisch
+German,take,verbs,action_words,nehmen,nehmen
+German,talk,verbs,action_words,reden,reden
+German,tea,nouns,food_drink,Tee,tee
+German,tear,verbs,action_words,reißen,reißen
+German,teddybear,nouns,animals,Teddy,teddy
+German,telephone,nouns,household,Telefon,telefon
+German,the,function_words,quantifiers,die,die
+German,the,function_words,quantifiers,der,der
+German,them,function_words,pronouns,ihnen,ihnen
+German,there,function_words,locations,da,da
+German,this,function_words,pronouns,dies,dies
+German,this,function_words,pronouns,diese,diese
+German,throw,verbs,action_words,schmeißen,schmeißen
+German,throw,verbs,action_words,werfen,werfen
+German,tickle,verbs,action_words,kitzeln,kitzeln
+German,tiger,nouns,animals,Tiger,tiger
+German,tights,nouns,clothing,Strumpfhose,strumpfhose
+German,tired,adjectives,descriptive_words,müde,müde
+German,to,function_words,locations,an,an
+German,to,function_words,locations,um,um
+German,toast,nouns,food_drink,Toast,toast
+German,toe,nouns,body_parts,Zeh,zeh
+German,tomato,nouns,food_drink,Tomate,tomate
+German,tongue,nouns,body_parts,Zunge,zunge
+German,tooth,nouns,body_parts,Zahn,zahn
+German,toothbrush,nouns,household,Zahnbürste,zahnbürste
+German,touch,verbs,action_words,anfassen,anfassen
+German,towel,nouns,household,Handtuch,handtuch
+German,toy (object),nouns,toys,Spielzeug,spielzeug
+German,tractor,nouns,vehicles,Trecker,trecker
+German,train,nouns,vehicles,Bahn,bahn
+German,trash,nouns,household,Müll,müll
+German,trash,verbs,action_words,wegwerfen,wegwerfen
+German,tree,nouns,outside,Baum,baum
+German,truck,nouns,vehicles,Lastwagen,lastwagen
+German,tummy,nouns,body_parts,Bauch,bauch
+German,turtle,nouns,animals,Schildkröte,schildkröte
+German,tv,nouns,furniture_rooms,Fernseher,fernseher
+German,under,function_words,locations,unter,unter
+German,us,function_words,pronouns,uns,uns
+German,vacuum,nouns,household,Staubsauger,staubsauger
+German,vagina,nouns,body_parts,Scheide,scheide
+German,walk,verbs,action_words,gehen,gehen
+German,walk,verbs,action_words,laufen,laufen
+German,wanna,function_words,helping_verbs,wollen,wollen
+German,wash,verbs,action_words,waschen,waschen
+German,washing machine,nouns,furniture_rooms,Waschmaschine,waschmaschine
+German,watch (action),verbs,action_words,zugucken,zugucken
+German,watch (action),verbs,action_words,gucken,gucken
+German,water (beverage),nouns,food_drink,Wasser,wasser
+German,we,function_words,pronouns,wir,wir
+German,wet (description),adjectives,descriptive_words,nass,nass
+German,what,function_words,question_words,was,was
+German,when (question),function_words,question_words,wann,wann
+German,where (question),function_words,question_words,wo,wo
+German,which (question),function_words,question_words,welche,welche
+German,white,adjectives,descriptive_words,weiß,weiß
+German,who,function_words,question_words,wer,wer
+German,why,function_words,question_words,warum,warum
+German,wind,nouns,outside,Wind,wind
+German,window,nouns,furniture_rooms,Fenster,fenster
+German,wipe,verbs,action_words,wischen,wischen
+German,with,function_words,locations,mit,mit
+German,wolf,nouns,animals,Wolf,wolf
+German,work (action),verbs,action_words,arbeiten,arbeiten
+German,write,verbs,action_words,schreiben,schreiben
+German,yard,nouns,outside,Hof,hof
+German,yellow,adjectives,descriptive_words,gelb,gelb
+German,yogurt,nouns,food_drink,Joghurt,joghurt
+German,you,function_words,pronouns,euch,euch
+German,you,function_words,pronouns,du,du
+German,your,function_words,pronouns,dein,dein
+German,bathroom,nouns,furniture_rooms,Klo/Toilette,toilette
+German,orange (food),nouns,food_drink,Orange/Apfelsine,apfelsine

@@ -32,24 +32,24 @@ def open_pkl(dir):
 def open_word_list_csv(csv_path):
     with open(csv_path, newline='\n') as csv_file:
         word_list = []
-        csv_contents = csv.reader(csv_file, delimiter=' ', quotechar='|')
+        csv_contents = csv.DictReader(csv_file, delimiter=',', quotechar='|')
         for row in csv_contents:
-            word_list.append(row[0].split('\t')[0])
-        word_list.remove(word_list[0])
-        return word_list
+            word_list.append(row)
+        return word_list_dict
 
 
 def save_surprisals_as_csv(surprisals, experiment_dir, file_name):
     with open(os.path.join(experiment_dir, file_name), mode='w') as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
-        writer.writerow(["word", "surprisal_value", "n_instances"])
+        writer.writerow(["word_clean", "n_tokens", "avg_surprisal", "avg_perplexity", "n_instances", "language"])
         for word in surprisals:
-            _sum, n = surprisals[word]
+            n_tokens, suprisal_sum, perplexity_sum, n, language = surprisals[word]
             if n == 0:
-                writer.writerow([word, 'NA', 'NA'])
+                writer.writerow([word, n_tokens, 'NA', 'NA', 'NA', language])
             else:
-                avg = _sum/n
-                writer.writerow([word, f"{avg:.16f}" , str(n)])
+                avg_surprisal = suprisal_sum/n
+                avg_perplexity = perplexity_sum/n
+                writer.writerow([word, str(n_tokens), f"{avg_surprisal:.16f}" , f"{avg_perplexity:.16f}", str(n), language])
 
 
 '''

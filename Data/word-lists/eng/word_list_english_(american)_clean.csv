@@ -1,0 +1,607 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+English (American),a,function_words,quantifiers,a,a
+English (American),a,function_words,quantifiers,an,an
+English (American),a lot,function_words,quantifiers,a lot,a lot
+English (American),about,function_words,locations,about,about
+English (American),above,function_words,locations,above,above
+English (American),airplane,nouns,vehicles,airplane,airplane
+English (American),all,function_words,quantifiers,all,all
+English (American),all gone,adjectives,descriptive_words,all gone,all gone
+English (American),alligator,nouns,animals,alligator,alligator
+English (American),am,function_words,helping_verbs,am,am
+English (American),and,function_words,connecting_words,and,and
+English (American),animal,nouns,animals,animal,animal
+English (American),ankle,nouns,body_parts,ankle,ankle
+English (American),another,function_words,quantifiers,another,another
+English (American),ant,nouns,animals,ant,ant
+English (American),any,function_words,quantifiers,any,any
+English (American),apple,nouns,food_drink,apple,apple
+English (American),applesauce,nouns,food_drink,applesauce,applesauce
+English (American),are,function_words,helping_verbs,are,are
+English (American),arm,nouns,body_parts,arm,arm
+English (American),around,function_words,locations,around,around
+English (American),asleep,adjectives,descriptive_words,asleep,asleep
+English (American),at,function_words,locations,at,at
+English (American),awake,adjectives,descriptive_words,awake,awake
+English (American),away,function_words,locations,away,away
+English (American),back (location),function_words,locations,back,back
+English (American),bad,adjectives,descriptive_words,bad,bad
+English (American),ball,nouns,toys,ball,ball
+English (American),balloon,nouns,toys,balloon,balloon
+English (American),banana,nouns,food_drink,banana,banana
+English (American),basement,nouns,furniture_rooms,basement,basement
+English (American),basket,nouns,household,basket,basket
+English (American),bat,nouns,toys,bat,bat
+English (American),bathroom,nouns,furniture_rooms,bathroom,bathroom
+English (American),bathtub,nouns,furniture_rooms,bathtub,bathtub
+English (American),be,function_words,helping_verbs,be,be
+English (American),beach,nouns,outside,beach,beach
+English (American),beads,nouns,clothing,beads,beads
+English (American),beans,nouns,food_drink,beans,beans
+English (American),bear,nouns,animals,bear,bear
+English (American),because,function_words,connecting_words,because,because
+English (American),bed,nouns,furniture_rooms,bed,bed
+English (American),bedroom,nouns,furniture_rooms,bedroom,bedroom
+English (American),bee,nouns,animals,bee,bee
+English (American),behind,function_words,locations,behind,behind
+English (American),belly button,nouns,body_parts,belly button,belly button
+English (American),belt,nouns,clothing,belt,belt
+English (American),bench,nouns,furniture_rooms,bench,bench
+English (American),beside,function_words,locations,beside,beside
+English (American),better,adjectives,descriptive_words,better,better
+English (American),bib,nouns,clothing,bib,bib
+English (American),bicycle,nouns,vehicles,bicycle,bicycle
+English (American),big,adjectives,descriptive_words,big,big
+English (American),bird,nouns,animals,bird,bird
+English (American),bite,verbs,action_words,bite,bite
+English (American),black,adjectives,descriptive_words,black,black
+English (American),blanket,nouns,household,blanket,blanket
+English (American),block,nouns,toys,block,block
+English (American),blow,verbs,action_words,blow,blow
+English (American),blue,adjectives,descriptive_words,blue,blue
+English (American),boat,nouns,vehicles,boat,boat
+English (American),book,nouns,toys,book,book
+English (American),boots,nouns,clothing,boots,boots
+English (American),bottle,nouns,household,bottle,bottle
+English (American),bowl,nouns,household,bowl,bowl
+English (American),box,nouns,household,box,box
+English (American),bread,nouns,food_drink,bread,bread
+English (American),break,verbs,action_words,break,break
+English (American),bring,verbs,action_words,bring,bring
+English (American),broken,adjectives,descriptive_words,broken,broken
+English (American),broom,nouns,household,broom,broom
+English (American),brown,adjectives,descriptive_words,brown,brown
+English (American),brush (object),nouns,household,brush,brush
+English (American),bubbles,nouns,toys,bubbles,bubbles
+English (American),bucket,nouns,household,bucket,bucket
+English (American),bug,nouns,animals,bug,bug
+English (American),build,verbs,action_words,build,build
+English (American),bump,verbs,action_words,bump,bump
+English (American),bunny,nouns,animals,bunny,bunny
+English (American),bus,nouns,vehicles,bus,bus
+English (American),but,function_words,connecting_words,but,but
+English (American),butt,nouns,body_parts,buttocks/bottom*,buttocks
+English (American),butter,nouns,food_drink,butter,butter
+English (American),butterfly,nouns,animals,butterfly,butterfly
+English (American),button,nouns,clothing,button,button
+English (American),buy,verbs,action_words,buy,buy
+English (American),by,function_words,locations,by,by
+English (American),cake,nouns,food_drink,cake,cake
+English (American),camera,nouns,household,camera,camera
+English (American),can (auxiliary),function_words,helping_verbs,can (auxiliary),can
+English (American),can (object),nouns,household,can (object),can
+English (American),candy,nouns,food_drink,candy,candy
+English (American),car,nouns,vehicles,car,car
+English (American),careful,adjectives,descriptive_words,careful,careful
+English (American),carrots,nouns,food_drink,carrots,carrots
+English (American),carry,verbs,action_words,carry,carry
+English (American),cat,nouns,animals,cat,cat
+English (American),catch,verbs,action_words,catch,catch
+English (American),cereal,nouns,food_drink,cereal,cereal
+English (American),chair,nouns,furniture_rooms,chair,chair
+English (American),chalk,nouns,toys,chalk,chalk
+English (American),chase,verbs,action_words,chase,chase
+English (American),cheek,nouns,body_parts,cheek,cheek
+English (American),cheerios,nouns,food_drink,cheerios,cheerios
+English (American),cheese,nouns,food_drink,cheese,cheese
+English (American),chicken (animal),nouns,animals,chicken (animal),chicken
+English (American),chicken (food),nouns,food_drink,chicken (food),chicken
+English (American),chin,nouns,body_parts,chin,chin
+English (American),chips,nouns,food_drink,potato chip,potato chip
+English (American),chocolate,nouns,food_drink,chocolate,chocolate
+English (American),church,nouns,outside,church*,church
+English (American),clap,verbs,action_words,clap,clap
+English (American),clean (action),verbs,action_words,clean (action),clean
+English (American),clean (description),adjectives,descriptive_words,clean (description),clean
+English (American),climb,verbs,action_words,climb,climb
+English (American),clock,nouns,household,clock,clock
+English (American),close,verbs,action_words,close,close
+English (American),closet,nouns,furniture_rooms,closet,closet
+English (American),cloud,nouns,outside,cloud,cloud
+English (American),coat,nouns,clothing,coat,coat
+English (American),coffee,nouns,food_drink,coffee,coffee
+English (American),coke,nouns,food_drink,coke,coke
+English (American),cold,adjectives,descriptive_words,cold,cold
+English (American),comb (object),nouns,household,comb,comb
+English (American),cook,verbs,action_words,cook,cook
+English (American),cookie,nouns,food_drink,cookie,cookie
+English (American),corn,nouns,food_drink,corn,corn
+English (American),couch,nouns,furniture_rooms,couch,couch
+English (American),could,function_words,helping_verbs,could,could
+English (American),cover (action),verbs,action_words,cover,cover
+English (American),cow,nouns,animals,cow,cow
+English (American),cracker,nouns,food_drink,cracker,cracker
+English (American),crayon,nouns,toys,crayon,crayon
+English (American),crib,nouns,furniture_rooms,crib,crib
+English (American),cry,verbs,action_words,cry,cry
+English (American),cup,nouns,household,cup,cup
+English (American),cut,verbs,action_words,cut,cut
+English (American),cute,adjectives,descriptive_words,cute,cute
+English (American),dance,verbs,action_words,dance,dance
+English (American),dark,adjectives,descriptive_words,dark,dark
+English (American),deer,nouns,animals,deer,deer
+English (American),diaper,nouns,clothing,diaper,diaper
+English (American),did,function_words,helping_verbs,did/did ya,did
+English (American),dirty,adjectives,descriptive_words,dirty,dirty
+English (American),dish,nouns,household,dish,dish
+English (American),do,function_words,helping_verbs,do,do
+English (American),does,function_words,helping_verbs,does,does
+English (American),dog,nouns,animals,dog,dog
+English (American),doll,nouns,toys,doll,doll
+English (American),don't,function_words,helping_verbs,don't,dont
+English (American),donkey,nouns,animals,donkey,donkey
+English (American),donut,nouns,food_drink,donut,donut
+English (American),door,nouns,furniture_rooms,door,door
+English (American),down,function_words,locations,down,down
+English (American),draw,verbs,action_words,draw,draw
+English (American),drawer,nouns,furniture_rooms,drawer,drawer
+English (American),dress (object),nouns,clothing,dress (object),dress
+English (American),drink (action),verbs,action_words,drink (action),drink
+English (American),drink (beverage),nouns,food_drink,drink (beverage),drink
+English (American),drive,verbs,action_words,drive,drive
+English (American),drop,verbs,action_words,drop,drop
+English (American),dry (action),verbs,action_words,dry (action),dry
+English (American),dry (description),adjectives,descriptive_words,dry (description),dry
+English (American),dryer,nouns,furniture_rooms,dryer,dryer
+English (American),duck,nouns,animals,duck,duck
+English (American),dump,verbs,action_words,dump,dump
+English (American),each,function_words,quantifiers,each,each
+English (American),ear,nouns,body_parts,ear,ear
+English (American),eat,verbs,action_words,eat,eat
+English (American),egg,nouns,food_drink,egg,egg
+English (American),elephant,nouns,animals,elephant,elephant
+English (American),empty,adjectives,descriptive_words,empty,empty
+English (American),every,function_words,quantifiers,every,every
+English (American),eye,nouns,body_parts,eye,eye
+English (American),face,nouns,body_parts,face,face
+English (American),fall,verbs,action_words,fall,fall
+English (American),fast,adjectives,descriptive_words,fast,fast
+English (American),feed,verbs,action_words,feed,feed
+English (American),find,verbs,action_words,find,find
+English (American),fine,adjectives,descriptive_words,fine,fine
+English (American),finger,nouns,body_parts,finger,finger
+English (American),finish,verbs,action_words,finish,finish
+English (American),firetruck,nouns,vehicles,firetruck,firetruck
+English (American),first,adjectives,descriptive_words,first,first
+English (American),fish (animal),nouns,animals,fish (animal),fish
+English (American),fish (food),nouns,food_drink,fish (food),fish
+English (American),fit,verbs,action_words,fit,fit
+English (American),fix,verbs,action_words,fix,fix
+English (American),flag,nouns,outside,flag,flag
+English (American),flower,nouns,outside,flower,flower
+English (American),food,nouns,food_drink,food,food
+English (American),foot,nouns,body_parts,foot,foot
+English (American),for,function_words,locations,for,for
+English (American),fork,nouns,household,fork,fork
+English (American),french fries,nouns,food_drink,french fries,french fries
+English (American),frog,nouns,animals,frog,frog
+English (American),full,adjectives,descriptive_words,full,full
+English (American),game,nouns,toys,game,game
+English (American),garage,nouns,furniture_rooms,garage,garage
+English (American),garbage,nouns,household,garbage,garbage
+English (American),garden,nouns,outside,garden,garden
+English (American),gentle,adjectives,descriptive_words,gentle,gentle
+English (American),get,verbs,action_words,get,get
+English (American),giraffe,nouns,animals,giraffe,giraffe
+English (American),give,verbs,action_words,give,give
+English (American),glass,nouns,household,glass,glass
+English (American),glasses,nouns,household,glasses,glasses
+English (American),gloves,nouns,clothing,gloves,gloves
+English (American),glue,nouns,toys,glue,glue
+English (American),go,verbs,action_words,go,go
+English (American),gonna,function_words,helping_verbs,gonna/going to,gonna
+English (American),good,adjectives,descriptive_words,good,good
+English (American),goose,nouns,animals,goose,goose
+English (American),gotta,function_words,helping_verbs,gotta/got to,gotta
+English (American),grapes,nouns,food_drink,grapes,grapes
+English (American),grass,nouns,outside,grass,grass
+English (American),green,adjectives,descriptive_words,green,green
+English (American),green beans,nouns,food_drink,green beans,green beans
+English (American),gum,nouns,food_drink,gum,gum
+English (American),hafta,function_words,helping_verbs,hafta/have to,hafta
+English (American),hair,nouns,body_parts,hair,hair
+English (American),hamburger,nouns,food_drink,hamburger,hamburger
+English (American),hammer,nouns,household,hammer,hammer
+English (American),hand,nouns,body_parts,hand,hand
+English (American),happy,adjectives,descriptive_words,happy,happy
+English (American),hard,adjectives,descriptive_words,hard,hard
+English (American),hat,nouns,clothing,hat,hat
+English (American),hate,verbs,action_words,hate,hate
+English (American),have,verbs,action_words,have,have
+English (American),he,function_words,pronouns,he,he
+English (American),head,nouns,body_parts,head,head
+English (American),hear,verbs,action_words,hear,hear
+English (American),heavy,adjectives,descriptive_words,heavy,heavy
+English (American),helicopter,nouns,vehicles,helicopter,helicopter
+English (American),help,verbs,action_words,help,help
+English (American),hen,nouns,animals,hen,hen
+English (American),her,function_words,pronouns,her,her
+English (American),here,function_words,locations,here,here
+English (American),hers,function_words,pronouns,hers,hers
+English (American),hide,verbs,action_words,hide,hide
+English (American),high,adjectives,descriptive_words,high,high
+English (American),high chair,nouns,furniture_rooms,high chair,high chair
+English (American),him,function_words,pronouns,him,him
+English (American),his,function_words,pronouns,his,his
+English (American),hit,verbs,action_words,hit,hit
+English (American),hold,verbs,action_words,hold,hold
+English (American),home,nouns,outside,home,home
+English (American),horse,nouns,animals,horse,horse
+English (American),hose,nouns,outside,hose,hose
+English (American),hot,adjectives,descriptive_words,hot,hot
+English (American),house,nouns,outside,house,house
+English (American),how,function_words,question_words,how,how
+English (American),hug,verbs,action_words,hug,hug
+English (American),hungry,adjectives,descriptive_words,hungry,hungry
+English (American),hurry,verbs,action_words,hurry,hurry
+English (American),hurt (description),adjectives,descriptive_words,hurt,hurt
+English (American),i,function_words,pronouns,I,i
+English (American),ice,nouns,food_drink,ice,ice
+English (American),ice cream,nouns,food_drink,ice cream,ice cream
+English (American),if,function_words,connecting_words,if,if
+English (American),in,function_words,locations,in,in
+English (American),in,function_words,locations,inside/in,inside
+English (American),inside,function_words,locations,inside,inside
+English (American),into,function_words,locations,into,into
+English (American),is,function_words,helping_verbs,is,is
+English (American),it,function_words,pronouns,it,it
+English (American),jacket,nouns,clothing,jacket,jacket
+English (American),jar,nouns,household,jar,jar
+English (American),jeans,nouns,clothing,jeans,jeans
+English (American),jello,nouns,food_drink,jello,jello
+English (American),jelly,nouns,food_drink,jelly,jelly
+English (American),juice,nouns,food_drink,juice,juice
+English (American),jump,verbs,action_words,jump,jump
+English (American),keys,nouns,household,keys,keys
+English (American),kick,verbs,action_words,kick,kick
+English (American),kiss,verbs,action_words,kiss,kiss
+English (American),kitchen,nouns,furniture_rooms,kitchen,kitchen
+English (American),kitty,nouns,animals,kitty,kitty
+English (American),knee,nouns,body_parts,knee,knee
+English (American),knife,nouns,household,knife,knife
+English (American),knock,verbs,action_words,knock,knock
+English (American),ladder,nouns,outside,ladder,ladder
+English (American),lamb,nouns,animals,lamb,lamb
+English (American),lamp,nouns,household,lamp,lamp
+English (American),last,adjectives,descriptive_words,last,last
+English (American),lawn mower,nouns,outside,lawn mower,lawn mower
+English (American),leg,nouns,body_parts,leg,leg
+English (American),lemme,function_words,helping_verbs,lemme/let me,lemme
+English (American),lick,verbs,action_words,lick,lick
+English (American),light (object),nouns,household,light,light
+English (American),like (action),verbs,action_words,like,like
+English (American),lion,nouns,animals,lion,lion
+English (American),lips,nouns,body_parts,lips,lips
+English (American),listen,verbs,action_words,listen,listen
+English (American),little (description),adjectives,descriptive_words,little (description),little
+English (American),living room,nouns,furniture_rooms,living room,living room
+English (American),lollipop,nouns,food_drink,lollipop,lollipop
+English (American),long,adjectives,descriptive_words,long,long
+English (American),look,verbs,action_words,look,look
+English (American),loud,adjectives,descriptive_words,loud,loud
+English (American),love,verbs,action_words,love,love
+English (American),mad,adjectives,descriptive_words,mad,mad
+English (American),make,verbs,action_words,make,make
+English (American),me,function_words,pronouns,me,me
+English (American),meat,nouns,food_drink,meat,meat
+English (American),medicine,nouns,household,medicine,medicine
+English (American),melon,nouns,food_drink,melon,melon
+English (American),milk,nouns,food_drink,milk,milk
+English (American),mine,function_words,pronouns,mine,mine
+English (American),mittens,nouns,clothing,mittens,mittens
+English (American),money,nouns,household,money,money
+English (American),monkey,nouns,animals,monkey,monkey
+English (American),moon,nouns,outside,moon,moon
+English (American),moose,nouns,animals,moose,moose
+English (American),mop,nouns,household,mop,mop
+English (American),more,function_words,quantifiers,more,more
+English (American),motorcycle,nouns,vehicles,motorcycle,motorcycle
+English (American),mouse,nouns,animals,mouse,mouse
+English (American),mouth,nouns,body_parts,mouth,mouth
+English (American),much,function_words,quantifiers,much,much
+English (American),muffin,nouns,food_drink,muffin,muffin
+English (American),my,function_words,pronouns,my,my
+English (American),myself,function_words,pronouns,myself,myself
+English (American),nail (object),nouns,household,nail,nail
+English (American),napkin,nouns,household,napkin,napkin
+English (American),naughty,adjectives,descriptive_words,naughty,naughty
+English (American),necklace,nouns,clothing,necklace,necklace
+English (American),need,function_words,helping_verbs,need/need to,need
+English (American),new,adjectives,descriptive_words,new,new
+English (American),next to,function_words,locations,next to,next to
+English (American),nice,adjectives,descriptive_words,nice,nice
+English (American),noisy,adjectives,descriptive_words,noisy,noisy
+English (American),none,function_words,quantifiers,none,none
+English (American),nose,nouns,body_parts,nose,nose
+English (American),not,function_words,quantifiers,not,not
+English (American),nuts,nouns,food_drink,nuts,nuts
+English (American),of,function_words,locations,of,of
+English (American),off,function_words,locations,off,off
+English (American),old,adjectives,descriptive_words,old,old
+English (American),on,function_words,locations,on,on
+English (American),on top of,function_words,locations,on top of,on top of
+English (American),open (action),verbs,action_words,open,open
+English (American),orange (description),adjectives,descriptive_words,orange (description),orange
+English (American),orange (food),nouns,food_drink,orange (food),orange
+English (American),other,function_words,quantifiers,other,other
+English (American),our,function_words,pronouns,our,our
+English (American),out,function_words,locations,out,out
+English (American),outside,nouns,outside,outside,outside
+English (American),oven,nouns,furniture_rooms,oven,oven
+English (American),over,function_words,locations,over,over
+English (American),owie,nouns,body_parts,owie/boo boo,owie
+English (American),owl,nouns,animals,owl,owl
+English (American),paint (action),verbs,action_words,paint,paint
+English (American),pajamas,nouns,clothing,pajamas,pajamas
+English (American),pancake,nouns,food_drink,pancake,pancake
+English (American),pants,nouns,clothing,pants,pants
+English (American),paper,nouns,household,paper,paper
+English (American),park,nouns,outside,park,park
+English (American),party,nouns,outside,party,party
+English (American),pasta,nouns,food_drink,noodles,noodles
+English (American),pasta,nouns,food_drink,spaghetti,spaghetti
+English (American),peanut butter,nouns,food_drink,peanut butter,peanut butter
+English (American),peas,nouns,food_drink,peas,peas
+English (American),pen,nouns,toys,pen,pen
+English (American),pencil,nouns,toys,pencil,pencil
+English (American),penguin,nouns,animals,penguin,penguin
+English (American),penis,nouns,body_parts,penis*,penis
+English (American),penny,nouns,household,penny,penny
+English (American),pick,verbs,action_words,pick,pick
+English (American),pickle,nouns,food_drink,pickle,pickle
+English (American),picture,nouns,household,picture,picture
+English (American),pig,nouns,animals,pig,pig
+English (American),pillow,nouns,household,pillow,pillow
+English (American),pizza,nouns,food_drink,pizza,pizza
+English (American),plant,nouns,household,plant,plant
+English (American),plate,nouns,household,plate,plate
+English (American),play,verbs,action_words,play,play
+English (American),play dough,nouns,toys,play dough,play dough
+English (American),play pen,nouns,furniture_rooms,play pen,play pen
+English (American),pony,nouns,animals,pony,pony
+English (American),pool,nouns,outside,pool,pool
+English (American),poor,adjectives,descriptive_words,poor,poor
+English (American),popcorn,nouns,food_drink,popcorn,popcorn
+English (American),popsicle,nouns,food_drink,popsicle,popsicle
+English (American),porch,nouns,furniture_rooms,porch,porch
+English (American),potato,nouns,food_drink,potato,potato
+English (American),potty,nouns,furniture_rooms,potty,potty
+English (American),pour,verbs,action_words,pour,pour
+English (American),present,nouns,toys,present,present
+English (American),pretend,verbs,action_words,pretend,pretend
+English (American),pretty,adjectives,descriptive_words,pretty,pretty
+English (American),pretzel,nouns,food_drink,pretzel,pretzel
+English (American),pudding,nouns,food_drink,pudding,pudding
+English (American),pull,verbs,action_words,pull,pull
+English (American),pumpkin,nouns,food_drink,pumpkin,pumpkin
+English (American),puppy,nouns,animals,puppy,puppy
+English (American),purse,nouns,household,purse,purse
+English (American),push,verbs,action_words,push,push
+English (American),put,verbs,action_words,put,put
+English (American),puzzle,nouns,toys,puzzle,puzzle
+English (American),quiet,adjectives,descriptive_words,quiet,quiet
+English (American),radio,nouns,household,radio,radio
+English (American),rain,nouns,outside,rain,rain
+English (American),raisin,nouns,food_drink,raisin,raisin
+English (American),read,verbs,action_words,read,read
+English (American),red,adjectives,descriptive_words,red,red
+English (American),refrigerator,nouns,furniture_rooms,refrigerator,refrigerator
+English (American),ride,verbs,action_words,ride,ride
+English (American),rip,verbs,action_words,rip,rip
+English (American),rock (object),nouns,outside,rock,rock
+English (American),rocking chair,nouns,furniture_rooms,rocking chair,rocking chair
+English (American),roof,nouns,outside,roof,roof
+English (American),room,nouns,furniture_rooms,room,room
+English (American),rooster,nouns,animals,rooster,rooster
+English (American),run,verbs,action_words,run,run
+English (American),sad,adjectives,descriptive_words,sad,sad
+English (American),salt,nouns,food_drink,salt,salt
+English (American),same,function_words,quantifiers,same,same
+English (American),sandbox,nouns,outside,sandbox,sandbox
+English (American),sandwich,nouns,food_drink,sandwich,sandwich
+English (American),sauce,nouns,food_drink,sauce,sauce
+English (American),say,verbs,action_words,say,say
+English (American),scared,adjectives,descriptive_words,scared,scared
+English (American),scarf,nouns,clothing,scarf,scarf
+English (American),school,nouns,outside,school,school
+English (American),scissors,nouns,household,scissors,scissors
+English (American),see,verbs,action_words,see,see
+English (American),shake,verbs,action_words,shake,shake
+English (American),share,verbs,action_words,share,share
+English (American),she,function_words,pronouns,she,she
+English (American),sheep,nouns,animals,sheep,sheep
+English (American),shirt,nouns,clothing,shirt,shirt
+English (American),shoe,nouns,clothing,shoe,shoe
+English (American),shorts,nouns,clothing,shorts,shorts
+English (American),shoulder,nouns,body_parts,shoulder,shoulder
+English (American),shovel,nouns,outside,shovel,shovel
+English (American),show,verbs,action_words,show,show
+English (American),shower,nouns,furniture_rooms,shower,shower
+English (American),sick,adjectives,descriptive_words,sick,sick
+English (American),sidewalk,nouns,outside,sidewalk,sidewalk
+English (American),sing,verbs,action_words,sing,sing
+English (American),sink,nouns,furniture_rooms,sink,sink
+English (American),sit,verbs,action_words,sit,sit
+English (American),skate,verbs,action_words,skate,skate
+English (American),sky,nouns,outside,sky,sky
+English (American),sled,nouns,vehicles,sled,sled
+English (American),sleep,verbs,action_words,sleep,sleep
+English (American),sleepy,adjectives,descriptive_words,sleepy,sleepy
+English (American),slide (action),verbs,action_words,slide (action),slide
+English (American),slide (object),nouns,outside,slide (object),slide
+English (American),slipper,nouns,clothing,slipper,slipper
+English (American),slow,adjectives,descriptive_words,slow,slow
+English (American),smile,verbs,action_words,smile,smile
+English (American),sneaker,nouns,clothing,sneaker,sneaker
+English (American),snow,nouns,outside,snow,snow
+English (American),snowman,nouns,outside,snowman,snowman
+English (American),snowsuit,nouns,clothing,snowsuit,snowsuit
+English (American),so,function_words,connecting_words,so,so
+English (American),soap,nouns,household,soap,soap
+English (American),sock,nouns,clothing,sock,sock
+English (American),soda,nouns,food_drink,soda/pop,soda
+English (American),sofa,nouns,furniture_rooms,sofa,sofa
+English (American),soft,adjectives,descriptive_words,soft,soft
+English (American),some,function_words,quantifiers,some,some
+English (American),soup,nouns,food_drink,soup,soup
+English (American),spill,verbs,action_words,spill,spill
+English (American),splash,verbs,action_words,splash,splash
+English (American),spoon,nouns,household,spoon,spoon
+English (American),sprinkler,nouns,outside,sprinkler,sprinkler
+English (American),squirrel,nouns,animals,squirrel,squirrel
+English (American),stairs,nouns,furniture_rooms,stairs,stairs
+English (American),stand,verbs,action_words,stand,stand
+English (American),star,nouns,outside,star,star
+English (American),stay,verbs,action_words,stay,stay
+English (American),stick,nouns,outside,stick,stick
+English (American),sticky,adjectives,descriptive_words,sticky,sticky
+English (American),stone,nouns,outside,stone,stone
+English (American),stop,verbs,action_words,stop,stop
+English (American),store,nouns,outside,store,store
+English (American),story,nouns,toys,story,story
+English (American),stove,nouns,furniture_rooms,stove,stove
+English (American),strawberry,nouns,food_drink,strawberry,strawberry
+English (American),street,nouns,outside,street,street
+English (American),stroller,nouns,vehicles,stroller,stroller
+English (American),stuck,adjectives,descriptive_words,stuck,stuck
+English (American),sun,nouns,outside,sun,sun
+English (American),sweater,nouns,clothing,sweater,sweater
+English (American),sweep,verbs,action_words,sweep,sweep
+English (American),swim,verbs,action_words,swim,swim
+English (American),swing (action),verbs,action_words,swing (action),swing
+English (American),swing (object),nouns,outside,swing (object),swing
+English (American),table,nouns,furniture_rooms,table,table
+English (American),take,verbs,action_words,take,take
+English (American),talk,verbs,action_words,talk,talk
+English (American),tape,nouns,household,tape,tape
+English (American),taste,verbs,action_words,taste,taste
+English (American),tear,verbs,action_words,tear,tear
+English (American),teddybear,nouns,animals,teddybear,teddybear
+English (American),telephone,nouns,household,telephone,telephone
+English (American),that,function_words,pronouns,that,that
+English (American),the,function_words,quantifiers,the,the
+English (American),their,function_words,pronouns,their,their
+English (American),them,function_words,pronouns,them,them
+English (American),then,function_words,connecting_words,then,then
+English (American),there,function_words,locations,there,there
+English (American),these,function_words,pronouns,these,these
+English (American),they,function_words,pronouns,they,they
+English (American),think,verbs,action_words,think,think
+English (American),thirsty,adjectives,descriptive_words,thirsty,thirsty
+English (American),this,function_words,pronouns,this,this
+English (American),those,function_words,pronouns,those,those
+English (American),throw,verbs,action_words,throw,throw
+English (American),tickle,verbs,action_words,tickle,tickle
+English (American),tiger,nouns,animals,tiger,tiger
+English (American),tights,nouns,clothing,tights,tights
+English (American),tiny,adjectives,descriptive_words,tiny,tiny
+English (American),tired,adjectives,descriptive_words,tired,tired
+English (American),tissue,nouns,household,tissue/kleenex,tissue
+English (American),to,function_words,locations,to,to
+English (American),toast,nouns,food_drink,toast,toast
+English (American),toe,nouns,body_parts,toe,toe
+English (American),tongue,nouns,body_parts,tongue,tongue
+English (American),too,function_words,quantifiers,too,too
+English (American),tooth,nouns,body_parts,tooth,tooth
+English (American),toothbrush,nouns,household,toothbrush,toothbrush
+English (American),touch,verbs,action_words,touch,touch
+English (American),towel,nouns,household,towel,towel
+English (American),toy (object),nouns,toys,toy (object),toy
+English (American),tractor,nouns,vehicles,tractor,tractor
+English (American),train,nouns,vehicles,train,train
+English (American),trash,nouns,household,trash,trash
+English (American),tray,nouns,household,tray,tray
+English (American),tree,nouns,outside,tree,tree
+English (American),tricycle,nouns,vehicles,tricycle,tricycle
+English (American),truck,nouns,vehicles,truck,truck
+English (American),try,function_words,helping_verbs,try/try to,try
+English (American),tummy,nouns,body_parts,tummy,tummy
+English (American),tuna,nouns,food_drink,tuna,tuna
+English (American),turkey,nouns,animals,turkey,turkey
+English (American),turtle,nouns,animals,turtle,turtle
+English (American),tv,nouns,furniture_rooms,TV,tv
+English (American),under,function_words,locations,under,under
+English (American),underpants,nouns,clothing,underpants,underpants
+English (American),up,function_words,locations,up,up
+English (American),us,function_words,pronouns,us,us
+English (American),vacuum,nouns,household,vacuum,vacuum
+English (American),vagina,nouns,body_parts,vagina*,vagina
+English (American),vanilla,nouns,food_drink,vanilla,vanilla
+English (American),vitamins,nouns,food_drink,vitamins,vitamins
+English (American),wait,verbs,action_words,wait,wait
+English (American),wake,verbs,action_words,wake,wake
+English (American),walk,verbs,action_words,walk,walk
+English (American),walker,nouns,household,walker,walker
+English (American),wanna,function_words,helping_verbs,wanna/want to,wanna
+English (American),was,function_words,helping_verbs,was,was
+English (American),wash,verbs,action_words,wash,wash
+English (American),washing machine,nouns,furniture_rooms,washing machine,washing machine
+English (American),watch (action),verbs,action_words,watch (action),watch
+English (American),watch (object),nouns,household,watch (object),watch
+English (American),water (beverage),nouns,food_drink,water (beverage),water
+English (American),water (not beverage),nouns,outside,water (not beverage),water
+English (American),we,function_words,pronouns,we,we
+English (American),were,function_words,helping_verbs,were,were
+English (American),wet (description),adjectives,descriptive_words,wet,wet
+English (American),what,function_words,question_words,what,what
+English (American),when (question),function_words,question_words,when,when
+English (American),where (question),function_words,question_words,where,where
+English (American),which (question),function_words,question_words,which,which
+English (American),white,adjectives,descriptive_words,white,white
+English (American),who,function_words,question_words,who,who
+English (American),why,function_words,question_words,why,why
+English (American),will,function_words,helping_verbs,will,will
+English (American),wind,nouns,outside,wind,wind
+English (American),window,nouns,furniture_rooms,window,window
+English (American),windy,adjectives,descriptive_words,windy,windy
+English (American),wipe,verbs,action_words,wipe,wipe
+English (American),wish,verbs,action_words,wish,wish
+English (American),with,function_words,locations,with,with
+English (American),wolf,nouns,animals,wolf,wolf
+English (American),work (action),verbs,action_words,work (action),work
+English (American),work (place),nouns,outside,work (place),work
+English (American),would,function_words,helping_verbs,would,would
+English (American),write,verbs,action_words,write,write
+English (American),yard,nouns,outside,backyard,backyard
+English (American),yellow,adjectives,descriptive_words,yellow,yellow
+English (American),yogurt,nouns,food_drink,yogurt,yogurt
+English (American),you,function_words,pronouns,you,you
+English (American),your,function_words,pronouns,your,your
+English (American),yourself,function_words,pronouns,yourself,yourself
+English (American),yucky,adjectives,descriptive_words,yucky,yucky
+English (American),zebra,nouns,animals,zebra,zebra
+English (American),zipper,nouns,clothing,zipper,zipper
+English (American),zoo,nouns,outside,zoo,zoo
+English (American),butt,nouns,body_parts,buttocks/bottom*,bottom
+English (American),did,function_words,helping_verbs,did/did ya,did ya
+English (American),gonna,function_words,helping_verbs,gonna/going to,going to
+English (American),gotta,function_words,helping_verbs,gotta/got to,got to
+English (American),hafta,function_words,helping_verbs,hafta/have to,have to
+English (American),in,function_words,locations,inside/in,in
+English (American),lemme,function_words,helping_verbs,lemme/let me,let me
+English (American),need,function_words,helping_verbs,need/need to,need to
+English (American),owie,nouns,body_parts,owie/boo boo,boo boo
+English (American),soda,nouns,food_drink,soda/pop,pop
+English (American),tissue,nouns,household,tissue/kleenex,kleenex
+English (American),try,function_words,helping_verbs,try/try to,try to
+English (American),wanna,function_words,helping_verbs,wanna/want to,want to

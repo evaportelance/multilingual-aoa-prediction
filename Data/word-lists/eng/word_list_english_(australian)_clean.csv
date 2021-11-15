@@ -1,0 +1,402 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+English (Australian),airplane,nouns,vehicles,(air)plane,plane
+English (Australian),all gone,adjectives,descriptive_words,all gone,all gone
+English (Australian),angry,adjectives,descriptive_words,mad,mad
+English (Australian),animal,nouns,animals,animal,animal
+English (Australian),ant,nouns,animals,ant,ant
+English (Australian),apple,nouns,food_drink,apple,apple
+English (Australian),arm,nouns,body_parts,arm,arm
+English (Australian),asleep,adjectives,descriptive_words,asleep,asleep
+English (Australian),backyard,nouns,outside,backyard,backyard
+English (Australian),bad,adjectives,descriptive_words,bad,bad
+English (Australian),ball,nouns,toys,ball,ball
+English (Australian),balloon,nouns,toys,balloon,balloon
+English (Australian),banana,nouns,food_drink,banana,banana
+English (Australian),bathroom,nouns,furniture_rooms,Bathroom,bathroom
+English (Australian),bathtub,nouns,furniture_rooms,Bath (tub),bath
+English (Australian),beans,nouns,food_drink,beans,beans
+English (Australian),bear,nouns,animals,bear,bear
+English (Australian),bed,nouns,furniture_rooms,bed,bed
+English (Australian),bedroom,nouns,furniture_rooms,bedroom,bedroom
+English (Australian),bee,nouns,animals,bee,bee
+English (Australian),belly button,nouns,body_parts,bellybutton/navel,bellybutton
+English (Australian),bib,nouns,clothing,bib,bib
+English (Australian),bicycle,nouns,vehicles,bicycle/bike,bicycle
+English (Australian),big,adjectives,descriptive_words,big,big
+English (Australian),bird,nouns,animals,bird,bird
+English (Australian),bite,verbs,action_words,bite,bite
+English (Australian),black,adjectives,descriptive_words,black,black
+English (Australian),blanket,nouns,household,blanket,blanket
+English (Australian),block,nouns,toys,block/brick,block
+English (Australian),blow,verbs,action_words,blow,blow
+English (Australian),blue,adjectives,descriptive_words,blue,blue
+English (Australian),boat,nouns,vehicles,boat,boat
+English (Australian),book,nouns,toys,book,book
+English (Australian),boots,nouns,clothing,boot(s),boot
+English (Australian),bottle,nouns,household,bottle,bottle
+English (Australian),bowl,nouns,household,bowl,bowl
+English (Australian),box,nouns,household,box,box
+English (Australian),bread,nouns,food_drink,bread,bread
+English (Australian),break,verbs,action_words,break,break
+English (Australian),breast,nouns,body_parts,breasts,breasts
+English (Australian),bring,verbs,action_words,bring,bring
+English (Australian),broken,adjectives,descriptive_words,broken,broken
+English (Australian),broom,nouns,household,broom,broom
+English (Australian),brush (object),nouns,household,brush,brush
+English (Australian),bubbles,nouns,toys,bubbles,bubbles
+English (Australian),bucket,nouns,household,bucket,bucket
+English (Australian),bug,nouns,animals,bug,bug
+English (Australian),bump,verbs,action_words,bump,bump
+English (Australian),bunny,nouns,animals,bunny/rabbit,bunny
+English (Australian),bus,nouns,vehicles,bus,bus
+English (Australian),butt,nouns,body_parts,bottom,bottom
+English (Australian),butter,nouns,food_drink,butter,butter
+English (Australian),butterfly,nouns,animals,butterfly,butterfly
+English (Australian),button,nouns,clothing,button,button
+English (Australian),buy,verbs,action_words,buy,buy
+English (Australian),cake,nouns,food_drink,cake,cake
+English (Australian),camera,nouns,household,camera,camera
+English (Australian),can (object),nouns,household,can,can
+English (Australian),cap,nouns,clothing,beanie,beanie
+English (Australian),car,nouns,vehicles,car,car
+English (Australian),careful,adjectives,descriptive_words,careful,careful
+English (Australian),carrots,nouns,food_drink,carrot,carrot
+English (Australian),carry,verbs,action_words,carry,carry
+English (Australian),cat,nouns,animals,(pussy)cat,cat
+English (Australian),catch,verbs,action_words,catch,catch
+English (Australian),cereal,nouns,food_drink,cereal,cereal
+English (Australian),chair,nouns,furniture_rooms,chair,chair
+English (Australian),cheek,nouns,body_parts,cheek,cheek
+English (Australian),cheese,nouns,food_drink,cheese,cheese
+English (Australian),chicken (food),nouns,food_drink,chicken,chicken
+English (Australian),chin,nouns,body_parts,chin,chin
+English (Australian),chocolate,nouns,food_drink,chocolate,chocolate
+English (Australian),clap,verbs,action_words,clap,clap
+English (Australian),clean (action),verbs,action_words,clean,clean
+English (Australian),clean (description),adjectives,descriptive_words,clean,clean
+English (Australian),climb,verbs,action_words,climb,climb
+English (Australian),clock,nouns,household,clock,clock
+English (Australian),close,verbs,action_words,shut,shut
+English (Australian),close,verbs,action_words,close,close
+English (Australian),cloud,nouns,outside,cloud,cloud
+English (Australian),coat,nouns,clothing,coat,coat
+English (Australian),coffee,nouns,food_drink,coffee,coffee
+English (Australian),cold,adjectives,descriptive_words,cold,cold
+English (Australian),comb (object),nouns,household,comb,comb
+English (Australian),computer,nouns,furniture_rooms,computer,computer
+English (Australian),cookie,nouns,food_drink,biscuit/bickie,biscuit
+English (Australian),couch,nouns,furniture_rooms,couch/lounge/sofa,couch
+English (Australian),cover (action),verbs,action_words,cover,cover
+English (Australian),cow,nouns,animals,cow,cow
+English (Australian),crayon,nouns,toys,crayon,crayon
+English (Australian),crib,nouns,household,cot,cot
+English (Australian),crib,nouns,furniture_rooms,crib,crib
+English (Australian),crocodile,nouns,animals,crocodile,crocodile
+English (Australian),cry,verbs,action_words,cry,cry
+English (Australian),cup,nouns,household,cup,cup
+English (Australian),cup,nouns,household,mug,mug
+English (Australian),cute,adjectives,descriptive_words,cute,cute
+English (Australian),dance,verbs,action_words,dance,dance
+English (Australian),dark,adjectives,descriptive_words,dark,dark
+English (Australian),deer,nouns,animals,deer,deer
+English (Australian),diaper,nouns,clothing,nappy,nappy
+English (Australian),dirty,adjectives,descriptive_words,dirty,dirty
+English (Australian),dish,nouns,household,dish,dish
+English (Australian),dog,nouns,animals,dog,dog
+English (Australian),doll,nouns,toys,doll,doll
+English (Australian),donkey,nouns,animals,donkey,donkey
+English (Australian),door,nouns,furniture_rooms,door,door
+English (Australian),draw,verbs,action_words,draw,draw
+English (Australian),drawer,nouns,furniture_rooms,drawer,drawer
+English (Australian),dress (object),nouns,clothing,dress,dress
+English (Australian),drink (action),verbs,action_words,drink,drink
+English (Australian),drink (beverage),nouns,food_drink,drink,drink
+English (Australian),drive,verbs,action_words,drive,drive
+English (Australian),drop,verbs,action_words,drop,drop
+English (Australian),dry (action),verbs,action_words,dry,dry
+English (Australian),dry (description),adjectives,descriptive_words,dry,dry
+English (Australian),duck,nouns,animals,duck,duck
+English (Australian),dump,verbs,action_words,dump,dump
+English (Australian),ear,nouns,body_parts,ear,ear
+English (Australian),easy,adjectives,descriptive_words,easy,easy
+English (Australian),eat,verbs,action_words,eat,eat
+English (Australian),egg,nouns,food_drink,egg,egg
+English (Australian),elephant,nouns,animals,elephant,elephant
+English (Australian),empty,adjectives,descriptive_words,empty,empty
+English (Australian),eye,nouns,body_parts,eye,eye
+English (Australian),face,nouns,body_parts,face,face
+English (Australian),fall,verbs,action_words,fall,fall
+English (Australian),fast,adjectives,descriptive_words,fast,fast
+English (Australian),feed,verbs,action_words,feed,feed
+English (Australian),find,verbs,action_words,find,find
+English (Australian),fine,adjectives,descriptive_words,fine,fine
+English (Australian),finger,nouns,body_parts,finger(s),finger
+English (Australian),finish,verbs,action_words,finish,finish
+English (Australian),firetruck,nouns,vehicles,fire truck/engine,fire truck
+English (Australian),fish (animal),nouns,animals,fish,fish
+English (Australian),fish (food),nouns,food_drink,fish,fish
+English (Australian),flower,nouns,outside,flower,flower
+English (Australian),food,nouns,food_drink,food,food
+English (Australian),foot,nouns,body_parts,foot/feet,foot
+English (Australian),fork,nouns,household,fork,fork
+English (Australian),frog,nouns,animals,frog,frog
+English (Australian),full,adjectives,descriptive_words,full,full
+English (Australian),garage,nouns,furniture_rooms,garage,garage
+English (Australian),garden,nouns,outside,garden,garden
+English (Australian),gentle,adjectives,descriptive_words,gentle,gentle
+English (Australian),get,verbs,action_words,get,get
+English (Australian),giraffe,nouns,animals,giraffe,giraffe
+English (Australian),give,verbs,action_words,give,give
+English (Australian),glass,nouns,household,glass,glass
+English (Australian),go,verbs,action_words,go,go
+English (Australian),good,adjectives,descriptive_words,good,good
+English (Australian),goose,nouns,animals,goose,goose
+English (Australian),grapes,nouns,food_drink,grapes,grapes
+English (Australian),grass,nouns,outside,grass,grass
+English (Australian),green,adjectives,descriptive_words,green,green
+English (Australian),hair,nouns,body_parts,hair,hair
+English (Australian),hammer,nouns,household,hammer,hammer
+English (Australian),hand,nouns,body_parts,hand,hand
+English (Australian),happy,adjectives,descriptive_words,happy,happy
+English (Australian),hard,adjectives,descriptive_words,hard,hard
+English (Australian),hat,nouns,clothing,hat,hat
+English (Australian),have,verbs,action_words,have,have
+English (Australian),head,nouns,body_parts,head,head
+English (Australian),hear,verbs,action_words,hear,hear
+English (Australian),heavy,adjectives,descriptive_words,heavy,heavy
+English (Australian),help,verbs,action_words,help,help
+English (Australian),hide,verbs,action_words,hide,hide
+English (Australian),high,adjectives,descriptive_words,high,high
+English (Australian),high chair,nouns,furniture_rooms,high chair,high chair
+English (Australian),hit,verbs,action_words,hit,hit
+English (Australian),hold,verbs,action_words,hold,hold
+English (Australian),horse,nouns,animals,horse,horse
+English (Australian),hot,adjectives,descriptive_words,hot,hot
+English (Australian),hug,verbs,action_words,hug,hug
+English (Australian),hungry,adjectives,descriptive_words,hungry,hungry
+English (Australian),hurry,verbs,action_words,hurry,hurry
+English (Australian),hurt (description),adjectives,descriptive_words,hurt,hurt
+English (Australian),ice cream,nouns,food_drink,ice cream,ice cream
+English (Australian),jacket,nouns,clothing,jacket,jacket
+English (Australian),jam,nouns,food_drink,jam,jam
+English (Australian),jar,nouns,household,jar,jar
+English (Australian),jeans,nouns,clothing,jeans,jeans
+English (Australian),juice,nouns,food_drink,juice,juice
+English (Australian),jump,verbs,action_words,jump,jump
+English (Australian),kangaroo,nouns,animals,kangaroo/roo,kangaroo
+English (Australian),keys,nouns,household,keys,keys
+English (Australian),kick,verbs,action_words,kick,kick
+English (Australian),kiss,verbs,action_words,kiss,kiss
+English (Australian),kitchen,nouns,furniture_rooms,kitchen,kitchen
+English (Australian),knee,nouns,body_parts,knee,knee
+English (Australian),knife,nouns,household,knife,knife
+English (Australian),ladder,nouns,outside,ladder,ladder
+English (Australian),lamb,nouns,animals,lamb,lamb
+English (Australian),lamp,nouns,household,lamp,lamp
+English (Australian),leg,nouns,body_parts,leg,leg
+English (Australian),lick,verbs,action_words,lick,lick
+English (Australian),light (object),nouns,household,light,light
+English (Australian),lion,nouns,animals,lion,lion
+English (Australian),little (description),adjectives,descriptive_words,little,little
+English (Australian),little (description),adjectives,descriptive_words,tiny,tiny
+English (Australian),living room,nouns,furniture_rooms,living/lounge room,living room
+English (Australian),lollipop,nouns,food_drink,lolly,lolly
+English (Australian),look,verbs,action_words,look,look
+English (Australian),loud,adjectives,descriptive_words,loud,loud
+English (Australian),love,verbs,action_words,love,love
+English (Australian),make,verbs,action_words,make,make
+English (Australian),meat,nouns,food_drink,meat,meat
+English (Australian),medicine,nouns,household,medicine,medicine
+English (Australian),milk,nouns,food_drink,milk,milk
+English (Australian),money,nouns,household,money,money
+English (Australian),monkey,nouns,animals,monkey,monkey
+English (Australian),moon,nouns,outside,moon,moon
+English (Australian),motorcycle,nouns,vehicles,motorbike,motorbike
+English (Australian),mouse,nouns,animals,mouse,mouse
+English (Australian),mouth,nouns,body_parts,mouth,mouth
+English (Australian),nail (body part),nouns,body_parts,nail(s),nails
+English (Australian),naughty,adjectives,descriptive_words,naughty,naughty
+English (Australian),neck,nouns,body_parts,neck,neck
+English (Australian),necklace,nouns,clothing,necklace,necklace
+English (Australian),new,adjectives,descriptive_words,new,new
+English (Australian),nice,adjectives,descriptive_words,nice,nice
+English (Australian),noodles,nouns,food_drink,noodles,noodles
+English (Australian),nose,nouns,body_parts,nose,nose
+English (Australian),old,adjectives,descriptive_words,old,old
+English (Australian),open (action),verbs,action_words,open,open
+English (Australian),orange (description),adjectives,descriptive_words,orange,orange
+English (Australian),orange (food),nouns,food_drink,orange,orange
+English (Australian),oven,nouns,furniture_rooms,oven/stove,oven
+English (Australian),owl,nouns,animals,owl,owl
+English (Australian),paint (action),verbs,action_words,paint,paint
+English (Australian),pajamas,nouns,clothing,pyjamas/jamies,pyjamas
+English (Australian),pancake,nouns,food_drink,pancake,pancake
+English (Australian),pants,nouns,clothing,pants,pants
+English (Australian),pasta,nouns,food_drink,pasta,pasta
+English (Australian),peas,nouns,food_drink,peas,peas
+English (Australian),pen,nouns,toys,pen,pen
+English (Australian),penguin,nouns,animals,penguin,penguin
+English (Australian),photos,nouns,household,photo,photo
+English (Australian),picture,nouns,household,picture,picture
+English (Australian),pig,nouns,animals,pig,pig
+English (Australian),pillow,nouns,household,pillow,pillow
+English (Australian),pizza,nouns,food_drink,pizza,pizza
+English (Australian),plant,nouns,household,plant,plant
+English (Australian),plate,nouns,household,plate,plate
+English (Australian),play,verbs,action_words,play,play
+English (Australian),play pen,nouns,furniture_rooms,play pen,play pen
+English (Australian),pony,nouns,animals,pony,pony
+English (Australian),pool,nouns,outside,pool,pool
+English (Australian),porch,nouns,furniture_rooms,veranda/porch,veranda
+English (Australian),potato,nouns,food_drink,potato,potato
+English (Australian),potty,nouns,furniture_rooms,potty,potty
+English (Australian),present,nouns,toys,puzzle,puzzle
+English (Australian),pretend,verbs,action_words,pretend,pretend
+English (Australian),pretty,adjectives,descriptive_words,pretty,pretty
+English (Australian),pudding,nouns,food_drink,pudding,pudding
+English (Australian),pull,verbs,action_words,pull,pull
+English (Australian),puppy,nouns,animals,puppy,puppy
+English (Australian),purse,nouns,household,purse/wallet,purse
+English (Australian),push,verbs,action_words,push,push
+English (Australian),put,verbs,action_words,put,put
+English (Australian),radio,nouns,household,radio,radio
+English (Australian),rain,nouns,outside,rain,rain
+English (Australian),raisin,nouns,food_drink,raisin,raisin
+English (Australian),read,verbs,action_words,read,read
+English (Australian),red,adjectives,descriptive_words,red,red
+English (Australian),refrigerator,nouns,furniture_rooms,fridge,fridge
+English (Australian),ride,verbs,action_words,ride,ride
+English (Australian),rock (object),nouns,outside,rock,rock
+English (Australian),rocking chair,nouns,furniture_rooms,rocking chair,rocking chair
+English (Australian),roof,nouns,outside,roof,roof
+English (Australian),room,nouns,furniture_rooms,room,room
+English (Australian),run,verbs,action_words,run,run
+English (Australian),sad,adjectives,descriptive_words,sad,sad
+English (Australian),sandals,nouns,clothing,thongs,thongs
+English (Australian),sandwich,nouns,food_drink,sandwich,sandwich
+English (Australian),sauce,nouns,food_drink,(tomato) sauce,sauce
+English (Australian),say,verbs,action_words,say,say
+English (Australian),scared,adjectives,descriptive_words,scared,scared
+English (Australian),scissors,nouns,household,scissors,scissors
+English (Australian),see,verbs,action_words,see,see
+English (Australian),shake,verbs,action_words,shake,shake
+English (Australian),sheep,nouns,animals,sheep,sheep
+English (Australian),shirt,nouns,clothing,shirt,shirt
+English (Australian),shoe,nouns,clothing,shoe(s),shoe
+English (Australian),shorts,nouns,clothing,shorts,shorts
+English (Australian),shovel,nouns,outside,shovel,shovel
+English (Australian),show,verbs,action_words,show,show
+English (Australian),shower,nouns,furniture_rooms,shower,shower
+English (Australian),sick,adjectives,descriptive_words,sick,sick
+English (Australian),sing,verbs,action_words,sing,sing
+English (Australian),sink,nouns,furniture_rooms,sink,sink
+English (Australian),sit,verbs,action_words,sit,sit
+English (Australian),sky,nouns,outside,sky,sky
+English (Australian),sleep,verbs,action_words,sleep,sleep
+English (Australian),sleepy,adjectives,descriptive_words,sleepy,sleepy
+English (Australian),slide (object),nouns,outside,slide,slide
+English (Australian),slipper,nouns,clothing,slipper(s),slipper
+English (Australian),slow,adjectives,descriptive_words,slow,slow
+English (Australian),smell,verbs,action_words,smell,smell
+English (Australian),smile,verbs,action_words,smile,smile
+English (Australian),snake,nouns,animals,snake,snake
+English (Australian),soap,nouns,household,soap,soap
+English (Australian),sock,nouns,clothing,sock(s),sock
+English (Australian),soda,nouns,food_drink,coke,coke
+English (Australian),soft,adjectives,descriptive_words,soft,soft
+English (Australian),soup,nouns,food_drink,soup,soup
+English (Australian),spaghetti,nouns,food_drink,spaghetti,spaghetti
+English (Australian),spider,nouns,animals,spider,spider
+English (Australian),spill,verbs,action_words,spill,spill
+English (Australian),splash,verbs,action_words,splash,splash
+English (Australian),spoon,nouns,household,spoon,spoon
+English (Australian),stairs,nouns,furniture_rooms,stairs,stairs
+English (Australian),stand,verbs,action_words,stand,stand
+English (Australian),star,nouns,outside,star,star
+English (Australian),stick,nouns,outside,stick,stick
+English (Australian),stone,nouns,outside,stone,stone
+English (Australian),stop,verbs,action_words,stop,stop
+English (Australian),street,nouns,outside,street,street
+English (Australian),stroller,nouns,vehicles,pram,pram
+English (Australian),stroller,nouns,vehicles,stroller,stroller
+English (Australian),sun,nouns,outside,sun,sun
+English (Australian),sweater,nouns,clothing,jumper,jumper
+English (Australian),sweep,verbs,action_words,sweep,sweep
+English (Australian),swim,verbs,action_words,swim,swim
+English (Australian),swing (action),verbs,action_words,swing,swing
+English (Australian),swing (object),nouns,outside,swing,swing
+English (Australian),table,nouns,furniture_rooms,table,table
+English (Australian),take,verbs,action_words,take,take
+English (Australian),talk,verbs,action_words,talk,talk
+English (Australian),tasty,adjectives,descriptive_words,yummy,yummy
+English (Australian),tear,verbs,action_words,rip,rip
+English (Australian),tear,verbs,action_words,tear,tear
+English (Australian),teddybear,nouns,toys,teddy bear,teddy bear
+English (Australian),telephone,nouns,household,telephone/phone,telephone
+English (Australian),tell,verbs,action_words,tell,tell
+English (Australian),thirsty,adjectives,descriptive_words,thirsty,thirsty
+English (Australian),throw,verbs,action_words,throw,throw
+English (Australian),tickle,verbs,action_words,tickle,tickle
+English (Australian),tiger,nouns,animals,tiger,tiger
+English (Australian),tired,adjectives,descriptive_words,tired,tired
+English (Australian),tissue,nouns,household,tissue,tissue
+English (Australian),toast,nouns,food_drink,toast,toast
+English (Australian),toe,nouns,body_parts,toe(s),toe
+English (Australian),tongue,nouns,body_parts,tongue,tongue
+English (Australian),tooth,nouns,body_parts,tooth/teeth,tooth
+English (Australian),toothbrush,nouns,household,toothbrush,toothbrush
+English (Australian),touch,verbs,action_words,touch,touch
+English (Australian),towel,nouns,household,towel,towel
+English (Australian),toy (object),nouns,toys,toy,toy
+English (Australian),tractor,nouns,vehicles,tractor,tractor
+English (Australian),train,nouns,vehicles,train,train
+English (Australian),trash,nouns,household,garbage/rubbish,garbage
+English (Australian),tree,nouns,outside,tree,tree
+English (Australian),truck,nouns,vehicles,truck,truck
+English (Australian),tummy,nouns,body_parts,stomach/tummy,stomach
+English (Australian),turkey,nouns,animals,turkey,turkey
+English (Australian),turtle,nouns,animals,turtle,turtle
+English (Australian),tv,nouns,furniture_rooms,TV,tv
+English (Australian),underpants,nouns,clothing,underpants/undies,underpants
+English (Australian),vacuum,nouns,household,vacuum cleaner,vacuum
+English (Australian),wake,verbs,action_words,wake,wake
+English (Australian),walk,verbs,action_words,walk,walk
+English (Australian),wall,nouns,outside,wall,wall
+English (Australian),wardrobe,nouns,furniture_rooms,wardrobe,wardrobe
+English (Australian),wash,verbs,action_words,wash,wash
+English (Australian),washing machine,nouns,furniture_rooms,washing machine,washing machine
+English (Australian),watch (action),verbs,action_words,watch,watch
+English (Australian),watch (object),nouns,household,watch,watch
+English (Australian),water (beverage),nouns,food_drink,water,water
+English (Australian),water (not beverage),nouns,outside,water,water
+English (Australian),wet (description),adjectives,descriptive_words,wet,wet
+English (Australian),white,adjectives,descriptive_words,white,white
+English (Australian),wind,nouns,outside,wind,wind
+English (Australian),window,nouns,furniture_rooms,window,window
+English (Australian),wipe,verbs,action_words,wipe,wipe
+English (Australian),work (action),verbs,action_words,work,work
+English (Australian),write,verbs,action_words,write,write
+English (Australian),yellow,adjectives,descriptive_words,yellow,yellow
+English (Australian),yogurt,nouns,food_drink,yoghurt,yoghurt
+English (Australian),yucky,adjectives,descriptive_words,yucky,yucky
+English (Australian),zipper,nouns,clothing,zipper,zipper
+English (Australian),belly button,nouns,body_parts,bellybutton/navel,navel
+English (Australian),bicycle,nouns,vehicles,bicycle/bike,bike
+English (Australian),block,nouns,toys,block/brick,brick
+English (Australian),bunny,nouns,animals,bunny/rabbit,rabbit
+English (Australian),cookie,nouns,food_drink,biscuit/bickie,bickie
+English (Australian),couch,nouns,furniture_rooms,couch/lounge/sofa,lounge
+English (Australian),firetruck,nouns,vehicles,fire truck/engine,fire engine
+English (Australian),foot,nouns,body_parts,foot/feet,feet
+English (Australian),kangaroo,nouns,animals,kangaroo/roo,roo
+English (Australian),living room,nouns,furniture_rooms,living/lounge room,lounge room
+English (Australian),oven,nouns,furniture_rooms,oven/stove,stove
+English (Australian),pajamas,nouns,clothing,pyjamas/jamies,jamies
+English (Australian),porch,nouns,furniture_rooms,veranda/porch,porch
+English (Australian),purse,nouns,household,purse/wallet,wallet
+English (Australian),telephone,nouns,household,telephone/phone,phone
+English (Australian),tooth,nouns,body_parts,tooth/teeth,teeth
+English (Australian),trash,nouns,household,garbage/rubbish,rubbish
+English (Australian),tummy,nouns,body_parts,stomach/tummy,tummy
+English (Australian),underpants,nouns,clothing,underpants/undies,undies
+English (Australian),couch,nouns,furniture_rooms,couch/lounge/sofa,sofa
