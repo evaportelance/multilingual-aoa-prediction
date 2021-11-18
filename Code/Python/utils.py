@@ -35,7 +35,7 @@ def open_word_list_csv(csv_path):
         csv_contents = csv.DictReader(csv_file, delimiter=',', quotechar='|')
         for row in csv_contents:
             word_list.append(row)
-        return word_list_dict
+        return word_list
 
 
 def save_surprisals_as_csv(surprisals, experiment_dir, file_name):

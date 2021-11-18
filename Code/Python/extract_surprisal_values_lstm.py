@@ -6,6 +6,9 @@ import torch
 import torch.nn.functional as F
 import sys
 import argparse
+import functools
+import operator
+import math
 from data_loader import Dataset
 from torch.utils.data import DataLoader
 import utils
@@ -39,8 +42,14 @@ def make_token_word_pairs(aoa_word_list, vocabulary):
         for w in word_seq:
             if w in vocabulary:
                 token = vocabulary[w]
-                token_seq.append(token)
+                if token != 0:
+                    token_seq.append(token)
+                else:
+                    #remove words that arent in top 5000 tokens
+                    seq_complete = False
+                    break
             else:
+                # remove words that aren't in Childes corpus
                 seq_complete = False
                 break
         if seq_complete:
@@ -78,9 +87,9 @@ def get_batched_surprisal_perplexity(model, dataloader, word_pairs, device):
                         match = surprisals[tuple(i)]
                         surprisal = match[indexes].item()
                         perplexity = 1/math.exp(-surprisal)
-                        word_surprisals_perplexity_n[word][1] += surprisal
-                        word_surprisals_perplexity_n[word][2] += perplexity
-                        word_surprisals_perplexity_n[word][3] += 1
+                        tokens_surprisals_perplexity_n[word][1] += surprisal
+                        tokens_surprisals_perplexity_n[word][2] += perplexity
+                        tokens_surprisals_perplexity_n[word][3] += 1
             else:
                 match_list = list(map(lambda x: indexes_in_sequence(indexes, x), enumerate(labels_split)))
                 index_matches = functools.reduce(operator.iconcat, match_list)
@@ -94,10 +103,10 @@ def get_batched_surprisal_perplexity(model, dataloader, word_pairs, device):
                             sub_surprisal = match[index].item()
                             surprisal += sub_surprisal
                         perplexity = 1/math.exp(((-surprisal)/n_tokens))
-                        word_surprisals_perplexity_n[word][1] += surprisal
-                        word_surprisals_perplexity_n[word][2] += perplexity
-                        word_surprisals_perplexity_n[word][3] += 1
-    return word_surprisals_perplexity_n
+                        tokens_surprisals_perplexity_n[word][1] += surprisal
+                        tokens_surprisals_perplexity_n[word][2] += perplexity
+                        tokens_surprisals_perplexity_n[word][3] += 1
+    return tokens_surprisals_perplexity_n
 
 def main():
     params = get_parameters()
@@ -107,7 +116,7 @@ def main():
     model = model.to(device)
     data = Dataset(params.data_path)
     dataloader = DataLoader(data, batch_size=params.batch_size)
-    word_list_dict = utils.open_word_list_csv(params.aoa_word_list)
+    word_list = utils.open_word_list_csv(params.aoa_word_list)
     word_pairs = make_token_word_pairs(word_list, vocabulary)
     word_surprisals = get_batched_surprisal_perplexity(model, dataloader, word_pairs, device)
     file_name = params.split + "_average_surprisal_perplexity.csv"
