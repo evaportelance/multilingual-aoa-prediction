@@ -51,6 +51,17 @@ def save_surprisals_as_csv(surprisals, experiment_dir, file_name):
                 avg_perplexity = perplexity_sum/n
                 writer.writerow([word, str(n_tokens), f"{avg_surprisal:.16f}" , f"{avg_perplexity:.16f}", str(n), language])
 
+def save_frequencies_as_csv(train_word_counts, val_word_counts, total_count, result_dir, file_name):
+    with open(os.path.join(result_dir, file_name), mode='w') as csv_file:
+        writer = csv.writer(csv_file, delimiter=',')
+        writer.writerow(["word_clean", "n_train_instances", "n_val_instances",  "n_total", "train_frequency", "all_frequency"])
+        for word in train_word_counts:
+            n_train = train_word_counts[word]
+            n_val = val_word_counts[word]
+            train_frequency = n_train/total_count
+            all_frequency = (n_train+n_val)/total_count
+            writer.writerow([word, str(n_train), str(n_val), str(total_count), f"{train_frequency:.16f}", f"{all_frequency:.16f}"])
+
 
 '''
     Opens a text file and creates a list whose elements are lists that

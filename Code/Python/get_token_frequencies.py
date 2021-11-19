@@ -83,20 +83,27 @@ def get_token_counts(dataloader, word_pairs, device):
 def main():
     params = get_parameters()
     dict_path = params.data_path + "model_datasets/" + params.language_code + "/encoding_dictionary_vocab_size_5000.pkl"
-    encoded_data_path = params.data_path + "model_datasets/" + params.language_code + "/all_child_directed_data_vocab_size_5000.pkl"
+    train_data_path = params.data_path + "model_datasets/" + params.language_code + "/train_vocab_size_5000.pkl"
+    val_data_path = params.data_path + "model_datasets/" + params.language_code + "/validation_vocab_size_5000.pkl"
     text_data_path = params.data_path + "model_datasets/" + params.language_code + "/all_child_directed_data.txt"
     word_list_path = params.data_path + "word-lists/" + params.language_code + "/unique_clean_words.csv"
     print("GET TOTAL WORD COUNT...")
     total_count = get_total_child_directed_word_count(text_data_path)
+    print(total_count)
     print("GET BY WORD COUNT...")
     device = torch.device('cuda') if params.gpu_run == True else torch.device('cpu')
     vocabulary = utils.open_pkl(dict_path)
-    data = Dataset(encoded_data_path)
-    dataloader = DataLoader(data, batch_size=params.batch_size)
     word_list = utils.open_word_list_csv(word_list_path)
     word_pairs = make_token_word_pairs(word_list, vocabulary)
-    word_counts = get_token_counts(dataloader, word_pairs, device)
+    print("FOR TRAIN SET...")
+    data = Dataset(train_data_path)
+    dataloader = DataLoader(data, batch_size=params.batch_size)
+    train_word_counts = get_token_counts(dataloader, word_pairs, device)
+    print("FOR VALIDATION SET...")
+    data = Dataset(val_data_path)
+    dataloader = DataLoader(data, batch_size=params.batch_size)
+    val_word_counts = get_token_counts(dataloader, word_pairs, device)
     file_name = params.language_code + "_frequency_counts.csv"
-    utils.save_frequencies_as_csv(word_counts, total_count, params.result_dir, file_name)
+    utils.save_frequencies_as_csv(train_word_counts, val_word_counts, total_count, params.result_dir, file_name)
 if __name__=="__main__":
     main()
