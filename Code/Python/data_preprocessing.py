@@ -15,6 +15,7 @@ def get_parameters():
     parser.add_argument("--encoding_dictionary_name", default="encoding_dictionary")
     parser.add_argument("--dataset_path", default="../../Data/model_datasets/eng/")
     parser.add_argument("--vocab_size", default=10, type=int)
+    parser.add_argument("--existing_encoding_dict", default=None)
     params = parser.parse_args()
     return params
 
@@ -107,9 +108,14 @@ def main():
     validation_data = utils.open_txt(os.path.join(params.dataset_path, str(params.validation_dataset_name + ".txt")))
     test_data = utils.open_txt(os.path.join(params.dataset_path, str(params.test_dataset_name+ ".txt")))
     datasets = (train_data, validation_data, test_data)
+    all_child_directed_data = utils.open_txt(os.path.join(params.dataset_path, str(params.all_child_directed_dataset_name+ ".txt")))
+    datasets = datasets = (train_data, validation_data, test_data, all_child_directed_data)
 
-    encoding_dictionary = create_encoding_dictionary(train_data + validation_data + test_data,
-                                                     params.vocab_size)
+    if params.existing_encoding_dict:
+        encoding_dictionary = utils.open_pkl(os.path.join(params.dataset_path,params.existing_encoding_dict))
+    else:
+        encoding_dictionary = create_encoding_dictionary(train_data + validation_data + test_data, params.vocab_size)
+        utils.save_pkl(params.dataset_path, encoding_dictionary, params.encoding_dictionary_name + "_vocab_size_" + str(params.vocab_size) + ".pkl")
 
     # Process data
     datasets, max_utterance_lens = replace_words_with_indexes(datasets, encoding_dictionary)
@@ -119,9 +125,7 @@ def main():
     utils.save_pkl(params.dataset_path, datasets[0], params.training_dataset_name + "_vocab_size_" + str(params.vocab_size)+ ".pkl")
     utils.save_pkl(params.dataset_path, datasets[1], params.validation_dataset_name + "_vocab_size_" + str(params.vocab_size) + ".pkl")
     utils.save_pkl(params.dataset_path, datasets[2], params.test_dataset_name + "_vocab_size_" + str(params.vocab_size) + ".pkl")
-    utils.save_pkl(params.dataset_path, datasets[0] + datasets[1], params.all_child_directed_dataset_name + "_vocab_size_" + str(params.vocab_size) + ".pkl")
-    utils.save_pkl(params.dataset_path, encoding_dictionary,
-                   params.encoding_dictionary_name + "_vocab_size_" + str(params.vocab_size) + ".pkl")
+    utils.save_pkl(params.dataset_path, datasets[3], params.all_child_directed_dataset_name + "_vocab_size_" + str(params.vocab_size) + ".pkl")
 
 if __name__ == "__main__":
     main()

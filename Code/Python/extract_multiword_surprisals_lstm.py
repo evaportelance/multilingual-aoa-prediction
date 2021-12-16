@@ -119,7 +119,7 @@ def main():
     word_list = utils.open_word_list_csv(params.aoa_word_list)
     word_pairs = make_token_word_pairs(word_list, vocabulary)
     word_surprisals = get_batched_surprisal_perplexity(model, dataloader, word_pairs, device)
-    file_name = params.split + "_average_surprisal_perplexity.csv"
+    file_name = params.split + "_multiword_average_surprisal_perplexity.csv"
     utils.save_surprisals_as_csv(word_surprisals, params.experiment_dir, file_name)
 if __name__=="__main__":
     main()

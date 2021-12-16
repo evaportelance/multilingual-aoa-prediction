@@ -1,0 +1,27 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+English (American),a lot,function_words,quantifiers,a lot,a lot
+English (American),all gone,adjectives,descriptive_words,all gone,all gone
+English (American),belly button,nouns,body_parts,belly button,belly button
+English (American),chips,nouns,food_drink,potato chip,potato chip
+English (American),french fries,nouns,food_drink,french fries,french fries
+English (American),green beans,nouns,food_drink,green beans,green beans
+English (American),high chair,nouns,furniture_rooms,high chair,high chair
+English (American),ice cream,nouns,food_drink,ice cream,ice cream
+English (American),lawn mower,nouns,outside,lawn mower,lawn mower
+English (American),living room,nouns,furniture_rooms,living room,living room
+English (American),next to,function_words,locations,next to,next to
+English (American),on top of,function_words,locations,on top of,on top of
+English (American),peanut butter,nouns,food_drink,peanut butter,peanut butter
+English (American),play dough,nouns,toys,play dough,play dough
+English (American),play pen,nouns,furniture_rooms,play pen,play pen
+English (American),rocking chair,nouns,furniture_rooms,rocking chair,rocking chair
+English (American),washing machine,nouns,furniture_rooms,washing machine,washing machine
+English (American),did,function_words,helping_verbs,did/did ya,did ya
+English (American),gonna,function_words,helping_verbs,gonna/going to,going to
+English (American),gotta,function_words,helping_verbs,gotta/got to,got to
+English (American),hafta,function_words,helping_verbs,hafta/have to,have to
+English (American),lemme,function_words,helping_verbs,lemme/let me,let me
+English (American),need,function_words,helping_verbs,need/need to,need to
+English (American),owie,nouns,body_parts,owie/boo boo,boo boo
+English (American),try,function_words,helping_verbs,try/try to,try to
+English (American),wanna,function_words,helping_verbs,wanna/want to,want to

@@ -148,7 +148,7 @@ def train_model(model, data_loader, validation_dl, learning_rate, num_epochs, st
 
         #Handles early stopping
         val_accuracy = evaluate_model(model, validation_dl, stat_tracker, epoch,
-                                                     "/validation/", batch_size, device)
+                                                    "/validation/", batch_size, device)
 
         print(str(epoch))
         print("train acc: "+ str(epoch_stats.avgs['accuracy']))

@@ -60,6 +60,16 @@ def make_token_word_pairs(aoa_word_list, vocabulary):
             word_pairs.append((token_seq, word['word_clean'], len(token_seq)))
     return word_pairs
 
+def indexes_in_sequence(query, base):
+    id_, label = base[0], base[1]
+    label = label.squeeze()
+    l = len(query)
+    locations = []
+    for i in range((len(label)-l)):
+        if torch.all(label[i:i+l] == query):
+            locations.append([id_, i])
+    return locations
+
 def get_token_counts(dataloader, word_pairs, device):
     tokens_count = {}
     for index, word, n_tokens in word_pairs:

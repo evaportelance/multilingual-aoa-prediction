@@ -1,0 +1,6 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+German,a little,function_words,quantifiers,ein bisschen,ein bisschen
+German,break,verbs,action_words,kaputt machen,kaputt machen
+German,clean (action),verbs,action_words,sauber machen,sauber machen
+German,finish,verbs,action_words,fertig machen,fertig machen
+German,go for a walk,verbs,action_words,spazieren gehen,spazieren gehen
