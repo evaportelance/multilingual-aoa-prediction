@@ -8,7 +8,7 @@ Please cite my dissertation if you choose to use any of the data, code, or resul
   author  = {Portelance, Eva},
   title   = {Neural network approaches to the study of word learning},
   school  = {Stanford University},
-  year    = {2021}
+  year    = {2022}
 }
 
 ## How to
