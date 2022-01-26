@@ -1,0 +1,107 @@
+---
+title: "merge_surprisal_wiki"
+author: "Yuguang Duan"
+date: "10/5/2021"
+output: html_document
+---
+```{r}
+library(car)
+library(ggplot2)
+library(lmSupport)
+library(psych)
+library(purrr)
+library(stringr)
+library(tidyverse)
+```
+
+```{r}
+wiki <- read.csv("word_list_cleaned/word_list_mandarin_(beijing)_clean.csv")
+wiki_surprisal2gm <- read.csv("surprisal/wiki_zh_1G_2gm_surprisal.txt")
+wiki_surprisal3gm <- read.csv("surprisal/wiki_zh_1G_3gm_surprisal.txt")
+wiki_surprisal4gm <- read.csv("surprisal/wiki_zh_1G_4gm_surprisal.txt")
+wiki_surprisal5gm <- read.csv("surprisal/wiki_zh_1G_5gm_surprisal.txt")
+wiki_surprisal6gm <- read.csv("surprisal/wiki_zh_1G_6gm_surprisal.txt")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_mandarin_(beijing)_cleaned_surprisal.csv",  row.names = FALSE)
+```
+
+```{r}
+wiki <- read.csv("word_list_cleaned/word_list_mandarin_(taiwanese)_clean.csv")
+wiki_surprisal2gm <- read.csv("surprisal/wiki_zh_1G_2gm_surprisal.txt")
+wiki_surprisal3gm <- read.csv("surprisal/wiki_zh_1G_3gm_surprisal.txt")
+wiki_surprisal4gm <- read.csv("surprisal/wiki_zh_1G_4gm_surprisal.txt")
+wiki_surprisal5gm <- read.csv("surprisal/wiki_zh_1G_5gm_surprisal.txt")
+wiki_surprisal6gm <- read.csv("surprisal/wiki_zh_1G_6gm_surprisal.txt")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_mandarin_(taiwanese)_cleaned_surprisal.csv",  row.names = FALSE)
+```
+
+```{r}
+wiki <- read.csv("word_list_cleaned/word_list_german_clean.csv")
+wiki_surprisal2gm <- read.csv("surprisal/wiki_de_1G_2gm_surprisal.txt")
+wiki_surprisal3gm <- read.csv("surprisal/wiki_de_1G_3gm_surprisal.txt")
+wiki_surprisal4gm <- read.csv("surprisal/wiki_de_1G_4gm_surprisal.txt")
+wiki_surprisal5gm <- read.csv("surprisal/wiki_de_1G_5gm_surprisal.txt")
+wiki_surprisal6gm <- read.csv("surprisal/wiki_de_1G_6gm_surprisal.txt")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_german_cleaned_surprisal.csv",  row.names = FALSE)
+```
+
+```{r}
+wiki <- read.csv("word_list_cleaned/word_list_english_(american)_clean.csv")
+wiki_surprisal2gm <- read.csv("surprisal/wiki_en_1G_2gm_surprisal.txt")
+wiki_surprisal3gm <- read.csv("surprisal/wiki_en_1G_3gm_surprisal.txt")
+wiki_surprisal4gm <- read.csv("surprisal/wiki_en_1G_4gm_surprisal.txt")
+wiki_surprisal5gm <- read.csv("surprisal/wiki_en_1G_5gm_surprisal.txt")
+wiki_surprisal6gm <- read.csv("surprisal/wiki_en_1G_6gm_surprisal.txt")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_english_(american)_cleaned_surprisal.csv",  row.names = FALSE)
+
+wiki <- read.csv("word_list_cleaned/word_list_english_(australian)_clean.csv")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_english_(australian)_cleaned_surprisal.csv",  row.names = FALSE)
+
+wiki <- read.csv("word_list_cleaned/word_list_english_(british)_clean.csv")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_english_(british)_cleaned_surprisal.csv",  row.names = FALSE)
+```
+
+```{r}
+wiki <- read.csv("word_list_cleaned/word_list_french_(french)_clean.csv")
+wiki_surprisal2gm <- read.csv("surprisal/wiki_fr_1G_2gm_surprisal.txt")
+wiki_surprisal3gm <- read.csv("surprisal/wiki_fr_1G_3gm_surprisal.txt")
+wiki_surprisal4gm <- read.csv("surprisal/wiki_fr_1G_4gm_surprisal.txt")
+wiki_surprisal5gm <- read.csv("surprisal/wiki_fr_1G_5gm_surprisal.txt")
+wiki_surprisal6gm <- read.csv("surprisal/wiki_fr_1G_6gm_surprisal.txt")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_french_(french)_cleaned_surprisal.csv",  row.names = FALSE)
+wiki <- read.csv("word_list_cleaned/word_list_french_(quebecois)_clean.csv")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_french_(quebecois)_cleaned_surprisal.csv",  row.names = FALSE)
+```
+
+
+```{r}
+wiki <- read.csv("word_list_cleaned/word_list_spanish_(european)_clean.csv")
+wiki_surprisal2gm <- read.csv("surprisal/wiki_es_1G_2gm_surprisal.txt")
+wiki_surprisal3gm <- read.csv("surprisal/wiki_es_1G_3gm_surprisal.txt")
+wiki_surprisal4gm <- read.csv("surprisal/wiki_es_1G_4gm_surprisal.txt")
+wiki_surprisal5gm <- read.csv("surprisal/wiki_es_1G_5gm_surprisal.txt")
+wiki_surprisal6gm <- read.csv("surprisal/wiki_es_1G_6gm_surprisal.txt")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_spanish_(european)_cleaned_surprisal.csv",  row.names = FALSE)
+wiki <- read.csv("word_list_cleaned/word_list_spanish_(mexican)_clean.csv")
+wiki_surp <- wiki %>% merge(wiki_surprisal2gm%>%rename(word_clean = word,surprisal_2gm = info_float) %>% mutate(sum_cnt = sum(cnt), frequency = -log(cnt/sum_cnt))%>%select(word_clean,cnt,frequency,surprisal_2gm),all.x = TRUE) %>% merge(wiki_surprisal3gm%>%rename(word_clean = word,surprisal_3gm = info_float)%>%select(word_clean,surprisal_3gm),all.x = TRUE) %>% merge(wiki_surprisal4gm%>%rename(word_clean = word,surprisal_4gm = info_float)%>%select(word_clean,surprisal_4gm),all.x = TRUE) %>% merge(wiki_surprisal5gm%>%rename(word_clean = word,surprisal_5gm = info_float)%>%select(word_clean,surprisal_5gm),all.x = TRUE) %>% merge(wiki_surprisal6gm%>%rename(word_clean = word,surprisal_6gm = info_float)%>%select(word_clean,surprisal_6gm),all.x = TRUE)
+corr.test(wiki_surp %>% select(surprisal_2gm,surprisal_3gm,surprisal_4gm,surprisal_5gm,surprisal_6gm))
+wiki_surp %>% write.csv(file = "ngram_wiki_surprisal/word_list_spanish_(mexican)_cleaned_surprisal.csv",  row.names = FALSE)
+
+```

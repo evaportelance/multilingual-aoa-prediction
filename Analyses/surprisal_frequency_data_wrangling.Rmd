@@ -1,0 +1,281 @@
+---
+title: "surprisal_frequency_data_wrangling"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+options(dplyr.summarise.inform = FALSE)
+
+library(tools)
+library(corrplot)
+library(tidyverse)
+library(glue)
+library(wordbankr)
+library(stringr)
+library(broom)
+
+# load functions
+walk(list.files("scripts", pattern = "*.R$", full.names = TRUE), source)
+
+```
+
+
+# Load Wordbank data
+
+Loading cached Wordbank data for multiple languages:
+```{r loadwordbankxling}
+target_langs <- c("French (Quebecois)", "German", "English (American)", "Spanish (Mexican)","Mandarin (Beijing)", "French (French)", "English (Australian)", "English (British)", "Mandarin (Taiwanese)", "Spanish (European)" )
+
+
+
+wb_data <- map_df(target_langs, function(lang) {
+  print(glue("Loading data for {lang}..."))
+  norm_lang <- normalize_language(lang)
+  tryCatch( 
+    {
+      # If data for language X is already cashed, it will be loaded directly into the workspace
+      readRDS(glue("./data/wordbank/{norm_lang}.rds"))
+    },
+    error = function(e) {
+      # If the data for language X is not cashed, it will download it for all available instruments types, cashe the data for future use and then load it into the workspace
+      print(glue("No cashed data for {lang}, downloading data now..."))
+      create_wb_data(lang)
+      readRDS(glue("./data/wordbank/{norm_lang}.rds"))
+    }
+    )
+
+})
+
+```
+
+# Get word lists and uni_lemmas for "Mandarin (Taiwanese)" and "Spanish (European)"
+These languages have now been cashed so there is no more need to run this. It is included in the event that we need to do this again for other language.
+
+There are currently (September 2021) no uni-lemmas in Wordbankr for "Mandarin (Taiwanese)" and "Spanish (European)", however we do have them in development. Here we combine the data from wordbankr and the uni-lemmas in development for them.
+
+```{r new_uni_lemmas, eval=FALSE}
+
+no_uni_lemma_langs <- c("Mandarin (Taiwanese)", "Spanish (European)")
+# No unilemmas for "Mandarin (Taiwanese)" and "Spanish (European)" 
+
+get_uni_lemmas_from_csv <- function(lang){
+  lang_norm <- normalize_language(lang)
+  name <- glue("./data/surprisal-and-frequency/word-lists/Wordbank_{lang_norm}.csv")
+  new_uni_lemmas <- read_csv(name)
+  
+  new_uni_lemmas <- new_uni_lemmas |>
+    select(-c(gloss, new_gloss, new_uni_lemma, notes)) |>
+    filter(!is.na(uni_lemma))
+  
+  ws_new_uni_lemmas <- new_uni_lemmas |>
+    mutate(item_id = WS) |>
+    select(-c(WG, WS)) |>
+    filter(!is.na(item_id)) |>
+    mutate(form = "WS")
+  
+  wg_new_uni_lemmas <- new_uni_lemmas |>
+    mutate(item_id = WG) |>
+    select(-c(WG, WS)) |>
+    filter(!is.na(item_id)) |>
+    mutate(form = "WG")
+  
+  new_uni_lemmas <- rbind(ws_new_uni_lemmas, wg_new_uni_lemmas) |>
+    mutate(language = lang)
+  
+  lang_wg <- create_inst_data(lang, "WG") |>
+    select(-c(uni_lemma)) |>
+    left_join(new_uni_lemmas)
+
+  lang_ws <- create_inst_data(lang, "WS") |>
+    select(-c(uni_lemma)) |>
+    left_join(new_uni_lemmas)
+  
+  wg_summary <- collapse_inst_data(lang_wg)
+  ws_summary <- collapse_inst_data(lang_ws)
+  comb_summary <- combine_form_data(list(wg_summary, ws_summary))
+  
+  saveRDS(comb_summary, file = glue("./data/wordbank/{lang_norm}.rds"))
+  
+  return(comb_summary)
+}
+
+wb_data_new_unilemmas <- map_df(no_uni_lemma_langs, get_uni_lemmas_from_csv)
+
+```
+
+# Make word lists for each language
+
+Get match unilemmas for each item
+```{r get_word_lists, eval=FALSE}
+
+get_word_lists <- function(wb_data) {
+  split_words <- wb_data |>
+    distinct(language, uni_lemma, items) |>
+    unnest(items) |>
+    select(-c(form, item_id)) |>
+    filter(lexical_class != "other") |>
+    distinct() |>
+    mutate(word_clean = gsub(" [(].*$","", definition)) |>
+    mutate(word_clean = gsub("[(].*$","", definition)) |>
+    mutate(word_clean = gsub(" $","", definition)) |>
+    separate(col=word_clean, into=c("word_clean1", "word_clean2", "word_clean3"), sep="/")
+  words <- split_words |>
+    mutate(word_clean = word_clean1) |>
+    select(-c( word_clean1, word_clean2, word_clean3))
+  words2 <- split_words |>
+    mutate(word_clean = word_clean2) |>
+    select(-c( word_clean1, word_clean2, word_clean3)) |>
+    filter(! is.na(word_clean))
+  words3 <- split_words |>
+    mutate(word_clean = word_clean3) |>
+    select(-c( word_clean1, word_clean2, word_clean3)) |>
+    filter(! is.na(word_clean))  
+  word_lists <- rbind(words, words2, words3)
+}
+
+word_lists <- get_word_lists(wb_data)
+
+
+save_lang_word_list <- function(lang){
+  lang_word_list <- word_lists |>
+    filter(language == lang)
+  norm_lang <- normalize_language(lang)
+  name <- glue("./data/surprisal-and-frequency/word-lists/word_list_{norm_lang}.csv")
+  write.csv(lang_word_list, file=name, sep=",")
+  return(lang_word_list)
+}
+
+map_df(target_langs, save_lang_word_list)
+```
+
+
+Get combined unique clean word lists for frequency count script per language (no need to run this again)
+```{r unique_words, eval=FALSE}
+combine_clean_word_lists <- function(lang){
+  lang_path <- glue("./data/surprisal-and-frequency/word-lists/{lang}/")
+  name <- glue("./data/surprisal-and-frequency/word-lists/{lang}/unique_clean_words.csv")
+  files = list.files(path=lang_path, pattern="*.csv", full.names=TRUE, recursive=FALSE)
+  lang_data <- files |> map(read_csv) |> reduce(rbind)
+  clean_words <- lang_data |> select(word_clean) |> unique()
+  write.csv(clean_words, file=name)
+  return(clean_words)
+}
+combine_clean_word_lists("deu")
+```
+
+
+load in surprisal results for all runs to verify correlations
+```{r surprisals}
+
+my_get_run <- function(file){
+  file_name = strsplit(file_path_sans_ext(file), "/")[[1]]
+  file_name = file_name[(length(file_name))]
+  run_num = str_sub(file_name, -1, -1)
+  surprisal_name = paste("avg_surprisal", run_num, sep="_")
+  perplexity_name = paste("avg_perplexity", run_num, sep="_")
+  data <- read_csv(file)
+  names(data)[names(data) == "avg_surprisal"] <- surprisal_name
+  names(data)[names(data) == "avg_perplexity"] <- perplexity_name
+  return(data)
+}
+
+get_all_runs_surprisal <- function(lang){
+  lang_path <- glue("./data/surprisal-and-frequency/lstm-surprisals/{lang}/")
+  files = list.files(path=lang_path, pattern="*.csv", full.names=TRUE, recursive=FALSE)
+  lang_data <- files |> map(my_get_run) |> reduce(left_join)
+  return(lang_data)
+}
+
+target_langs = c("English (American)", "English (British)", "English (Australian)", "Spanish (Mexican)", "Spanish (European)", "German", "Mandarin (Beijing)", "Mandarin (Taiwanese)", "French (Quebecois)", "French (French)")
+
+#target_langs = c("English (American)", "Spanish (Mexican)", "German", "Mandarin (Beijing)", "French (French)")
+
+all_surprisals <- map(target_langs, get_all_runs_surprisal) |> reduce(rbind)
+all_surprisals$language |> unique()
+
+
+```
+
+get the correlation across models for each language surprisal set 
+
+```{r cor, eval=FALSE}
+
+my_get_cor_plot <- function(data){
+  selected_data <- data |> select(-c(word_clean, n_tokens, n_instances, language))
+  M = cor(selected_data, method = "pearson", use = "complete.obs")
+  print(M)
+  corrplot(M, method = 'number')
+}
+
+all_surprisals |> group_by(language) |> 
+  group_split() |>
+  map(my_get_cor_plot)
+
+```
+
+Get averaged surprisals and perplexity values across all 5 random runs for each lstm model or just use first runs
+```{r average}
+avg_surprisals <- all_surprisals |> 
+  mutate(avg_surprisal = (avg_surprisal_0+ avg_surprisal_1+ avg_surprisal_2)/3,
+         avg_perplexity = (avg_perplexity_0+ avg_perplexity_1+ avg_perplexity_2)/3) |>
+  select(word_clean, n_tokens, n_instances, language, avg_surprisal, avg_perplexity)
+
+```
+
+```{r firsts, eval=FALSE}
+surprisal_path <- "./data/surprisal-and-frequency/lstm-surprisals/first_runs/"
+files = list.files(path=surprisal_path, pattern="*.csv", full.names=TRUE, recursive=FALSE)
+avg_surprisals <- files |> map(read_csv) |> reduce(rbind)
+```
+
+combine them with the corresponding word lists to have all variables
+```{r combine}
+langs <- c("eng", "fra", "deu", "spa", "zho")
+get_all_word_list <- function(lang){
+  lang_path <- glue("./data/surprisal-and-frequency/word-lists/{lang}/")
+  files = list.files(path=lang_path, pattern="*_clean.csv", full.names=TRUE, recursive=FALSE)
+  lang_data <- files |> map(read_csv) |> reduce(rbind)
+  return(lang_data)
+}
+word_list_data <- map(langs, get_all_word_list) |> reduce(rbind)
+
+
+lstm_surprisals <- left_join(avg_surprisals, word_list_data)
+saveRDS(lstm_surprisals, file ="./surprisals/lstm_surprisals.rds")
+
+```
+
+```{r wrangle_freq}
+
+get_frequencies <- function(lang){
+  lang_path <- glue("./data/surprisal-and-frequency/word-lists/{lang}/")
+  files = list.files(path=lang_path, pattern="*_clean.csv", full.names=TRUE, recursive=FALSE)
+  lang_data <- files |> map(read_csv) |> reduce(rbind)
+  frequency_path <- glue("./data/surprisal-and-frequency/frequencies/{lang}_frequency_counts.csv")
+  freq_data <- read_csv(frequency_path)
+  combined_freq_data <- left_join(lang_data, freq_data)
+  return(combined_freq_data)
+}
+
+
+frequencies <- map(langs, get_frequencies) |> reduce(rbind)
+saveRDS(frequencies, file ="./surprisals/frequencies.rds")
+
+```
+
+
+
+```{r load_ngram_childes_suprisals}
+files  <- list.files(path = "./data/surprisal-and-frequency/ngram/ngram_childes_surprisal/", full.names = TRUE)
+tables <- lapply(files, read.csv, header = TRUE)
+ngram_childes_surprisal <- do.call(rbind , tables) %>% mutate(avg_surprisal = (surprisal_2gm+surprisal_3gm+surprisal_4gm+surprisal_5gm+surprisal_6gm)/5)
+saveRDS(ngram_childes_surprisal, "./data/surprisal-and-frequency/ngram_childes_surprisal.rds" )
+```
+
+```{r load_ngram_wiki_suprisals}
+files  <- list.files(path = "./surprisals/ngram/ngram_wiki_surprisal/", full.names = TRUE)
+tables <- lapply(files, read.csv, header = TRUE)
+ngram_wiki_surprisal <- do.call(rbind , tables) %>% mutate(avg_surprisal = (surprisal_2gm+surprisal_3gm+surprisal_4gm+surprisal_5gm+surprisal_6gm)/5)
+saveRDS(ngram_wiki_surprisal, "./data/surprisal-and-frequency/ngram_wiki_surprisal.rds" )
+```

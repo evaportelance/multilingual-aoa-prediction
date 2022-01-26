@@ -1,0 +1,259 @@
+---
+title: "diss-chap2-plots"
+output: html_document
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+options(dplyr.summarise.inform = FALSE)
+
+library(tidyverse)
+library(widyr)
+library(ggthemes)
+#library(devtools)
+#install_github("langcog/langcog")
+library(ggstance)
+library(langcog)
+library(ggdendro)
+library(ggplot2)#
+library(glue)
+library(cowplot)
+library(ggpubr)
+
+walk(list.files("scripts", pattern = "*.R$", full.names = TRUE), source)
+```
+
+## EXPERIMENT 1 
+
+Estimate by lexical category figure by language
+```{r exp1-est}
+
+data <- readRDS("./experiment-results/diss/exp1_all_lexcat_betas.rds")
+data <- data |> filter(term != "concreteness")
+
+lex.labs <- c("function words", "nouns", "predicates")
+names(lex.labs) <- c("fctwd", "noun", "pred")
+
+make_lang_plot <- function(lang){
+  lang_data <- data |> filter(language == lang)
+  p = ggplot(lang_data, aes(x = estimate, y = term, colour = term, fill=term)) +
+  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
+  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
+  geom_point(alpha=0.3, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
+  labs(x = "Coefficient estimate", y = "") +
+  theme_bw() +
+  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),
+        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+  return(p)
+}
+
+p_EnAm = make_lang_plot("English (American)")
+p_EnBr = make_lang_plot("English (British)")
+p_EnAu = make_lang_plot("English (Australian)")
+p_Gr = make_lang_plot("German")
+p_FrEu = make_lang_plot("French (French)")
+p_FrQc = make_lang_plot("French (Quebecois)")
+p_SpEu = make_lang_plot("Spanish (European)")
+p_SpMx = make_lang_plot("Spanish (Mexican)")
+p_MaBj = make_lang_plot("Mandarin (Beijing)")
+p_MaTw = make_lang_plot("Mandarin (Taiwanese)")
+
+plots_exp1_1 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab"), p_FrEu, 
+          labels = c("English (American)", "English (British)", "English (Australian)", "German", "French (European)"),
+          ncol = 1, nrow = 5,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          label.x = c(0.4, 0.4, 0.4, 0.5, 0.4))
+
+
+plots_exp1_2 = ggarrange(p_FrQc+rremove("xlab"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab"), p_MaBj+rremove("xlab"), p_MaTw,
+          labels = c("French (Quebecois)", "Spanish (European)", "Spanish (Mexican)", "Mandarin (Beijingese)", "Mandarin (Taiwanese)"),
+          ncol = 1, nrow = 5,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          label.x = c(0.4, 0.4, 0.4, 0.35, 0.35))
+
+ggsave("plots_exp1_chap2_1_est.jpeg",plot=plots_exp1_1, width = 7, height = 10, units="in", limitsize = FALSE)
+ggsave("plots_exp1_chap2_2_est.jpeg",plot=plots_exp1_2, width = 7, height = 10, units="in", limitsize = FALSE)
+```
+
+
+Estimate by lexical category for all languages
+```{r exp1-alllang}
+
+data <- readRDS("./experiment-results/diss/exp1_all_lexcat_betas.rds")
+data_bylang <- data |> filter(term != "concreteness") |> group_by(language, measure, lexical_category, term) |>
+  summarize(mean_estimate = mean(estimate))
+data_means <- data_bylang |> ungroup() |> group_by(lexical_category, term) |>
+  summarize(mean_estimate = mean(mean_estimate))
+
+lex.labs <- c("function words", "nouns", "predicates")
+names(lex.labs) <- c("fctwd", "noun", "pred")
+
+
+p = ggplot(data_bylang, aes(x = mean_estimate, y = term, colour = term, fill=term)) +
+  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
+  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
+  geom_point(alpha=0.3, show.legend = FALSE)+
+  geom_point(data = data_means, size = 4, show.legend = FALSE)+
+  labs(x = "Coefficient estimate", y = "") +
+  theme_bw() +
+  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12))
+
+
+ggsave("plots_exp1_chap2_summary.jpeg",plot=p, width = 7, height = 2.5, units="in", limitsize = FALSE)
+
+```
+
+
+
+## EXPERIMENT 2
+
+Estimate by lexical category figure by language
+```{r exp2-est}
+
+data <- readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid.rds")
+data <- data |> filter(term != "concreteness")
+
+lex.labs <- c("function words", "nouns", "predicates")
+names(lex.labs) <- c("fctwd", "noun", "pred")
+
+make_lang_plot <- function(lang){
+  lang_data <- data |> filter(language == lang) |>
+    mutate(term = ifelse(term == "unigram", "unigram surprisal", "LSTM residual surprisal"))
+  p = ggplot(lang_data, aes(x = estimate, y = term, colour = term, fill=term)) +
+  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
+  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
+  geom_point(alpha=0.3, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
+  labs(x = "Coefficient estimate", y = "") +
+  theme_bw() +
+  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),
+        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+  return(p)
+}
+
+p_EnAm = make_lang_plot("English (American)")
+p_EnBr = make_lang_plot("English (British)")
+p_EnAu = make_lang_plot("English (Australian)")
+p_Gr = make_lang_plot("German")
+p_FrEu = make_lang_plot("French (French)")
+p_FrQc = make_lang_plot("French (Quebecois)")
+p_SpEu = make_lang_plot("Spanish (European)")
+p_SpMx = make_lang_plot("Spanish (Mexican)")
+p_MaBj = make_lang_plot("Mandarin (Beijing)")
+p_MaTw = make_lang_plot("Mandarin (Taiwanese)")
+
+plots_exp1_1 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab"), p_FrEu, 
+          labels = c("English (American)", "English (British)", "English (Australian)", "German", "French (European)"),
+          ncol = 1, nrow = 5,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          label.x = c(0.5, 0.5, 0.5, 0.6, 0.5))
+
+plots_exp1_2 = ggarrange(p_FrQc+rremove("xlab"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab"), p_MaBj+rremove("xlab"), p_MaTw,
+          labels = c("French (Quebecois)", "Spanish (European)", "Spanish (Mexican)", "Mandarin (Beijingese)", "Mandarin (Taiwanese)"),
+          ncol = 1, nrow = 5,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          label.x = c(0.5, 0.5, 0.5, 0.45, 0.45))
+
+ggsave("plots_exp2_chap2_1_est.jpeg",plot=plots_exp1_1, width = 8, height = 10, units="in", limitsize = FALSE)
+ggsave("plots_exp2_chap2_2_est.jpeg",plot=plots_exp1_2, width = 8, height = 10, units="in", limitsize = FALSE)
+```
+
+
+Estimate by lexical category for all languages
+```{r exp2-alllang}
+
+data <- readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid.rds")
+data_bylang <- data |> filter(term != "concreteness") |> group_by(language, measure, lexical_category, term) |>
+  summarize(mean_estimate = mean(estimate)) |> mutate(term = ifelse(term == "unigram", "unigram surprisal", "LSTM residual surprisal"))
+data_means <- data_bylang |> ungroup() |> group_by(lexical_category, term) |>
+  summarize(mean_estimate = mean(mean_estimate))
+
+lex.labs <- c("function words", "nouns", "predicates")
+names(lex.labs) <- c("fctwd", "noun", "pred")
+
+
+p = ggplot(data_bylang, aes(x = mean_estimate, y = term, colour = term, fill=term)) +
+  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
+  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
+  geom_point(alpha=0.3, show.legend = FALSE)+
+  geom_point(data = data_means, size = 4, show.legend = FALSE)+
+  labs(x = "Coefficient estimate", y = "") +
+  theme_bw() +
+  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12))
+
+
+ggsave("plots_exp2_chap2_summary.jpeg",plot=p, width = 7, height = 2.5, units="in", limitsize = FALSE)
+
+```
+
+
+Top 30 words for diff between unigram and unigram+lstm_resid by language
+```{r exp2}
+
+data <- readRDS("./experiment-results/diss/exp2_all_word_mad_diffs_resid.rds" ) |> rename(uni_lemma = test_word) 
+
+word_data <- data_lexcat |> select(c(language, uni_lemma, word_clean, lexical_category)) |> unique()
+
+all_data <- left_join(data, word_data) |> group_by(uni_lemma, language, lexical_category, diff) |> 
+  select(-c(lstm_surp_rd, uni_surp, measure, aoa)) |> mutate(word_list = cbind(word_clean)) |> mutate(words = paste(word_list, collapse = "/")) |> select(-c(word_clean, word_list )) |> unique() |> mutate(uni_label = paste("[", uni_lemma, "]", sep="")) |> mutate(words_uni = paste(words, uni_label, sep="  "))
+
+
+
+plot_bylang <- function(lang, font= "PingFang TC"){
+  
+  lang_data <- all_data |> filter(language == lang)
+  
+  lex.labs <- c("function words", "nouns", "predicates")
+  names(lex.labs) <- c("function_words", "nouns", "predicates")
+  
+  p = ggplot(data = lang_data |> arrange(desc(diff)) %>% head(30) , 
+            aes(x = reorder(words_uni,diff), y = diff, fill=lexical_category)) +
+  geom_bar(stat='identity') +
+  coord_flip()+
+  labs(x="", y="difference in absolute deviation") +
+  scale_fill_manual(values=c("nouns"="brown3", "predicates"="deepskyblue3", "function_words"="chartreuse4"), 
+                    guide="none") +
+  theme_bw(base_family = font) +
+  theme(text=element_text(size=10), legend.title = element_text( size = 10), legend.text = element_text( size = 10), legend.position = c(0.7, 0.6), axis.text.x = element_text(size = 10), axis.text.y = element_text(size = 10), plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+  
+  return(p)
+}
+
+p_EnAm = plot_bylang("English (American)")
+p_EnBr = plot_bylang("English (British)")
+p_EnAu = plot_bylang("English (Australian)")
+p_Gr = plot_bylang("German")
+p_FrEu = plot_bylang("French (French)", "PingFang TC")
+p_FrQc = plot_bylang("French (Quebecois)")
+p_SpEu = plot_bylang("Spanish (European)")
+p_SpMx = plot_bylang("Spanish (Mexican)")
+p_MaBj = plot_bylang("Mandarin (Beijing)","PingFang TC")
+p_MaTw = plot_bylang("Mandarin (Taiwanese)", "PingFang TC")
+
+
+plots_exp2_1 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab"),
+          labels = c("English (American)", "English (British)", "English (Australian)", "German"),
+          ncol = 2, nrow = 2,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          widths= c(1, 1))
+
+plots_exp2_2 = ggarrange(p_FrEu+rremove("xlab"), p_FrQc+rremove("xlab"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab"),
+          labels = c("French (European)", "French (Quebecois)", "Spanish (European)", "Spanish (Mexican)"),
+          ncol = 2, nrow = 2,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          widths= c(1, 1))
+
+plots_exp2_3 = ggarrange(p_MaBj+rremove("xlab"), p_MaTw+rremove("xlab"),
+          labels = c("Mandarin (Beijingese)", "Mandarin (Taiwanese)"),
+          ncol = 2, nrow = 1,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          widths= c(1, 1))
+
+ggsave("plots_exp2_chap2_1_top30.jpeg",plot=plots_exp2_1, width = 9, height = 10, units="in") 
+ggsave("plots_exp2_chap2_2_top30.jpeg",plot=plots_exp2_2, width = 9, height = 10, units="in") 
+ggsave("plots_exp2_chap2_3_top30.jpeg",plot=plots_exp2_3, width = 9, height = 5, units="in") 
+
+```
+
+
+
+

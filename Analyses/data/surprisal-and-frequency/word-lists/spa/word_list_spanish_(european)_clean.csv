@@ -1,0 +1,562 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+Spanish (European),a,function_words,quantifiers,uno/a,uno
+Spanish (European),a,function_words,articles,un,un
+Spanish (European),a,function_words,articles,uno,uno
+Spanish (European),a,function_words,articles,una,una
+Spanish (European),above,function_words,locations,encima,encima
+Spanish (European),afraid,adjectives,descriptive_words,asustado,asustado
+Spanish (European),afraid,adjectives,descriptive_words,miedo,miedo
+Spanish (European),again,function_words,articles,otra vez,otra vez
+Spanish (European),airplane,nouns,vehicles,avión,avión
+Spanish (European),all,function_words,quantifiers,todo/a/os/as,todo
+Spanish (European),all,function_words,articles,todas/os,todas
+Spanish (European),almost,function_words,locations,casi,casi
+Spanish (European),alone,adjectives,descriptive_words,solo,solo
+Spanish (European),also,function_words,articles,también,también
+Spanish (European),ambulance,nouns,vehicles,ambulancia,ambulancia
+Spanish (European),and,function_words,connecting_words,y,y
+Spanish (European),angry,adjectives,descriptive_words,enfadado,enfadado
+Spanish (European),animal,nouns,animals,animal,animal
+Spanish (European),ant,nouns,animals,hormiga,hormiga
+Spanish (European),any,function_words,articles,alguno/a,alguno
+Spanish (European),apple,nouns,food_drink,manzana,manzana
+Spanish (European),applesauce,nouns,food_drink,potito,potito
+Spanish (European),arm,nouns,body_parts,brazos,brazos
+Spanish (European),back (location),function_words,locations,detrás,detrás
+Spanish (European),bad,adjectives,descriptive_words,malo,malo
+Spanish (European),ball,nouns,toys,balón,balón
+Spanish (European),ball,nouns,toys,fútbol,fútbol
+Spanish (European),ball,nouns,toys,pelota,pelota
+Spanish (European),balloon,nouns,toys,globo,globo
+Spanish (European),bath,nouns,household,baño,baño
+Spanish (European),bathe,verbs,action_words,bañar(se),bañar
+Spanish (European),bathtub,nouns,household,bañera,bañera
+Spanish (European),battery,nouns,household,pila,pila
+Spanish (European),be,verbs,action_words,"estar [estoy, estás…]",estar
+Spanish (European),be,verbs,action_words,"ser (eres, es…)",ser
+Spanish (European),be,verbs,action_words,"ser [soy, eres, es...]",Ser
+Spanish (European),be,function_words,states,estar (estoy jugando),estar
+Spanish (European),bear,nouns,animals,oso,oso
+Spanish (European),beard,nouns,body_parts,barba,barba
+Spanish (European),because,function_words,connecting_words,porque,porque
+Spanish (European),bed,nouns,household,cama,cama
+Spanish (European),bee,nouns,animals,abeja,abeja
+Spanish (European),belly button,nouns,body_parts,ombligo,ombligo
+Spanish (European),below,function_words,locations,debajo/abajo,debajo
+Spanish (European),belt,nouns,clothing,cinturón,cinturón
+Spanish (European),beside,function_words,locations,al lado,al lado
+Spanish (European),between,function_words,locations,entre,entre
+Spanish (European),bib,nouns,clothing,babero,babero
+Spanish (European),bicycle,nouns,vehicles,bici,bici
+Spanish (European),big,adjectives,descriptive_words,grande,grande
+Spanish (European),bird,nouns,animals,pájaro,pájaro
+Spanish (European),bite,verbs,action_words,morder,morder
+Spanish (European),black,adjectives,descriptive_words,negro,negro
+Spanish (European),blender,nouns,household,batidora,batidora
+Spanish (European),block,nouns,toys,cubo,cubo
+Spanish (European),blue,adjectives,descriptive_words,azul,azul
+Spanish (European),boat,nouns,vehicles,barco,barco
+Spanish (European),book,nouns,toys,cuento/libro,cuento
+Spanish (European),boots,nouns,clothing,bota/s,bota
+Spanish (European),bottle,nouns,food_drink,biberón,biberón
+Spanish (European),bottle,nouns,household,botella,botella
+Spanish (European),box,nouns,toys,caja,caja
+Spanish (European),bracelet,nouns,toys,pulsera,pulsera
+Spanish (European),bread,nouns,food_drink,pan,pan
+Spanish (European),break,verbs,action_words,romper(se),romper
+Spanish (European),breakfast (action),verbs,action_words,desayunar,desayunar
+Spanish (European),breast,nouns,body_parts,teta,teta
+Spanish (European),bring,verbs,action_words,traer,traer
+Spanish (European),broken,adjectives,descriptive_words,roto,roto
+Spanish (European),broom,nouns,household,escoba,escoba
+Spanish (European),brush (object),nouns,household,cepillo,cepillo
+Spanish (European),bug,nouns,animals,bicho,bicho
+Spanish (European),bull,nouns,animals,toro,toro
+Spanish (European),bun,nouns,food_drink,bollo,bollo
+Spanish (European),bunny,nouns,animals,conejo,conejo
+Spanish (European),burn,verbs,action_words,quemar,quemar
+Spanish (European),bus,nouns,vehicles,autobús,autobús
+Spanish (European),bus,nouns,vehicles,autobús/bus,autobús
+Spanish (European),but,function_words,connecting_words,pero,pero
+Spanish (European),butt,nouns,body_parts,culo,culo
+Spanish (European),butterfly,nouns,animals,mariposa,mariposa
+Spanish (European),button,nouns,clothing,botón,botón
+Spanish (European),buy,verbs,action_words,comprar,comprar
+Spanish (European),by,function_words,locations,por,por
+Spanish (European),cake,nouns,food_drink,bizcocho,bizcocho
+Spanish (European),cake,nouns,food_drink,tarta,tarta
+Spanish (European),call,verbs,action_words,llamar,llamar
+Spanish (European),can,verbs,action_words,poder,poder
+Spanish (European),can,function_words,states,poder (puedes correr),poder
+Spanish (European),can (auxiliary),verbs,action_words,poder [puedes…],poder
+Spanish (European),candy,nouns,food_drink,caramelo,caramelo
+Spanish (European),car,nouns,vehicles,coche,coche
+Spanish (European),cards,nouns,toys,cartas,cartas
+Spanish (European),care,verbs,action_words,cuidar,cuidar
+Spanish (European),carrot,nouns,food_drink,zanahoria,zanahoria
+Spanish (European),cat,nouns,animals,gato,gato
+Spanish (European),CD,nouns,household,CD/compact,cd
+Spanish (European),cell phone,nouns,household,móvil,móvil
+Spanish (European),cereal,nouns,food_drink,cereales,cereales
+Spanish (European),chair,nouns,household,silla,silla
+Spanish (European),cheese,nouns,food_drink,queso (quesitos),queso
+Spanish (European),chick,nouns,animals,pollito,pollito
+Spanish (European),chicken (animal),nouns,animals,gallina,gallina
+Spanish (European),chicken (food),nouns,food_drink,pollo,pollo
+Spanish (European),chin,nouns,body_parts,barbilla,barbilla
+Spanish (European),chips,nouns,food_drink,gusanitos,gusanitos
+Spanish (European),chocolate,nouns,food_drink,chocolate,chocolate
+Spanish (European),clean (description),adjectives,descriptive_words,limpio,limpio
+Spanish (European),climb,verbs,action_words,subir(se),subir
+Spanish (European),clock,nouns,household,reloj,reloj
+Spanish (European),close,verbs,action_words,cerrar,cerrar
+Spanish (European),clothing,nouns,clothing,ropa,ropa
+Spanish (European),clown,nouns,toys,payaso,payaso
+Spanish (European),coat,nouns,clothing,abrigo,abrigo
+Spanish (European),coin,nouns,household,monedas,monedas
+Spanish (European),cold,adjectives,descriptive_words,frío,frío
+Spanish (European),comb (action),verbs,action_words,peinar(se),peinar
+Spanish (European),comb (object),nouns,household,peine,peine
+Spanish (European),come,verbs,action_words,"venir [ven, vente]",venir
+Spanish (European),cook (action),verbs,action_words,cocinar,cocinar
+Spanish (European),cookie,nouns,food_drink,galleta,galleta
+Spanish (European),cool (action),verbs,action_words,enfriar(se),enfriar
+Spanish (European),couch,nouns,household,sofá,sofá
+Spanish (European),cough,verbs,action_words,toser,toser
+Spanish (European),cover,verbs,action_words,tapar,tapar
+Spanish (European),cow,nouns,animals,vaca,vaca
+Spanish (European),crane,nouns,vehicles,grúa,grúa
+Spanish (European),crib,nouns,household,cuna,cuna
+Spanish (European),crocodile,nouns,animals,cocodrilo,cocodrilo
+Spanish (European),croquette,nouns,food_drink,croqueta/s,croqueta
+Spanish (European),cry,verbs,action_words,llorar,llorar
+Spanish (European),cup,nouns,household,taza,taza
+Spanish (European),cushion,nouns,household,cojín,cojín
+Spanish (European),cut (action),verbs,action_words,cortar,cortar
+Spanish (European),cute,adjectives,descriptive_words,guapo,guapo
+Spanish (European),dance,verbs,action_words,bailar,bailar
+Spanish (European),diaper,nouns,clothing,pañal,pañal
+Spanish (European),difficult,adjectives,descriptive_words,difícil,difícil
+Spanish (European),dinosaur,nouns,animals,dinosaurio,dinosaurio
+Spanish (European),dirty,adjectives,descriptive_words,sucio,sucio
+Spanish (European),do,verbs,action_words,"hacer [haz, haces...]",hacer
+Spanish (European),dog,nouns,animals,perro,perro
+Spanish (European),doll,nouns,toys,muñeca,muñeca
+Spanish (European),donkey,nouns,animals,burro,burro
+Spanish (European),door,nouns,household,puerta,puerta
+Spanish (European),dove,nouns,animals,paloma,paloma
+Spanish (European),down,function_words,locations,abajo (debajo),abajo
+Spanish (European),draw,verbs,action_words,dibujar,dibujar
+Spanish (European),drawer,nouns,household,cajón,cajón
+Spanish (European),dream,adjectives,descriptive_words,sueño,sueño
+Spanish (European),dress,nouns,clothing,vestido,vestido
+Spanish (European),dress (action),verbs,action_words,vestir(se),vestir
+Spanish (European),drink,verbs,action_words,beber,beber
+Spanish (European),drive,verbs,action_words,conducir,conducir
+Spanish (European),drum,nouns,toys,tambor,tambor
+Spanish (European),duck,nouns,animals,pato,pato
+Spanish (European),ear,nouns,body_parts,oreja/s,oreja
+Spanish (European),earrings,nouns,clothing,pendientes,pendientes
+Spanish (European),eat,verbs,action_words,comer(se),comer
+Spanish (European),eat dinner,verbs,action_words,cenar,cenar
+Spanish (European),egg,nouns,food_drink,huevo,huevo
+Spanish (European),either,function_words,articles,tampoco,tampoco
+Spanish (European),elephant,nouns,animals,elefante,elefante
+Spanish (European),empty,adjectives,descriptive_words,vacío,vacío
+Spanish (European),enter,verbs,action_words,entrar,entrar
+Spanish (European),everything,function_words,articles,todo,todo
+Spanish (European),eye,nouns,body_parts,ojos,ojos
+Spanish (European),eyebrow,nouns,body_parts,cejas,cejas
+Spanish (European),face,nouns,body_parts,cara,cara
+Spanish (European),fall,verbs,action_words,caer(se),caer
+Spanish (European),faucet,nouns,household,grifo,grifo
+Spanish (European),finger,nouns,body_parts,dedos,dedos
+Spanish (European),finger,nouns,body_parts,dedo/s,dedo
+Spanish (European),fingernail,nouns,body_parts,uña,uña
+Spanish (European),finish,verbs,action_words,terminar/acabar(se),terminar
+Spanish (European),fish,nouns,food_drink,pescado,pescado
+Spanish (European),fish (animal),nouns,animals,pez,pez
+Spanish (European),fit (action),verbs,action_words,caber,caber
+Spanish (European),flood (action),verbs,action_words,mojar(se),mojar
+Spanish (European),floor,nouns,household,suelo,suelo
+Spanish (European),flower,nouns,household,flor,flor
+Spanish (European),fly (action),verbs,action_words,volar,volar
+Spanish (European),fly (animal),nouns,animals,mosca,mosca
+Spanish (European),food,nouns,food_drink,comida,comida
+Spanish (European),foot,nouns,body_parts,pie/s,pie
+Spanish (European),for,function_words,locations,para,para
+Spanish (European),for me,function_words,pronouns,(para) mí,para mí
+Spanish (European),fork,nouns,household,tenedor,tenedor
+Spanish (European),four,function_words,articles,cuatro,cuatro
+Spanish (European),fox,nouns,animals,zorro,zorro
+Spanish (European),frog,nouns,animals,rana,rana
+Spanish (European),front,function_words,locations,delante,delante
+Spanish (European),fruit,nouns,food_drink,fruta,fruta
+Spanish (European),full,adjectives,descriptive_words,lleno,lleno
+Spanish (European),garage,nouns,household,garaje/cochera,garaje
+Spanish (European),gift (action),verbs,action_words,regalar,regalar
+Spanish (European),giraffe,nouns,animals,jirafa,jirafa
+Spanish (European),give,verbs,action_words,dar,dar
+Spanish (European),glass,nouns,household,vaso,vaso
+Spanish (European),glasses,nouns,clothing,gafas,gafas
+Spanish (European),gloves,nouns,clothing,guantes,guantes
+Spanish (European),go,verbs,action_words,"ir(se) [voy, vas, vamos…]",ir
+Spanish (European),go,function_words,states,ir (vamos a dormir),ir
+Spanish (European),goal,nouns,toys,gol,gol
+Spanish (European),good,adjectives,descriptive_words,bueno,bueno
+Spanish (European),grape,nouns,food_drink,uvas,uvas
+Spanish (European),green,adjectives,descriptive_words,verde,verde
+Spanish (European),grow (action),verbs,action_words,crecer,crecer
+Spanish (European),guitar,nouns,toys,guitarra,guitarra
+Spanish (European),gut,nouns,body_parts,tripa,tripa
+Spanish (European),hall,nouns,household,pasillo,pasillo
+Spanish (European),ham,nouns,food_drink,jamón (york),jamón
+Spanish (European),hammer,nouns,household,martillo,martillo
+Spanish (European),hand,nouns,body_parts,mano/s,mano
+Spanish (European),happy,adjectives,descriptive_words,contento,contento
+Spanish (European),hat,nouns,clothing,gorro,gorro
+Spanish (European),hat,nouns,clothing,sombrero,sombrero
+Spanish (European),have,verbs,action_words,haber [hay],haber
+Spanish (European),have,verbs,action_words,"tener [tengo, tienes...]",tener
+Spanish (European),have,function_words,states,haber (he comido),haber
+Spanish (European),he,function_words,pronouns,él,él
+Spanish (European),head,nouns,body_parts,cabeza,cabeza
+Spanish (European),hear,verbs,action_words,oír,oír
+Spanish (European),helicopter,nouns,vehicles,helicóptero,helicóptero
+Spanish (European),her,function_words,pronouns,ella,ella
+Spanish (European),here,function_words,locations,aquí,aquí
+Spanish (European),his,function_words,pronouns,suyo/a,suyo
+Spanish (European),hit,verbs,action_words,pegar(se),pegar
+Spanish (European),horse,nouns,animals,caballo,caballo
+Spanish (European),hot,adjectives,descriptive_words,caliente,caliente
+Spanish (European),how,function_words,question_words,cómo,cómo
+Spanish (European),how many,function_words,question_words,cuántos,cuántos
+Spanish (European),hungry,adjectives,descriptive_words,hambre,hambre
+Spanish (European),i,function_words,pronouns,yo,yo
+Spanish (European),ice cream,nouns,food_drink,helado,helado
+Spanish (European),if,function_words,connecting_words,si (estoy quieres),si
+Spanish (European),inside,function_words,locations,dento/adentro,dento
+Spanish (European),its,function_words,pronouns,su,su
+Spanish (European),jacket,nouns,clothing,chaqueta,chaqueta
+Spanish (European),juice,nouns,food_drink,zumo,zumo
+Spanish (European),jump,verbs,action_words,saltar,saltar
+Spanish (European),keys,nouns,household,llaves,llaves
+Spanish (European),kitchen,nouns,household,cocina,cocina
+Spanish (European),knee,nouns,body_parts,rodillas,rodillas
+Spanish (European),knife,nouns,household,cuchillo,cuchillo
+Spanish (European),know,verbs,action_words,saber (no sé),saber
+Spanish (European),ladybug,nouns,animals,mariquita,mariquita
+Spanish (European),laugh,verbs,action_words,reír,reír
+Spanish (European),laugh,verbs,action_words,reír(se),reír
+Spanish (European),learn,verbs,action_words,aprender,aprender
+Spanish (European),leave,verbs,action_words,salir,salir
+Spanish (European),leg,nouns,body_parts,piernas,piernas
+Spanish (European),leg,nouns,body_parts,pierna/s (pata/s),pierna
+Spanish (European),lemon,nouns,food_drink,limón,limón
+Spanish (European),lentils,nouns,food_drink,lentejas,lentejas
+Spanish (European),lettuce,nouns,food_drink,lechuga,lechuga
+Spanish (European),liar,adjectives,descriptive_words,mentiroso,mentiroso
+Spanish (European),light,nouns,household,luz,luz
+Spanish (European),lighter,nouns,household,mechero,mechero
+Spanish (European),like,verbs,action_words,gustar,gustar
+Spanish (European),lion,nouns,animals,león,león
+Spanish (European),lips,nouns,body_parts,labios,labios
+Spanish (European),little,function_words,quantifiers,poco,poco
+Spanish (European),little,function_words,articles,poco,poco
+Spanish (European),little (description),adjectives,descriptive_words,pequeño,pequeño
+Spanish (European),living room,nouns,household,salón,salón
+Spanish (European),lollipop,nouns,food_drink,chupa-chups,chupa-chups
+Spanish (European),lollipop,nouns,food_drink,piruleta,piruleta
+Spanish (European),look,verbs,action_words,mirar,mirar
+Spanish (European),lower (action),verbs,action_words,bajar(se),bajar
+Spanish (European),meat,nouns,food_drink,carne/chicha,carne
+Spanish (European),meat,nouns,food_drink,carne (chicha),carne
+Spanish (European),medicine,nouns,household,medicina,medicina
+Spanish (European),melon,nouns,food_drink,melón,melón
+Spanish (European),microwave,nouns,household,microondas,microondas
+Spanish (European),milk,nouns,food_drink,leche,leche
+Spanish (European),mine,function_words,pronouns,mío/a,mío
+Spanish (European),mine,function_words,pronouns,mío/mía,mío
+Spanish (European),mine,function_words,pronouns,míos/mías,míos
+Spanish (European),mirror,nouns,household,espejo,espejo
+Spanish (European),miss,verbs,action_words,perder(se),perder
+Spanish (European),monkey,nouns,animals,mono,mono
+Spanish (European),more,function_words,quantifiers,más,más
+Spanish (European),more,function_words,articles,más,más
+Spanish (European),motorcycle,nouns,vehicles,moto,moto
+Spanish (European),mouse,nouns,animals,ratón,ratón
+Spanish (European),mouth,nouns,body_parts,boca,boca
+Spanish (European),much,function_words,articles,mucho/a/os/as,mucho
+Spanish (European),music,nouns,toys,música,música
+Spanish (European),mustache,nouns,body_parts,bigote,bigote
+Spanish (European),my,function_words,pronouns,mí,mí
+Spanish (European),neck,nouns,body_parts,cuello,cuello
+Spanish (European),neighborhood,nouns,household,colonia,colonia
+Spanish (European),new,adjectives,descriptive_words,nuevo,nuevo
+Spanish (European),none,function_words,articles,no hay,no hay
+Spanish (European),nose,nouns,body_parts,nariz,nariz
+Spanish (European),nothing,function_words,articles,nada,nada
+Spanish (European),octopus,nouns,animals,pulpo,pulpo
+Spanish (European),of,function_words,locations,de,de
+Spanish (European),of,function_words,locations,del,del
+Spanish (European),off,adjectives,descriptive_words,apagado,apagado
+Spanish (European),olive,nouns,food_drink,aceituna/s,aceituna
+Spanish (European),on,function_words,locations,en,en
+Spanish (European),on (description),adjectives,descriptive_words,encendido,encendido
+Spanish (European),open (action),verbs,action_words,abrir,abrir
+Spanish (European),or,function_words,connecting_words,o,o
+Spanish (European),orange,nouns,food_drink,naranja,naranja
+Spanish (European),other,function_words,pronouns,otra/o,otra
+Spanish (European),other,function_words,articles,otro,otro
+Spanish (European),out,function_words,locations,fuera/afuera,fuera
+Spanish (European),pacifier,nouns,household,chupete,chupete
+Spanish (European),paint,verbs,action_words,pintar,pintar
+Spanish (European),painting,nouns,toys,pintura,pintura
+Spanish (European),pajamas,nouns,clothing,pijima,pijima
+Spanish (European),panther,nouns,animals,pantera,pantera
+Spanish (European),pants,nouns,clothing,pantalón/es,pantalón
+Spanish (European),paper,nouns,toys,papel,papel
+Spanish (European),parrot,nouns,animals,loro,loro
+Spanish (European),pass,verbs,action_words,pasar,pasar
+Spanish (European),pasta,nouns,food_drink,macarrones,macarrones
+Spanish (European),pear,nouns,food_drink,pera,pera
+Spanish (European),pen,nouns,toys,bolígrafo/boli,bolígrafo
+Spanish (European),Pencil,nouns,toys,lápiz,lápiz
+Spanish (European),photo,nouns,toys,fotos (cámara),fotos
+Spanish (European),piano,nouns,toys,piano,piano
+Spanish (European),pie,nouns,food_drink,pastel,pastel
+Spanish (European),pig,nouns,animals,cerdo,cerdo
+Spanish (European),pillow,nouns,household,almohada,almohada
+Spanish (European),plantain,nouns,food_drink,plátano,plátano
+Spanish (European),plate,nouns,household,plato,plato
+Spanish (European),play,verbs,action_words,jugar,jugar
+Spanish (European),plug,nouns,household,enchufe,enchufe
+Spanish (European),police car,nouns,vehicles,coche policía,coche policía
+Spanish (European),potato,nouns,food_drink,patatas,patatas
+Spanish (European),potato,nouns,food_drink,patata/s,patata
+Spanish (European),potty,nouns,household,orinal,orinal
+Spanish (European),pretty,adjectives,descriptive_words,bonito,bonito
+Spanish (European),put,verbs,action_words,poner(se),poner
+Spanish (European),put,verbs,action_words,meter(se),meter
+Spanish (European),puzzle,nouns,toys,puzzle,puzzle
+Spanish (European),puzzle,nouns,toys,puzzle/rompecabezas,puzzle
+Spanish (European),racket,nouns,toys,raqueta,raqueta
+Spanish (European),radio,nouns,household,radio,radio
+Spanish (European),rain,verbs,action_words,llover,llover
+Spanish (European),rake,nouns,toys,rastrillo,rastrillo
+Spanish (European),rat,nouns,animals,rata,rata
+Spanish (European),read,verbs,action_words,leer,leer
+Spanish (European),red,adjectives,descriptive_words,rojo,rojo
+Spanish (European),refrigerator,nouns,household,nevera/frigorífico,nevera
+Spanish (European),remote,nouns,household,mando,mando
+Spanish (European),remove,verbs,action_words,quitar(se),quitar
+Spanish (European),rice,nouns,food_drink,arroz,arroz
+Spanish (European),room,nouns,household,habitación/cuarto,habitación
+Spanish (European),round,adjectives,descriptive_words,redondo,redondo
+Spanish (European),run,verbs,action_words,correr,correr
+Spanish (European),sad,adjectives,descriptive_words,triste,triste
+Spanish (European),sandal,nouns,clothing,sandalia,sandalia
+Spanish (European),sandwich,nouns,food_drink,bocadillo,bocadillo
+Spanish (European),sausage,nouns,food_drink,chorizo,chorizo
+Spanish (European),sausage,nouns,food_drink,salchicha/s,salchicha
+Spanish (European),save,verbs,action_words,guardar,guardar
+Spanish (European),scared,adjectives,descriptive_words,susto,susto
+Spanish (European),scarf,nouns,clothing,bufanda,bufanda
+Spanish (European),scissors,nouns,household,tijeras,tijeras
+Spanish (European),search,verbs,action_words,buscar,buscar
+Spanish (European),sheep,nouns,animals,oveja,oveja
+Spanish (European),shirt,nouns,clothing,camiseta,camiseta
+Spanish (European),shoe,nouns,clothing,zapatilla/s,zapatilla
+Spanish (European),shoe,nouns,clothing,zapato/s,zapato
+Spanish (European),show,verbs,action_words,enseñar,enseñar
+Spanish (European),shower (object),nouns,household,ducha,ducha
+Spanish (European),sick,adjectives,descriptive_words,enfermo/malito,enfermo
+Spanish (European),silence (action),verbs,action_words,callar,callar
+Spanish (European),sing,verbs,action_words,cantar,cantar
+Spanish (European),sink (object),nouns,household,lavabo,lavabo
+Spanish (European),sit,verbs,action_words,sentar(se),sentar
+Spanish (European),skates,nouns,vehicles,patines,patines
+Spanish (European),skirt,nouns,clothing,falda,falda
+Spanish (European),sleep,verbs,action_words,dormir(se),dormir
+Spanish (European),small,adjectives,descriptive_words,pequeño/chiquitito,pequeño
+Spanish (European),smoothie,nouns,food_drink,batido,batido
+Spanish (European),snail,nouns,animals,caracol,caracol
+Spanish (European),snake,nouns,animals,serpiente,serpiente
+Spanish (European),so,function_words,locations,así,así
+Spanish (European),soap,nouns,household,jabón,jabón
+Spanish (European),sock,nouns,clothing,calcetín/es,calcetín
+Spanish (European),some,function_words,articles,unas,unas
+Spanish (European),some,function_words,articles,unos,unos
+Spanish (European),something,function_words,pronouns,algo,algo
+Spanish (European),soup,nouns,food_drink,sopa,sopa
+Spanish (European),spider,nouns,animals,araña,araña
+Spanish (European),sponge,nouns,household,esponja,esponja
+Spanish (European),spoon,nouns,household,cuchara,cuchara
+Spanish (European),stairs,nouns,household,escalera,escalera
+Spanish (European),steak,nouns,food_drink,filete,filete
+Spanish (European),stick,nouns,toys,palo,palo
+Spanish (European),strawberry,nouns,food_drink,fresa/s,fresa
+Spanish (European),sugar,nouns,food_drink,azúcar,azúcar
+Spanish (European),sweater,nouns,clothing,jersey,jersey
+Spanish (European),sweets,nouns,food_drink,chuches,chuches
+Spanish (European),swimsuit,nouns,clothing,bañador,bañador
+Spanish (European),syrup,nouns,household,jarabe,jarabe
+Spanish (European),table,nouns,household,mesa,mesa
+Spanish (European),take,verbs,action_words,coger,coger
+Spanish (European),take,verbs,action_words,sacar,sacar
+Spanish (European),take,verbs,action_words,tomar(se),tomar
+Spanish (European),tall,adjectives,descriptive_words,alto,alto
+Spanish (European),tangerine,nouns,food_drink,mandarina,mandarina
+Spanish (European),teddybear,nouns,toys,osito,osito
+Spanish (European),telephone,nouns,household,teléfono,teléfono
+Spanish (European),tell,verbs,action_words,decir,decir
+Spanish (European),tell,verbs,action_words,contar,contar
+Spanish (European),terrace,nouns,household,terraza,terraza
+Spanish (European),that,function_words,pronouns,ese/esa/o,ese
+Spanish (European),that,function_words,pronouns,aquel,aquel
+Spanish (European),that,function_words,pronouns,ese,ese
+Spanish (European),that,function_words,pronouns,eso,eso
+Spanish (European),that,function_words,connecting_words,que (que no vengas),que
+Spanish (European),the,function_words,articles,el,el
+Spanish (European),the,function_words,articles,la,la
+Spanish (European),the,function_words,articles,las,las
+Spanish (European),the,function_words,articles,los,los
+Spanish (European),them,function_words,pronouns,ellos/as,ellos
+Spanish (European),then,function_words,connecting_words,entonces,entonces
+Spanish (European),there,function_words,locations,allí,allí
+Spanish (European),there,function_words,locations,ahí,ahí
+Spanish (European),these,function_words,pronouns,éstos/éstas,éstos
+Spanish (European),thirsty,adjectives,descriptive_words,sed,sed
+Spanish (European),this,function_words,pronouns,este/a/o,este
+Spanish (European),this,function_words,pronouns,esa,esa
+Spanish (European),this,function_words,pronouns,ésta,ésta
+Spanish (European),this,function_words,pronouns,éste,éste
+Spanish (European),this,function_words,pronouns,ésto,ésto
+Spanish (European),those,function_words,pronouns,aquella/as/os,aquella
+Spanish (European),those,function_words,pronouns,esos/as,esos
+Spanish (European),three,function_words,articles,tres,tres
+Spanish (European),throw,verbs,action_words,tirar,tirar
+Spanish (European),tiger,nouns,animals,tigre,tigre
+Spanish (European),tire (action),verbs,action_words,cansar(se),cansar
+Spanish (European),to,function_words,locations,a (a dormir),a
+Spanish (European),to,function_words,locations,al,al
+Spanish (European),toilet,nouns,household,váter,váter
+Spanish (European),tomato,nouns,food_drink,tomate,tomate
+Spanish (European),tongue,nouns,body_parts,lengua,lengua
+Spanish (European),tooth,nouns,body_parts,dientes,dientes
+Spanish (European),touch,verbs,action_words,tocar,tocar
+Spanish (European),towel,nouns,household,toallitas,toallitas
+Spanish (European),towel,nouns,household,toalla,toalla
+Spanish (European),toy,nouns,toys,juguete,juguete
+Spanish (European),tractor,nouns,vehicles,tractor,tractor
+Spanish (European),train,nouns,vehicles,tren,tren
+Spanish (European),trash,nouns,household,basura,basura
+Spanish (European),tricycle,nouns,vehicles,triciclo,triciclo
+Spanish (European),trolley,nouns,vehicles,carro/carrito,carro
+Spanish (European),truck,nouns,vehicles,camión,camión
+Spanish (European),tummy,nouns,body_parts,barriga,barriga
+Spanish (European),turn off,verbs,action_words,apagar,apagar
+Spanish (European),turn on,verbs,action_words,encender,encender
+Spanish (European),turtle,nouns,animals,tortuga,tortuga
+Spanish (European),TV,nouns,household,televisión,televisión
+Spanish (European),two,function_words,articles,dos,dos
+Spanish (European),ugly,adjectives,descriptive_words,feo,feo
+Spanish (European),until,function_words,locations,hasta,hasta
+Spanish (European),up,function_words,locations,arriba,arriba
+Spanish (European),value (action),verbs,action_words,valer,valer
+Spanish (European),video,nouns,household,vídeo,vídeo
+Spanish (European),wait,verbs,action_words,esperar(se),esperar
+Spanish (European),wake,verbs,action_words,despertar(se),despertar
+Spanish (European),walk,verbs,action_words,andar,andar
+Spanish (European),walk,verbs,action_words,pasear,pasear
+Spanish (European),want,verbs,action_words,querer,querer
+Spanish (European),want,function_words,states,querer (quiero comer),querer
+Spanish (European),wash,verbs,action_words,lavar(se),lavar
+Spanish (European),washer,nouns,household,lavadora,lavadora
+Spanish (European),watch (action),verbs,action_words,ver,ver
+Spanish (European),water (beverage),nouns,food_drink,agua,agua
+Spanish (European),watermelon,nouns,food_drink,sandía,sandía
+Spanish (European),what,function_words,question_words,qué,qué
+Spanish (European),wheel,nouns,toys,rueda,rueda
+Spanish (European),when,function_words,question_words,cuándo,cuándo
+Spanish (European),where,function_words,question_words,dónde,dónde
+Spanish (European),which,function_words,question_words,cuál,cuál
+Spanish (European),white,adjectives,descriptive_words,blanco,blanco
+Spanish (European),who,function_words,question_words,quién,quién
+Spanish (European),why,function_words,question_words,por qué,por qué
+Spanish (European),window,nouns,household,ventana,ventana
+Spanish (European),with,function_words,locations,con,con
+Spanish (European),with me,function_words,pronouns,conmigo,conmigo
+Spanish (European),with you,function_words,pronouns,contigo,contigo
+Spanish (European),without,function_words,locations,sin,sin
+Spanish (European),wolf,nouns,animals,lobo,lobo
+Spanish (European),work,verbs,action_words,trabajar,trabajar
+Spanish (European),worm,nouns,animals,gusano,gusano
+Spanish (European),write,verbs,action_words,escribir,escribir
+Spanish (European),yellow,adjectives,descriptive_words,amarillo,amarillo
+Spanish (European),yogurt,nouns,food_drink,yogur,yogur
+Spanish (European),you,function_words,pronouns,tu/tuyo,tu
+Spanish (European),you,function_words,pronouns,(para) ti,ti 
+Spanish (European),you,function_words,pronouns,tú,tú
+Spanish (European),your,function_words,pronouns,tu,tu
+Spanish (European),yours,function_words,pronouns,tuyo/tuya,tuyo
+Spanish (European),yours,function_words,pronouns,tuyos/tuyas,tuyos
+Spanish (European),zebra,nouns,animals,cebras,cebras
+Spanish (European),zipper,nouns,clothing,cremallera,cremallera
+Spanish (European),a,function_words,quantifiers,uno/a,una
+Spanish (European),all,function_words,quantifiers,todo/a/os/as,toda
+Spanish (European),all,function_words,articles,todas/os,todos
+Spanish (European),any,function_words,articles,alguno/a,alguna
+Spanish (European),below,function_words,locations,debajo/abajo,abajo
+Spanish (European),book,nouns,toys,cuento/libro,libro
+Spanish (European),boots,nouns,clothing,bota/s,botas
+Spanish (European),bus,nouns,vehicles,autobús/bus,bus
+Spanish (European),CD,nouns,household,CD/compact,compact
+Spanish (European),croquette,nouns,food_drink,croqueta/s,croquetas
+Spanish (European),ear,nouns,body_parts,oreja/s,orejas
+Spanish (European),finger,nouns,body_parts,dedo/s,dedos
+Spanish (European),finish,verbs,action_words,terminar/acabar(se),acabar
+Spanish (European),foot,nouns,body_parts,pie/s,pies
+Spanish (European),garage,nouns,household,garaje/cochera,cochera
+Spanish (European),hand,nouns,body_parts,mano/s,manos
+Spanish (European),his,function_words,pronouns,suyo/a,suya
+Spanish (European),inside,function_words,locations,dento/adentro,adentro
+Spanish (European),leg,nouns,body_parts,pierna/s (pata/s),piernas
+Spanish (European),meat,nouns,food_drink,carne/chicha,chicha
+Spanish (European),mine,function_words,pronouns,mío/a,mía
+Spanish (European),mine,function_words,pronouns,mío/mía,mía
+Spanish (European),mine,function_words,pronouns,míos/mías,mías
+Spanish (European),much,function_words,articles,mucho/a/os/as,mucha
+Spanish (European),olive,nouns,food_drink,aceituna/s,aceitunas
+Spanish (European),other,function_words,pronouns,otra/o,otro
+Spanish (European),out,function_words,locations,fuera/afuera,afuera
+Spanish (European),pants,nouns,clothing,pantalón/es,pantalónes
+Spanish (European),pen,nouns,toys,bolígrafo/boli,boli
+Spanish (European),potato,nouns,food_drink,patata/s,patatas
+Spanish (European),puzzle,nouns,toys,puzzle/rompecabezas,rompecabezas
+Spanish (European),refrigerator,nouns,household,nevera/frigorífico,frigorífico
+Spanish (European),room,nouns,household,habitación/cuarto,cuarto
+Spanish (European),sausage,nouns,food_drink,salchicha/s,salchichas
+Spanish (European),shoe,nouns,clothing,zapatilla/s,zapatillas
+Spanish (European),shoe,nouns,clothing,zapato/s,zapatos
+Spanish (European),sick,adjectives,descriptive_words,enfermo/malito,malito
+Spanish (European),small,adjectives,descriptive_words,pequeño/chiquitito,chiquitito
+Spanish (European),sock,nouns,clothing,calcetín/es,calcetínes
+Spanish (European),strawberry,nouns,food_drink,fresa/s,fresas
+Spanish (European),that,function_words,pronouns,ese/esa/o,esa
+Spanish (European),them,function_words,pronouns,ellos/as,ellas
+Spanish (European),these,function_words,pronouns,éstos/éstas,éstas
+Spanish (European),this,function_words,pronouns,este/a/o,esta
+Spanish (European),those,function_words,pronouns,aquella/as/os,aquellas
+Spanish (European),those,function_words,pronouns,esos/as,esas
+Spanish (European),trolley,nouns,vehicles,carro/carrito,carrito
+Spanish (European),you,function_words,pronouns,tu/tuyo,tuyo
+Spanish (European),yours,function_words,pronouns,tuyo/tuya,tuya
+Spanish (European),yours,function_words,pronouns,tuyos/tuyas,tuyas
+Spanish (European),all,function_words,quantifiers,todo/a/os/as,todos
+Spanish (European),all,function_words,quantifiers,todo/a/os/as,todas
+Spanish (European),much,function_words,articles,mucho/a/os/as,muchos
+Spanish (European),much,function_words,articles,mucho/a/os/as,muchas
+Spanish (European),that,function_words,pronouns,ese/esa/o,eso
+Spanish (European),this,function_words,pronouns,este/a/o,esto
+Spanish (European),those,function_words,pronouns,aquella/as/os,aquellos

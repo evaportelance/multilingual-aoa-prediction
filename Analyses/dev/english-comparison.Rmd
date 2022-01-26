@@ -1,0 +1,284 @@
+---
+title: "english_comparison"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+options(dplyr.summarise.inform = FALSE)
+
+# load libraries
+library(arm)
+library(tidyverse)
+library(glue)
+library(wordbankr)
+#install.packages("remotes")
+#remotes::install_github("langcog/childesr")
+library(childesr)
+library(broom)
+library(car)
+#library(jglmm)
+library(modelr)
+library(ggrepel)
+#library(SnowballC)
+library(stringr)
+
+library(tools)
+library(corrplot)
+library(lme4)
+library(modelr)
+library(purrr)
+theme_set(theme_classic())
+
+#library(Hmisc)
+#library(arm)
+
+# load functions
+setwd("~/Documents/LanguageLearning/aoa-pipeline/")
+walk(list.files("scripts", pattern = "*.R$", full.names = TRUE), source)
+```
+
+## Load data from cogsci paper and current project for English (American)
+
+Previous data has 314 items while the newer data has 585 items. The scaling used for predictors may also be different. 
+
+```{r prev_data}
+load("~/Documents/LanguageLearning/aoa_lstm_prediction/data/aoa_predictors/data_mega_child.RData")
+prev_data <- data
+```
+
+```{r current_data}
+curr_data <- readRDS("./surprisals/lstm_aoa_predictor_data.rds" ) |>
+  filter(language=="English (American)" & measure=="produces")
+  
+```
+## Previous Code
+```{r prev}
+
+full_surp = ~ lexical_category * avg_surprisal + lexical_category * avg_freq + lexical_category * num_phons + lexical_category * concreteness + lexical_category * valence + lexical_category * arousal + lexical_category * babiness
+
+formulae <- formulas(~aoa, full_surp)
+
+loo_data <- crossv_loo(ungroup(data))
+  
+fit_models <- function(id) {
+  models <- "no model"
+  #print("run model")
+  train_idx <- loo_data[id,1][[1]][[1]]$idx
+  test_idx <- loo_data[id,2][[1]][[1]]$idx
+  train_data <- data[train_idx,]
+  try(models <- fit_with(train_data, lm, formulae))
+  
+  result <- enframe(models) %>% 
+    mutate(model = value,
+      train = list(train_idx),
+    test = list(test_idx)) %>% 
+    select(-c(value))
+  
+  return(result)
+  
+}
+models_loo<- loo_data$.id %>% map( ~ fit_models(.)) %>% reduce(rbind)
+
+get_aoa_pred<- function(n){
+   row <- tibble(
+     name = models_loo$name[n],
+     test = models_loo$test[n],
+     train = models_loo$train[n],
+     model = models_loo$model[n],
+     test_word = data$words[as.numeric(test)],
+     lexical_category = data$lexical_category[as.numeric(test)],
+    aoa = data$aoa[as.numeric(test)],
+    aoa_pred = predict(model[[1]],  data[as.numeric(test),]))
+  return(row)
+}
+sep_models_loo <- map(c(1:nrow(models_loo)), get_aoa_pred) %>% bind_rows() %>% 
+  mutate(abs_dev = abs(aoa - aoa_pred)) %>% 
+  mutate(se = abs_dev^2)
+ results <- sep_models_loo %>% 
+  transform(abs_dev = as.numeric(abs_dev)) %>% 
+  group_by(name) %>%
+  summarise(mean_abs_dev = mean(abs_dev), sd_abs_dev = sd(abs_dev), rmse = sqrt(mean(se)), mse = mean(se)) %>% 
+  mutate(ci_mad = 1.96*(sd_abs_dev/sqrt(n()))) %>% 
+  mutate(ci_mad_min = mean_abs_dev - ci_mad) %>% 
+  mutate(ci_mad_max = mean_abs_dev + ci_mad)
+
+ get_betas <- function(n){
+  model = full_surp_models$model[n]
+  result <- tidy(model[[1]]) %>% 
+      mutate(fold = n)
+  return(result)
+  }
+full_surp_models= models_loo %>% filter(name=="full_surp")  
+full_surp_betas = map(c(1:nrow(full_surp_models)), get_betas) %>% bind_rows()
+full_surp_betas <- full_surp_betas %>% select(term, estimate, fold) %>% spread(key=term, value=estimate) %>% 
+  mutate(noun_surprisal = avg_surprisal,
+         fctwd_surprisal = avg_surprisal + lexical_categoryfunction_words + lexical_categoryfunction_words:avg_surprisal,
+         pred_surprisal = avg_surprisal + lexical_categorypredicates + lexical_categorypredicates:avg_surprisal,
+         noun_frequency = avg_freq,
+         fctwd_frequency = avg_freq + lexical_categoryfunction_words + lexical_categoryfunction_words:avg_freq,
+         pred_frequency = avg_freq + lexical_categorypredicates + lexical_categorypredicates:avg_freq
+         ) %>% 
+  select(noun_surprisal,fctwd_surprisal,pred_surprisal,noun_frequency, fctwd_frequency, pred_frequency) %>% 
+  gather(key="term", value="estimate") %>% 
+  separate(col=term, into=c("lexical_category", "term"), sep="_")
+lex.labs <- c("function words", "nouns", "predicates")
+names(lex.labs) <- c("fctwd", "noun", "pred")
+p = ggplot(full_surp_betas, aes(x = estimate, y = term, colour = term, fill=term)) +
+  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
+  scale_colour_manual(values=c("#D41159","#1A85FF")) +
+  scale_fill_manual(values=c("#D41159","#1A85FF")) +
+  geom_vline(xintercept = 0, color = "grey", linetype = "dotted") +
+  geom_point(alpha=0.015, position = position_jitter(w = 0, h = 0.05), show.legend = FALSE)+
+  ggstance::stat_summaryh(geom = "point", shape=21, size=4, color="black", fun.x = mean, fun.xmin = min,fun.xmax = max, show.legend = FALSE) +
+  labs(x = "Coefficient estimate", y = "") +
+  theme(text=element_text(size=18,  family="Times New Roman"), axis.text.x = element_text(size = 16), axis.text.y = element_text(size = 16))
+
+```
+
+Previous data linear model :
+```{r lm1}
+
+#prev_model <- lm(formula = aoa ~ lexical_category * avg_surprisal + lexical_category * avg_freq + lexical_category * num_phons + lexical_category * concreteness + lexical_category * valence + lexical_category * arousal + lexical_category * babiness, data = data)
+
+new_model <- lm(formula = aoa ~ lexical_category * avg_surprisal + lexical_category * avg_freq + lexical_category * concreteness, data = data)
+
+broom::tidy(new_model)
+
+```
+
+Rescale all predictors between -0.5-0.5
+```{r lm2}
+predictors <- c("avg_surprisal", "avg_freq", "concreteness")
+prev_data_rescaled <- prev_data |> mutate_at(vars(predictors), funs(scales::rescale(., to = c(-0.5, 0.5)))) |> mutate_at(vars(predictors), funs(base::scale(., center=TRUE, scale = TRUE)))
+
+ggplot(prev_data, aes(y=aoa, x=avg_surprisal, color=lexical_category)) +
+  geom_point()
+
+
+new_model_scaled <- lm(formula = aoa ~ lexical_category * avg_surprisal + lexical_category * avg_freq + lexical_category * concreteness, data = prev_data)
+
+broom::tidy(new_model_scaled)
+
+
+```
+
+## fit model on new data rescaled to (-0.5, 0.5) on all new items
+```{r new_lm1}
+predictors <- c("avg_surprisal", "all_frequency", "concreteness")
+curr_data_rescaled <- curr_data |> filter(uni_lemma != "cheerios") |> mutate_at(vars(predictors), funs(scales::rescale(., to = c(0, 1)))) 
+
+plot_data <- curr_data_rescaled |> filter(avg_surprisal < 6)
+ggplot(plot_data, aes(y=aoa, x=avg_surprisal, color=lexical_category)) +
+  geom_point()
+
+new_model_scaled <- lm(formula = aoa ~ lexical_category * avg_surprisal + lexical_category * all_frequency + lexical_category * concreteness, data = curr_data_rescaled)
+
+curr_data_rescaled_312 <- curr_data_rescaled |> filter(uni_lemma %in% prev_data$uni_lemma)
+new_model_scaled <- lm(formula = aoa ~ lexical_category * avg_surprisal + lexical_category * all_frequency + lexical_category * concreteness, data = curr_data_rescaled_312)
+
+new_coefs_all <- broom::tidy(new_model_scaled) |>
+  mutate(term = str_replace(term, "lexical_category1", "predicates")) |>
+  mutate(term = str_replace(term, "lexical_category2", "function_words"))
+  
+#lexical_category 1 = predicates and lexical_category 2 = function words
+
+write_csv(new_coefs_all, "new_data_coefs_all_585_items.csv")
+```
+
+## fit model on new data rescaled to (-0.5, 0.5) only on the 314 items from the first study
+```{r new_lm1}
+curr_data_newnames <- rename(curr_data_rescaled, avg_surprisal_new = avg_surprisal, concreteness_new = concreteness, new_freq = all_frequency, aoa_new = aoa, words = definition) |>
+  select(uni_lemma, words, lexical_category, avg_surprisal_new, concreteness_new, new_freq, aoa_new)
+
+predictors <- c("avg_surprisal", "avg_surprisal_new", "avg_freq", "new_freq", "concreteness", "concreteness_new")
+all_data <- prev_data_rescaled |> left_join(curr_data_newnames) |>
+  filter(!is.na(avg_surprisal_new)) |> filter(uni_lemma != "cheerios") |> mutate_at(vars(predictors), funs(scales::rescale(., to = c(-0.5, 0.5)))) |> mutate_at(vars(predictors), funs(base::scale(., center=TRUE, scale = FALSE)))
+  
+
+new_model_scaled <- lm(formula = aoa_new ~ lexical_category * avg_surprisal_new + lexical_category * new_freq + lexical_category * concreteness_new, data = all_data)
+
+new_coefs <- broom::tidy(new_model_scaled)
+#lexical_category 1 = predicates and lexical_category 2 = function words
+
+old_model_scaled <- lm(formula = aoa ~ lexical_category * avg_surprisal + lexical_category * avg_freq + lexical_category * concreteness, data = all_data)
+
+old_coefs <- broom::tidy(old_model_scaled)
+
+write_csv(new_coefs, "new_data_coefs_312_common_items.csv")
+write_csv(old_coefs, "old_data_coefs_312_common_items.csv")
+
+```
+
+## Correlations
+```{r cor}
+cor(all_data$aoa, all_data$aoa_new) #0.9936585
+cor(all_data$concreteness, all_data$concreteness_new) #1
+cor(all_data$avg_freq, all_data$new_freq) #0.5818772
+cor(all_data$avg_surprisal, all_data$avg_surprisal_new) #0.2047537
+```
+
+
+```{r surp}
+## cheerios is an outlier for the new data 
+items_311 <- all_data |>
+  select(lexical_category, uni_lemma, words, aoa_new, avg_surprisal, avg_surprisal_new)
+
+# nouns 187/311 = 0.601  mean surp -0.4320679	mean aoa 22.47473	
+# predicates 91/311 = 0.292  mean surp -0.4792791 mean aoa 24.70058	
+# function words 33/311 = 0.106  mean surp -0.4933204  mean aoa 25.87849
+
+items_311 |> group_by(lexical_category) |> summarise(mean_surp = mean(avg_surprisal_new), mean_aoa = mean(aoa_new))
+
+items_273 <- curr_data_newnames |> filter(!(uni_lemma %in% items_311$uni_lemma)) |>
+  select(lexical_category, uni_lemma, words, aoa_new,  avg_surprisal_new)
+
+# nouns 128/273 = 0.468  mean surp -0.4385652   mean aoa 25.92970	
+# predicates 75/273 = 0.274  ean surp -0.4787790	mean aoa 27.29153	
+# function words 70/273 = 0.256  ean surp  -0.4961692 mean aoa 29.70760	
+
+items_273 |> group_by(lexical_category) |> summarise(mean_surp = mean(avg_surprisal_new), mean_aoa = mean(aoa_new))
+
+items_312_noscale <- curr_data |> filter(uni_lemma %in% all_data$uni_lemma) |> select(lexical_category, uni_lemma, definition, aoa, avg_surprisal, all_frequency)
+
+items_273_noscale <- curr_data |> filter(!(uni_lemma %in% all_data$uni_lemma)) |> select(lexical_category, uni_lemma, definition, aoa, avg_surprisal, all_frequency)
+
+plot_data <- items_312_noscale |>
+  mutate(item_type = "prev") |>
+  full_join(items_273_noscale) |> mutate(item_type = ifelse(is.na(item_type), "new", item_type))
+
+p = ggplot(plot_data, aes(y=aoa, x=avg_surprisal, color=item_type)) +
+  geom_point() +
+  facet_wrap(~lexical_category)+
+  ggrepel::geom_label_repel(data = filter(plot_data, avg_surprisal > .1), aes(label=definition))
+
+
+surprisals <- read_csv("~/Documents/LanguageLearning/aoa-pipeline/analyses/surprisals/lstm-surprisals/English (American)/lstm_english_(american)_validation_average_surprisal_perplexity_run0.csv")
+
+cor(surprisals$n_instances, surprisals$avg_surprisal)
+
+cor(plot_data$avg_surprisal, (exp(plot_data$all_frequency)* 16062386))
+
+
+
+plot_data <- items_311 |> select(-c(avg_surprisal)) |> 
+  mutate(item_type = "prev") |>
+  full_join(items_273) |> mutate(item_type = ifelse(is.na(item_type), "new", item_type))
+  
+p = ggplot(plot_data, aes(y=aoa_new, x=avg_surprisal_new, color=item_type)) +
+  geom_point() +
+  facet_wrap(~lexical_category)
+p
+
+```
+
+
+
+## fit current model (smaller model) using current and previous versions of avg_surprisal and frequency (for only the 314 words and then also with all 585 words for the current data)
+```{r new_model}
+formula = aoa ~ lexical_category * avg_surprisal + lexical_category * all_frequency + lexical_category * concreteness
+
+```
+
+
+## Check correlation between new and old aoa, surprisal, and frequency

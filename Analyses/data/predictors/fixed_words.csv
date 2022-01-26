@@ -1,0 +1,58 @@
+"language","uni_lemma","definition","cleaned","fixed_word"
+"Italian","NA","minestrone/brodo","minestrone, brodo",
+"Italian","NA","cocomero/anguria","cocomero, anguria",
+"Italian","NA","pongo/didò","pongo, didò",
+"Italian","book","favola/storia","favola, storia",
+"Italian","pen/pencil","matita/penna","matita, penna",
+"Italian","tv","televisione/tv","televisione, tv",
+"Italian","NA","amico/a","amico, a","amico / amica"
+"Italian","babysitter","babysitter/tata","babysitter, tata",
+"Italian","NA","bambino/a","bambino, a","bambino / bambina"
+"Italian","cousin","cugino/a","cugino, a","cugino / cugina"
+"Italian","teacher","maestro/a","maestro, a","maestro / maestra"
+"Italian","boy","ragazzo/a","ragazzo, a","ragazzo / ragazza"
+"Italian","sir","signore/a","signore, a","signore / signora"
+"Italian","good night","buonanotte/buongiorno","buonanotte, buongiorno",
+"Italian","NA","che rumore/chiasso","cherumore, chiasso",
+"Italian","thank you","grazie/prego","grazie, prego",
+"Italian","NA","per favore/per piacere","perfavore, perpiacere",
+"Italian","hello","pronto/chi è?","pronto, chiè",
+"Italian","one two three","un/due/tre","un, due, tre","un due tre"
+"Italian","shh","zitto/sch","zitto, sch",
+"Italian","NA","gridare/urlare","gridare, urlare",
+"Italian","take off","levare/togliere","levare, togliere",
+"Italian","NA","nascondere/si","nascondere, si","nascondere / nascondersi"
+"Italian","NA","calmo/tranquillo","calmo, tranquillo",
+"Italian","big","grande/grosso","grande, grosso",
+"Italian","NA","pazzo/matto","pazzo, matto",
+"Italian","NA","sciocco/stupido","sciocco, stupido",
+"Italian","NA","veloce/svelto","veloce, svelto",
+"Italian","now","adesso/ora","adesso, ora",
+"Italian","after","dopo/poi","dopo, poi",
+"Italian","my","mio/a","mio, a","mio / mia"
+"Italian","your","tuo/a","tuo, a","tuo / tua"
+"Italian","his","suo/a","suo, a","suo / sua"
+"Italian","NA","nostro/a","nostro, a","nostro / nostra"
+"Italian","NA","vostro/a","vostro, a","vostro / vostra"
+"Italian","me","me/mi","me, mi",
+"Italian","NA","te/ti","te, ti",
+"Italian","that","quello/a","quello, a","quello / quella"
+"Italian","this","questo/a","questo, a","questo / questa"
+"Italian","NA","lo/a","lo, a","lo / la"
+"Italian","NA","li/e","li, e","li / le"
+"Italian","what","che/che cosa","che, checosa",
+"Italian","NA","fra/tra","fra, tra",
+"Italian","a","un/uno/una","un, uno, una",
+"Italian","NA","del/della","del, della",
+"Italian","NA","dei/delle","dei, delle",
+"Italian","another","altro/un altro","altro, unaltro",
+"Italian","NA","quindi/allora","quindi, allora",
+"Italian","NA","anche/pure","anche, pure",
+"Italian","NA","li/l","li, l",
+"Italian","NA","qui/qua","qui, qua",
+"Italian","child","bimbo/a","bimbo, a","bimbo / bimba"
+"Italian","go potty","fare la popò/pipì","farelapopò, pipì","fare la popò / fare la pipì"
+"Italian","no more","non c'èpiù/più","noncèpiù, più",
+"Italian","what","che/che cosa?","che, checosa",
+"Russian","go potty","пúсать",,"писать"
+"Russian","vroom","брр/ввв и т.п.",,"брр/ввв (и т.п.)"

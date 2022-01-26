@@ -15,7 +15,7 @@ library("dplyr")
 
 There are 3 different English lists (American, Brittish and Australian). I need you to do through the uni_lemma column and make sure there are no "NA" values, 
 
-if there are remove those rows. Next I need you to go through the word_clean column and make sure that there are no rogue punctuatin marks (remove them from this column only is so) or extra spaces at the end of the words.
+if there are remove those rows. Next I need you to go through the word_clean column and make sure that there are no rogue punctuating marks (remove them from this column only is so) or extra spaces at the end of the words.
 ```{R}
 
 clean_word_list <- function(read_path) {

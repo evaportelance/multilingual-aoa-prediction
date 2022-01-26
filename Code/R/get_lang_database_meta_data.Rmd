@@ -56,8 +56,6 @@ write.csv(unique_langs, "unique_langs.csv")
 ```
 
 
-
-
 Fills out a CSV in the format of the 'aoa-pipeline language map' spreadsheet 
 with the correct number of target children.
 Note: used double for-loops here because there are only 41*81 operations
@@ -193,12 +191,7 @@ wordbankr::get_item_data("Danish", "WS")
 print(wordbank_langs)
 write.csv(wordbank_langs, "test.csv")
 ```
-  #print(length(lang_item_data$form))
-  #wordbank_langs$forms[i] <- lang_forms
 
-unique_forms <- unique(item_data$form)
-print(wordbank_langs$forms)
-```
 
 unilemmas for each language in Wordbank.
 ```{R}

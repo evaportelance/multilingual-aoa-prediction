@@ -1,0 +1,186 @@
+"language","uni_lemma","definition","phons","fixed_phon"
+"Croatian","ga ga","ga-ga","ɡ_a_ɡ_æ",
+"Croatian","peekaboo","ku-ku (sound)","k_u_k_ʊ",
+"Croatian","beep beep","tu-tu","t_u_t_ʊ",
+"Croatian","cockadoodledoo","kukuriku","k_u_k_ʊ_r_ɪ_k_ʊ",
+"Croatian","grrr","grr","ɡ_ə_r_ə_r_ə","ɡ_r"
+"Croatian","meow","mijau","m_i_j_æ_ʊ",
+"Croatian","moo","muu","m_u_ʊ",
+"Croatian","ouch","jao","j_a_o",
+"Croatian","quack quack","kva-kva","k_v_a_k_v_æ",
+"Croatian","vroom","brr-brr","b__ɾ_r_b__ɾ_r","b_r_b_ɾ"
+"Croatian","woof woof","vau-vau","v_a_ʊ_v_æ_ʊ",
+"Croatian","yum yum","njam-njam","ɲ_a_m_ɲ_æ_m",
+"Croatian","baa baa","ga-ga","ɡ_a_ɡ_æ",
+"Croatian","cockadoodledoo","kukurikuuu","k_u_k_ʊ_r_ɪ_k_ʊ_ʊ_ʊ","k_u_k_ʊ_r_ɪ_k_ʊ"
+"Russian","weee","а-а-а","a_ɑ_a",
+"Russian","woof woof","ав","ɑ_f",
+"Russian","hello","алё","a_ɭ_ɵ",
+"Russian","yum yum","ам-ам/ням-ням","ɑ_m_ʌ_m, n_ɑ_m_n_ʌ_m",
+"Russian","baa baa","бе","bʲ_e",
+"Russian","beep beep","биби","bʲ_i_bʲ_ɪ",
+"Russian","gobble gobble","бл-бл","b_ɛ_ɛ_ɭ_b_ɛ_ɛ_ɭ","b_ɭ_b_ɭ"
+"Russian","vroom","брр/ввв и т.п.","b_ɛ_ɛ_r_ɛ_r, v_ɛ_v_ɛ_v_ɛ","b_r, v"
+"Russian","thump","бух/бах/бам","b_u_x, b_ɑ_x, b_ɑ_m",
+"Russian","honk honk","га-га","ɡ_ɑ_ɡ_a",
+"Russian","ring ring","динь-динь","dʲ_i_n_dʲ_i_n",
+"Russian","bzzz","жж","ʒ_ɛ_ʒ_ɛ","ʒ"
+"Russian","hee haw","иа","i_a",
+"Russian","neigh","иго-го/цока-ющий звук","ɪ_ɡ_o_v_ʌ, ts_ʌ_k_a_ju_ɕ_i_j z_v_u_k","ɪ_ɡ_o_v_ʌ"
+"Russian","drip drop","кап-кап","k_a_p_k_ɑ_p",
+"Russian","caw","кар","k_ɑ_r",
+"Russian","croak","ква","k_v_ɑ",
+"Russian","cluck","ко-ко","k_o_k_ʌ",
+"Russian","quack quack","кря","k__rʲ_ɑ",
+"Russian","cockadoodledoo","кукареку","k_u_k_ɑ_rʲ_i_k_u",
+"Russian","lah lah","ля-ля-ля","ɭ_a_ɭ_ɑ_ɭ_ʌ",
+"Russian","baa baa","ме","mʲ_e",
+"Russian","moo","му","m_u",
+"Russian","meow","мяу","mʲ_ɑ_u",
+"Russian","squeak","пи-пи","pʲ_i_pʲ_ɪ",
+"Russian","hop","прыг","p__r_y_k",
+"Russian","grrr","ррр","ɛ_r_ɛ_r_ɛ_r","r"
+"Russian","tick tock","тик-так","tʲ_i_k_t_ɑ_k",
+"Russian","stomp stomp","топ-топ","t_ʌ_p_t_o_p",
+"Russian","shh","тсс","t_ɛ_ɛ_s_ɛ_s","t_ɛ"
+"Russian","knock knock","тук-тук","t_u_k_t_u_k",
+"Russian","choo choo","ту-ту/чух-чух","t_u_t_u, tʃʲ_u_x_tʃʲ_u_x",
+"Russian","awoo","уу","u_u","u"
+"Russian","yucky","фу","f_u",
+"Russian","oink","хрр/хрю","x_ɑ_ɛ_r_ɛ_r, x__rʲ_u""","x_r, x_rʲ_u"""
+"Russian","click","чик","tʃʲ_i_k",
+"Russian","sss","шш","ʃ_ɑ_ʃ_ɑ","ʃ"
+"Swedish","vroom","brrr","b_eː_ɛ_r_ɛ_r_ɛ_r","b_r"
+"Swedish","baa baa","bä bä","b_ɛː b_ɛː",
+"Swedish","grrr","grrr","ɡ_eː_ɛ_r_ɛ_r_ɛ_r","ɡ__r"
+"Swedish","cockadoodledoo","kuckeliku","k_ɵ_kː_ə_l_iː_k_ʉ",
+"Swedish","quack quack","kvack kvack","k_v_a_k k_v_a_k",
+"Swedish","meow","mjau","m_j_ɑː_ʉ",
+"Swedish","moo","mu","m_ʉ",
+"Swedish","yum yum","nam nam","n_ɑː_m n_ɑː_m",
+"Swedish","choo choo","tuff tuff","t_ɵ_f t_ɵ_f",
+"Swedish","woof woof","vov vov","v_uː_v v_uː_v",
+"Swedish","NA","aj aj","ɑː_j ɑː_j",
+"Swedish","vroom","brr","b_eː_ɛ_r_ɛ_r","b_r"
+"Swedish","grrr","grr","ɡ_eː_ɛ_r_ɛ_r","ɡ_r"
+"Swedish","NA","pip pip","p_iː_p p_iː_p",
+"Turkish","peekaboo","cee","dʒ_e_ɛ","dʒ_e"
+"Turkish","don't","cıss","dʒ_ɯ_s_s","dʒ_ɯ_s"
+"Turkish","vroom","düt","d_ø_t",
+"Turkish","yum yum","ham","h_a_m",
+"Turkish","woof woof","havhav","h_a_v_h_a_v",
+"Turkish","up","hop/hoppa","h_ɔ_p, h_ɔ_p_p_a","h_ɔ_p, h_ɔ_p_a"
+"Turkish","baa baa","mee","m_e_ɛ",
+"Turkish","moo","möö","m_œ_œ","m_œ"
+"Turkish","meow","pisi-pisi","p_i_s_i_p_i_s_ɪ",
+"Turkish","ouch","uf","ʊ_f",
+"Turkish","NA","çufçuf","tʃ_ʊ_f_tʃ_ʊ_f",
+"Turkish","NA","şişt","ʃ_ɪ_ʃ_t",
+"Turkish","NA","vak vak","v_a_k v_a_k",
+"Turkish","vroom","vınn","v_ɯ_n_n","v_ɯ_n"
+"Danish","ouch","av","ɑ_u",
+"Danish","meow","mjav","m_j_ɑ_w",
+"Danish","quack quack","rap","ʁ_?ɑ_p",
+"Danish","choo choo","fut","f_ʔu_t",
+"Danish","moo","muh","m_ʔu",
+"Danish","woof woof","vov","ʋ_ɔ_w",
+"Danish","grrr","grrrr","ɡ_e_ɛ_ʁ_ɛ_ʁ_ɛ_ʁ_ɛ_ɐ̯","ɡ_ʁ"
+"Danish","baa baa","mæh","m_ε",
+"Danish","vroom","årnnn (bil-lyd)","ɒ_ɐ̯_n_n_n","ɒ_ɐ̯_n"
+"Danish","cockadoodledoo","kykliky","k_ʔy_k_l_ʔi_k_ʔy",
+"Danish","yum yum","mm mm (lækkert)","ɛ_m_ɛ_m ɛ_m_ɛ_m","m"
+"French (Quebec)","woof woof","wouf wouf","_w_u_f _w_u_f",
+"French (Quebec)","vroom","vroum","v_ʁ_u_m",
+"French (Quebec)","choo choo","tchou tchou","t_ʃ_u t_ʃ_u",
+"French (Quebec)","ouch","aïe","a_j",
+"French (Quebec)","uh oh","oh oh","ɔ ɔ",
+"French (Quebec)","yum yum","miam miam","m_j_a_m m_j_a_m",
+"French (Quebec)","meow","miaou","m_j_a_u",
+"French (Quebec)","moo","meuh","m_œ",
+"French (Quebec)","grrr","grrrr","ʒ_e_ɛ_ʁ_ɛ_ʁ_ɛ_ʁ_ɛ_ʁ","ʒ_ʁ"
+"French (Quebec)","quack quack","coin coin","k_w_ɛ̃ k_w_ɛ̃",
+"French (Quebec)","cockadoodledoo","cocorico","k_ɔ_k_ɔ_ʁ_i_k_o",
+"French (Quebec)","baa baa","bêêêê bêêêê","b_ɛ_ɛ_ɛ_ɛ b_ɛ_ɛ_ɛ_ɛ","b_ɛ_b_ɛ"
+"English (American)","baa baa","baa baa","b_ɑː b_ɑː",
+"English (American)","choo choo","choo choo","tʃ_uː tʃ_uː",
+"English (American)","cockadoodledoo","cockadoodledoo","k_ɑː_k_ɐ_d_uː_d_əl_d_uː",
+"English (American)","grrr","grrr","dʒ_iː__ɑː_ɹ_ɑː_ɹ_ɑːɹ","dʒ_ɹ"
+"English (American)","meow","meow","m_ɪ__aʊ",
+"English (American)","moo","moo","m_uː",
+"English (American)","ouch","ouch","aʊ_tʃ",
+"English (American)","quack quack","quack quack","k_w_æ_k k_w_æ_k",
+"English (American)","uh oh","uh oh","ʌ oʊ",
+"English (American)","vroom","vroom","v_iː_ɹ_uː_m","v_ɹ_uː_m"
+"English (American)","woof woof","woof woof","w_uː_f w_uː_f",
+"English (American)","yum yum","yum yum","j_ʌ_m j_ʌ_m",
+"Spanish (Mexican)","yum yum","¡am!","a_m",
+"Spanish (Mexican)","ouch","¡ay!","aɪ",
+"Spanish (Mexican)","baa baa","bee/mee","b_e_e, m_e_e","b_e, m_e"
+"Spanish (Mexican)","quack quack","cuacuá","k_w_a_k_w_a",
+"Spanish (Mexican)","woof woof","guaguá","ɡ_w_a_ɣ_w_a",
+"Spanish (Mexican)","meow","miau","m_j_aʊ",
+"Spanish (Mexican)","moo","muu","m_u_u","m_u"
+"Spanish (Mexican)","tweet tweet","pío pío","p_i__o p_i__o",
+"Spanish (Mexican)","honk honk","pipí (coche)","p_i_p_i",
+"Spanish (Mexican)","bang","¡pum!","p_u_m",
+"Spanish (Mexican)","cockadoodledoo","quiquiriquí","k_i_k_i_ɾ_i_k_i",
+"Spanish (Mexican)","choo choo","tutú","t_u_t_u",
+"Italian","choo choo","tuttù","t_ʊ_tː_u",
+"Italian","moo","muh","m_u",
+"Italian","grrr","grr","dʒ_i__ɛ_r_ɾ_e_ɛ_r_ɾ_e","dʒ_ɾ"
+"Italian","cockadoodledoo","coccodè","k_o_kː_o_d_ɛ",
+"Italian","quack quack","qua qua","k_w_a k_w_a",
+"Italian","meow","miao","m_j_aʊ",
+"Italian","uh oh","oh oh","ɔ_ ɔ",
+"Italian","clop clop","clop clop","k_l_o_p k_l_o_p",
+"Italian","tweet tweet","cip cip","tʃ_i_p tʃ_i_p",
+"Italian","vroom","brum brum","b__r_u_m b__r_u_m",
+"Italian","baa baa","beh beh","b_ɛ b_ɛ",
+"Italian","woof woof","bau bau","b_aː_ʊ b_aː_ʊ",
+"Spanish","honk honk","pipí","p_i_p_i",
+"Norwegian","ouch","au","aʊ",
+"Norwegian","baa baa","bææ","b_ɛː_ɛː","b_ɛː"
+"Norwegian","vroom","brrr (bil-lyd)","b_eː_ɛː_r_ɛː_r_ɛː_r","b_r"
+"Norwegian","quack quack","gakk gakk","ɡ_ɑ_kː ɡ_ɑ_kː",
+"Norwegian","grrr","grr","ɡ_eː_ɛː_r_ɛː_r","ɡ_r"
+"Norwegian","cockadoodledoo","kykeliky","x_yː_k_eː_l_iː_x_yː",
+"Norwegian","meow","mjau","m_j_aʊ",
+"Norwegian","moo","møø","m_øː_øː","m_øː"
+"Norwegian","yum yum","nam - nam","n_a_m n_a_m",
+"Norwegian","choo choo","tøff-tøff","t_œ_f_f_t_œ_f_f","t_œ_f_t_œ_f"
+"Norwegian","woof woof","voff voff","v_ɔ_f_f v_ɔ_f_f","v_ɔ_f_v_ɔ_f"
+"Norwegian","NA","oi (uttrykk for overraskelse)","ɔɪ",
+"Danish","NA","åh åhh (ups)","ɒ ɒ_h",
+"French (Quebec)","baa baa","bêêê bêêê","b_ɛ_ɛ_ɛ b_ɛ_ɛ_ɛ","b_ɛ_b_ɛ"
+"French (Quebec)","grrr","grr","ʒ_e_ɛ_ʁ_ɛ_ʁ","ʒ_ʁ"
+"English (Australian)","baa baa","baa baa","b_ɑː b_ɑː",
+"English (Australian)","choo choo","choo choo","tʃ_uː tʃ_uː",
+"English (Australian)","cockadoodledoo","cockadoodledoo","k_ɒ_k_ɐ_d_uː_d_əl_d_uː",
+"English (Australian)","grrr","grr","dʒ_iː__ɑː_ɹ_ɑː","dʒ_ɹ"
+"English (Australian)","meow","meow","m_ɪ__aʊ",
+"English (Australian)","moo","moo","m_uː",
+"English (Australian)","ouch","ouch","aʊ_tʃ",
+"English (Australian)","quack quack","quack quack","k_w_a_k k_w_a_k",
+"English (Australian)","uh oh","uh oh","ʌ əʊ",
+"English (Australian)","vroom","vroom/broom","v_iː_ɹ_uː_m, b_ɹ_uː_m","v_ɹ_uː_m, b_ɹ_uː_m"
+"English (Australian)","woof woof","woof woof","w_uː_f w_uː_f",
+"English (Australian)","yum yum","yum yum","j_ʌ_m j_ʌ_m",
+"English (British)","baa baa","baa baa","b_ɑː b_ɑː",
+"English (British)","choo choo","choo choo","tʃ_uː tʃ_uː",
+"English (British)","cockadoodledoo","cockadoodledoo","k_ɒ_k_ɐ_d_uː_d_əl_d_uː",
+"English (British)","grrr","grr","dʒ_iː__ɑː_ɹ_ɑː","dʒ_ɹ"
+"English (British)","meow","meow","m_ɪ__aʊ",
+"English (British)","moo","moo","m_uː",
+"English (British)","ouch","ouch","aʊ_tʃ",
+"English (British)","quack quack","quack","k_w_æ_k",
+"English (British)","uh oh","uh oh","ʌ əʊ",
+"English (British)","vroom","vroom","v_iː_ɹ_uː_m","v_ɹ_uː_m"
+"English (British)","woof woof","woof","w_uː_f",
+"English (British)","yum yum","yum","j_ʌ_m",
+"Spanish (Mexican)","shh","shh","ɛ_s_e_a_tʃ_e_a_tʃ_e","ʃ"
+"Croatian","shh","psst-tiho",,"p_s_t"
+"Danish","shh","shh",,"ʃ"
+"Italian","shh","zitto/sch",,"dz_ˈi_tː_o, ʃ"
+"Swedish","shh","sch /hysch",,"ʃ, h_y_ʃ"
+"English (British)","shh","shh / hush / shush",,"ʃ, h_ʌ_ʃ, ʃ_ʌ_ʃ"
+"English (American)","shh","shh/shush/hush",,"ʃ, h_ʌ_ʃ, ʃ_ʌ_ʃ"

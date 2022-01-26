@@ -1,0 +1,409 @@
+language,uni_lemma,lexical_class,category,definition,word_clean
+Spanish (Mexican),a,function_words,articles,un,un
+Spanish (Mexican),a,function_words,articles,una,una
+Spanish (Mexican),a,function_words,articles,unas,unas
+Spanish (Mexican),a,function_words,articles,unos,unos
+Spanish (Mexican),a lot,function_words,quantifiers,mucho,mucho
+Spanish (Mexican),again,function_words,quantifiers,otro/otra vez,otro
+Spanish (Mexican),airplane,nouns,vehicles,avión,avión
+Spanish (Mexican),all,function_words,quantifiers,todo,todo
+Spanish (Mexican),already,function_words,quantifiers,ya,ya
+Spanish (Mexican),also,function_words,quantifiers,también,también
+Spanish (Mexican),angry,adjectives,descriptive_words,enojado,enojado
+Spanish (Mexican),animal,nouns,animals,animal,animal
+Spanish (Mexican),ant,nouns,animals,hormiga,hormiga
+Spanish (Mexican),apple,nouns,food_drink,manzana,manzana
+Spanish (Mexican),arm,nouns,body_parts,brazos,brazos
+Spanish (Mexican),arm,nouns,body_parts,brazo,brazo
+Spanish (Mexican),atole,nouns,food_drink,atole,atole
+Spanish (Mexican),back (location),function_words,locations,atrás,atrás
+Spanish (Mexican),bad,adjectives,descriptive_words,malo,malo
+Spanish (Mexican),ball,nouns,toys,pelota,pelota
+Spanish (Mexican),balloon,nouns,toys,globo/bomba,globo
+Spanish (Mexican),banana,nouns,food_drink,plátano/banana,plátano
+Spanish (Mexican),bat,nouns,toys,bat,bat
+Spanish (Mexican),bathroom,nouns,furniture_rooms,baño,baño
+Spanish (Mexican),bathtub,nouns,furniture_rooms,tina,tina
+Spanish (Mexican),be,function_words,states,estar,estar
+Spanish (Mexican),be,function_words,states,ser,ser
+Spanish (Mexican),beach,nouns,outside,playa,playa
+Spanish (Mexican),beans,nouns,food_drink,frijoles,frijoles
+Spanish (Mexican),bear,nouns,animals,oso,oso
+Spanish (Mexican),bed,nouns,furniture_rooms,cama,cama
+Spanish (Mexican),bedroom,nouns,furniture_rooms,recámara,recámara
+Spanish (Mexican),bee,nouns,animals,abeja,abeja
+Spanish (Mexican),belly button,nouns,body_parts,ombligo,ombligo
+Spanish (Mexican),bib,nouns,clothing,babero,babero
+Spanish (Mexican),bicycle,nouns,vehicles,bicicleta,bicicleta
+Spanish (Mexican),big,adjectives,descriptive_words,grande,grande
+Spanish (Mexican),bird,nouns,animals,pájaro,pájaro
+Spanish (Mexican),bite,verbs,action_words,morder,morder
+Spanish (Mexican),blanket,nouns,household,cobija,cobija
+Spanish (Mexican),blow,verbs,action_words,soplar,soplar
+Spanish (Mexican),blue,adjectives,descriptive_words,azul,azul
+Spanish (Mexican),boat,nouns,vehicles,barco,barco
+Spanish (Mexican),book,nouns,toys,libro,libro
+Spanish (Mexican),boots,nouns,clothing,botas,botas
+Spanish (Mexican),bottle,nouns,household,botella/mamila,botella
+Spanish (Mexican),box,nouns,household,caja,caja
+Spanish (Mexican),bread,nouns,food_drink,pan,pan
+Spanish (Mexican),break,verbs,action_words,romper,romper
+Spanish (Mexican),breast,nouns,body_parts,chichi/pecho,chichi
+Spanish (Mexican),broken,adjectives,descriptive_words,roto,roto
+Spanish (Mexican),broom,nouns,household,escoba,escoba
+Spanish (Mexican),brush (object),nouns,household,cepillo,cepillo
+Spanish (Mexican),bunny,nouns,animals,conejo,conejo
+Spanish (Mexican),butterfly,nouns,animals,mariposa,mariposa
+Spanish (Mexican),button,nouns,clothing,botón,botón
+Spanish (Mexican),cake,nouns,food_drink,pastel,pastel
+Spanish (Mexican),can (auxiliary),verbs,action_words,poder,poder
+Spanish (Mexican),candle,nouns,household,vela,vela
+Spanish (Mexican),candy,nouns,food_drink,dulce,dulce
+Spanish (Mexican),car,nouns,vehicles,carro/coche,carro
+Spanish (Mexican),careful,adjectives,descriptive_words,cuidado,cuidado
+Spanish (Mexican),cat,nouns,animals,gato,gato
+Spanish (Mexican),cereal,nouns,food_drink,cereal,cereal
+Spanish (Mexican),chair,nouns,furniture_rooms,silla,silla
+Spanish (Mexican),cheek,nouns,body_parts,cachete,cachete
+Spanish (Mexican),cheese,nouns,food_drink,queso,queso
+Spanish (Mexican),chick,nouns,animals,pollito,pollito
+Spanish (Mexican),chicken (food),nouns,food_drink,pollo,pollo
+Spanish (Mexican),chili,nouns,food_drink,chile,chile
+Spanish (Mexican),church,nouns,outside,iglesia/templo,iglesia
+Spanish (Mexican),cigarette,nouns,household,cigarros,cigarros
+Spanish (Mexican),clean (description),adjectives,descriptive_words,limpio,limpio
+Spanish (Mexican),climb,verbs,action_words,subir,subir
+Spanish (Mexican),climb,verbs,action_words,subir(se),subir
+Spanish (Mexican),close,verbs,action_words,cerrar,cerrar
+Spanish (Mexican),closet,nouns,furniture_rooms,ropero/closet,ropero
+Spanish (Mexican),cloth,nouns,household,trapo,trapo
+Spanish (Mexican),cloud,nouns,outside,nube,nube
+Spanish (Mexican),coffee,nouns,food_drink,café,café
+Spanish (Mexican),cold,adjectives,descriptive_words,frío,frío
+Spanish (Mexican),comb (action),verbs,action_words,peinar(se),peinar
+Spanish (Mexican),comb (object),nouns,household,peine,peine
+Spanish (Mexican),cookie,nouns,food_drink,galleta,galleta
+Spanish (Mexican),couch,nouns,furniture_rooms,sofá,sofá
+Spanish (Mexican),cow,nouns,animals,vaca,vaca
+Spanish (Mexican),crib,nouns,furniture_rooms,cuna,cuna
+Spanish (Mexican),cry,verbs,action_words,llorar,llorar
+Spanish (Mexican),cup,nouns,household,taza,taza
+Spanish (Mexican),cute,adjectives,descriptive_words,guapo,guapo
+Spanish (Mexican),dance,verbs,action_words,bailar,bailar
+Spanish (Mexican),dark,adjectives,descriptive_words,oscuro,oscuro
+Spanish (Mexican),deer,nouns,animals,venado,venado
+Spanish (Mexican),diaper,nouns,clothing,pañal,pañal
+Spanish (Mexican),different,adjectives,descriptive_words,diferente,diferente
+Spanish (Mexican),dirty,adjectives,descriptive_words,sucio,sucio
+Spanish (Mexican),dog,nouns,animals,perro,perro
+Spanish (Mexican),doll,nouns,toys,muñeca,muñeca
+Spanish (Mexican),donkey,nouns,animals,burro,burro
+Spanish (Mexican),door,nouns,furniture_rooms,puerta,puerta
+Spanish (Mexican),down,function_words,locations,abajo,abajo
+Spanish (Mexican),draw,verbs,action_words,dibujar,dibujar
+Spanish (Mexican),drawer,nouns,furniture_rooms,cajón,cajón
+Spanish (Mexican),dress (object),nouns,clothing,vestido,vestido
+Spanish (Mexican),drum,nouns,toys,tambor,tambor
+Spanish (Mexican),dry (action),verbs,action_words,secar(se),secar
+Spanish (Mexican),duck,nouns,animals,pato,pato
+Spanish (Mexican),ear,nouns,body_parts,orejas,orejas
+Spanish (Mexican),ear,nouns,body_parts,oreja,oreja
+Spanish (Mexican),earrings,nouns,clothing,aretes,aretes
+Spanish (Mexican),eat,verbs,action_words,comer(se),comer
+Spanish (Mexican),eat breakfast,verbs,action_words,desayunar,desayunar
+Spanish (Mexican),eat dinner,verbs,action_words,cenar,cenar
+Spanish (Mexican),egg,nouns,food_drink,huevo,huevo
+Spanish (Mexican),elephant,nouns,animals,elefante,elefante
+Spanish (Mexican),empty,adjectives,descriptive_words,vacío,vacío
+Spanish (Mexican),eye,nouns,body_parts,ojos,ojos
+Spanish (Mexican),face,nouns,body_parts,cara,cara
+Spanish (Mexican),fall,verbs,action_words,caer(se),caer
+Spanish (Mexican),field,nouns,outside,campo,campo
+Spanish (Mexican),finger,nouns,body_parts,dedos,dedos
+Spanish (Mexican),finger,nouns,body_parts,dedo,dedo
+Spanish (Mexican),finish,verbs,action_words,acabar(se),acabar
+Spanish (Mexican),finish,verbs,action_words,acabar,acabar
+Spanish (Mexican),firetruck,nouns,vehicles,camión de bomberos,camión de bomberos
+Spanish (Mexican),fish (animal),nouns,animals,pescado,pescado
+Spanish (Mexican),flower,nouns,outside,flor,flor
+Spanish (Mexican),fly (animal),nouns,animals,mosca,mosca
+Spanish (Mexican),food,nouns,food_drink,comida,comida
+Spanish (Mexican),foot,nouns,body_parts,pies,pies
+Spanish (Mexican),for,function_words,locations,para,para
+Spanish (Mexican),fork,nouns,household,tenedor,tenedor
+Spanish (Mexican),frog,nouns,animals,rana,rana
+Spanish (Mexican),full,adjectives,descriptive_words,lleno,lleno
+Spanish (Mexican),garage,nouns,furniture_rooms,cochera/garaje,cochera
+Spanish (Mexican),garden,nouns,outside,jardín,jardín
+Spanish (Mexican),giraffe,nouns,animals,jirafa,jirafa
+Spanish (Mexican),give,verbs,action_words,dar,dar
+Spanish (Mexican),glass,nouns,household,vaso,vaso
+Spanish (Mexican),glass,nouns,household,vasos,vasos
+Spanish (Mexican),glasses,nouns,clothing,lentes,lentes
+Spanish (Mexican),go,verbs,action_words,ir(se),ir
+Spanish (Mexican),goat,nouns,animals,cabra,cabra
+Spanish (Mexican),grapes,nouns,food_drink,uvas,uvas
+Spanish (Mexican),green,adjectives,descriptive_words,verde,verde
+Spanish (Mexican),hair,nouns,body_parts,pelo,pelo
+Spanish (Mexican),ham,nouns,food_drink,jamón,jamón
+Spanish (Mexican),hammer,nouns,household,martillo,martillo
+Spanish (Mexican),hand,nouns,body_parts,manos (body_parts),manos
+Spanish (Mexican),hand,nouns,body_parts,mano,mano
+Spanish (Mexican),happy,adjectives,descriptive_words,contento,contento
+Spanish (Mexican),hard,adjectives,descriptive_words,difícil,difícil
+Spanish (Mexican),hat,nouns,clothing,sombrero,sombrero
+Spanish (Mexican),have,verbs,action_words,tener,tener
+Spanish (Mexican),he,function_words,pronouns,él (pronouns),él
+Spanish (Mexican),head,nouns,body_parts,cabeza,cabeza
+Spanish (Mexican),heavy,adjectives,descriptive_words,pesado,pesado
+Spanish (Mexican),helicopter,nouns,vehicles,helicóptero,helicóptero
+Spanish (Mexican),help,verbs,action_words,ayudar,ayudar
+Spanish (Mexican),hen,nouns,animals,gallina,gallina
+Spanish (Mexican),her,function_words,pronouns,ella,ella
+Spanish (Mexican),here,function_words,locations,aquí,aquí
+Spanish (Mexican),him,function_words,pronouns,lo,lo
+Spanish (Mexican),hippopotamus,nouns,animals,hipopótamo,hipopótamo
+Spanish (Mexican),his,function_words,pronouns,su,su
+Spanish (Mexican),hit,verbs,action_words,pegar(se),pegar
+Spanish (Mexican),horse,nouns,animals,caballo,caballo
+Spanish (Mexican),hot,adjectives,descriptive_words,caliente,caliente
+Spanish (Mexican),hot dog,nouns,food_drink,salchicha,salchicha
+Spanish (Mexican),house,nouns,outside,casa,casa
+Spanish (Mexican),how,function_words,question_words,cómo,cómo
+Spanish (Mexican),hungry,adjectives,descriptive_words,hambre,hambre
+Spanish (Mexican),hurry,verbs,action_words,apurar(se),apurar
+Spanish (Mexican),hurt (action),verbs,action_words,doler,doler
+Spanish (Mexican),i,function_words,pronouns,yo,yo
+Spanish (Mexican),ice cream,nouns,food_drink,helado/nieve,helado
+Spanish (Mexican),in,function_words,locations,en,en
+Spanish (Mexican),inside,function_words,locations,adentro,adentro
+Spanish (Mexican),it,function_words,pronouns,le,le
+Spanish (Mexican),juice,nouns,food_drink,jugo,jugo
+Spanish (Mexican),jump,verbs,action_words,brincar,brincar
+Spanish (Mexican),keys,nouns,household,llaves,llaves
+Spanish (Mexican),keys,nouns,household,llave,llave
+Spanish (Mexican),kitchen,nouns,furniture_rooms,cocina,cocina
+Spanish (Mexican),knee,nouns,body_parts,rodilla,rodilla
+Spanish (Mexican),knife,nouns,household,cuchillo,cuchillo
+Spanish (Mexican),lamb,nouns,animals,borrego,borrego
+Spanish (Mexican),leg,nouns,body_parts,piernas,piernas
+Spanish (Mexican),light (object),nouns,household,luz,luz
+Spanish (Mexican),lion,nouns,animals,león,león
+Spanish (Mexican),little (description),adjectives,descriptive_words,chico,chico
+Spanish (Mexican),little (description),adjectives,descriptive_words,poco,poco
+Spanish (Mexican),living room,nouns,furniture_rooms,sala,sala
+Spanish (Mexican),lollipop,nouns,food_drink,paleta,paleta
+Spanish (Mexican),look,verbs,action_words,mirar,mirar
+Spanish (Mexican),me,function_words,pronouns,me,me
+Spanish (Mexican),meat,nouns,food_drink,carne,carne
+Spanish (Mexican),medicine,nouns,household,medicina,medicina
+Spanish (Mexican),milk,nouns,food_drink,leche,leche
+Spanish (Mexican),mine,function_words,pronouns,mía,mía
+Spanish (Mexican),mine,function_words,pronouns,mías,mías
+Spanish (Mexican),mine,function_words,pronouns,mío,mío
+Spanish (Mexican),mine,function_words,pronouns,míos,míos
+Spanish (Mexican),mirror,nouns,household,espejo,espejo
+Spanish (Mexican),money,nouns,household,dinero,dinero
+Spanish (Mexican),monkey,nouns,animals,mono,mono
+Spanish (Mexican),moon,nouns,outside,luna,luna
+Spanish (Mexican),more,function_words,quantifiers,más,más
+Spanish (Mexican),motorcycle,nouns,vehicles,moto,moto
+Spanish (Mexican),mouse,nouns,animals,ratón,ratón
+Spanish (Mexican),mouth,nouns,body_parts,boca,boca
+Spanish (Mexican),mustache,nouns,body_parts,bigote,bigote
+Spanish (Mexican),necklace,nouns,clothing,collar,collar
+Spanish (Mexican),new,adjectives,descriptive_words,nuevo,nuevo
+Spanish (Mexican),none,function_words,quantifiers,no hay,no hay
+Spanish (Mexican),nose,nouns,body_parts,nariz,nariz
+Spanish (Mexican),nothing,function_words,quantifiers,nada,nada
+Spanish (Mexican),of,function_words,locations,de,de
+Spanish (Mexican),old,adjectives,descriptive_words,viejo,viejo
+Spanish (Mexican),on,function_words,locations,encima,encima
+Spanish (Mexican),open (action),verbs,action_words,abrir,abrir
+Spanish (Mexican),orange (food),nouns,food_drink,naranja,naranja
+Spanish (Mexican),out,function_words,locations,afuera,afuera
+Spanish (Mexican),oven,nouns,furniture_rooms,horno,horno
+Spanish (Mexican),owl,nouns,animals,búho,búho
+Spanish (Mexican),ox,nouns,animals,buey,buey
+Spanish (Mexican),pacifier,nouns,household,chupón/chupete,chupón
+Spanish (Mexican),paint (action),verbs,action_words,pintar,pintar
+Spanish (Mexican),pajamas,nouns,clothing,pijama,pijama
+Spanish (Mexican),pants,nouns,clothing,pantalón,pantalón
+Spanish (Mexican),paper,nouns,household,papel,papel
+Spanish (Mexican),park,nouns,outside,parque,parque
+Spanish (Mexican),party,nouns,outside,fiesta,fiesta
+Spanish (Mexican),pen/pencil,nouns,toys,lápiz,lápiz
+Spanish (Mexican),penguin,nouns,animals,pingüino,pingüino
+Spanish (Mexican),penis,nouns,body_parts,pene,pene
+Spanish (Mexican),photos,nouns,household,fotos,fotos
+Spanish (Mexican),picture,nouns,household,cuadro,cuadro
+Spanish (Mexican),pig,nouns,animals,puerco,puerco
+Spanish (Mexican),pillow,nouns,household,almohada,almohada
+Spanish (Mexican),plant,nouns,outside,planta,planta
+Spanish (Mexican),plate,nouns,household,plato,plato
+Spanish (Mexican),play,verbs,action_words,jugar,jugar
+Spanish (Mexican),pool,nouns,outside,alberca/piscina,alberca
+Spanish (Mexican),potty,nouns,furniture_rooms,bacinica,bacinica
+Spanish (Mexican),pretty,adjectives,descriptive_words,bonita,bonita
+Spanish (Mexican),purse,nouns,household,bolsa,bolsa
+Spanish (Mexican),purse,nouns,clothing,bolsa (clothing),bolsa
+Spanish (Mexican),push,verbs,action_words,empujar,empujar
+Spanish (Mexican),put,verbs,action_words,meter(se),meter
+Spanish (Mexican),put,verbs,action_words,poner(se),poner
+Spanish (Mexican),quesadilla,nouns,food_drink,quesadilla,quesadilla
+Spanish (Mexican),radio,nouns,household,radio,radio
+Spanish (Mexican),rain,nouns,outside,lluvia,lluvia
+Spanish (Mexican),read,verbs,action_words,leer,leer
+Spanish (Mexican),red,adjectives,descriptive_words,rojo,rojo
+Spanish (Mexican),refrigerator,nouns,furniture_rooms,refrigerador,refrigerador
+Spanish (Mexican),rice,nouns,food_drink,arroz,arroz
+Spanish (Mexican),rock (object),nouns,outside,piedra,piedra
+Spanish (Mexican),roof,nouns,outside,techo,techo
+Spanish (Mexican),room,nouns,furniture_rooms,cuarto,cuarto
+Spanish (Mexican),run,verbs,action_words,correr,correr
+Spanish (Mexican),sad,adjectives,descriptive_words,triste,triste
+Spanish (Mexican),same,adjectives,descriptive_words,igual,igual
+Spanish (Mexican),say,verbs,action_words,decir,decir
+Spanish (Mexican),scared,adjectives,descriptive_words,miedo,miedo
+Spanish (Mexican),scared,adjectives,descriptive_words,miedo/susto,miedo
+Spanish (Mexican),school,nouns,outside,escuela,escuela
+Spanish (Mexican),scissors,nouns,household,tijeras,tijeras
+Spanish (Mexican),see,verbs,action_words,ver,ver
+Spanish (Mexican),see,verbs,action_words,ver(se),ver
+Spanish (Mexican),self,function_words,pronouns,se,se
+Spanish (Mexican),shoe,nouns,clothing,zapato,zapato
+Spanish (Mexican),shorts,nouns,clothing,shorts,shorts
+Spanish (Mexican),show,verbs,action_words,enseñar,enseñar
+Spanish (Mexican),shower,nouns,furniture_rooms,regadera/ducha,regadera
+Spanish (Mexican),sick,adjectives,descriptive_words,enfermo,enfermo
+Spanish (Mexican),sing,verbs,action_words,cantar,cantar
+Spanish (Mexican),sink,nouns,furniture_rooms,lavabo,lavabo
+Spanish (Mexican),sit,verbs,action_words,sentar(se),sentar
+Spanish (Mexican),skirt,nouns,clothing,falda,falda
+Spanish (Mexican),sky,nouns,outside,cielo,cielo
+Spanish (Mexican),sleep,verbs,action_words,dormir(se),dormir
+Spanish (Mexican),sleepy,adjectives,descriptive_words,sueño,sueño
+Spanish (Mexican),slide (object),nouns,outside,resbaladilla,resbaladilla
+Spanish (Mexican),snow,nouns,outside,nieve,nieve
+Spanish (Mexican),soap,nouns,household,jabón,jabón
+Spanish (Mexican),sock,nouns,clothing,calcetines,calcetines
+Spanish (Mexican),sock,nouns,clothing,calcetín,calcetín
+Spanish (Mexican),soda,nouns,food_drink,soda/refresco,soda
+Spanish (Mexican),soft,adjectives,descriptive_words,suave,suave
+Spanish (Mexican),soup,nouns,food_drink,sopa,sopa
+Spanish (Mexican),spider,nouns,animals,araña,araña
+Spanish (Mexican),spoon,nouns,household,cuchara,cuchara
+Spanish (Mexican),squirrel,nouns,animals,ardilla,ardilla
+Spanish (Mexican),stairs,nouns,furniture_rooms,escalera,escalera
+Spanish (Mexican),stairs,nouns,furniture_rooms,escaleras,escaleras
+Spanish (Mexican),star,nouns,outside,estrella,estrella
+Spanish (Mexican),stop,verbs,action_words,parar(se),parar
+Spanish (Mexican),store,nouns,outside,tienda/mercado,tienda
+Spanish (Mexican),stove,nouns,furniture_rooms,estufa,estufa
+Spanish (Mexican),street,nouns,outside,calle,calle
+Spanish (Mexican),stroller,nouns,vehicles,carreola,carreola
+Spanish (Mexican),sun,nouns,outside,sol,sol
+Spanish (Mexican),sweater,nouns,clothing,suéter,suéter
+Spanish (Mexican),swing (object),nouns,outside,columpio,columpio
+Spanish (Mexican),t-shirt,nouns,clothing,playera,playera
+Spanish (Mexican),table,nouns,furniture_rooms,mesa,mesa
+Spanish (Mexican),take,verbs,action_words,llevar(se),llevar
+Spanish (Mexican),take,verbs,action_words,tomar(se),tomar
+Spanish (Mexican),take out,verbs,action_words,sacar,sacar
+Spanish (Mexican),teddybear,nouns,toys,osito,osito
+Spanish (Mexican),telephone,nouns,household,teléfono,teléfono
+Spanish (Mexican),that,function_words,pronouns,aquel,aquel
+Spanish (Mexican),that,function_words,pronouns,aquella,aquella
+Spanish (Mexican),that,function_words,pronouns,esa,esa
+Spanish (Mexican),that,function_words,pronouns,ese,ese
+Spanish (Mexican),that,function_words,pronouns,eso,eso
+Spanish (Mexican),the,function_words,articles,el (articles),el
+Spanish (Mexican),the,function_words,articles,la,la
+Spanish (Mexican),the,function_words,articles,las,las
+Spanish (Mexican),the,function_words,articles,los,los
+Spanish (Mexican),them,function_words,pronouns,les,les
+Spanish (Mexican),there,function_words,locations,ahí,ahí
+Spanish (Mexican),there,function_words,locations,alla/allí,alla
+Spanish (Mexican),these,function_words,pronouns,éstas,éstas
+Spanish (Mexican),these,function_words,pronouns,éstos,éstos
+Spanish (Mexican),they,function_words,pronouns,ellas,ellas
+Spanish (Mexican),they,function_words,pronouns,ellos,ellos
+Spanish (Mexican),thirsty,adjectives,descriptive_words,sed,sed
+Spanish (Mexican),this,function_words,pronouns,ésta,ésta
+Spanish (Mexican),this,function_words,pronouns,éste,éste
+Spanish (Mexican),this,function_words,pronouns,esto,esto
+Spanish (Mexican),those,function_words,pronouns,esas,esas
+Spanish (Mexican),those,function_words,pronouns,esos,esos
+Spanish (Mexican),throw,verbs,action_words,aventar,aventar
+Spanish (Mexican),throw,verbs,action_words,tirar,tirar
+Spanish (Mexican),tiger,nouns,animals,tigre,tigre
+Spanish (Mexican),tights,nouns,clothing,medias,medias
+Spanish (Mexican),tired,adjectives,descriptive_words,cansado,cansado
+Spanish (Mexican),tongue,nouns,body_parts,lengua,lengua
+Spanish (Mexican),tooth,nouns,body_parts,dientes,dientes
+Spanish (Mexican),toothbrush,nouns,household,cepillo de dientes,cepillo de dientes
+Spanish (Mexican),tortilla,nouns,food_drink,tortilla,tortilla
+Spanish (Mexican),touch,verbs,action_words,tocar,tocar
+Spanish (Mexican),towel,nouns,household,toalla,toalla
+Spanish (Mexican),toy (object),nouns,toys,juguete,juguete
+Spanish (Mexican),tractor,nouns,vehicles,tractor,tractor
+Spanish (Mexican),train,nouns,vehicles,tren,tren
+Spanish (Mexican),trash,nouns,household,basura,basura
+Spanish (Mexican),tree,nouns,outside,árbol,árbol
+Spanish (Mexican),truck,nouns,vehicles,camión/troca,camión
+Spanish (Mexican),tummy,nouns,body_parts,panza,panza
+Spanish (Mexican),turkey,nouns,animals,guajolote,guajolote
+Spanish (Mexican),turn off,verbs,action_words,apagar,apagar
+Spanish (Mexican),turn on,verbs,action_words,prender,prender
+Spanish (Mexican),turtle,nouns,animals,tortuga,tortuga
+Spanish (Mexican),tv,nouns,furniture_rooms,televisión,televisión
+Spanish (Mexican),ugly,adjectives,descriptive_words,feo,feo
+Spanish (Mexican),underpants,nouns,clothing,calzón,calzón
+Spanish (Mexican),up,function_words,locations,arriba,arriba
+Spanish (Mexican),vacuum,nouns,household,aspiradora,aspiradora
+Spanish (Mexican),vagina,nouns,body_parts,vagina,vagina
+Spanish (Mexican),wait,verbs,action_words,esperar(se),esperar
+Spanish (Mexican),walk,verbs,action_words,caminar,caminar
+Spanish (Mexican),wanna,verbs,action_words,querer,querer
+Spanish (Mexican),wash,verbs,action_words,lavar(se),lavar
+Spanish (Mexican),watch (object),nouns,household,reloj,reloj
+Spanish (Mexican),water (beverage),nouns,food_drink,agua,agua
+Spanish (Mexican),wet (action),verbs,action_words,mojar(se),mojar
+Spanish (Mexican),what,function_words,question_words,qué,qué
+Spanish (Mexican),what,function_words,question_words,qué (question_words),qué
+Spanish (Mexican),where (question),function_words,question_words,dónde está,dónde está
+Spanish (Mexican),where (question),function_words,question_words,dónde,dónde
+Spanish (Mexican),which (question),function_words,question_words,cuál,cuál
+Spanish (Mexican),who,function_words,question_words,quién,quién
+Spanish (Mexican),why,function_words,question_words,por qué,por qué
+Spanish (Mexican),window,nouns,furniture_rooms,ventana,ventana
+Spanish (Mexican),wolf,nouns,animals,lobo,lobo
+Spanish (Mexican),work (action),verbs,action_words,trabajar,trabajar
+Spanish (Mexican),write,verbs,action_words,escribir,escribir
+Spanish (Mexican),yellow,adjectives,descriptive_words,amarillo,amarillo
+Spanish (Mexican),you,function_words,pronouns,te,te
+Spanish (Mexican),you,function_words,pronouns,tú,tú
+Spanish (Mexican),your,function_words,pronouns,tuya,tuya
+Spanish (Mexican),your,function_words,pronouns,tuyas,tuyas
+Spanish (Mexican),your,function_words,pronouns,tuyo,tuyo
+Spanish (Mexican),your,function_words,pronouns,tuyos,tuyos
+Spanish (Mexican),yucky,adjectives,descriptive_words,fuchi,fuchi
+Spanish (Mexican),zipper,nouns,clothing,cierre,cierre
+Spanish (Mexican),zoo,nouns,outside,zoológico,zoológico
+Spanish (Mexican),again,function_words,quantifiers,otro/otra vez,otra vez
+Spanish (Mexican),balloon,nouns,toys,globo/bomba,bomba
+Spanish (Mexican),banana,nouns,food_drink,plátano/banana,banana
+Spanish (Mexican),bottle,nouns,household,botella/mamila,mamila
+Spanish (Mexican),breast,nouns,body_parts,chichi/pecho,pecho
+Spanish (Mexican),car,nouns,vehicles,carro/coche,coche
+Spanish (Mexican),church,nouns,outside,iglesia/templo,templo
+Spanish (Mexican),garage,nouns,furniture_rooms,cochera/garaje,garaje
+Spanish (Mexican),ice cream,nouns,food_drink,helado/nieve,nieve
+Spanish (Mexican),pacifier,nouns,household,chupón/chupete,chupete
+Spanish (Mexican),pool,nouns,outside,alberca/piscina,piscina
+Spanish (Mexican),scared,adjectives,descriptive_words,miedo/susto,susto
+Spanish (Mexican),shower,nouns,furniture_rooms,regadera/ducha,ducha
+Spanish (Mexican),soda,nouns,food_drink,soda/refresco,refresco
+Spanish (Mexican),store,nouns,outside,tienda/mercado,mercado
+Spanish (Mexican),there,function_words,locations,alla/allí,allí
+Spanish (Mexican),truck,nouns,vehicles,camión/troca,troca
