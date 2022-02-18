@@ -17,7 +17,7 @@ library(wordbankr)
 library(childesr)
 library(broom)
 library(car)
-#library(jglmm)
+#library(jglmm)1
 library(modelr)
 library(ggrepel)
 library(SnowballC)
@@ -172,13 +172,30 @@ cor(cor_data)
 #polyserial(cor_data$concreteness, cor_data$lexical_category)
 
 #Do colinearity analysis
-model = lm(aoa ~ surprisal_2gm + concreteness + lexical_category, data=scaled_lang_data)
+model = lm(aoa ~ lstm_surprisal + all_frequency + concreteness + lexical_category, data=scaled_lang_data)
 car::vif(model)
 ```
 
 Run cross-validation for a single language.
 ```{r cross_validate2}
 loo_df <- crossv_loo(scaled_lang_data)
+
+fit_cv_models_single <- function(id) {
+  models <- "no model"
+  train_idx <- loo_df[id,1][[1]][[1]]$idx
+  test_idx <- loo_df[id,2][[1]][[1]]$idx
+  train_df <- scaled_lang_data[train_idx,]
+
+  try(models <- fit_with(train_df, lm, formulae))
+
+  result <- enframe(models) |>
+    mutate(model = value,
+           train = list(train_idx),
+           test = list(test_idx)) |>
+    select(-c(value))
+
+  return(result)
+}
 
 # dont try to view
 loo_models <- loo_df$.id |>
@@ -188,16 +205,14 @@ loo_models <- loo_df$.id |>
 # dont try to view
 loo_preds <- get_cv_preds(loo_models, scaled_lang_data) |> 
   mutate(language = lang,
-         measure = ms,
-         n = n)
+         measure = ms)
 # View
 cv_results <- get_cv_results(loo_preds) |>
     mutate(language = lang,
-         measure = ms,
-         n = n)
+         measure = ms)
 
 cv_results_pos <- loo_preds |>
-  group_by(language, measure, n, name, lexical_category) |>
+  group_by(language, measure, name, lexical_category) |>
   summarise(mean_abs_dev = mean(abs_dev), sd_ads_dev = sd(abs_dev))
 
 ```
@@ -307,8 +322,8 @@ exp1_all_lexcat_mad_diffs <- lexcat_mad_diff
 STOP - REPEAT EXPERIMENT FOR NEXT LANGUAGE
 
 ```{r save_data3}
-saveRDS(exp2_all_cv_results, "./experiment-results/diss/exp1_all_cv_results.rds" )
-saveRDS(exp2_all_cv_results_pos, "./experiment-results/diss/exp1_all_cv_results_pos.rds" )
+saveRDS(exp1_all_cv_results, "./experiment-results/diss/exp1_all_cv_results.rds" )
+saveRDS(exp1_all_cv_results_pos, "./experiment-results/diss/exp1_all_cv_results_pos.rds" )
 
 saveRDS(exp1_all_lexcat_betas, "./experiment-results/diss/exp1_all_lexcat_betas.rds" )
 saveRDS(exp1_all_word_mad_diffs, "./experiment-results/diss/exp1_all_word_mad_diffs.rds" )
@@ -338,7 +353,7 @@ When I try to run cross validation on all languages and measures simultaneously 
 START - RUN FOR EACH LANGUAGE
 
 ```{r prep_data1_log}
-lang = "German"
+lang = "English (American)"
 ms = "produces"
 
 predictors <- c("lstm_surprisal", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "concreteness", "surprisal_1gm")
@@ -387,16 +402,14 @@ loo_models <- loo_df$.id |>
 # dont try to view
 loo_preds <- get_cv_preds(loo_models, scaled_lang_data) |> 
   mutate(language = lang,
-         measure = ms,
-         n = n)
+         measure = ms)
 # View
 cv_results <- get_cv_results(loo_preds) |>
     mutate(language = lang,
-         measure = ms,
-         n = n)
+         measure = ms)
 
 cv_results_pos <- loo_preds |>
-  group_by(language, measure, n, name, lexical_category) |>
+  group_by(language, measure, name, lexical_category) |>
   summarise(mean_abs_dev = mean(abs_dev), sd_ads_dev = sd(abs_dev))
 ```
 
@@ -436,7 +449,7 @@ When I try to run cross validation on all languages and measures simultaneously 
 
 START - RUN FOR EACH LANGUAGE
 ```{r prep_data1_log}
-lang = "German"
+lang = "English (American)"
 ms = "produces"
 
 predictors <- c("concreteness", "surprisal_1gm", "lstm_surprisal")
@@ -469,16 +482,14 @@ loo_models <- loo_df$.id |>
 # dont try to view
 loo_preds <- get_cv_preds(loo_models, scaled_lang_data) |> 
   mutate(language = lang,
-         measure = ms,
-         n = n)
+         measure = ms)
 # View
 cv_results <- get_cv_results(loo_preds) |>
     mutate(language = lang,
-         measure = ms,
-         n = n)
+         measure = ms)
 
 cv_results_pos <- loo_preds |>
-  group_by(language, measure, n, name, lexical_category) |>
+  group_by(language, measure, name, lexical_category) |>
   summarise(mean_abs_dev = mean(abs_dev), sd_ads_dev = sd(abs_dev))
 
 ```
@@ -588,9 +599,9 @@ STOP - REPEAT EXPERIMENT FOR NEXT LANGUAGE
 saveRDS(exp2_all_cv_results_resid, "./experiment-results/diss/exp2_all_cv_results_resid.rds" )
 saveRDS(exp2_all_cv_results_pos_resid, "./experiment-results/diss/exp2_all_cv_results_pos_resid.rds" )
 
-saveRDS(exp3_all_lexcat_betas_resid, "./experiment-results/diss/exp2_all_lexcat_betas_resid.rds" )
-saveRDS(exp3_all_word_mad_diffs_resid, "./experiment-results/diss/exp2_all_word_mad_diffs_resid.rds" )
-saveRDS(exp3_all_lexcat_mad_diffs_resid, "./experiment-results/diss/exp2_all_lexcat_mad_diffs_resid.rds" )
+saveRDS(exp2_all_lexcat_betas_resid, "./experiment-results/diss/exp2_all_lexcat_betas_resid.rds" )
+saveRDS(exp2_all_word_mad_diffs_resid, "./experiment-results/diss/exp2_all_word_mad_diffs_resid.rds" )
+saveRDS(exp2_all_lexcat_mad_diffs_resid, "./experiment-results/diss/exp2_all_lexcat_mad_diffs_resid.rds" )
 ```
 
 
@@ -606,7 +617,8 @@ get_betas <- function(n){
   return(result)
 }
 
-models= loo_models |> filter(name=="all_full")  
+#models= loo_models |> filter(name=="all_full")  
+models= loo_models |> filter(name=="lstm_surp_rd")  
 
 models_betas = map(c(1:nrow(models)), get_betas) |> bind_rows()
 
@@ -620,6 +632,20 @@ lexcat_betas <- models_betas |> select(term, estimate, fold) |> spread(key=term,
          pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
          ) |> 
   select(noun_surprisal,pred_surprisal,noun_frequency, pred_frequency, noun_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+lexcat_betas <- models_betas |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(
+         pred_lstmresid = lstmsurpresid + lexicalcategorypredicates + lexicalcategorypredicateslstmsurpresid,
+         noun_lstmresid = lstmsurpresid,
+         noun_unigram = surprisal1gm,
+         pred_unigram = surprisal1gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal1gm
+         ) |> 
+  select(noun_lstmresid,pred_lstmresid,noun_unigram, pred_unigram) |> 
   gather(key="term", value="estimate") |> 
   separate(col=term, into=c("lexical_category", "term"), sep="_") |>
   mutate(language = lang,
