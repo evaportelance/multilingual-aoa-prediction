@@ -1,0 +1,704 @@
+---
+title: "approach1"
+author: "Eva Portelance"
+date: "8/10/2022"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+options(dplyr.summarise.inform = FALSE)
+
+# load libraries
+library(arm)
+library(tidyverse)
+library(glue)
+library(wordbankr)
+#install.packages("remotes")
+#remotes::install_github("langcog/childesr")
+library(childesr)
+library(broom)
+library(car)
+#library(jglmm)
+library(modelr)
+library(ggrepel)
+library(SnowballC)
+library(stringr)
+library(ggplot2)
+library(tm)
+library(sjPlot)
+library(sjlabelled)
+library(sjmisc)
+theme_set(theme_sjplot())
+
+
+# load functions
+
+walk(list.files("scripts", pattern = "*.R$", full.names = TRUE), source)
+```
+
+## APPROACH 1 
+
+Compare different context sizes: surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, and lstm_surprisal, controlling for concreteness and collapsing on lexical categories.
+
+Load in data
+```{r data}
+#with multi word items combined :
+aoa_predictor_data <- readRDS("./data/aoa_predictor_data_unify.rds" )
+
+#with multi word items separated: (appendix)
+#aoa_predictor_data <- readRDS("./data/aoa_predictor_data.rds" )
+
+words <- aoa_predictor_data %>% select(uni_lemma, definition, language) %>%  unique()
+```
+
+Define models to compare
+```{r formulae2}
+full_1gm = ~ lexical_category * surprisal_1gm + lexical_category * concreteness
+full_2gm = ~ lexical_category * surprisal_2gm + lexical_category * concreteness
+full_3gm = ~ lexical_category * surprisal_3gm + lexical_category * concreteness
+full_4gm = ~ lexical_category * surprisal_4gm + lexical_category * concreteness
+full_lstm = ~ lexical_category * lstm_surprisal + lexical_category * concreteness
+full_freq = ~ lexical_category * all_frequency + lexical_category * concreteness
+base_model = ~ lexical_category * concreteness
+null_model = ~ 1
+formulae <- formulas(~aoa, null_model, base_model, full_freq, full_1gm, full_2gm, full_3gm, full_4gm, full_lstm)
+```
+
+
+When I try to run cross validation on all languages and measures simultaneously using map, R crashes, so you have to run each language manually one at a time and then combine them. Here we prep and scale the data for one language
+
+START - RUN FOR EACH LANGUAGE
+
+"English (American)"
+"English (British)"
+"English (Australian)"
+"German"
+"French (French)"
+"French (Quebecois)"
+"Spanish (European)"
+"Spanish (Mexican)"
+"Mandarin (Beijing)"
+"Mandarin (Taiwanese)"
+
+
+```{r prep_data2}
+lang = "English (American)"
+ms = "produces"
+
+predictors <- c("surprisal_1gm", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "lstm_surprisal", "all_frequency", "concreteness")
+
+scaled_lang_data <- aoa_predictor_data |>
+  filter(language==lang & measure==ms) |>
+  select(language, uni_lemma, category, definition, aoa, lexical_category, surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, all_frequency, concreteness) |>
+  unique() |> mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |>
+  mutate(lexical_category = factor(lexical_category, levels = c("nouns", "predicates" , "function_words"),
+                 labels = c("nouns", "predicates" , "function_words")))
+
+#aoa_predictor_data |> filter(language==lang & measure==ms) %>% select(surprisal_1gm) %>% mutate(gm1 = max(surprisal_1gm))
+```
+
+#### to check colinearity between variables.
+```{r cor_vif1, eval=FALSE}
+#Get correlation plot
+
+for (lang in unique(scaled_lang_data$language)){
+  print(lang)
+  cor_data <- scaled_lang_data %>% filter(language == lang) %>% ungroup() %>% select(surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, concreteness)
+  print(cor(cor_data))
+}
+
+#polyserial(cor_data$concreteness, cor_data$lexical_category)
+
+#Do colinearity analysis
+model = lm(aoa ~ surprisal_1gm + all_frequency + concreteness + lexical_category, data=scaled_lang_data)
+car::vif(model)
+model = lm(aoa ~ lstm_surprisal + all_frequency + concreteness + lexical_category, data=scaled_lang_data)
+car::vif(model)
+model = lm(aoa ~ surprisal_1gm + concreteness + lexical_category, data=scaled_lang_data)
+car::vif(model)
+model = lm(aoa ~ surprisal_2gm + concreteness + lexical_category, data=scaled_lang_data)
+car::vif(model)
+model = lm(aoa ~ surprisal_3gm + concreteness + lexical_category, data=scaled_lang_data)
+car::vif(model)
+model = lm(aoa ~ surprisal_4gm + concreteness + lexical_category, data=scaled_lang_data)
+car::vif(model)
+model = lm(aoa ~ lstm_surprisal + concreteness + lexical_category, data=scaled_lang_data)
+car::vif(model)
+```
+
+(The conclusion is that surprisal_1gm is highly correlated with frequency and we will use surprisal_1gm to replace frequency in the following experiments.)
+
+
+Run cross-validation for a single language.
+```{r cross_validate}
+loo_df <- crossv_loo(scaled_lang_data)
+
+# dont try to view
+
+fit_cv_models_single <- function(id) {
+  models <- "no model"
+  train_idx <- loo_df[id,1][[1]][[1]]$idx
+  test_idx <- loo_df[id,2][[1]][[1]]$idx
+  train_df <- scaled_lang_data[train_idx,]
+
+  try(models <- fit_with(train_df, lm, formulae))
+
+  result <- enframe(models) |>
+    mutate(model = value,
+           train = list(train_idx),
+           test = list(test_idx)) |>
+    select(-c(value))
+
+  return(result)
+}
+
+
+loo_models <- loo_df$.id |>
+    map(fit_cv_models_single) |>
+    reduce(rbind)
+
+
+# dont try to view
+loo_preds <- get_cv_preds(loo_models, scaled_lang_data) |> 
+  mutate(language = lang,
+         measure = ms) ##
+# View
+cv_results <- get_cv_results(loo_preds) |>
+    mutate(language = lang,
+         measure = ms) ##
+
+cv_results_pos <- loo_preds |>
+  group_by(language, measure, name, lexical_category) |>
+  summarise(mean_abs_dev = mean(abs_dev), sd_ads_dev = sd(abs_dev))
+
+cv_results
+```
+
+
+Check if difference between full_1gm, full_2gm, full_3gm, full_4gm, full_lstm, and null models are significant using ANOVA
+```{r anova2, eval=FALSE}
+null_model <- lm(formula= aoa ~ 1, data = scaled_lang_data)
+model_base <- lm(formula= aoa ~ lexical_category * concreteness, data = scaled_lang_data)
+model_freq <- lm(formula = aoa ~ lexical_category * surprisal_1gm + lexical_category * concreteness, data = scaled_lang_data)
+model_1gm <- lm(formula = aoa ~ lexical_category * surprisal_1gm + lexical_category * concreteness, data = scaled_lang_data)
+model_2gm <- lm(formula = aoa ~ lexical_category * surprisal_2gm + lexical_category * concreteness, data = scaled_lang_data)
+model_3gm <- lm(formula = aoa ~ lexical_category * surprisal_3gm + lexical_category * concreteness, data = scaled_lang_data)
+model_4gm <- lm(formula = aoa ~ lexical_category * surprisal_4gm + lexical_category * concreteness, data = scaled_lang_data)
+model_lstm <- lm(formula = aoa ~ lexical_category * lstm_surprisal + lexical_category * concreteness, data = scaled_lang_data)
+
+#anova(null_model, model_base)
+#anova(model_base, model_freq)
+#anova(model_base, model_1gm)
+#anova(model_base, model_2gm)
+#anova(model_base, model_3gm)
+#anova(model_base, model_4gm)
+#anova(model_base, model_lstm)
+```
+
+(Again the conclusion is that we can replace frequency with surprisal_1gm.)
+
+
+Look at the relation between surprisal and aoa. First part is to look at coefficient estimate, second is to look at the effect of surprisal beyond frequency.
+
+Get coefficient estimates for frequency and surprisal in the models
+```{r betas}
+get_betas <- function(n){
+  model = models$model[n]
+  result <- tidy(model[[1]]) |> 
+      mutate(fold = n)
+  return(result)
+}
+
+models_1gm= loo_models |> filter(name=="full_1gm")  
+models <- models_1gm
+models_betas_1gm = map(c(1:nrow(models_1gm)), get_betas) |> bind_rows()
+
+lexcat_betas_1gm <- models_betas_1gm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(fctwd_surprisal = surprisal1gm + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordssurprisal1gm,
+         pred_surprisal = surprisal1gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal1gm,
+         noun_surprisal = surprisal1gm,
+         noun_concreteness = concreteness,
+         fctwd_concreteness = concreteness + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordsconcreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal,fctwd_surprisal,pred_surprisal, noun_concreteness, fctwd_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+models_2gm= loo_models |> filter(name=="full_2gm")  
+models <- models_2gm
+models_betas_2gm = map(c(1:nrow(models_2gm)), get_betas) |> bind_rows()
+
+lexcat_betas_2gm <- models_betas_2gm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(fctwd_surprisal = surprisal2gm + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordssurprisal2gm,
+         pred_surprisal = surprisal2gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal2gm,
+         noun_surprisal = surprisal2gm,
+         noun_concreteness = concreteness,
+         fctwd_concreteness = concreteness + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordsconcreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal,fctwd_surprisal,pred_surprisal, noun_concreteness, fctwd_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+models_3gm= loo_models |> filter(name=="full_3gm")  
+models <- models_3gm
+models_betas_3gm = map(c(1:nrow(models_3gm)), get_betas) |> bind_rows()
+
+lexcat_betas_3gm <- models_betas_3gm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(fctwd_surprisal = surprisal3gm + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordssurprisal3gm,
+         pred_surprisal = surprisal3gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal3gm,
+         noun_surprisal = surprisal3gm,
+         noun_concreteness = concreteness,
+         fctwd_concreteness = concreteness + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordsconcreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal,fctwd_surprisal,pred_surprisal, noun_concreteness, fctwd_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+models_4gm= loo_models |> filter(name=="full_4gm")  
+models <- models_4gm
+models_betas_4gm = map(c(1:nrow(models_4gm)), get_betas) |> bind_rows()
+
+lexcat_betas_4gm <- models_betas_4gm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(fctwd_surprisal = surprisal4gm + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordssurprisal4gm,
+         pred_surprisal = surprisal4gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal4gm,
+         noun_surprisal = surprisal4gm,
+         noun_concreteness = concreteness,
+         fctwd_concreteness = concreteness + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordsconcreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal,fctwd_surprisal,pred_surprisal, noun_concreteness, fctwd_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+models_lstm= loo_models |> filter(name=="full_lstm")  
+models <- models_lstm
+models_betas_lstm = map(c(1:nrow(models_lstm)), get_betas) |> bind_rows()
+
+lexcat_betas_lstm <- models_betas_lstm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(fctwd_surprisal = lstmsurprisal + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordslstmsurprisal,
+         pred_surprisal = lstmsurprisal + lexicalcategorypredicates + lexicalcategorypredicateslstmsurprisal,
+         noun_surprisal = lstmsurprisal,
+         noun_concreteness = concreteness,
+         fctwd_concreteness = concreteness + lexicalcategoryfunctionwords + lexicalcategoryfunctionwordsconcreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal,fctwd_surprisal,pred_surprisal, noun_concreteness, fctwd_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+#lex.labs <- c("function words", "nouns", "predicates")
+#names(lex.labs) <- c("fctwd", "noun", "pred")
+#ggplot(lexcat_betas, aes(x = estimate, y = term, colour = term, fill=term)) +
+#  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
+#  geom_vline(xintercept = 0, color = "grey", linetype = "dotted") +
+#  geom_point(alpha=0.2, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
+#  labs(x = "Coefficient estimate", y = "") +
+#  theme_bw() +
+#  theme(text=element_text(size=18,  family="Times New Roman"), axis.text.x = element_text(size = 16), axis.text.y = element_text(size = 16))
+```
+
+Comparing a model with and without surprisal by word
+```{r beyond_freq}
+word_mad_diff_1gm <- loo_preds |> filter(name %in% c("full_1gm", "base_model")) |> 
+  group_by(name, test_word, lexical_category, aoa) |> summarise(mean(abs_dev)) |> 
+  spread(key=name, value="mean(abs_dev)" ) |> 
+  mutate(diff = full_1gm-base_model) |> 
+  arrange(desc(diff)) |>
+  mutate(language = lang,
+         measure = ms)
+
+word_mad_diff_2gm <- loo_preds |> filter(name %in% c("full_2gm", "base_model")) |> 
+  group_by(name, test_word, lexical_category, aoa) |> summarise(mean(abs_dev)) |> 
+  spread(key=name, value="mean(abs_dev)" ) |> 
+  mutate(diff = full_2gm-base_model) |> 
+  arrange(desc(diff)) |>
+  mutate(language = lang,
+         measure = ms)
+
+word_mad_diff_3gm <- loo_preds |> filter(name %in% c("full_3gm", "base_model")) |> 
+  group_by(name, test_word, lexical_category, aoa) |> summarise(mean(abs_dev)) |> 
+  spread(key=name, value="mean(abs_dev)" ) |> 
+  mutate(diff = full_3gm-base_model) |> 
+  arrange(desc(diff)) |>
+  mutate(language = lang,
+         measure = ms)
+
+word_mad_diff_4gm <- loo_preds |> filter(name %in% c("full_4gm", "base_model")) |> 
+  group_by(name, test_word, lexical_category, aoa) |> summarise(mean(abs_dev)) |> 
+  spread(key=name, value="mean(abs_dev)" ) |> 
+  mutate(diff = full_4gm-base_model) |> 
+  arrange(desc(diff)) |>
+  mutate(language = lang,
+         measure = ms)
+
+word_mad_diff_lstm <- loo_preds |> filter(name %in% c("full_lstm", "base_model")) |> 
+  group_by(name, test_word, lexical_category, aoa) |> summarise(mean(abs_dev)) |> 
+  spread(key=name, value="mean(abs_dev)" ) |> 
+  mutate(diff = full_lstm-base_model) |> 
+  arrange(desc(diff)) |>
+  mutate(language = lang,
+         measure = ms)
+#ggplot(data = word_mad_diff |> arrange(desc(diff)) %>% head(50) , 
+#            aes(x = reorder(test_word,diff), y = diff, fill=lexical_category)) +
+#  geom_bar(stat='identity') +
+#  coord_flip()+
+#  labs(x="", y="difference in absolute deviation") +
+#  theme_bw() +
+#  theme(text=element_text(size=18,  family="Times New Roman"), legend.title = element_text( size = 16), legend.text = element_text( size = 16), legend.position = c(0.7, 0.6), axis.text.x = element_text(size = 16), axis.text.y = element_text(size = 16))
+
+
+```
+
+by lexical category
+```{r lexcat_counts}
+lexcat_mad_diff_1gm <- word_mad_diff_1gm |> group_by(lexical_category) |>
+  summarise(mean_diff=mean(diff), n_lex =n()) |>
+  mutate(language = lang,
+         measure = ms)
+
+lexcat_mad_diff_2gm <- word_mad_diff_2gm |> group_by(lexical_category) |>
+  summarise(mean_diff=mean(diff), n_lex =n()) |>
+  mutate(language = lang,
+         measure = ms)
+
+lexcat_mad_diff_3gm <- word_mad_diff_3gm |> group_by(lexical_category) |>
+  summarise(mean_diff=mean(diff), n_lex =n()) |>
+  mutate(language = lang,
+         measure = ms)
+
+lexcat_mad_diff_4gm <- word_mad_diff_4gm |> group_by(lexical_category) |>
+  summarise(mean_diff=mean(diff), n_lex =n()) |>
+  mutate(language = lang,
+         measure = ms)
+
+lexcat_mad_diff_lstm <- word_mad_diff_lstm |> group_by(lexical_category) |>
+  summarise(mean_diff=mean(diff), n_lex =n()) |>
+  mutate(language = lang,
+         measure = ms)
+```
+
+
+```{r collect_data}
+#first language
+exp1_all_cv_results <- cv_results
+exp1_all_cv_results_pos <- cv_results_pos
+
+exp1_all_lexcat_betas_1gm <- lexcat_betas_1gm
+exp1_all_word_mad_diffs_1gm <- word_mad_diff_1gm
+exp1_all_lexcat_mad_diffs_1gm <- lexcat_mad_diff_1gm
+
+exp1_all_lexcat_betas_2gm <- lexcat_betas_2gm
+exp1_all_word_mad_diffs_2gm <- word_mad_diff_2gm
+exp1_all_lexcat_mad_diffs_2gm <- lexcat_mad_diff_2gm
+
+exp1_all_lexcat_betas_3gm <- lexcat_betas_3gm
+exp1_all_word_mad_diffs_3gm <- word_mad_diff_3gm
+exp1_all_lexcat_mad_diffs_3gm <- lexcat_mad_diff_3gm
+
+exp1_all_lexcat_betas_4gm <- lexcat_betas_4gm
+exp1_all_word_mad_diffs_4gm <- word_mad_diff_4gm
+exp1_all_lexcat_mad_diffs_4gm <- lexcat_mad_diff_4gm
+
+exp1_all_lexcat_betas_lstm <- lexcat_betas_lstm
+exp1_all_word_mad_diffs_lstm <- word_mad_diff_lstm
+exp1_all_lexcat_mad_diffs_lstm <- lexcat_mad_diff_lstm
+```
+
+
+
+```{r bind_data, eval=F}
+#all subsequent languages
+exp1_all_cv_results <- exp1_all_cv_results |> rbind(cv_results)
+exp1_all_cv_results_pos <- exp1_all_cv_results_pos |> rbind(cv_results_pos)
+
+exp1_all_lexcat_betas_1gm <- exp1_all_lexcat_betas_1gm |> rbind(lexcat_betas_1gm)
+exp1_all_word_mad_diffs_1gm <- exp1_all_word_mad_diffs_1gm |> rbind(word_mad_diff_1gm)
+exp1_all_lexcat_mad_diffs_1gm <- exp1_all_lexcat_mad_diffs_1gm |> rbind(lexcat_mad_diff_1gm)
+
+exp1_all_lexcat_betas_2gm <- exp1_all_lexcat_betas_2gm |> rbind(lexcat_betas_2gm)
+exp1_all_word_mad_diffs_2gm <- exp1_all_word_mad_diffs_2gm |> rbind(word_mad_diff_2gm)
+exp1_all_lexcat_mad_diffs_2gm <- exp1_all_lexcat_mad_diffs_2gm |> rbind(lexcat_mad_diff_2gm)
+
+exp1_all_lexcat_betas_3gm <- exp1_all_lexcat_betas_3gm |> rbind(lexcat_betas_3gm)
+exp1_all_word_mad_diffs_3gm <- exp1_all_word_mad_diffs_3gm |> rbind(word_mad_diff_3gm)
+exp1_all_lexcat_mad_diffs_3gm <- exp1_all_lexcat_mad_diffs_3gm |> rbind(lexcat_mad_diff_3gm)
+
+exp1_all_lexcat_betas_4gm <- exp1_all_lexcat_betas_4gm |> rbind(lexcat_betas_4gm)
+exp1_all_word_mad_diffs_4gm <- exp1_all_word_mad_diffs_4gm |> rbind(word_mad_diff_4gm)
+exp1_all_lexcat_mad_diffs_4gm <- exp1_all_lexcat_mad_diffs_4gm |> rbind(lexcat_mad_diff_4gm)
+
+exp1_all_lexcat_betas_lstm <- exp1_all_lexcat_betas_lstm |> rbind(lexcat_betas_lstm)
+exp1_all_word_mad_diffs_lstm <- exp1_all_word_mad_diffs_lstm |> rbind(word_mad_diff_lstm)
+exp1_all_lexcat_mad_diffs_lstm <- exp1_all_lexcat_mad_diffs_lstm |> rbind(lexcat_mad_diff_lstm)
+```
+
+STOP - REPEAT EXPERIMENT FOR NEXT LANGUAGE
+
+```{r save_data1}
+saveRDS(exp1_all_cv_results, "./experiment-results/approach1-results/exp1_all_cv_results.rds" )
+
+exp1_all_cv_results_pos <- exp1_all_cv_results_pos %>% merge(aoa_predictor_data %>% filter(measure=="produces")%>%select(language, uni_lemma, category, definition, aoa, lexical_category)%>%unique%>%group_by(language)%>%mutate(n=length(definition%>%unique)) %>%group_by(language, lexical_category)%>%mutate(nlex=length(definition)) %>%select(language,lexical_category,n=nlex)%>%unique)%>% arrange(language,name)%>% rename(sd_abs_dev=sd_ads_dev)%>%
+    mutate(ci_mad = 1.96 * (sd_abs_dev / sqrt(n)),
+           ci_mad_min = mean_abs_dev - ci_mad,
+           ci_mad_max = mean_abs_dev + ci_mad)
+
+saveRDS(exp1_all_cv_results_pos, "./experiment-results/approach1-results/exp1_all_cv_results_pos.rds" )
+
+saveRDS(exp1_all_lexcat_betas_1gm, "./experiment-results/approach1-results/exp1_all_lexcat_betas_1gm.rds" )
+saveRDS(exp1_all_word_mad_diffs_1gm, "./experiment-results/approach1-results/exp1_all_word_mad_diffs_1gm.rds" )
+saveRDS(exp1_all_lexcat_mad_diffs_1gm, "./experiment-results/approach1-results/exp1_all_lexcat_mad_diffs_1gm.rds" )
+
+saveRDS(exp1_all_lexcat_betas_2gm, "./experiment-results/approach1-results/exp1_all_lexcat_betas_2gm.rds" )
+saveRDS(exp1_all_word_mad_diffs_2gm, "./experiment-results/approach1-results/exp1_all_word_mad_diffs_2gm.rds" )
+saveRDS(exp1_all_lexcat_mad_diffs_2gm, "./experiment-results/approach1-results/exp1_all_lexcat_mad_diffs_2gm.rds" )
+
+saveRDS(exp1_all_lexcat_betas_3gm, "./experiment-results/approach1-results/exp1_all_lexcat_betas_3gm.rds" )
+saveRDS(exp1_all_word_mad_diffs_3gm, "./experiment-results/approach1-results/exp1_all_word_mad_diffs_3gm.rds" )
+saveRDS(exp1_all_lexcat_mad_diffs_3gm, "./experiment-results/approach1-results/exp1_all_lexcat_mad_diffs_3gm.rds" )
+
+saveRDS(exp1_all_lexcat_betas_4gm, "./experiment-results/approach1-results/exp1_all_lexcat_betas_4gm.rds" )
+saveRDS(exp1_all_word_mad_diffs_4gm, "./experiment-results/approach1-results/exp1_all_word_mad_diffs_4gm.rds" )
+saveRDS(exp1_all_lexcat_mad_diffs_4gm, "./experiment-results/approach1-results/exp1_all_lexcat_mad_diffs_4gm.rds" )
+
+saveRDS(exp1_all_lexcat_betas_lstm, "./experiment-results/approach1-results/exp1_all_lexcat_betas_lstm.rds" )
+saveRDS(exp1_all_word_mad_diffs_lstm, "./experiment-results/approach1-results/exp1_all_word_mad_diffs_lstm.rds" )
+saveRDS(exp1_all_lexcat_mad_diffs_lstm, "./experiment-results/approach1-results/exp1_all_lexcat_mad_diffs_lstm.rds" )
+
+view(exp1_all_cv_results)
+```
+
+## For Australian beta extraction from cross validation models
+
+For Australian English has no function word items. If you run into trouble getting the betas for this language, run  this code instead for all experiments
+```{r betas}
+get_betas <- function(n){
+  model = models$model[n]
+  result <- tidy(model[[1]]) |> 
+      mutate(fold = n)
+  return(result)
+}
+
+models_1gm= loo_models |> filter(name=="full_1gm")  
+models <- models_1gm
+models_betas_1gm = map(c(1:nrow(models_1gm)), get_betas) |> bind_rows()
+
+lexcat_betas_1gm <- models_betas_1gm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(pred_surprisal = surprisal1gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal1gm,
+         noun_surprisal = surprisal1gm,
+         noun_concreteness = concreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal,pred_surprisal, noun_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+models_2gm= loo_models |> filter(name=="full_2gm")  
+models <- models_2gm
+models_betas_2gm = map(c(1:nrow(models_2gm)), get_betas) |> bind_rows()
+
+lexcat_betas_2gm <- models_betas_2gm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(pred_surprisal = surprisal2gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal2gm,
+         noun_surprisal = surprisal2gm,
+         noun_concreteness = concreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal,pred_surprisal, noun_concreteness,pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+models_3gm= loo_models |> filter(name=="full_3gm")  
+models <- models_3gm
+models_betas_3gm = map(c(1:nrow(models_3gm)), get_betas) |> bind_rows()
+
+lexcat_betas_3gm <- models_betas_3gm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(pred_surprisal = surprisal3gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal3gm,
+         noun_surprisal = surprisal3gm,
+         noun_concreteness = concreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal, pred_surprisal, noun_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+models_4gm= loo_models |> filter(name=="full_4gm")  
+models <- models_4gm
+models_betas_4gm = map(c(1:nrow(models_4gm)), get_betas) |> bind_rows()
+
+lexcat_betas_4gm <- models_betas_4gm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(pred_surprisal = surprisal4gm + lexicalcategorypredicates + lexicalcategorypredicatessurprisal4gm,
+         noun_surprisal = surprisal4gm,
+         noun_concreteness = concreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal, pred_surprisal, noun_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+models_lstm= loo_models |> filter(name=="full_lstm")  
+models <- models_lstm
+models_betas_lstm = map(c(1:nrow(models_lstm)), get_betas) |> bind_rows()
+
+lexcat_betas_lstm <- models_betas_lstm |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(pred_surprisal = lstmsurprisal + lexicalcategorypredicates + lexicalcategorypredicateslstmsurprisal,
+         noun_surprisal = lstmsurprisal,
+         noun_concreteness = concreteness,
+         pred_concreteness = concreteness + lexicalcategorypredicates + lexicalcategorypredicatesconcreteness
+         ) |> 
+  select(noun_surprisal, pred_surprisal, noun_concreteness, pred_concreteness) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+
+#lex.labs <- c("nouns", "predicates")
+#names(lex.labs) <- c("noun", "pred")
+#p = ggplot(lexcat_betas, aes(x = estimate, y = term, colour = term, fill=term)) +
+#  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
+#  geom_vline(xintercept = 0, color = "grey", linetype = "dotted") +
+#  geom_point(alpha=0.2, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
+#  labs(x = "Coefficient estimate", y = "") +
+#  theme_bw() +
+#  theme(text=element_text(size=18,  family="Times New Roman"), axis.text.x = element_text(size = 16), axis.text.y = element_text(size = 16))
+
+```
+
+## FIT MODELS BY LEXICAL CATEGORY
+```{r prep_data}
+lang = "English (Australian)"
+ms = "produces"
+
+predictors <- c("surprisal_1gm", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "lstm_surprisal", "all_frequency", "concreteness")
+
+#aoa_predictor_data |> filter(language==lang & measure==ms) %>% select(surprisal_1gm) %>% mutate(gm1 = max(surprisal_1gm))
+```
+
+```{r cross_validate}
+
+scaled_lang_data <- aoa_predictor_data |>
+  filter(language==lang & measure==ms & lexical_category == lex_cat) |>
+  select(language, uni_lemma, category, definition, aoa, lexical_category, surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, all_frequency, concreteness) |>
+  unique() |> mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |>
+  mutate(lexical_category = factor(lexical_category, levels = c("nouns", "predicates" , "function_words"),
+                 labels = c("nouns", "predicates" , "function_words")))
+
+loo_df <- crossv_loo(scaled_lang_data)
+
+# dont try to view
+loo_models <- loo_df$.id |>
+    map(fit_cv_models_single) |>
+    reduce(rbind)
+
+# dont try to view
+loo_preds <- get_cv_preds(loo_models, scaled_lang_data) |> 
+  mutate(language = lang,
+         measure = ms) ##
+# View
+cv_results <- get_cv_results(loo_preds) |>
+    mutate(language = lang,
+         measure = ms) ##
+
+cv_results_pos <- loo_preds |>
+  group_by(language, measure, name, lexical_category) |>
+  summarise(mean_abs_dev = mean(abs_dev), sd_ads_dev = sd(abs_dev))
+
+cv_results
+```
+
+
+## Run model fitting on each lexical category separately
+```{r}
+full_1gm = ~ surprisal_1gm + concreteness
+full_2gm = ~ surprisal_2gm + concreteness
+full_3gm = ~ surprisal_3gm + concreteness
+full_4gm = ~ surprisal_4gm + concreteness
+full_lstm = ~ lstm_surprisal + concreteness
+null_model = ~ 1
+formulae <- formulas(~aoa, null_model,full_1gm, full_2gm, full_3gm, full_4gm, full_lstm)
+
+fit_cv_models_single <- function(id) {
+  models <- "no model"
+  train_idx <- loo_df[id,1][[1]][[1]]$idx
+  test_idx <- loo_df[id,2][[1]][[1]]$idx
+  train_df <- scaled_lang_data[train_idx,]
+
+  try(models <- fit_with(train_df, lm, formulae))
+
+  result <- enframe(models) |>
+    mutate(model = value,
+           train = list(train_idx),
+           test = list(test_idx)) |>
+    select(-c(value))
+
+  return(result)
+}
+```
+
+```{r prep_data2} 
+lexical_cats = c("nouns", "predicates", "function_words")
+for(lex in lexical_cats){
+  lang = "German"
+  ms = "produces"
+  lex = lex
+  
+  predictors <- c("surprisal_1gm", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "lstm_surprisal", "all_frequency", "concreteness")
+  
+  scaled_lang_data <- aoa_predictor_data |>
+    filter(language==lang & measure==ms & lexical_category == lex) |>
+    select(language, uni_lemma, category, definition, aoa, lexical_category, surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, all_frequency, concreteness) |>
+    unique() |> mutate_at(vars(predictors), ~as.numeric(base::scale(.)))
+  
+  
+  loo_df <- crossv_loo(scaled_lang_data)
+  
+  loo_models <- loo_df$.id |>
+      map(fit_cv_models_single) |>
+      reduce(rbind)
+  
+  # dont try to view
+  loo_preds <- get_cv_preds(loo_models, scaled_lang_data) |> 
+    mutate(language = lang,
+           measure = ms,
+           lexical_category = lex) ##
+  
+  # View
+  cv_results <- get_cv_results(loo_preds) |>
+      mutate(language = lang,
+           measure = ms,
+           lexical_category = lex) ##
+  
+  #first language
+  #exp1_bylex_cv_results <- cv_results
+  exp1_bylex_cv_results <- exp1_bylex_cv_results |> rbind(cv_results)
+}
+```

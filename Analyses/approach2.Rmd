@@ -1,0 +1,134 @@
+---
+title: "approach3"
+author: "Eva Portelance"
+date: "8/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+options(dplyr.summarise.inform = FALSE)
+
+# load libraries
+library(arm)
+#library(glue)
+library(wordbankr)
+#install.packages("remotes")
+#remotes::install_github("langcog/childesr")
+library(childesr)
+library(broom)
+library(car)
+#library(jglmm)
+library(modelr)
+library(ggrepel)
+library(SnowballC)
+library(stringr)
+library(ggplot2)
+library(ggpubr)
+library(tidyverse)
+library(sjPlot)
+library(sjlabelled)
+library(sjmisc)
+theme_set(theme_sjplot())
+
+
+# load functions
+
+walk(list.files("scripts", pattern = "*.R$", full.names = TRUE), source)
+```
+
+## APPROACH 3
+
+Compare the effect size of surprisal across languages and whether differences in surprisal predicts differences in aoa across languages
+
+Load in data
+```{r data}
+#with multi word items combined :
+aoa_predictor_data <- readRDS("./data/aoa_predictor_data_unify.rds")
+
+#with multi word items separated: (appendix)
+#aoa_predictor_data <- readRDS("./data/aoa_predictor_data.rds" )
+```
+
+Define models to compare 
+
+```{r formulae-random_slopes-no_interaction}
+lstm_surp_rd = ~ lstm_surp_resid + surprisal_1gm + concreteness +  (1 + lstm_surp_resid + surprisal_1gm|language)
+surp_2gm_rd = ~ surp_2gm_resid + surprisal_1gm + concreteness + (1 + surp_2gm_resid + surprisal_1gm|language)
+surp_3gm_rd = ~ surp_3gm_resid + surprisal_1gm + concreteness + (1 + surp_3gm_resid + surprisal_1gm|language)
+surp_4gm_rd = ~ surp_4gm_resid + surprisal_1gm + concreteness +  (1 + surp_4gm_resid + surprisal_1gm|language)
+formulae_random_slope_no_interaction <- formulas(~aoa, lstm_surp_rd, surp_2gm_rd, surp_3gm_rd, surp_4gm_rd)
+```
+
+### prepare data
+```{r prep_data3}
+ms = "produces"
+
+predictors <- c("surprisal_1gm", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "lstm_surprisal", "all_frequency", "concreteness")
+#predictors2 <- c("surprisal_1gm", "surp_2gm_resid", "surp_3gm_resid", "surp_4gm_resid", "lstm_surp_resid", "all_frequency", "concreteness")
+
+scaled_lang_data_random_slope <- aoa_predictor_data |>
+  filter(measure==ms) |>
+  group_by(uni_lemma) |> 
+  mutate(all_lang = ifelse(length(unique(language)) > 9, 1, 0)) |>
+  ungroup() |> mutate(surprisal_1gm = - log(all_frequency)) |>
+  dplyr::select(!c(measure, intercept, slope, lexical_class, surprisal_5gm, surprisal_6gm, n_tokens, avg_perplexity)) |>
+  filter(all_lang == 1) |> ##
+  group_by(language) |> mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |> ##
+  unique() |> 
+  mutate(lstm_surp_resid = resid(lm(lstm_surprisal ~ surprisal_1gm))) |> ##
+  mutate(surp_2gm_resid = resid(lm(surprisal_2gm ~ surprisal_1gm))) |>
+  mutate(surp_3gm_resid = resid(lm(surprisal_3gm ~ surprisal_1gm))) |>
+  mutate(surp_4gm_resid = resid(lm(surprisal_4gm ~ surprisal_1gm))) |>
+  #filter(all_lang == 1) |> 
+  group_by(language) |>
+  #mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |> ##
+  ungroup() |> 
+  mutate(lexical_category = factor(lexical_category, levels = c("nouns", "predicates" , "function_words"),
+                 labels = c("nouns", "predicates" , "function_words")))
+
+saveRDS(scaled_lang_data_random_slope, "./data/scaled_lang_data_random_slope.rds" )
+#scaled_lang_data_random_slope <- readRDS("./data/scaled_lang_data_random_slope.rds" )
+```
+
+```{r wordlist size}
+#scaled_lang_data_random_slope <- readRDS("./data/scaled_lang_data_random_slope.rds" )
+
+scaled_lang_data_random_slope |> dplyr::select(uni_lemma,lexical_category) |> unique() |> group_by(lexical_category) |> mutate(cnt = length(uni_lemma)) |> dplyr::select(lexical_category, cnt) |> unique()
+```
+Check out words in list
+```{r what nouns}
+scaled_lang_data_random_slope |> filter(lexical_category == "nouns" & language == "English (American)") |> ungroup()  |> select(uni_lemma,aoa,concreteness,surprisal_1gm,surprisal_2gm,surprisal_3gm,surprisal_4gm,lstm_surprisal) |> unique() |> arrange(concreteness)
+```
+
+```{r what preds}
+scaled_lang_data_random_slope |> filter(lexical_category == "predicates" & language == "English (American)") |> ungroup()  |> select(uni_lemma,aoa,concreteness,surprisal_1gm,surprisal_2gm,surprisal_3gm,surprisal_4gm,lstm_surprisal) |> unique() |> arrange(concreteness)
+```
+
+
+```{r correlation}
+#scaled_lang_data_random_slope <- readRDS("./data/scaled_lang_data_random_slope.rds" )
+
+for (lang in unique(scaled_lang_data_random_slope$language)){
+  print(lang)
+  cor_data <- scaled_lang_data_random_slope %>% filter(language == lang) %>% ungroup() %>% select(surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, concreteness)
+  print(cor(cor_data)[1,1:5])
+  cor_data <- scaled_lang_data_random_slope %>% filter(language == lang & lexical_category=="nouns") %>% ungroup() %>% select(surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, concreteness)
+  print(cor(cor_data)[1,1:5])
+  cor_data <- scaled_lang_data_random_slope %>% filter(language == lang & lexical_category=="predicates") %>% ungroup() %>% select(surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, concreteness)
+  print(cor(cor_data)[1,1:5])
+}
+```
+
+
+```{r fit_model_random_slope2}
+models_random_slope_noun <- fit_with(scaled_lang_data_random_slope %>% filter(lexical_category == "nouns"), lmer, formulae_random_slope_no_interaction)
+models_random_slope_pred <- fit_with(scaled_lang_data_random_slope %>% filter(lexical_category == "predicates"), lmer, formulae_random_slope_no_interaction)
+
+#models_random_slope_noun[1:4] |> plot_models(p.shape = T, m.labels = c("aoa_noun (~lstm_resid)","aoa_noun (~2gm_resid)","aoa_noun (~3gm_resid)","aoa_noun (~4gm_resid)"))
+#models_random_slope_pred[1:4] |> plot_models(p.shape = T, m.labels = c("aoa_pred (~lstm_resid)","aoa_pred (~2gm_resid)","aoa_pred (~3gm_resid)","aoa_pred (~4gm_resid)"))
+
+models_random_slope_noun %>% saveRDS("./experiment-results/approach3-results/models_random_slope_noun.rds")
+models_random_slope_pred %>% saveRDS("./experiment-results/approach3-results/models_random_slope_pred.rds")
+```
+
