@@ -1,0 +1,5 @@
+Term,POS,p-value,Effects,Lb,Ub
+LSTM residual differences,Nouns,***,-0.30779,-0.4384690,-0.1767829
+uni-gram differences,Nouns,***,0.87530,0.7562263,0.9936380
+LSTM residual differences,Predicates,***,0.48686,0.2344412,0.7401978
+uni-gram differences,Predicates,***,0.75235,0.5890019,0.9163611
