@@ -38,11 +38,12 @@ data$term = factor(dplyr::recode(data$term, "unigram" = "uni-gram","lstmresid" =
 data <- data |> filter(term != "concreteness")
 
 
+
 lex.labs <- c("function words", "nouns", "predicates")
 names(lex.labs) <- c("fctwd", "noun", "pred")
 
 make_lang_plot <- function(lang){
-  lang_data <- data |> filter(language == lang)
+  lang_data <- data |> filter(language == lang) |> filter(estimate <= 20)
   p = ggplot(lang_data, aes(x = estimate, y = term, colour = term, fill=term)) +
   facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
   geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
@@ -65,7 +66,7 @@ p_SpMx = make_lang_plot("Spanish (Mexican)")
 p_MaBj = make_lang_plot("Mandarin (Beijing)")
 p_MaTw = make_lang_plot("Mandarin (Taiwanese)")
 
-p_EnAm
+p_FrEu
 
 plots_exp2 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab")+rremove("y.text"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab")+rremove("y.text"), p_FrEu+rremove("xlab"), 
                        p_FrQc+rremove("xlab")+rremove("y.text"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab")+rremove("y.text"), p_MaBj, p_MaTw+rremove("y.text"),
@@ -293,14 +294,14 @@ models_random_slope_pred <- readRDS("./data/models_random_slope_pred.rds")
 #}
 
 
-p1 <- models_random_slope_noun[1:4] |> plot_models(p.shape = T,show.legend = T, m.labels = c("residualised LSTM","residualised bi-gram","residualised tri-gram","residualised four-gram"), axis.labels=c("concreteness" = "concreteness", "surprisal_1gm" = "uni-gram","lstm_surp_resid" = "LSTM residual", "surp_2gm_resid" = "bi-gram residual", "surp_3gm_resid"="tri-gram residual", "surp_4gm_resid" = "four-gram residual")) + ylim(-8,2.5) + labs(title = "Nouns")+
+p1 <- models_random_slope_noun[1:4] |> plot_models(p.shape = T,show.legend = T, m.labels = c("residualised LSTM","residualised bi-gram","residualised tri-gram","residualised four-gram"), axis.labels=c("concreteness" = "concreteness", "surprisal_1gm" = "uni-gram","lstm_surp_resid" = "LSTM residual", "surp_2gm_resid" = "bi-gram residual", "surp_3gm_resid"="tri-gram residual", "surp_4gm_resid" = "four-gram residual"), p.show=TRUE, p.style ="scientific") + ylim(-8,2.5) + labs(title = "Nouns")+
   scale_colour_discrete("Models")+
   geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
   theme_bw() +
   theme(legend.position="bottom")+
   theme(plot.title = element_text(hjust = 0.5, margin = margin(t = 5, b = 5), face="bold"), text=element_text(size=20,  family="Times New Roman"), legend.text = element_text(size = 18), axis.text.x = element_text(size = 20), axis.text.y = element_text(size = 20), strip.text.x = element_text(size = 20))
 
-ggsave("p1b_exp4_model_3.jpeg",plot=p1, width = 6, height = 4, units="in", limitsize = FALSE)
+#ggsave("p1b_exp4_model_3.jpeg",plot=p1, width = 6, height = 4, units="in", limitsize = FALSE)
 
 
 p2 <- models_random_slope_pred[1:4] |> plot_models(p.shape = T,show.legend = T, m.labels = c("residualised LSTM","residualised bi-gram","residualised tri-gram","residualised four-gram"), axis.labels=c("concreteness" = "concreteness", "surprisal_1gm" = "uni-gram","lstm_surp_resid" = "LSTM residual", "surp_2gm_resid" = "bi-gram residual", "surp_3gm_resid"="tri-gram residual", "surp_4gm_resid" = "four-gram residual")) + ylim(-8,2.5) + labs(title = "Predicates")  +
@@ -310,7 +311,7 @@ p2 <- models_random_slope_pred[1:4] |> plot_models(p.shape = T,show.legend = T, 
   theme(legend.position="bottom")+
   theme(plot.title = element_text(hjust = 0.5, margin = margin(t = 5, b = 5), face="bold"), text=element_text(size=20,  family="Times New Roman"), legend.text = element_text(size = 18), axis.text.x = element_text(size = 20), axis.text.y = element_text(size = 20), strip.text.x = element_text(size = 20))
 
-ggsave("p2_exp4_model_3.jpeg",plot=p2, width = 6, height = 4, units="in", limitsize = FALSE)
+#ggsave("p2_exp4_model_3.jpeg",plot=p2, width = 6, height = 4, units="in", limitsize = FALSE)
 
 plots_exp4_1 = ggarrange(p1, p2, 
           #labels = c("Nouns", "Predicates"),
@@ -323,6 +324,8 @@ plots_exp4_1
 #saveRDS(models_random_slope_noun, "./data/models_random_slope_noun.rds")
 #saveRDS(models_random_slope_pred, "./data/models_random_slope_pred.rds")
 #models_random_slope_noun<-readRDS("./data/models_random_slope_noun.rds")
+p2
+
 ```
 
 ```{r compare_languages_random_effect - no concreteness}
