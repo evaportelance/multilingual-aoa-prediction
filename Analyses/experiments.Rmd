@@ -1988,3 +1988,67 @@ plots_exp4
 ggsave("plots_exp4_language_3.jpeg",plot=plots_exp4, width = 12, height = 16, units="in", limitsize = FALSE)
 ```
 
+
+## AoA difference
+
+
+
+```{r prep_data4, eval = F, echo = F}
+ms = "produces"
+
+predictors <- c("surprisal_1gm", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "lstm_surprisal", "all_frequency")
+#predictors2 <- c("surprisal_1gm", "surp_2gm_resid", "surp_3gm_resid", "surp_4gm_resid", "lstm_surp_resid", "all_frequency", "concreteness")
+
+scaled_lang_data_aoa_diff <- aoa_predictor_data |>
+  filter(measure==ms) |>
+  group_by(uni_lemma) |> 
+  mutate(all_lang = ifelse(length(unique(language)) > 9, 1, 0)) |>
+  ungroup() |> mutate(surprisal_1gm = - log(all_frequency)) |>
+  select(all_lang, language, uni_lemma, category, definition, aoa, lexical_category, surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, all_frequency, concreteness) |>
+  filter(all_lang == 1) |> ##
+  group_by(language) |> mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |> ##
+  unique() |> 
+  mutate(lstm_surp_resid = resid(lm(lstm_surprisal ~ surprisal_1gm))) |> ##
+  mutate(surp_2gm_resid = resid(lm(surprisal_2gm ~ surprisal_1gm))) |>
+  mutate(surp_3gm_resid = resid(lm(surprisal_3gm ~ surprisal_1gm))) |>
+  mutate(surp_4gm_resid = resid(lm(surprisal_4gm ~ surprisal_1gm))) |>
+  #filter(all_lang == 1) |> 
+  group_by(language) |>
+  #mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |> ##
+  ungroup() |> 
+  mutate(lexical_category = factor(lexical_category, levels = c("nouns", "predicates" , "function_words"),
+                 labels = c("nouns", "predicates" , "function_words")))
+
+#saveRDS(scaled_lang_data_random_slope, "./data/scaled_lang_data_random_slope.rds" )
+#scaled_lang_data_random_slope <- readRDS("./data/scaled_lang_data_random_slope.rds" )
+```
+
+
+```{r aoa difference, eval = F, echo = F}
+scaled_lang_data_aoa_diff <- scaled_lang_data_aoa_diff %>% select(uni_lemma,category,lexical_category,concreteness,language,definition,aoa,surprisal_1gm,lstm_surp_resid) %>% rename(language1 = language, definition1 = definition, aoa1 = aoa,surprisal_1gm1 = surprisal_1gm,lstm_surp_resid1 = lstm_surp_resid) %>% merge(scaled_lang_data_aoa_diff %>% select(uni_lemma,category,lexical_category,concreteness,language,definition,aoa,surprisal_1gm,lstm_surp_resid) %>% rename(language2 = language, definition2 = definition, aoa2 = aoa,surprisal_1gm2 = surprisal_1gm,lstm_surp_resid2 = lstm_surp_resid)) %>% filter(language1 != language2)
+
+#scaled_lang_data_aoa_diff %>% write.csv("./data/scaled_lang_data_aoa_diff.csv",quote = T, row.names = F)
+
+# use python to remove symmetric rows: remove_symmetric.py 
+scaled_lang_data_aoa_diff <- read.csv("./data/scaled_lang_data_aoa_diff2.csv")
+scaled_lang_data_aoa_diff <- scaled_lang_data_aoa_diff %>% mutate(aoa_diff = aoa1-aoa2, surprisal_1gm_diff = surprisal_1gm1-surprisal_1gm2, lstm_surp_resid_diff = lstm_surp_resid1-lstm_surp_resid2,concreteness = scale(concreteness))
+
+
+scaled_lang_data_aoa_diff %>% write.csv("./data/scaled_lang_data_aoa_diff_all.csv",quote = T,row.names = F)
+```
+
+```{r aoa difference regression}
+scaled_lang_data_aoa_diff <- read.csv("./data/scaled_lang_data_aoa_diff_all.csv")
+lang_variant <- read.csv("./data/language_variant_coding.csv")
+
+model_aoa_diff_noun <- scaled_lang_data_aoa_diff %>% filter(lexical_category == "nouns") %>% left_join(lang_variant,by=c("language1"="original_language")) %>% rename(language_variant1 = language_variant, base_language1=language) %>% left_join(lang_variant,by=c("language2"="original_language")) %>% rename(language_variant2 = language_variant, base_language2=language) %>% lmer(aoa_diff~ surprisal_1gm_diff+ lstm_surp_resid_diff+I(base_language1==base_language2)+(1|uni_lemma)+(1|base_language1)+(1|base_language2),data=.) #lmer(aoa_diff ~ lstm_surp_resid_diff + surprisal_1gm_diff + (1|uni_lemma) + (1|language1) + (1|language2), data = .)
+
+
+model_aoa_diff_pred <- scaled_lang_data_aoa_diff %>% filter(lexical_category == "predicates") %>% left_join(lang_variant,by=c("language1"="original_language")) %>% rename(language_variant1 = language_variant, base_language1=language) %>% left_join(lang_variant,by=c("language2"="original_language")) %>% rename(language_variant2 = language_variant, base_language2=language) %>% lmer(aoa_diff~ surprisal_1gm_diff+ lstm_surp_resid_diff+I(base_language1==base_language2)+(1|uni_lemma)+(1|base_language1)+(1|base_language2),data=.)# lmer(aoa_diff ~ lstm_surp_resid_diff + surprisal_1gm_diff + (1|uni_lemma) + (1|language1) + (1|language2), data = .)
+
+summary(model_aoa_diff_noun)
+summary(model_aoa_diff_pred)
+
+model_aoa_diff_noun %>% saveRDS("./data/model_aoa_diff_noun.rds")
+model_aoa_diff_pred %>% saveRDS("./data/model_aoa_diff_pred.rds")
+```

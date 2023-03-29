@@ -402,3 +402,21 @@ plots_exp4
 
 ggsave("approach3_ngrams_languages.jpeg",plot=plots_exp4, width = 12, height = 10, units="in", limitsize = FALSE)
 ```
+
+# AoA differences plot
+```{r consistent plots}
+effects <- read.csv("./data/exp4_aoa_diff_plot.csv")
+p4 <- effects %>% rename(`p-value` = p.value) %>% ggplot(aes(x = Effects, y = Term, shape = `p-value`,xmax = Ub, xmin = Lb))  +
+  facet_grid(~ POS) +
+  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
+  geom_point(color = "red",  show.legend = T)+
+  geom_errorbar(position = position_dodge(width = -2), width = 0.01, color = "red") +
+  labs(x = "Estimate", y = "")+
+  scale_shape_manual(values=c(17)) +
+  theme_bw()+
+  xlim(-1,1)+
+  theme(strip.background = element_rect(colour="#FFFFFF", fill="#FFFFFF"),legend.position="bottom",text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 18,face = "bold"),
+        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+
+ggsave("plots_exp4_model_aoa_diff.png",plot=p4, width = 9, height = 4, units="in", limitsize = FALSE)
+```
