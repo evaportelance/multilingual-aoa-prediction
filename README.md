@@ -2,7 +2,14 @@
 
 This repository contains all the data, code, and analyses presented in Chapter 2 of my dissertation. This project extends on an earlier paper of mine, *Predicting Age of Acquisition in Early Word Learning Using Recurrent Neural Networks* by Portelance, Degen, and Frank, CogSci (2020), by applying previous analyses as well as new ones to a set of cross-linguistic child-directed utterance corpora. Its main purpose is to determine (1) whether word surprisal is a good predictor of when words are acquired by children? and (2) whether words which are difficult for language models to learn are also acquired later by children?
 
-Please cite my dissertation if you choose to use any of the data, code, or results from this repository:
+Please cite the following manuscript and/or my dissertation if you choose to use any of the data, code, or results from this repository:
+
+
+@manuscript{portelance2021dissertation,
+  author  = {Portelance, Eva and Duan, Yuguang and Frank, Michael C. and Lupyan, Gary},
+  title   = {Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal},
+  year    = {2023}
+}
 
 @phdthesis{portelance2021dissertation,
   author  = {Portelance, Eva},
@@ -43,6 +50,9 @@ If you have retrained and extracted your one models, you'll need to collect the 
 
 The code in the */Analyses/* section uses a lot of the base functions provided by the **AoA-pipeline** project (https://github.com/mikabr/aoa-pipeline), a joint initiative to create a library of functions for analyzing and predicting AoA using wordbank data.
 
-To run the experiments presented in chapter 2 of my dissertation, simply run the code in *./Analyses/diss-chap2-experiments.Rmd* .
+To run the experiments presented in the manuscript:
+For experiment 1, simply run the code in *./Analyses/approach1.Rmd* ;
+For experiment 2, simply run the code in *./Analyses/approach2.Rmd* .
 
-To reproduce the plots used in this chapter, run the code in *./Analyses/diss-chap2-plots.Rmd*
+
+To reproduce the plots used in the manuscript, run the code in *./Analyses/plots/plots.Rmd*
