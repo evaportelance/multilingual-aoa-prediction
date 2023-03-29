@@ -1405,8 +1405,9 @@ dat <- scaled_lang_data |> filter(language == "English (American)") |> rename("l
 dat$`lexical category` = gsub("_", " ", dat$`lexical category`) 
 my_comparisons <- list( c("nouns", "predicates"), c("predicates", "function words"), c("nouns", "function words") )
 box <- ggboxplot(dat, x = "lexical category", y = "concreteness",color = "lexical category", palette = "jco")+ 
-  stat_compare_means(comparisons = my_comparisons)+rremove("xlab")# Add pairwise comparisons p-value
-ggsave("plots_exp3_box.jpeg",plot=box, width = 8, height = 5, units="in", limitsize = FALSE)
+  stat_compare_means(comparisons = my_comparisons)+rremove("xlab")+
+  theme(plot.title = element_text(hjust = 0.5, face="bold"), legend.title = element_blank(), text=element_text(size=15,  family="Times New Roman"), strip.text.x = element_text(size = 15))# Add pairwise comparisons p-value
+ggsave("plots_exp3_box.png",plot=box, width = 5, height = 4, units="in", limitsize = FALSE)
 ```
 
 

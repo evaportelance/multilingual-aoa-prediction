@@ -21,12 +21,13 @@ library(ggplot2)#
 library(cowplot)
 library(ggpubr)
 library(sjPlot)
+library(lmSupport)
 
 walk(list.files("scripts", pattern = "*.R$", full.names = TRUE), source)
 ```
 
 
-## APPROACH 2
+## APPROACH 1
 
 ```{r lstm}
 
@@ -76,31 +77,34 @@ plots_exp2 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab")+rremove("y
           font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
           label.x = c(0.4, 0.4, 0.4, 0.5, 0.4), widths = c(1, .8))
 
-ggsave("plots_approach2_betas_resid.jpeg",plot=plots_exp2, width = 12, height = 12, units="in", limitsize = FALSE)
+ggsave("plots_approach2_betas_resid.png",plot=plots_exp2, width = 12, height = 12, units="in", limitsize = FALSE)
 ```
 
-Estimate by lexical category figure by language
+Version in appendix where all words are separate items.
 
-```{r lstm}
-library(lmSupport)
-data <- readRDS("./experiment-results/approach2-results/exp2_all_lexcat_betas_resid_lstm.rds")
+```{r with_allwords}
+data <- readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_lstm.rds")
+data <- data %>% rbind(filter(readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_2gm.rds"), term != "unigram"))
+data <- data %>% rbind(filter(readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_3gm.rds"), term != "unigram"))
+data <- data %>% rbind(filter(readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_4gm.rds"), term != "unigram"))
+data$term = factor(dplyr::recode(data$term, "unigram" = "uni-gram","lstmresid" = "LSTM residual", "2gmresid" = "bi-gram residual", "3gmresid"="tri-gram residual", "4gmresid" = "four-gram residual"), levels = c("LSTM residual", "four-gram residual", "tri-gram residual", "bi-gram residual","uni-gram"))
 data <- data |> filter(term != "concreteness")
-data$term <- varRecode(data$term, c("unigram","lstmresid"), c("1gm", "lstm-rd"))
+
 
 
 lex.labs <- c("function words", "nouns", "predicates")
 names(lex.labs) <- c("fctwd", "noun", "pred")
 
 make_lang_plot <- function(lang){
-  lang_data <- data |> filter(language == lang)
+  lang_data <- data |> filter(language == lang) |> filter(estimate <= 20)
   p = ggplot(lang_data, aes(x = estimate, y = term, colour = term, fill=term)) +
   facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
   geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
-  geom_point(alpha=0.3, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
+  geom_point(alpha=0.4, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
   labs(x = "Surprisal estimate", y = "") +
   theme_bw() +
   theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),
-        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+        plot.margin = margin(1, 0.5, 0.5, 0.1, "cm"))
   return(p)
 }
 
@@ -115,158 +119,20 @@ p_SpMx = make_lang_plot("Spanish (Mexican)")
 p_MaBj = make_lang_plot("Mandarin (Beijing)")
 p_MaTw = make_lang_plot("Mandarin (Taiwanese)")
 
+p_FrEu
 
-plots_exp2 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab"), p_FrEu+rremove("xlab"), 
-                       p_FrQc+rremove("xlab"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab"), p_MaBj, p_MaTw,
+plots_exp2 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab")+rremove("y.text"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab")+rremove("y.text"), p_FrEu+rremove("xlab"), 
+                       p_FrQc+rremove("xlab")+rremove("y.text"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab")+rremove("y.text"), p_MaBj, p_MaTw+rremove("y.text"),
           labels = c("English (American)", "English (British)", "English (Australian)", "German", "French (European)",
                      "French (Quebecois)", "Spanish (European)", "Spanish (Mexican)", "Mandarin (Beijingese)", "Mandarin (Taiwanese)"),
           ncol = 2, nrow = 5,
           font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
-          label.x = c(0.4, 0.4, 0.4, 0.5, 0.4))
+          label.x = c(0.4, 0.4, 0.4, 0.5, 0.4), widths = c(1, .8))
 
-ggsave("plots_exp3_betas_resid_lstm_2.jpeg",plot=plots_exp2, width = 12, height = 10, units="in", limitsize = FALSE)
+ggsave("plots_approach2_allwords_betas_resid.png",plot=plots_exp2, width = 12, height = 12, units="in", limitsize = FALSE)
 ```
 
-```{r 2gm}
-library(lmSupport)
-data <- readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_2gm.rds")
-data <- data |> filter(term != "concreteness")
-data$term <- varRecode(data$term, c("unigram","2gmresid"), c("1gm", "2gm-rd"))
-
-
-lex.labs <- c("function words", "nouns", "predicates")
-names(lex.labs) <- c("fctwd", "noun", "pred")
-
-make_lang_plot <- function(lang){
-  lang_data <- data |> filter(language == lang)
-  p = ggplot(lang_data, aes(x = estimate, y = term, colour = term, fill=term)) +
-  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
-  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
-  geom_point(alpha=0.3, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
-  labs(x = "Surprisal estimate", y = "") +
-  theme_bw() +
-  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),
-        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
-  return(p)
-}
-
-p_EnAm = make_lang_plot("English (American)")
-p_EnBr = make_lang_plot("English (British)")
-p_EnAu = make_lang_plot("English (Australian)")
-p_Gr = make_lang_plot("German")
-p_FrEu = make_lang_plot("French (French)")
-p_FrQc = make_lang_plot("French (Quebecois)")
-p_SpEu = make_lang_plot("Spanish (European)")
-p_SpMx = make_lang_plot("Spanish (Mexican)")
-p_MaBj = make_lang_plot("Mandarin (Beijing)")
-p_MaTw = make_lang_plot("Mandarin (Taiwanese)")
-
-
-plots_exp2 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab"), p_FrEu+rremove("xlab"), 
-                       p_FrQc+rremove("xlab"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab"), p_MaBj, p_MaTw,
-          labels = c("English (American)", "English (British)", "English (Australian)", "German", "French (European)",
-                     "French (Quebecois)", "Spanish (European)", "Spanish (Mexican)", "Mandarin (Beijingese)", "Mandarin (Taiwanese)"),
-          ncol = 2, nrow = 5,
-          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
-          label.x = c(0.4, 0.4, 0.4, 0.5, 0.4))
-
-ggsave("plots_exp3_betas_resid_2gm_2.jpeg",plot=plots_exp2, width = 12, height = 10, units="in", limitsize = FALSE)
-```
-
-```{r 3gm}
-library(lmSupport)
-data <- readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_3gm.rds")
-data <- data |> filter(term != "concreteness")
-data$term <- varRecode(data$term, c("unigram","3gmresid"), c("1gm", "3gm-rd"))
-
-
-lex.labs <- c("function words", "nouns", "predicates")
-names(lex.labs) <- c("fctwd", "noun", "pred")
-
-make_lang_plot <- function(lang){
-  lang_data <- data |> filter(language == lang)
-  p = ggplot(lang_data, aes(x = estimate, y = term, colour = term, fill=term)) +
-  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
-  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
-  geom_point(alpha=0.3, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
-  labs(x = "Surprisal estimate", y = "") +
-  theme_bw() +
-  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),
-        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
-  return(p)
-}
-
-p_EnAm = make_lang_plot("English (American)")
-p_EnBr = make_lang_plot("English (British)")
-p_EnAu = make_lang_plot("English (Australian)")
-p_Gr = make_lang_plot("German")
-p_FrEu = make_lang_plot("French (French)")
-p_FrQc = make_lang_plot("French (Quebecois)")
-p_SpEu = make_lang_plot("Spanish (European)")
-p_SpMx = make_lang_plot("Spanish (Mexican)")
-p_MaBj = make_lang_plot("Mandarin (Beijing)")
-p_MaTw = make_lang_plot("Mandarin (Taiwanese)")
-
-
-plots_exp2 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab"), p_FrEu+rremove("xlab"), 
-                       p_FrQc+rremove("xlab"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab"), p_MaBj, p_MaTw,
-          labels = c("English (American)", "English (British)", "English (Australian)", "German", "French (European)",
-                     "French (Quebecois)", "Spanish (European)", "Spanish (Mexican)", "Mandarin (Beijingese)", "Mandarin (Taiwanese)"),
-          ncol = 2, nrow = 5,
-          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
-          label.x = c(0.4, 0.4, 0.4, 0.5, 0.4))
-
-ggsave("plots_exp3_betas_resid_3gm_2.jpeg",plot=plots_exp2, width = 12, height = 10, units="in", limitsize = FALSE)
-```
-
-```{r 4gm}
-library(lmSupport)
-data <- readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_4gm.rds")
-data <- data |> filter(term != "concreteness")
-data$term <- varRecode(data$term, c("unigram","4gmresid"), c("1gm", "4gm-rd"))
-
-
-lex.labs <- c("function words", "nouns", "predicates")
-names(lex.labs) <- c("fctwd", "noun", "pred")
-
-make_lang_plot <- function(lang){
-  lang_data <- data |> filter(language == lang)
-  p = ggplot(lang_data, aes(x = estimate, y = term, colour = term, fill=term)) +
-  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
-  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
-  geom_point(alpha=0.3, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
-  labs(x = "Surprisal estimate", y = "") +
-  theme_bw() +
-  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),
-        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
-  return(p)
-}
-
-p_EnAm = make_lang_plot("English (American)")
-p_EnBr = make_lang_plot("English (British)")
-p_EnAu = make_lang_plot("English (Australian)")
-p_Gr = make_lang_plot("German")
-p_FrEu = make_lang_plot("French (French)")
-p_FrQc = make_lang_plot("French (Quebecois)")
-p_SpEu = make_lang_plot("Spanish (European)")
-p_SpMx = make_lang_plot("Spanish (Mexican)")
-p_MaBj = make_lang_plot("Mandarin (Beijing)")
-p_MaTw = make_lang_plot("Mandarin (Taiwanese)")
-
-
-plots_exp3 = ggarrange(p_EnAm+rremove("xlab"), p_EnBr+rremove("xlab"), p_EnAu+rremove("xlab"), p_Gr+rremove("xlab"), p_FrEu+rremove("xlab"), 
-                       p_FrQc+rremove("xlab"), p_SpEu+rremove("xlab"), p_SpMx+rremove("xlab"), p_MaBj, p_MaTw,
-          labels = c("English (American)", "English (British)", "English (Australian)", "German", "French (European)",
-                     "French (Quebecois)", "Spanish (European)", "Spanish (Mexican)", "Mandarin (Beijingese)", "Mandarin (Taiwanese)"),
-          ncol = 2, nrow = 5,
-          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
-          label.x = c(0.4, 0.4, 0.4, 0.5, 0.4))
-
-ggsave("plots_exp3_betas_resid_4gm_2.jpeg",plot=plots_exp3, width = 12, height = 10, units="in", limitsize = FALSE)
-```
-
-
-# APPROACH 3
+# APPROACH 2
 
 
 ```{r fit_model_random_slope2}
@@ -329,30 +195,32 @@ p2
 ```
 
 ```{r compare_languages_random_effect - no concreteness}
-p_lstm_sd <- coef(models_random_slope_pred$lstm_surp_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "predicates") |> 
-  rbind(coef(models_random_slope_noun$lstm_surp_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "nouns")) |> 
-  filter(preds != "concreteness") |>
-  ggplot(aes(x = estimates, y = preds, color = language)) + 
-  geom_point(size = 3, alpha=0.7, position = position_jitter(w = 0, h = 0.1)) + 
-  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) + 
-  facet_grid(~lexical_category) +
-  scale_y_discrete(labels=c("concreteness" = "concreteness", "surprisal_1gm" = "uni-gram","lstm_surp_resid" = "LSTM residual", "surp_2gm_resid" = "bi-gram residual", "surp_3gm_resid"="tri-gram residual", "surp_4gm_resid" = "four-gram residual"))+
-  scale_color_discrete(labels=c("French (French)"= "French (European)", "Mandarin (Beijing)" = "Mandarin (Beijingese)" ))+
-  labs(x = "Coefficient estimate", y = "") + 
-  ggtitle("Residualised LSTM surprisal") +
-  theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, face="bold"), legend.title = element_blank(), text=element_text(size=15,  family="Times New Roman"), axis.text.x = element_text(size = 15), axis.text.y = element_text(size = 15), strip.text.x = element_text(size = 15), plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
 
-ggsave("approach3_lstm_languages.jpeg",plot=p_lstm_sd, width = 12, height = 4, units="in", limitsize = FALSE)
+dat <- coef(models_random_slope_pred$lstm_surp_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "Predicates") |> 
+  rbind(coef(models_random_slope_noun$lstm_surp_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "Nouns")) |> 
+  filter(preds != "concreteness")
+
+p_lstm_sd <- dat |>
+  ggplot(aes(x = estimates, y = preds, color = language)) + 
+  geom_point(size = 4, alpha=0.7, position = position_jitter(w = 0, h = 0.1)) + 
+  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) + 
+  facet_grid(~ lexical_category) +
+  scale_y_discrete(labels=c("concreteness" = "concreteness", "surprisal_1gm" = "uni-gram","lstm_surp_resid" = "LSTM residual", "surp_2gm_resid" = "bi-gram residual", "surp_3gm_resid"="tri-gram residual", "surp_4gm_resid" = "four-gram residual"))+
+  scale_color_discrete(labels=c("French (French)"= "French (European)" ))+
+  labs(x = "Coefficient estimate", y = "") + 
+  theme_bw() +
+  theme(legend.title = element_blank(), text=element_text(family="Times New Roman" ), axis.text.x = element_text(size = 22), axis.text.y = element_text(size = 22), axis.title.x = element_text(size = 22),  plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), legend.position = "bottom", legend.text = element_text(size=15,  family="Times New Roman"), strip.text = element_text(face = "bold", size = 25), strip.background = element_rect(colour="#FFFFFF", fill="#FFFFFF"))
+
+ggsave("approach3_lstm_languages.png",plot=p_lstm_sd, width = 13, height = 4, units="in", limitsize = FALSE)
 
 ```
 
 ```{r}
-p_2gm_sd <- coef(models_random_slope_pred$surp_2gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "predicates") |> 
-  rbind(coef(models_random_slope_noun$surp_2gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "nouns")) |> 
+p_2gm_sd <- coef(models_random_slope_pred$surp_2gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "Predicates") |> 
+  rbind(coef(models_random_slope_noun$surp_2gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "Nouns")) |> 
   filter(preds != "concreteness") |>
   ggplot(aes(x = estimates, y = preds, color = language)) + 
-  geom_point(size = 3, alpha=0.7, position = position_jitter(w = 0, h = 0.1)) + 
+  geom_point(size = 4, alpha=0.7, position = position_jitter(w = 0, h = 0.1)) + 
   geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) + 
   facet_grid(~lexical_category) +
   scale_y_discrete(labels=c("concreteness" = "concreteness", "surprisal_1gm" = "uni-gram","lstm_surp_resid" = "LSTM residual", "surp_2gm_resid" = "bi-gram residual", "surp_3gm_resid"="tri-gram residual", "surp_4gm_resid" = "four-gram residual"))+
@@ -360,13 +228,13 @@ p_2gm_sd <- coef(models_random_slope_pred$surp_2gm_rd)$language |> rownames_to_c
   labs(x = "Coefficient estimate", y = "") + 
   ggtitle("Residualized bi-gram surprisal") +
   theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, face="bold"), legend.title = element_blank(), legend.position="none", text=element_text(size=15,  family="Times New Roman"), axis.text.x = element_text(size = 15), axis.text.y = element_text(size = 15), strip.text.x = element_text(size = 15), plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+  theme(plot.title = element_text(hjust = 0.5, face="bold", size = 18), legend.title = element_blank(), text=element_text(family="Times New Roman" ), axis.text.x = element_text(size = 15), axis.text.y = element_text(size = 15), axis.title.x = element_text(size = 15),  plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), legend.position = "bottom", legend.text = element_text(size=15,  family="Times New Roman"), strip.text = element_text(face = "bold", size = 18), strip.background = element_rect(colour="#FFFFFF", fill="#FFFFFF"))
 
-p_3gm_sd <- coef(models_random_slope_pred$surp_3gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "predicates") |> 
-  rbind(coef(models_random_slope_noun$surp_3gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "nouns")) |> 
+p_3gm_sd <- coef(models_random_slope_pred$surp_3gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "Predicates") |> 
+  rbind(coef(models_random_slope_noun$surp_3gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "Nouns")) |> 
   filter(preds != "concreteness") |>
   ggplot(aes(x = estimates, y = preds, color = language)) + 
-  geom_point(size = 3, alpha=0.7, position = position_jitter(w = 0, h = 0.1)) + 
+  geom_point(size = 4, alpha=0.7, position = position_jitter(w = 0, h = 0.1)) + 
   geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) + 
   facet_grid(~lexical_category) +
   scale_y_discrete(labels=c("concreteness" = "concreteness", "surprisal_1gm" = "uni-gram","lstm_surp_resid" = "LSTM residual", "surp_2gm_resid" = "bi-gram residual", "surp_3gm_resid"="tri-gram residual", "surp_4gm_resid" = "four-gram residual"))+
@@ -374,25 +242,25 @@ p_3gm_sd <- coef(models_random_slope_pred$surp_3gm_rd)$language |> rownames_to_c
   labs(x = "Coefficient estimate", y = "") + 
   ggtitle("Residualized tri-gram surprisal") +
   theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, face="bold"), legend.title = element_blank(), legend.position="none", text=element_text(size=15,  family="Times New Roman"), axis.text.x = element_text(size = 15), axis.text.y = element_text(size = 15), strip.text.x = element_text(size = 15), plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+  theme(plot.title = element_text(hjust = 0.5, face="bold", size = 18), legend.title = element_blank(), text=element_text(family="Times New Roman" ), axis.text.x = element_text(size = 15), axis.text.y = element_text(size = 15), axis.title.x = element_text(size = 15),  plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), legend.position = "bottom", legend.text = element_text(size=15,  family="Times New Roman"), strip.text = element_text(face = "bold", size = 18), strip.background = element_rect(colour="#FFFFFF", fill="#FFFFFF"))
 
-p_4gm_sd <- coef(models_random_slope_pred$surp_4gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "predicates") |> 
-  rbind(coef(models_random_slope_noun$surp_4gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "nouns")) |> 
+p_4gm_sd <- coef(models_random_slope_pred$surp_4gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "Predicates") |> 
+  rbind(coef(models_random_slope_noun$surp_4gm_rd)$language |> rownames_to_column(var = "language") |> rename(Intercept = "(Intercept)") |> gather(preds, estimates, 3:5) |> mutate(lexical_category = "Nouns")) |> 
   filter(preds != "concreteness") |>
   ggplot(aes(x = estimates, y = preds, color = language)) + 
-  geom_point(size = 3, alpha=0.7, position = position_jitter(w = 0, h = 0.1)) + 
+  geom_point(size = 4, alpha=0.7, position = position_jitter(w = 0, h = 0.1)) + 
   geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) + 
   facet_grid(~lexical_category) +
   scale_y_discrete(labels=c("concreteness" = "concreteness", "surprisal_1gm" = "uni-gram","lstm_surp_resid" = "LSTM residual", "surp_2gm_resid" = "bi-gram residual", "surp_3gm_resid"="tri-gram residual", "surp_4gm_resid" = "four-gram residual"))+
-    scale_color_discrete(labels=c("French (French)"= "French (European)", "Mandarin (Beijing)" = "Mandarin (Beijingese)" ))+
+    scale_color_discrete(labels=c("French (French)"= "French (European)" ))+
   labs(x = "Coefficient estimate", y = "") + 
   labs(x = "Coefficient estimate", y = "") + 
   ggtitle("Residualized four-gram surprisal") +
   theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, face="bold"), legend.title = element_blank(), legend.position="bottom", text=element_text(size=15,  family="Times New Roman"), axis.text.x = element_text(size = 15), axis.text.y = element_text(size = 15), strip.text.x = element_text(size = 15), plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+  theme(plot.title = element_text(hjust = 0.5, face="bold", size = 18), legend.title = element_blank(), text=element_text(family="Times New Roman" ), axis.text.x = element_text(size = 15), axis.text.y = element_text(size = 15), axis.title.x = element_text(size = 15),  plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), legend.position = "bottom", legend.text = element_text(size=15,  family="Times New Roman"), strip.text = element_text(face = "bold", size = 18), strip.background = element_rect(colour="#FFFFFF", fill="#FFFFFF"))
 
 
-plots_exp4 = ggarrange(p_2gm_sd+rremove("xlab"), p_3gm_sd+rremove("xlab"), p_4gm_sd, 
+plots_exp4 = ggarrange(p_2gm_sd+rremove("xlab")+rremove("legend"), p_3gm_sd+rremove("xlab")+rremove("legend"), p_4gm_sd, 
           #labels = c("Residualized LSTM surprisal", "Residualized bi-gram surprisal", "Residualized tri-gram surprisal", "Residualized four-gram surprisal"),
           #hjust = 0.5,
           ncol = 1,
@@ -400,13 +268,16 @@ plots_exp4 = ggarrange(p_2gm_sd+rremove("xlab"), p_3gm_sd+rremove("xlab"), p_4gm
 
 plots_exp4
 
-ggsave("approach3_ngrams_languages.jpeg",plot=plots_exp4, width = 12, height = 10, units="in", limitsize = FALSE)
+ggsave("approach3_ngrams_languages.png",plot=plots_exp4, width = 13.5, height = 9, units="in", limitsize = FALSE)
 ```
 
 # AoA differences plot
 ```{r consistent plots}
-effects <- read.csv("./data/exp4_aoa_diff_plot.csv")
-p4 <- effects %>% rename(`p-value` = p.value) %>% ggplot(aes(x = Effects, y = Term, shape = `p-value`,xmax = Ub, xmin = Lb))  +
+effects <- read.csv("./data/exp4_aoa_diff_plot.csv") %>% 
+  mutate(p.value = if_else(p.value=="***", "< 0.001", p.value)) %>% 
+  rename(`p-level` = p.value)
+  
+p4 <- effects %>% ggplot(aes(x = Effects, y = Term, shape = `p-level`,xmax = Ub, xmin = Lb))  +
   facet_grid(~ POS) +
   geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
   geom_point(color = "red",  show.legend = T)+
@@ -415,8 +286,8 @@ p4 <- effects %>% rename(`p-value` = p.value) %>% ggplot(aes(x = Effects, y = Te
   scale_shape_manual(values=c(17)) +
   theme_bw()+
   xlim(-1,1)+
-  theme(strip.background = element_rect(colour="#FFFFFF", fill="#FFFFFF"),legend.position="bottom",text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 18,face = "bold"),
-        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+  theme(strip.background = element_rect(colour="#FFFFFF", fill="#FFFFFF"),legend.position="bottom",text=element_text(size=16,  family="Times New Roman"), axis.text.x = element_text(size = 16), axis.text.y = element_text(size = 14), strip.text.x = element_text(size = 18,face = "bold"),
+        plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"))
 
-ggsave("plots_exp4_model_aoa_diff.png",plot=p4, width = 9, height = 4, units="in", limitsize = FALSE)
+ggsave("plots_exp4_model_aoa_diff.png",plot=p4, width = 8.5, height = 3, units="in", limitsize = FALSE)
 ```
