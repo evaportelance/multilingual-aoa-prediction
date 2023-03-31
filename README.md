@@ -1,9 +1,8 @@
 # multilingual-aoa-prediction
 
-This repository contains all the data, code, and analyses presented in Chapter 2 of my dissertation. This project extends on an earlier paper of mine, *Predicting Age of Acquisition in Early Word Learning Using Recurrent Neural Networks* by Portelance, Degen, and Frank, CogSci (2020), by applying previous analyses as well as new ones to a set of cross-linguistic child-directed utterance corpora. Its main purpose is to determine (1) whether word surprisal is a good predictor of when words are acquired by children? and (2) whether words which are difficult for language models to learn are also acquired later by children?
+This repository contains all the data, code, and analyses presented in Chapter 2 of my dissertation as well as the subsequent paper entitled _Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal_. 
 
-Please cite the following manuscript and/or my dissertation if you choose to use any of the data, code, or results from this repository:
-
+Please cite the following paper and/or my dissertation if you choose to use any of the cleaned data, code, or results from this repository:
 
 @manuscript{portelance2023predicting,
   author  = {Portelance, Eva and Duan, Yuguang and Frank, Michael C. and Lupyan, Gary},
@@ -16,6 +15,26 @@ Please cite the following manuscript and/or my dissertation if you choose to use
   title   = {Neural network approaches to the study of word learning},
   school  = {Stanford University},
   year    = {2022}
+}
+
+Additionally, please cite the CHILDES and Wordbank repositories, where the original data is stored, as well as the original studies in each language used:
+
+@book{macwhinney2000CHILDES,
+  title={The {CHILDES} {P}roject: {T}ools for analyzing talk. {T}hird {E}dition.},
+  author={MacWhinney, B.},
+  year={2000},
+  publisher={Erlbaum}
+}
+
+@article{frank2017wordbank,
+  title={Wordbank: An open repository for developmental vocabulary data},
+  author={Frank, Michael C and Braginsky, Mika and Yurovsky, Daniel and Marchman, Virginia A},
+  journal={Journal of child language},
+  volume={44},
+  number={3},
+  pages={677--694},
+  year={2017},
+  publisher={Cambridge University Press}
 }
 
 ## How to
@@ -44,7 +63,7 @@ To extract token frequency values separately, run :
 
 All of the results will be saved to the experiment directory, by default *./Results/experiments/[NAME OF EXPERIMENT]*.
 
-### Running the analyses and experiments presented in the dissertation chapter
+### Running the analyses and experiments
 
 If you have retrained and extracted your one models, you'll need to collect the average surprisal results from each model run from the directory indicated above and then you can run the code in *./Analyses/surprisal_frequency_data_wrangling.Rmd* to average data across each random seed by language. Otherwise SKIP THIS STEP.
 
