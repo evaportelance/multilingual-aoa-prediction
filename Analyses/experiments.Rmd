@@ -949,6 +949,29 @@ scaled_lang_data <- aoa_predictor_data |>
                  labels = c("nouns", "predicates" , "function_words")))
 ```
 
+Don't run this section until you want to check the results differences for Mandarin between this experiment (complete word set) and experiment4 (uni-lemma based intersection set)!!!
+
+```{r Compare Mandarin results on the uni-lemma-based intersection set}
+# Run each language separately
+lang = "Mandarin (Beijingese)" # "Mandarin (Taiwanese)"
+ms = "produces"
+scaled_lang_data_mandarin <- aoa_predictor_data |>
+  filter(measure==ms) |>
+  group_by(uni_lemma) |> 
+  mutate(all_lang = ifelse(length(unique(language)) > 9, 1, 0)) |>
+  ungroup() |> mutate(surprisal_1gm = - log(all_frequency)) |>
+  select(all_lang, language, uni_lemma, category, definition, aoa, lexical_category, surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, all_frequency, concreteness) |>
+  filter(all_lang == 1) |>
+  filter(language==lang) |> mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |> ##
+  unique() |> 
+  mutate(lstm_surp_resid = resid(lm(lstm_surprisal ~ surprisal_1gm))) |> ##
+  mutate(surp_2gm_resid = resid(lm(surprisal_2gm ~ surprisal_1gm))) |>
+  mutate(surp_3gm_resid = resid(lm(surprisal_3gm ~ surprisal_1gm))) |>
+  mutate(surp_4gm_resid = resid(lm(surprisal_4gm ~ surprisal_1gm))) |>
+  mutate(lexical_category = factor(lexical_category, levels = c("nouns", "predicates" , "function_words"),
+                 labels = c("nouns", "predicates" , "function_words")))
+```
+
 
 Run cross-validation for a single language.
 ```{r cross_validate1}
@@ -1989,9 +2012,292 @@ plots_exp4
 ggsave("plots_exp4_language_3.jpeg",plot=plots_exp4, width = 12, height = 16, units="in", limitsize = FALSE)
 ```
 
+## Examine differences in effects direction for Mandarin between exp1 and exp2
+
+```{r word distribution in exp1 and exp2}
+aoa_predictor_data <- readRDS("./data/aoa_predictor_data_unify.rds" )
+predictors <- c("concreteness", "surprisal_1gm","surprisal_2gm","surprisal_3gm","surprisal_4gm", "lstm_surprisal")
+# Repeat for each language
+lang = "Mandarin (Taiwanese)" #"English (American)","English (British)","English (Australian)","German","French (French)","French (Quebecois)","Spanish (European)","Spanish (Mexican)","Mandarin (Beijing)","Mandarin (Taiwanese)"
+ms = "produces"
+
+scaled_lang_data <- aoa_predictor_data |>
+  filter(language==lang & measure==ms) |>
+  select(language, uni_lemma, category, definition, aoa, lexical_category, lstm_surprisal, surprisal_2gm, surprisal_3gm, surprisal_4gm, surprisal_1gm, concreteness) |>
+  unique() |> mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |>
+  mutate(lstm_surp_resid = resid(lm(lstm_surprisal ~ surprisal_1gm))) |>
+  mutate(surp_2gm_resid = resid(lm(surprisal_2gm ~ surprisal_1gm))) |>
+  mutate(surp_3gm_resid = resid(lm(surprisal_3gm ~ surprisal_1gm))) |>
+  mutate(surp_4gm_resid = resid(lm(surprisal_4gm ~ surprisal_1gm))) |>
+  mutate(lexical_category = factor(lexical_category, levels = c("nouns", "predicates" , "function_words"),
+                 labels = c("nouns", "predicates" , "function_words")))
+
+scaled_lang_data <- scaled_lang_data %>% filter(lexical_category=="predicates") %>% mutate_at(vars(c("aoa", predictors, "lstm_surp_resid", "surp_2gm_resid", "surp_3gm_resid", "surp_4gm_resid")), ~as.numeric(base::scale(.)))
+scaled_lang_data$dataset = "complete predicate dataset"
+scaled_lang_data_subset <- scaled_lang_data %>% filter(uni_lemma %in% scaled_lang_data_mandarin$uni_lemma)
+scaled_lang_data_subset$dataset = "uni-lemma-based intersection across languages"
+scaled_lang_data_leftout <- scaled_lang_data %>% filter(!uni_lemma %in% scaled_lang_data_mandarin$uni_lemma)
+scaled_lang_data_leftout$dataset = "left-out predicate set"
+
+ttest_results = data.frame()
+pred_mandarin_data_subset <- scaled_lang_data_subset %>% filter(lexical_category=="predicates")
+pred_mandarin_data_rest <- scaled_lang_data %>% filter(lexical_category=="predicates") %>% filter(!definition %in% pred_mandarin_data_subset$definition)
+for (col in c("aoa","concreteness", "surprisal_1gm","lstm_surp_resid")){
+  test = t.test(pred_mandarin_data_rest[[col]],pred_mandarin_data_subset[[col]])
+  temp = data.frame(
+    language = lang,
+    "Variable" = col, 
+    "t_value" = paste0(round(test$statistic,2), " (",round(test$p.value,2),")")
+  )
+  ttest_results = rbind(ttest_results, temp)
+}
+
+
+#First language
+ttest_all <- ttest_results%>%
+  mutate(Variable = case_when(
+    Variable == "aoa" ~ "AoA",
+    Variable == "concreteness" ~ "concreteness",
+    Variable == "surprisal_1gm" ~ "uni-gram",
+    Variable == "surprisal_2gm" ~ "bi-gram",
+    Variable == "surprisal_3gm" ~ "tri-gram",
+    Variable == "surprisal_4gm" ~ "four-gram",
+    Variable == "lstm_surprisal" ~ "LSTM",
+    Variable == "lstm_surp_resid" ~ "LSTM residual",
+    Variable == "surp_2gm_resid" ~ "bi-gram residual",
+    Variable == "surp_3gm_resid" ~ "tri-gram residual",
+    Variable == "surp_4gm_resid" ~ "four-gram residual",
+    TRUE ~ Variable
+  ))  
+
+
+#Subsequent languages
+ttest_all <- ttest_all %>% rbind(ttest_results)
+
+ttest_all%>% write.csv("ttest_results_all.csv",row.names = F, quote = T)
+
+# distribution plot (check Mandarin (Beijingese) and Mandarin (Taiwanese) separately)
+two_sets <- rbind(scaled_lang_data,scaled_lang_data_subset)
+
+p_beijing <- two_sets %>%
+  filter(lexical_category=="predicates") %>%
+  pivot_longer(data = ., cols = c("aoa", predictors, "lstm_surp_resid", "surp_2gm_resid", "surp_3gm_resid", "surp_4gm_resid"), names_to = "variable", values_to="value") %>%
+  mutate(variable = case_when(
+    variable == "aoa" ~ "AoA",
+    variable == "concreteness" ~ "concreteness",
+    variable == "surprisal_1gm" ~ "uni-gram",
+    variable == "surprisal_2gm" ~ "bi-gram",
+    variable == "surprisal_3gm" ~ "tri-gram",
+    variable == "surprisal_4gm" ~ "four-gram",
+    variable == "lstm_surprisal" ~ "LSTM",
+    variable == "lstm_surp_resid" ~ "LSTM residual",
+    variable == "surp_2gm_resid" ~ "bi-gram residual",
+    variable == "surp_3gm_resid" ~ "tri-gram residual",
+    variable == "surp_4gm_resid" ~ "four-gram residual",
+    TRUE ~ variable
+  )) %>% filter(variable %in% c("AoA","concreteness","uni-gram","LSTM residual"))%>%
+  ggplot(data = ., aes(x = value, fill = dataset)) +
+  geom_histogram(alpha = 0.5, bins = 30) +
+  facet_wrap(~factor(variable, levels=c("AoA","concreteness","uni-gram","LSTM residual")), scales = "free",ncol=4) +
+  theme_bw() +
+  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),legend.position="bottom",legend.text = element_text(size=12),plot.margin = margin(1, 0.5, 0.5, 0.5, "cm")) 
+
+p_taiwan <- two_sets %>%
+  filter(lexical_category=="predicates") %>%
+  pivot_longer(data = ., cols = c("aoa", predictors, "lstm_surp_resid", "surp_2gm_resid", "surp_3gm_resid", "surp_4gm_resid"), names_to = "variable", values_to="value") %>%
+  mutate(variable = case_when(
+    variable == "aoa" ~ "AoA",
+    variable == "concreteness" ~ "concreteness",
+    variable == "surprisal_1gm" ~ "uni-gram",
+    variable == "surprisal_2gm" ~ "bi-gram",
+    variable == "surprisal_3gm" ~ "tri-gram",
+    variable == "surprisal_4gm" ~ "four-gram",
+    variable == "lstm_surprisal" ~ "LSTM",
+    variable == "lstm_surp_resid" ~ "LSTM residual",
+    variable == "surp_2gm_resid" ~ "bi-gram residual",
+    variable == "surp_3gm_resid" ~ "tri-gram residual",
+    variable == "surp_4gm_resid" ~ "four-gram residual",
+    TRUE ~ variable
+  )) %>% filter(variable %in% c("AoA","concreteness","uni-gram","LSTM residual"))%>%
+  ggplot(data = ., aes(x = value, fill = dataset)) +
+  geom_histogram(alpha = 0.5, bins = 30) +
+  facet_wrap(~factor(variable, levels=c("AoA","concreteness","uni-gram","LSTM residual")), scales = "free",ncol=4) +
+  theme_bw() +
+  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),legend.position="bottom",legend.text = element_text(size=12),plot.margin = margin(1, 0.5, 0.5, 0.5, "cm")) 
+
+plots_distribution_mandarin = ggarrange(p_beijing+rremove("xlab"), p_taiwan,
+          labels = c("Mandarin (Beijingese)", "Mandarin (Taiwanese)"),
+          ncol = 1, nrow = 2,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          label.x = c(0.4, 0.4, 0.4, 0.5, 0.4),
+  common.legend = F)
+
+ggsave("distribution_mandarin_complete.jpeg",plot=plots_distribution_mandarin, width = 14, height =6, units="in", limitsize = FALSE)
+```
+
+
+```{r difference due to 1gm-surprisal and concreteness split LOOCV}
+lstm_surp_rd = ~ lexical_category * lstm_surp_resid + lexical_category * surprisal_1gm + lexical_category * concreteness
+
+formulae <- formulas(~aoa, lstm_surp_rd)
+
+# Repeat for each language
+lang = "Mandarin (Taiwanese)" #"English (American)","English (British)","English (Australian)","German","French (French)","French (Quebecois)","Spanish (European)","Spanish (Mexican)","Mandarin (Beijing)","Mandarin (Taiwanese)"
+ms = "produces"
+
+## Manipulate filter to split concreteness and surprisal_1gm from median
+## Try following combination each time
+### concreteness > median(concreteness) & surprisal_1gm <= median(surprisal_1gm) -> low concreteness + high 1gm surprisal
+### concreteness > median(concreteness) & surprisal_1gm > median(surprisal_1gm) -> high concreteness + high 1gm surprisal
+### concreteness <= median(concreteness) & surprisal_1gm <= median(surprisal_1gm) -> low concreteness + low 1gm surprisal
+### concreteness <= median(concreteness) & surprisal_1gm > median(surprisal_1gm) -> high concreteness + low 1gm surprisal
+
+scaled_lang_data <- aoa_predictor_data |>
+  filter(language==lang & measure==ms) |>
+  select(language, uni_lemma, category, definition, aoa, lexical_category, lstm_surprisal, surprisal_2gm, surprisal_3gm, surprisal_4gm, surprisal_1gm, concreteness) |>
+  unique() |> mutate_at(vars(predictors), ~as.numeric(base::scale(.))) |>
+  mutate(lstm_surp_resid = resid(lm(lstm_surprisal ~ surprisal_1gm))) |>
+  mutate(surp_2gm_resid = resid(lm(surprisal_2gm ~ surprisal_1gm))) |>
+  mutate(surp_3gm_resid = resid(lm(surprisal_3gm ~ surprisal_1gm))) |>
+  mutate(surp_4gm_resid = resid(lm(surprisal_4gm ~ surprisal_1gm))) |>
+  mutate(lexical_category = factor(lexical_category, levels = c("nouns", "predicates" , "function_words"),
+                 labels = c("nouns", "predicates" , "function_words"))) |>
+  group_by(lexical_category) |>
+  filter(concreteness <= median(concreteness) & surprisal_1gm > median(surprisal_1gm) & lexical_category!="function_words") |> ungroup()
+
+loo_df <- crossv_loo(scaled_lang_data)
+
+# dont try to view
+loo_models <- loo_df$.id |>
+    map(fit_cv_models_single) |>
+    reduce(rbind)
+
+# dont try to view
+loo_preds <- get_cv_preds(loo_models, scaled_lang_data) |> 
+  mutate(language = lang,
+         measure = ms)
+# View
+cv_results <- get_cv_results(loo_preds) |>
+    mutate(language = lang,
+         measure = ms)
+
+cv_results_pos <- loo_preds |>
+  group_by(language, measure, name, lexical_category) |>
+  summarise(mean_abs_dev = mean(abs_dev), sd_ads_dev = sd(abs_dev))
+
+
+models_lstm_rd = loo_models |> filter(name=="lstm_surp_rd")  
+models <- models_lstm_rd
+models_betas_lstm_rd = map(c(1:nrow(models_lstm_rd)), get_betas) |> bind_rows()
+
+lexcat_betas_lstm_rd <- models_betas_lstm_rd |> select(term, estimate, fold) |> spread(key=term, value=estimate) |>
+  rename_with(removePunctuation) |>
+  mutate(
+         pred_lstmresid = lstmsurpresid + lexicalcategorypredicates + lexicalcategorypredicateslstmsurpresid,
+         noun_lstmresid = lstmsurpresid
+         ) |> 
+  select(noun_lstmresid,pred_lstmresid) |> 
+  gather(key="term", value="estimate") |> 
+  separate(col=term, into=c("lexical_category", "term"), sep="_") |>
+  mutate(language = lang,
+         measure = ms)
+
+#first language
+exp2_all_cv_results_resid <- cv_results
+exp2_all_cv_results_pos_resid <- cv_results_pos
+exp2_all_lexcat_betas_resid_lstm <- lexcat_betas_lstm_rd
+
+#all subsequent languages
+exp2_all_cv_results_resid <- exp2_all_cv_results_resid |> rbind(cv_results)
+exp2_all_cv_results_pos_resid <- exp2_all_cv_results_pos_resid |> rbind(cv_results_pos)
+exp2_all_lexcat_betas_resid_lstm <- exp2_all_lexcat_betas_resid_lstm |> rbind(lexcat_betas_lstm_rd)
+
+saveRDS(exp2_all_lexcat_betas_resid_lstm, "./experiment-results/diss/exp2_all_lexcat_betas_resid_lstm_mandarin_concrete_low_1gm_high2.rds" )
+
+
+data <- readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_lstm_mandarin_concrete_low_1gm_high2.rds")
+data <- data |> filter(term != "concreteness")
+data$term <- varRecode(data$term, c("unigram","lstmresid"), c("uni-gm", "LSTM residual"))
+
+
+lex.labs <- c("function words", "nouns", "predicates")# 
+names(lex.labs) <- c("fctwd", "noun", "pred")#
+
+make_lang_plot <- function(lang){
+  lang_data <- data |> filter(language == lang)
+  p = ggplot(lang_data, aes(x = estimate, y = term, colour = term, fill=term)) +
+  facet_grid(~ lexical_category, labeller = labeller(lexical_category = lex.labs)) +
+  geom_vline(xintercept = 0, color = "grey", linetype = "dotted", size = 1) +
+  geom_point(alpha=0.3, position = position_jitter(w = 0, h = 0.1), show.legend = FALSE)+
+  labs(x = "Surprisal estimate", y = "") +
+  theme_bw() +
+  theme(text=element_text(size=12,  family="Times New Roman"), axis.text.x = element_text(size = 12), axis.text.y = element_text(size = 12), strip.text.x = element_text(size = 12),
+        plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"))
+  return(p)
+}
+
+# Select from the following steps according to the filter above (e.g., HL == high concreteness + low surprisal_1gm)
+## High concreteness + Low surprisal_1gm
+p_EnAmHL = make_lang_plot("English (American)")
+p_EnBrHL = make_lang_plot("English (British)")
+p_EnAuHL = make_lang_plot("English (Australian)")
+p_GrHL = make_lang_plot("German")
+p_FrEuHL = make_lang_plot("French (French)")
+p_FrQcHL = make_lang_plot("French (Quebecois)")
+p_SpEuHL = make_lang_plot("Spanish (European)")
+p_SpMxHL = make_lang_plot("Spanish (Mexican)")
+p_MaBjHL = make_lang_plot("Mandarin (Beijing)")
+p_MaTwHL = make_lang_plot("Mandarin (Taiwanese)")
+
+## High concreteness + High surprisal_1gm
+p_EnAmHH = make_lang_plot("English (American)")
+p_EnBrHH = make_lang_plot("English (British)")
+p_EnAuHH = make_lang_plot("English (Australian)")
+p_GrHH = make_lang_plot("German")
+p_FrEuHH = make_lang_plot("French (French)")
+p_FrQcHH = make_lang_plot("French (Quebecois)")
+p_SpEuHH = make_lang_plot("Spanish (European)")
+p_SpMxHH = make_lang_plot("Spanish (Mexican)")
+p_MaBjHH = make_lang_plot("Mandarin (Beijing)")
+p_MaTwHH = make_lang_plot("Mandarin (Taiwanese)")
+
+## Low concreteness + Low surprisal_1gm
+p_EnAmLL = make_lang_plot("English (American)")
+p_EnBrLL = make_lang_plot("English (British)")
+p_EnAuLL = make_lang_plot("English (Australian)")
+p_GrLL = make_lang_plot("German")
+p_FrEuLL = make_lang_plot("French (French)")
+p_FrQcLL = make_lang_plot("French (Quebecois)")
+p_SpEuLL = make_lang_plot("Spanish (European)")
+p_SpMxLL = make_lang_plot("Spanish (Mexican)")
+p_MaBjLL = make_lang_plot("Mandarin (Beijing)")
+p_MaTwLL = make_lang_plot("Mandarin (Taiwanese)")
+
+## Low concreteness + High surprisal_1gm
+p_EnAmLH = make_lang_plot("English (American)")
+p_EnBrLH = make_lang_plot("English (British)")
+p_EnAuLH = make_lang_plot("English (Australian)")
+p_GrLH = make_lang_plot("German")
+p_FrEuLH = make_lang_plot("French (French)")
+p_FrQcLH = make_lang_plot("French (Quebecois)")
+p_SpEuLH = make_lang_plot("Spanish (European)")
+p_SpMxLH = make_lang_plot("Spanish (Mexican)")
+p_MaBjLH = make_lang_plot("Mandarin (Beijing)")
+p_MaTwLH = make_lang_plot("Mandarin (Taiwanese)")
+
+library(ggpubr)
+# Plot 2 languages each time
+plots_exp2 = ggarrange(p_SpEuHL+rremove("xlab"), p_SpMxHL+rremove("xlab")+rremove("ylab"), p_SpEuHH+rremove("xlab"), p_SpMxHH+rremove("xlab")+rremove("ylab"), p_SpEuLL+rremove("xlab"), p_SpMxLL+rremove("xlab")+rremove("ylab"), p_SpEuLH, p_SpMxLH+rremove("ylab"),
+          labels = c("Spanish (European)", "Spanish (Mexican)", "(high concreteness +", "high uni-gram surprisal)","(low concreteness + ", "low uni-gram surprisal)","(low concreteness + ", "high uni-gram surprisal)"),
+          ncol = 2, nrow = 4,
+          font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
+          label.x = c(0.4, 0.4, 0.4, 0.5, 0.4))
+
+ggsave("plots_exp3_betas_resid_lstm_2_Sp_Mx.jpeg",plot=plots_exp2, width = 12, height = 8, units="in", limitsize = FALSE)
+```
+
 
 ## AoA difference
-
 
 
 ```{r prep_data4, eval = F, echo = F}
