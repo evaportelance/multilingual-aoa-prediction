@@ -2074,7 +2074,7 @@ ttest_all <- ttest_results%>%
 #Subsequent languages
 ttest_all <- ttest_all %>% rbind(ttest_results)
 
-ttest_all%>% write.csv("ttest_results_all.csv",row.names = F, quote = T)
+ttest_all%>% write.csv("./experiment-results/diss/exp4_ttest_results_all.csv",row.names = F, quote = T)
 
 # distribution plot (check Mandarin (Beijingese) and Mandarin (Taiwanese) separately)
 two_sets <- rbind(scaled_lang_data,scaled_lang_data_subset)
@@ -2132,7 +2132,7 @@ plots_distribution_mandarin = ggarrange(p_beijing+rremove("xlab"), p_taiwan,
           label.x = c(0.4, 0.4, 0.4, 0.5, 0.4),
   common.legend = F)
 
-ggsave("distribution_mandarin_complete.jpeg",plot=plots_distribution_mandarin, width = 14, height =6, units="in", limitsize = FALSE)
+ggsave("./plots/exp4_distribution_mandarin_complete.jpeg",plot=plots_distribution_mandarin, width = 14, height =6, units="in", limitsize = FALSE)
 ```
 
 
@@ -2212,10 +2212,10 @@ exp2_all_cv_results_resid <- exp2_all_cv_results_resid |> rbind(cv_results)
 exp2_all_cv_results_pos_resid <- exp2_all_cv_results_pos_resid |> rbind(cv_results_pos)
 exp2_all_lexcat_betas_resid_lstm <- exp2_all_lexcat_betas_resid_lstm |> rbind(lexcat_betas_lstm_rd)
 
-saveRDS(exp2_all_lexcat_betas_resid_lstm, "./experiment-results/diss/exp2_all_lexcat_betas_resid_lstm_mandarin_concrete_low_1gm_high2.rds" )
+saveRDS(exp2_all_lexcat_betas_resid_lstm, "./experiment-results/diss/exp4_all_lexcat_betas_resid_lstm_mandarin_concrete_low_1gm_high.rds" )
 
 
-data <- readRDS("./experiment-results/diss/exp2_all_lexcat_betas_resid_lstm_mandarin_concrete_low_1gm_high2.rds")
+data <- readRDS("./experiment-results/diss/exp4_all_lexcat_betas_resid_lstm_mandarin_concrete_low_1gm_high.rds")
 data <- data |> filter(term != "concreteness")
 data$term <- varRecode(data$term, c("unigram","lstmresid"), c("uni-gm", "LSTM residual"))
 
@@ -2293,7 +2293,7 @@ plots_exp2 = ggarrange(p_SpEuHL+rremove("xlab"), p_SpMxHL+rremove("xlab")+rremov
           font.label = list(size = 12, color = "black", face = "bold", family = "Times New Roman"),
           label.x = c(0.4, 0.4, 0.4, 0.5, 0.4))
 
-ggsave("plots_exp3_betas_resid_lstm_2_Sp_Mx.jpeg",plot=plots_exp2, width = 12, height = 8, units="in", limitsize = FALSE)
+ggsave("plots_exp4_betas_resid_lstm_Sp_Mx.jpeg",plot=plots_exp2, width = 12, height = 8, units="in", limitsize = FALSE)
 ```
 
 
