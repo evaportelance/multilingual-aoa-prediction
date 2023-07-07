@@ -1,0 +1,212 @@
+---
+title: "contextual-diversity"
+author: "Eva Portelance"
+date: "6/15/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+options(dplyr.summarise.inform = FALSE)
+
+# load libraries
+library(arm)
+library(tidyverse)
+library(glue)
+library(wordbankr)
+library(contrast)
+#install.packages("remotes")
+#remotes::install_github("langcog/childesr")
+library(childesr)
+library(broom)
+library(car)
+#library(jglmm)
+library(modelr)
+library(ggrepel)
+library(SnowballC)
+library(stringr)
+library(ggplot2)
+library(tm)
+library(sjPlot)
+library(sjlabelled)
+library(sjmisc)
+theme_set(theme_sjplot())
+
+
+# load functions
+
+walk(list.files("scripts", pattern = "*.R$", full.names = TRUE), source)
+```
+
+```{r}
+my_read <- function(file){
+  data = read_csv(file)
+  return(data)
+}
+get_all_langs_cd <- function(){
+  lang_path <- glue("./data/contextual-diversity/")
+  files = list.files(path=lang_path, pattern="*.csv", full.names=TRUE, recursive=FALSE)
+  lang_data <- files |> map(my_read) |> reduce(rbind)
+  return(lang_data)
+}
+
+contextual_diversity <- get_all_langs_cd()
+```
+
+```{r}
+frequencies <- readRDS("./data/surprisal-and-frequency/frequencies.rds")
+frequencies <- frequencies |> select(-c(n_train_instances, n_val_instances, n_total, train_frequency))
+
+lstm_surprisals <- readRDS("./data/surprisal-and-frequency/lstm_surprisals.rds")
+lstm_surprisals <- lstm_surprisals |> mutate(lstm_surprisal = avg_surprisal) |> select(-c(n_instances, avg_surprisal)) |> unique()
+
+ngram_surprisals <- readRDS("./data/surprisal-and-frequency/ngram_childes_surprisal.rds")
+ngram_surprisals <- ngram_surprisals |> select(-c(cnt, frequency, avg_surprisal))
+
+```
+
+```{r}
+all_vars <- ngram_surprisals |> left_join(lstm_surprisals) |> left_join(frequencies) |> left_join(contextual_diversity)
+```
+
+Set lexical contrasts and predictors list
+
+Remove items with NA data points
+
+```{r remove_NA}
+
+predictors <- c("lstm_surprisal", "all_frequency", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "cd_score")
+remove_NA_predictors <- function(data, predictors){
+  for (pred in predictors){
+    data <- data |> filter(!is.na(data[[pred]]))
+  }
+  return(data)
+}
+
+data <- remove_NA_predictors(all_vars, predictors)
+
+data <- data %>% unique() |> group_by(language,uni_lemma,definition) |> mutate(surprisal_1gm = - log(all_frequency)) |> mutate_at(vars(starts_with("surprisal"),lstm_surprisal,avg_perplexity), ~sum(.*all_frequency)/sum(all_frequency)) |> mutate(all_frequency=sum(all_frequency)) |> mutate(log_cd_score=log(cd_score)) |> select(language, uni_lemma, category, definition, lexical_class, lstm_surprisal, surprisal_2gm, surprisal_3gm, surprisal_4gm, surprisal_1gm, cd_score, log_cd_score) |> unique() |> ungroup() |> group_by(language) |> mutate_at(vars(c("lstm_surprisal", "surprisal_1gm", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "cd_score", "log_cd_score")), ~as.numeric(base::scale(.)))
+
+#data |> filter(language == "French (French)") |> summarize(sd = sd(lstm_surprisal), mean = mean(lstm_surprisal))
+```
+
+```{r}
+my_get_cor_plot <- function(data){
+  lang = data$language |> unique()
+  #selected_data <- data |> select(surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, cd_score, log_cd_score)
+  selected_data <- data |> select(surprisal_1gm, lstm_surprisal, cd_score, log_cd_score)
+  M = cor(selected_data, method = "pearson", use = "complete.obs")
+  print(lang)
+  print(M)
+  #corrplot(M, method = 'number')
+  #corrplot(M)
+}
+
+#data |> group_by(language) |> 
+#  group_split() |>
+#  map(my_get_cor_plot)
+
+my_get_cor_plot(ungroup(data))
+```
+
+
+```{r}
+resid_data <- data |> mutate(lstm_surp_resid = resid(lm(lstm_surprisal ~ surprisal_1gm))) |>
+  mutate(log_cd_resid = resid(lm(log_cd_score ~ surprisal_1gm)))
+
+my_get_cor_plot <- function(data){
+  lang = data$language |> unique()
+  selected_data <- data |> select(lstm_surp_resid, log_cd_resid, surprisal_1gm)
+  M = cor(selected_data, method = "pearson", use = "complete.obs")
+  print(lang)
+  print(M)
+  #corrplot(M, method = 'number')
+  #corrplot(M)
+}
+
+#resid_data |> group_by(language) |> 
+#  group_split() |>
+#  map(my_get_cor_plot)
+
+my_get_cor_plot(ungroup(resid_data))
+
+```
+
+```{r}
+lexcat_data <- data |> mutate(lexical_category = ifelse(lexical_class %in% c('verbs', 'adjectives'), 'predicates', lexical_class))
+
+my_get_cor_plot <- function(data){
+  lang = data$language |> unique()
+  lexical_category = data$lexical_category |> unique()
+  selected_data <- data |> select(surprisal_1gm, lstm_surprisal, cd_score, log_cd_score)
+  M = cor(selected_data, method = "pearson", use = "complete.obs")
+  print(lang)
+  print(lexical_category)
+  print(M)
+  #corrplot(M, method = 'number')
+  #corrplot(M)
+}
+
+lexcat_data |> group_by(language, lexical_category) |> 
+  group_split() |>
+  map(my_get_cor_plot)
+```
+
+```{r}
+resid_lexcat_data <- lexcat_data |> mutate(lstm_surp_resid = resid(lm(lstm_surprisal ~ surprisal_1gm))) |>
+  mutate(log_cd_resid = resid(lm(log_cd_score ~ surprisal_1gm)))
+
+my_get_cor_plot <- function(data){
+  lang = data$language |> unique()
+  lexical_category = data$lexical_category |> unique()
+  selected_data <- data |> select(lstm_surp_resid, log_cd_resid, surprisal_1gm)
+  #selected_data <- data |> select(lstm_surprisal, log_cd_score, surprisal_1gm)
+  M = cor(selected_data, method = "pearson", use = "complete.obs")
+  print(lang)
+  print(lexical_category)
+  print(M)
+  print("")
+  #corrplot(M, method = 'number')
+  #corrplot(M)
+}
+
+#resid_lexcat_data
+plot_data |> group_by(lexical_category) |> 
+  group_split() |>
+  map(my_get_cor_plot)
+
+```
+
+```{r}
+
+scaled_lang_data_random_slope <- readRDS("./data/scaled_lang_data_random_slope.rds" ) |> select(language, aoa, uni_lemma, definition)
+
+plot_data <- scaled_lang_data_random_slope |> left_join(resid_lexcat_data)
+
+aoa_predictor_data <- readRDS("./data/aoa_predictor_data_unify.rds" ) 
+aoa <- aoa_predictor_data |> select(language, aoa, uni_lemma, definition)
+
+plot_data <- resid_lexcat_data |> left_join(aoa)
+
+ggplot(plot_data |> filter(lexical_category != "nouns"), aes(x=cd_score, y=aoa)) +
+  geom_point(alpha=0.3)
+
+
+
+
+results <- loo_preds |> filter(name=="uni_surp") |> select(test_word, lexical_category, aoa, aoa_pred, abs_dev) |> mutate(uni_lemma= test_word)
+
+subset_results <- test |> left_join(results)
+
+subset_summary <- subset_results |> summarise(mean_abs_dev = mean(abs_dev, na.rm=TRUE),
+              sd_abs_dev = sd(abs_dev, na.rm=TRUE )) 
+
+
+
+|>
+    mutate(ci_mad = 1.96 * (sd_abs_dev / sqrt(n)),
+           ci_mad_min = mean_abs_dev - ci_mad,
+           ci_mad_max = mean_abs_dev + ci_mad) |>
+    unique()
+
+```
