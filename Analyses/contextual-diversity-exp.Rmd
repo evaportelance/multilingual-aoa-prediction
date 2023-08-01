@@ -85,7 +85,7 @@ remove_NA_predictors <- function(data, predictors){
 
 data <- remove_NA_predictors(all_vars, predictors)
 
-data <- data %>% unique() |> group_by(language,uni_lemma,definition) |> mutate(surprisal_1gm = - log(all_frequency)) |> mutate_at(vars(starts_with("surprisal"),lstm_surprisal,avg_perplexity), ~sum(.*all_frequency)/sum(all_frequency)) |> mutate(all_frequency=sum(all_frequency)) |> mutate(log_cd_score=log(cd_score)) |> select(language, uni_lemma, category, definition, lexical_class, lstm_surprisal, surprisal_2gm, surprisal_3gm, surprisal_4gm, surprisal_1gm, cd_score, log_cd_score) |> unique() |> ungroup() |> group_by(language) |> mutate_at(vars(c("lstm_surprisal", "surprisal_1gm", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "cd_score", "log_cd_score")), ~as.numeric(base::scale(.)))
+data <- data %>% unique() |> group_by(language,uni_lemma,definition) |> mutate(surprisal_1gm = - log(all_frequency)) |> mutate_at(vars(starts_with("surprisal"),lstm_surprisal), ~sum(.*all_frequency)/sum(all_frequency)) |> mutate(all_frequency=sum(all_frequency)) |> mutate(log_cd_score=log(cd_score)) |> select(language, uni_lemma, category, definition, lexical_class, lstm_surprisal, surprisal_2gm, surprisal_3gm, surprisal_4gm, surprisal_1gm, cd_score, log_cd_score, all_frequency) |> unique() |> ungroup() |> group_by(language) |> mutate_at(vars(c("lstm_surprisal", "surprisal_1gm", "surprisal_2gm", "surprisal_3gm", "surprisal_4gm", "cd_score", "log_cd_score", "all_frequency")), ~as.numeric(base::scale(.)))
 
 #data |> filter(language == "French (French)") |> summarize(sd = sd(lstm_surprisal), mean = mean(lstm_surprisal))
 ```
@@ -94,7 +94,7 @@ data <- data %>% unique() |> group_by(language,uni_lemma,definition) |> mutate(s
 my_get_cor_plot <- function(data){
   lang = data$language |> unique()
   #selected_data <- data |> select(surprisal_1gm, surprisal_2gm, surprisal_3gm, surprisal_4gm, lstm_surprisal, cd_score, log_cd_score)
-  selected_data <- data |> select(surprisal_1gm, lstm_surprisal, cd_score, log_cd_score)
+  selected_data <- data |> select(all_frequency, surprisal_1gm, lstm_surprisal, cd_score, log_cd_score)
   M = cor(selected_data, method = "pearson", use = "complete.obs")
   print(lang)
   print(M)
