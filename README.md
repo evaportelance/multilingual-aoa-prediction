@@ -3,7 +3,7 @@
 This repository contains all the data, code, and analyses presented in Chapter 2 of my dissertation as well as the subsequent paper entitled _Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal_. 
 
 Please cite the following paper and/or my dissertation if you choose to use any of the cleaned data, code, or results from this repository:
-
+```
 @article{portelance2023predicting,
   author  = {Portelance, Eva and Duan, Yuguang and Frank, Michael C. and Lupyan, Gary},
   title   = {Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal},
@@ -17,9 +17,9 @@ Please cite the following paper and/or my dissertation if you choose to use any 
   school  = {Stanford University},
   year    = {2022}
 }
-
+```
 Additionally, please cite the CHILDES and Wordbank repositories, where the original data is stored, as well as the original studies in each language used:
-
+```
 @book{macwhinney2000CHILDES,
   title={The {CHILDES} {P}roject: {T}ools for analyzing talk. {T}hird {E}dition.},
   author={MacWhinney, B.},
@@ -37,7 +37,7 @@ Additionally, please cite the CHILDES and Wordbank repositories, where the origi
   year={2017},
   publisher={Cambridge University Press}
 }
-
+```
 ## How to
 
 ### Where to find the corpora of child-directed utterances
