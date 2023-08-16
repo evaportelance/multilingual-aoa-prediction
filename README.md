@@ -1,6 +1,6 @@
-# multilingual-aoa-prediction
+# Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal
 
-This repository contains all the data, code, and analyses presented in Chapter 2 of my dissertation as well as the subsequent paper entitled _Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal_. 
+This repository contains all the data, code, and analyses presented in the paper entitled _Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal_. 
 
 Please cite the following paper if you choose to use any of the cleaned data, code, or results from this repository:
 ```
