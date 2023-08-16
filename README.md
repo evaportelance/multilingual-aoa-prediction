@@ -2,20 +2,13 @@
 
 This repository contains all the data, code, and analyses presented in Chapter 2 of my dissertation as well as the subsequent paper entitled _Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal_. 
 
-Please cite the following paper and/or my dissertation if you choose to use any of the cleaned data, code, or results from this repository:
+Please cite the following paper if you choose to use any of the cleaned data, code, or results from this repository:
 ```
 @article{portelance2023predicting,
   author  = {Portelance, Eva and Duan, Yuguang and Frank, Michael C. and Lupyan, Gary},
   title   = {Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal},
   journal = {Cognitive Science},
   year    = {To Appear}
-}
-
-@phdthesis{portelance2022dissertation,
-  author  = {Portelance, Eva},
-  title   = {Neural network approaches to the study of word learning},
-  school  = {Stanford University},
-  year    = {2022}
 }
 ```
 Additionally, please cite the CHILDES and Wordbank repositories, where the original data is stored, as well as the original studies in each language used:
