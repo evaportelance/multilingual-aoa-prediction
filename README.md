@@ -8,7 +8,7 @@ Please cite the following paper if you choose to use any of the cleaned data, co
   author  = {Portelance, Eva and Duan, Yuguang and Frank, Michael C. and Lupyan, Gary},
   title   = {Predicting age of acquisition for children’s early vocabulary in five languages using language model surprisal},
   journal = {Cognitive Science},
-  year    = {To Appear}
+  year    = {2023}
 }
 ```
 Additionally, please cite the CHILDES and Wordbank repositories, where the original data is stored, as well as the original studies in each language used:
